@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+.App {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #303364;
+  animation: flash 1s linear;
+  animation-delay: 0.5s;
+  animation-iteration-count: 2;
+}
+
+.div-logo-intro {
+  height: 35vh;
+  width: 100%;
+}
+
+.intro-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+
+.bienvenue-container {
+    padding-top: 1rem;
+  height: 15vh;
+  animation: bienvenue-container 2s;
+}
+
+.bienvenue-text {
+  animation: bienvenue 5s;
+  color: white;
+  font-size: 2rem;
+  visibility: hidden;
+}
+
+.logo-intro {
+  width: 90vw;
+  max-width: 400px;
+  animation: mylogo 2s;
+}
+
+@keyframes bienvenue {
+  0%,
+  10%,
+  20%,
+  30%,
+  50%,
+  70% {
+    visibility: hidden;
+  }
+  80% {
+    visibility: visible;
+    font-size: 2rem;
+  }
+  90%,
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes mylogo {
+  0% {
+    transform: scale(0.33);
+  }
+  50% {
+    transform: scale(0.66);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes flash {
+  0% {
+    background-color: white;
+  }
+}
+
+.buttons-intro {
+  height: 40vw;
+  max-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  
+}
+
+.buttons-intro,
+.buttons-intro * {
+  animation: flash-accueil 5s;
+}
+
+@keyframes flash-accueil {
+  0% {
+    visibility: hidden;
+  }
+
+  90% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: initial;
+  }
+}
