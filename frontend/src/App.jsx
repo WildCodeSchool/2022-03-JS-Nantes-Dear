@@ -1,14 +1,13 @@
-// import Home from "@pages/Home";
-import Intro from "./pages/Intro";
+// import Intro from "./pages/Intro";
+import Home from "./pages/Home";
 
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
-      <Intro />
-
-      {/* <Home /> */}
+      {/* <Intro /> */}
+      <Home />
     </div>
   );
 }

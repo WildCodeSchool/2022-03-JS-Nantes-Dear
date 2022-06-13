@@ -1,5 +1,5 @@
 import React from "react";
-import "../components/componentsCss/Inscription.css";
+import "./componentsCss/Inscription.css";
 
 function Inscription() {
   return (

@@ -1,12 +1,12 @@
 .button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 96vw;
-    max-width: 500px;
-    height: 15vw;
-    max-height: 100px;
-    background-color: #ffffff;
-    color: #303364;
-    border-radius: 10px;
-  }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 96vw;
+  max-width: 500px;
+  height: 15vw;
+  max-height: 100px;
+  background-color: #ffffff;
+  color: #303364;
+  border-radius: 10px;
+}
