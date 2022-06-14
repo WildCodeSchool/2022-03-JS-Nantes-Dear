@@ -1,7 +1,7 @@
 import React from "react";
-import "./componentsCss/Inscription.css";
+import "./styles/Registration.css";
 
-function Inscription() {
+function Registration() {
   return (
     <div className="button">
       <h3>S'INSCRIRE</h3>
@@ -9,4 +9,4 @@ function Inscription() {
   );
 }
 
-export default Inscription;
+export default Registration;

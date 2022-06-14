@@ -1,8 +1,9 @@
 import React from "react";
-import logo from "../assets/dearlogo.png";
-import Inscription from "../components/Inscription";
-import Connexion from "../components/Connexion";
-import "../components/componentsCss/Intro.css";
+import { NavLink } from "react-router-dom";
+import logo from "../assets/dear-logo-white.png";
+import Registration from "../components/intro/Registration";
+import Connection from "../components/intro/Connection";
+import "./styles/Intro.css";
 
 function Intro() {
   return (
@@ -14,8 +15,10 @@ function Intro() {
         <p className="bienvenue-text"> Bienvenue </p>
       </div>
       <div className="buttons-intro">
-        <Inscription />
-        <Connexion />
+        <NavLink to="/Home">
+          <Registration />
+        </NavLink>
+        <Connection />
       </div>
     </div>
   );

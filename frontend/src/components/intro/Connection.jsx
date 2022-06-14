@@ -1,7 +1,7 @@
 import React from "react";
-import "./componentsCss/Connexion.css";
+import "./styles/Connection.css";
 
-function Connexion() {
+function Connection() {
   return (
     <div className="button">
       <h3>CONNEXION</h3>
@@ -9,4 +9,4 @@ function Connexion() {
   );
 }
 
-export default Connexion;
+export default Connection;

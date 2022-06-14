@@ -1,11 +1,8 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
 
-.App {
-  font-family: "Montserrat", sans-serif;
-  text-align: center;
-}
 
-body {
+
+.intro-container {
   background-color: #303364;
   animation: flash 1s linear;
   animation-delay: 0.5s;
@@ -14,7 +11,7 @@ body {
 
 .div-logo-intro {
   height: 35vh;
-  width: 100%;
+  margin: 0 auto;
 }
 
 .intro-container {
@@ -29,6 +26,7 @@ body {
 .bienvenue-container {
   padding-top: 1rem;
   height: 15vh;
+  max-height: 70px;
   animation: bienvenue-container 2s;
 }
 
@@ -43,6 +41,7 @@ body {
   width: 90vw;
   max-width: 400px;
   animation: mylogo 2s;
+  margin: 0 auto;
 }
 
 @keyframes bienvenue {
