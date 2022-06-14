@@ -41,8 +41,7 @@ class UserController {
       res.status(400).send({ error: "Please specify both email and password" });
     }
 
-    models.user
-      .findByMail(email)
+    models.User.findByMail(email)
       .then(async ([rows]) => {
         if (rows[0] == null) {
           res.status(401).send("Email ou mot de passe incorrect");
@@ -87,8 +86,7 @@ class UserController {
   };
 
   static browse = (req, res) => {
-    models.item
-      .findAll()
+    models.User.findAll()
       .then(([rows]) => {
         res.send(rows);
       })
@@ -125,8 +123,7 @@ class UserController {
   };
 
   static read = (req, res) => {
-    models.item
-      .find(req.params.id)
+    models.User.find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
@@ -141,12 +138,11 @@ class UserController {
   };
 
   static edit = (req, res) => {
-    const item = req.body;
+    const User = req.body;
 
-    item.id = parseInt(req.params.id, 10);
+    User.id = parseInt(req.params.id, 10);
 
-    models.item
-      .update(item)
+    models.User.update(User)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -161,12 +157,11 @@ class UserController {
   };
 
   static add = (req, res) => {
-    const item = req.body;
+    const User = req.body;
 
-    models.item
-      .insert(item)
+    models.User.insert(User)
       .then(([result]) => {
-        res.status(201).send({ ...item, id: result.insertId });
+        res.status(201).send({ ...User, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);
@@ -175,8 +170,7 @@ class UserController {
   };
 
   static delete = (req, res) => {
-    models.item
-      .delete(req.params.id)
+    models.User.delete(req.params.id)
       .then(() => {
         res.sendStatus(204);
       })
