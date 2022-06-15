@@ -1,0 +1,41 @@
+body {
+  background-color: var(--dark-blue);
+}
+
+h4 {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.form {
+  height: 65vh;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.inputEmail,
+.inputPassword,
+.inputConfirmPassword {
+  width: 90%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  height: 3rem;
+}
+::placeholder {
+  padding-left: 20px;
+  font-size: 1.1rem;
+  color: #bdc3cf;
+}
+
+.inputSubmit {
+  width: 90%;
+  margin-top: 1rem;
+  border-radius: 10px;
+  height: 3rem;
+  background: #a7d1cd;
+  color: #ffffff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
