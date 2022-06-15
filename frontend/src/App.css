@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 :root {
   --dark-blue: #303364;
   --light-red: #ec4d4d;
@@ -15,3 +16,28 @@
   font-size: 16px;
   box-sizing: border-box;
 }
+=======
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap%22");
+
+:root {
+  --dark-blue: #303364;
+  --light-red: #EC4D4D;
+  --mint-blue: #A7D1CD;
+  --mustard: #F8C053; 
+  --light-purple: #A098C9;
+  --white: #FFFFFF;
+  --font: "Montserrat", sans-serif;
+
+}
+
+* {
+ margin: 0;
+ padding: 0;
+ font-size: 16px;
+ box-sizing: border-box;
+}
+
+input {
+  color: #bdc3cf;
+}
+>>>>>>> 506e1610805366dcc1f1ac6dfef0a776f0a9f14f
