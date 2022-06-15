@@ -4,7 +4,7 @@ import "./styles/SorryNotAdult.css";
 
 function SorryNotAdult() {
   return (
-    <div>
+    <div className="div-sorry">
       <div className="div-logo-not-adult">
         <img className="logo-not-adult" src={logo} alt="logo Dear blanc" />
       </div>

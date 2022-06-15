@@ -3,7 +3,7 @@
 
 
 .intro-container {
-  background-color: #303364;
+  background-color: var(--dark-blue);
   animation: flash 1s linear;
   animation-delay: 0.5s;
   animation-iteration-count: 2;

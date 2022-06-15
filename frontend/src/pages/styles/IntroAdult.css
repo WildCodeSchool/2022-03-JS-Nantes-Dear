@@ -6,11 +6,16 @@
   }
   
   .intro-container {
-    background-color: #303364;
+    background-color: var(--dark-blue);
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     height: 100vh;
     width: 100vw;
+  }
+
+  .more18 {
+    color: var(--white);
+    
   }
