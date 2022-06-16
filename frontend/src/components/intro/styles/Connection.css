@@ -10,3 +10,7 @@
   color: #303364;
   border-radius: 10px;
 }
+
+.button * {
+  font-family: var(--font);;
+}
