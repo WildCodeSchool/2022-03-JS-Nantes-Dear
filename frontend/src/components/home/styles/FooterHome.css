@@ -1,0 +1,23 @@
+.footerHome {
+    position: fixed;
+    background-color: white;
+    width: 100vw;
+    height: 7vh;
+    max-height:100px ;
+    bottom: 0;
+    display: flex;
+    box-sizing: border-box;
+    justify-content: center;
+}
+
+.logo-footer-container{
+    position: fixed;
+    right: 0;
+}
+
+
+.publication-button img {
+    width: 15vw;
+    height: 7vh;
+    max-width: 70px;
+}

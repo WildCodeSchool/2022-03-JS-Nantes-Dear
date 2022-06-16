@@ -1,5 +1,6 @@
 import HeaderHome from "../components/home/HeaderHome";
 import ModalHome from "../components/home/ModalHome";
+import FooterHome from "../components/home/FooterHome";
 
 export default function Home() {
   return (
@@ -8,6 +9,7 @@ export default function Home() {
       <div className="Home-Modal">
         <ModalHome />
       </div>
+      <FooterHome />
     </div>
   );
 }
