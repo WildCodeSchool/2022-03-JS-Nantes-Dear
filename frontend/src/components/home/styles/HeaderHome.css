@@ -64,7 +64,7 @@ h4 {
     max-width: 150px;
     height: 12vh;
     max-height: 120px;
-}
+  }
 
 @media screen and (min-width: 1024px) {
   header {
