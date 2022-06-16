@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 96vw;
-  height: 15vw;
+  width: 88vw;
+  max-width: 500px;
+  height: 6vh;
   max-height: 70px;
   background-color: #ffffff;
   color: #303364;
