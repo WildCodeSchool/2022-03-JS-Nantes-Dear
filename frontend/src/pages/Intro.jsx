@@ -15,7 +15,7 @@ function Intro() {
         <p className="bienvenue-text"> Bienvenue </p>
       </div>
       <div className="buttons-intro">
-        <NavLink to="/Inscription">
+        <NavLink to="/IntroAdult">
           <Registration />
         </NavLink>
         <NavLink to="/Connection">
