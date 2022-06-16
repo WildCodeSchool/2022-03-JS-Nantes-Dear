@@ -1,0 +1,24 @@
+.logo-connection {
+  height: 20vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.bonjour-text-connection {
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 5rem;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-connection {
+    height: 30vh;
+  }
+
+  .bonjour-text-connection {
+    margin-left: 30rem;
+  }
+}
