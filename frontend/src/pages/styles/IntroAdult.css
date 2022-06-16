@@ -1,0 +1,28 @@
+
+  
+  .div-logo-intro {
+    height: 35vh;
+    margin: 0 auto;
+  }
+  
+  .intro-adult-container {
+    background-color: var(--dark-blue);
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+  }
+
+  .logo-intro-adult {
+    width: 90vw;
+    max-width: 400px;
+    margin: 0 auto;
+
+  }
+
+  .more18 {
+    color: var(--white);
+    
+  }
