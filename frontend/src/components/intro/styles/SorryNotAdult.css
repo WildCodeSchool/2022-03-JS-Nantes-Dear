@@ -1,8 +1,36 @@
-.div-sorry {
+body {
     background-color: var(--dark-blue);
 }
 
-.logo-not-adult {
+.div-sorry {
+    color: var(--white);
+}
+
+.div-logo-not-adult {
+    height: 30vh;
+    margin: 0 auto;
     width: 20vw;
-    height: 8vh;
+}
+
+.logo-not-adult {
+    width: 40vw;
+}
+
+.text-sorry {
+    display: flex;
+    flex-direction: column;
+    width: 80vw;
+    height: 70vh;
+}
+
+.sorry-title {
+    font-size: 3rem;
+}
+
+.insta-pssst {
+    font-size: 0.9rem;
+}
+
+.take-care {
+    font-size: 2rem;
 }

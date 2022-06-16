@@ -8,13 +8,17 @@ function SorryNotAdult() {
       <div className="div-logo-not-adult">
         <img className="logo-not-adult" src={logo} alt="logo Dear blanc" />
       </div>
-      <h2>Désolé...</h2>
-      <p>
-        Nous sommes navrés, l'appli DEAR s'adresse uniquement à des personnes
-        MAJEURES.
-      </p>
-      <p>Pssst, par contre tu peux nous suivre sur INSTA : dear_officiel_</p>
-      <p>Take care.</p>
+      <div className="text-sorry">
+        <h2 className="sorry-title">Désolé...</h2>
+        <p>
+          Nous sommes navrés, l'appli DEAR s'adresse uniquement à des personnes
+          MAJEURES.
+        </p>
+        <p className="insta-pssst">
+          Pssst, par contre tu peux nous suivre sur INSTA : dear_officiel_
+        </p>
+        <p className="take-care">Take care.</p>
+      </div>
     </div>
   );
 }
