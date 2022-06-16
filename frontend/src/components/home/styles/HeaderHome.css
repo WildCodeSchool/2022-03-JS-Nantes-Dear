@@ -63,7 +63,7 @@ h4 {
   .logo {
     max-width: 150px;
     height: 12vh;
-  }
+    max-height: 120px;
 }
 
 @media screen and (min-width: 1024px) {
@@ -73,6 +73,7 @@ h4 {
     justify-content: space-around;
     align-items: center;
     height: 30vh;
+    max-height: 220px;
   }
   .welcome-text {
     display: flex;
