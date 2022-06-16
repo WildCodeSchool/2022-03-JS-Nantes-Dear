@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   width: 80vw;
-  height: 130vw;
+  height: 110vw;
   background-color: var(--white);
   border-radius: 10px;
   margin-top: 1rem;
@@ -74,6 +74,7 @@
   text-align: center;
   font-size: 1rem;
   font-family: var(--font);
+  color: var(--darkblue);
 }
 
 ::placeholder {
