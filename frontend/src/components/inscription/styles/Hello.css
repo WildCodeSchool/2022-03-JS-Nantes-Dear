@@ -1,0 +1,35 @@
+.logo-inscription {
+  height: 20vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text {
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.bienvenue-text-inscription {
+  font-family: var(--font);
+  color: var(--white);
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-inscription {
+    height: 30vh;
+  }
+
+  .welcome-text {
+    margin-left: 30rem;
+  }
+
+  .bienvenue-text-inscription {
+    margin-left: 30rem;
+  }
+}
