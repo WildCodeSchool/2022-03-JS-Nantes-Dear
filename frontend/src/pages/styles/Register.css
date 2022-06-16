@@ -1,41 +1,47 @@
-body {
-  background-color: var(--dark-blue);
-}
-
-h4 {
+.register-title {
   color: var(--white);
-  font-size: 1rem;
+  font-family: var(--font);
 }
 
-.form {
-  height: 65vh;
-  margin-left: 10px;
-  margin-right: 10px;
-  border-radius: 10px;
-  margin-bottom: 2rem;
+.register-title h3 {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .inputEmail,
 .inputPassword,
 .inputConfirmPassword {
-  width: 90%;
+  width: 90vw;
   margin-top: 1rem;
   border-radius: 10px;
-  height: 3rem;
+  height: 3.5rem;
+  border: none;
+  margin-top: 3rem;
 }
+.inputEmail,
+.inputPassword,
+.inputConfirmPassword,
 ::placeholder {
   padding-left: 20px;
   font-size: 1.1rem;
   color: #bdc3cf;
 }
 
-.inputSubmit {
-  width: 90%;
-  margin-top: 1rem;
-  border-radius: 10px;
-  height: 3rem;
-  background: #a7d1cd;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
+.inputConfirmPassword {
+  margin-bottom: 60px;
+  color: var(--dark-blue);
+}
+
+.inputEmail {
+  color: var(--dark-blue);
+}
+
+.inputPassword {
+  color: var(--dark-blue);
 }

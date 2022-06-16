@@ -1,0 +1,117 @@
+.title-card {
+  color: #ffff;
+  font-family: var(--font);
+}
+
+.title-card h1 {
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.title-card h2 {
+  font-size: 1.2rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.title-card h3 {
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.bloc-pseudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 80vw;
+  height: 130vw;
+  background-color: #ffff;
+  border-radius: 10px;
+  margin-top: 1rem;
+  margin: auto;
+}
+
+.form-pseudo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.stringform {
+  color: var(--dark-blue);
+  font-family: var(--font);
+  text-align: center;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+}
+
+.inputformsubmit {
+  width: 40vw;
+  height: 10vw;
+  background-color: var(--mint-blue);
+  color: var(--white);
+  border-radius: 20px;
+  margin-top: 5rem;
+  border: none;
+}
+
+.button-continue {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 2.8rem;
+}
+
+.inputformpseudo {
+  border-radius: 5rem;
+  border: none;
+  height: 3rem;
+  width: 65vw;
+  text-align: center;
+  font-size: 1rem;
+  font-family: var(--font);
+}
+
+::placeholder {
+  color: #bdc3cf;
+}
+
+.option-age {
+  border-radius: 5rem;
+  height: 3rem;
+  width: 65vw;
+  text-align: center;
+  color: var(--dark-blue);
+  font-size: 0.8rem;
+  font-family: var(--font);
+  border: none;
+}
+
+@media screen and (min-width: 768px) {
+  .bloc-pseudo {
+    width: 30vw;
+    height: 30vw;
+  }
+
+  .inputformpseudo {
+    border-radius: 5rem;
+    height: 3rem;
+    width: 25vw;
+    font-size: 1rem;
+  }
+
+  .option-age {
+    width: 25vw;
+    font-size: 1rem;
+  }
+
+  .inputformsubmit {
+    width: 15vw;
+    height: 4vw;
+    margin-top: 3rem;
+  }
+}

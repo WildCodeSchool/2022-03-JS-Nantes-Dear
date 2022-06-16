@@ -15,10 +15,12 @@ function Intro() {
         <p className="bienvenue-text"> Bienvenue </p>
       </div>
       <div className="buttons-intro">
-        <NavLink to="/Home">
+        <NavLink to="/Inscription">
           <Registration />
         </NavLink>
-        <Connection />
+        <NavLink to="/Connection">
+          <Connection />
+        </NavLink>
       </div>
     </div>
   );

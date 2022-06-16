@@ -2,12 +2,13 @@ body {
   background-color: var(--dark-blue);
 }
 
-h4 {
-  color: var(--white);
-  font-size: 1rem;
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
-.form {
+.form-login {
   height: 65vh;
   margin-left: 10px;
   margin-right: 10px;
@@ -15,27 +16,25 @@ h4 {
   margin-bottom: 2rem;
 }
 
-.inputEmail,
-.inputPassword
- {
-  width: 90%;
+.inputPseudo,
+.inputLogPassword {
+  width: 90vw;
   margin-top: 1rem;
   border-radius: 10px;
-  height: 3rem;
+  height: 3.5rem;
+  border: none;
+  margin-top: 3rem;
+  color: black;
 }
+
+.inputPseudo,
+.inputLogPassword,
 ::placeholder {
   padding-left: 20px;
   font-size: 1.1rem;
   color: #bdc3cf;
 }
 
-.inputSubmit {
-  width: 90%;
-  margin-top: 1rem;
-  border-radius: 10px;
-  height: 3rem;
-  background: #a7d1cd;
-  color: #ffffff;
-  font-size: 1.1rem;
-  font-weight: 600;
+.inputLogPassword {
+  margin-bottom: 60px;
 }
