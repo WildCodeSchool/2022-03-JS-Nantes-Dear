@@ -13,7 +13,9 @@ function IntroAdult() {
       </div>
       <h3 className="more18">As-tu plus de 18 ans ?</h3>
       <div className="buttons-intro">
-        <Adult />
+        <NavLink to="/Inscription">
+          <Adult />
+        </NavLink>
         <NavLink to="/SorryNotAdult">
           <NotAdult />
         </NavLink>

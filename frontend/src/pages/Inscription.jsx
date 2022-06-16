@@ -1,11 +1,11 @@
 import React from "react";
 import "./styles/Inscription.css";
-import CardPseudo from "../components/inscription/CardPseudo";
+import Hello from "../components/inscription/Hello";
 
 export default function Inscription() {
   return (
     <div className="bloc-inscription">
-      <CardPseudo />
+      <Hello />
     </div>
   );
 }
