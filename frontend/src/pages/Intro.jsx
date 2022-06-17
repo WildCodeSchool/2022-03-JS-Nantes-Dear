@@ -18,7 +18,9 @@ function Intro() {
         <NavLink to="/IntroAdult">
           <Registration />
         </NavLink>
-        <Connection />
+        <NavLink to="/Connection">
+          <Connection />
+        </NavLink>
       </div>
     </div>
   );

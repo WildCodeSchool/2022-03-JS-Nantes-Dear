@@ -1,0 +1,40 @@
+body {
+  background-color: var(--dark-blue);
+}
+
+.login {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.form-login {
+  height: 65vh;
+  margin-left: 10px;
+  margin-right: 10px;
+  border-radius: 10px;
+  margin-bottom: 2rem;
+}
+
+.inputPseudo,
+.inputLogPassword {
+  width: 90vw;
+  margin-top: 1rem;
+  border-radius: 10px;
+  height: 3.5rem;
+  border: none;
+  margin-top: 3rem;
+  color: black;
+}
+
+.inputPseudo,
+.inputLogPassword,
+::placeholder {
+  padding-left: 20px;
+  font-size: 1.1rem;
+  color: #bdc3cf;
+}
+
+.inputLogPassword {
+  margin-bottom: 60px;
+}
