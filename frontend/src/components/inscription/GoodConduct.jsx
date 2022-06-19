@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles/GoodConduct.css";
 import logo from "../../assets/dear-logo-white.png";
-import Checkbox from "./checkbox";
+import Checkbox from "./Checkbox";
 
 function GoodConduct() {
   const [checked, setChecked] = useState(false);
