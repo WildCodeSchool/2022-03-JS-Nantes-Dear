@@ -1,0 +1,63 @@
+body {
+  background-color: var(--dark-blue);
+}
+
+.div-sorry {
+  color: var(--white);
+}
+
+.div-logo-not-adult {
+  height: 35vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.logo-not-adult {
+  width: 45vw;
+  height: 20vh;
+}
+
+.text-sorry {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 80vw;
+  height: 50vh;
+  margin: auto;
+}
+
+.sorry-title {
+  font-size: 3rem;
+  margin-bottom: 0.5em;
+}
+
+.text-adult {
+  width: 62vw;
+  height: 10vh;
+}
+
+.insta-pssst {
+  font-size: 0.9rem;
+  width: 70vw;
+  height: 6vh;
+  text-align: center;
+}
+
+.take-care {
+  font-size: 2rem;
+}
+
+.first-bloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.second-bloc {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

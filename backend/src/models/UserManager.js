@@ -1,9 +1,8 @@
 const AbstractManager = require("./AbstractManager");
 
 class UserManager extends AbstractManager {
-  static table = "User";
+  static table = "user";
 
-  // TODO complete the `findByMail` method
   findByMail(email) {
     return this.connection.query(
       `select * from ${UserManager.table} where email = ?`,
@@ -20,8 +19,8 @@ class UserManager extends AbstractManager {
 
   update(user) {
     return this.connection.query(
-      `update ${UserManager.table} set title = ? where id = ?`,
-      [user.title, user.id]
+      `update ${UserManager.table} set email = ?, password = ?, role = ? where id = ?`,
+      [user.email, user.password, user.role, user.id]
     );
   }
 }

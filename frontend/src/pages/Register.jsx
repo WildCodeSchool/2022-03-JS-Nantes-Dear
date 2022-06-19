@@ -6,14 +6,14 @@ function Register() {
   return (
     <div className="register">
       <div className="register-title">
-        <h3>Procédons ensemble à ton inscription</h3>
+        <h2>Procédons ensemble à ton inscription</h2>
         <form className="form-register">
           <input
             className="inputEmail"
             type="email"
             name="email"
             id="email"
-            placeholder="Adresse email"
+            placeholder="sophie.durand@gmail.coml"
           />
           <input
             className="inputPassword"
@@ -29,7 +29,9 @@ function Register() {
             id="password"
             placeholder="Confirmation du mot de passe"
           />
-          <ButtonContinue />
+          <div className="button-continue">
+            <ButtonContinue />
+          </div>
         </form>
       </div>
     </div>
