@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
 import ButtonContinue from "./ButtonContinue";
 
@@ -45,7 +46,9 @@ export default function CardPseudo() {
         </form>
       </div>
       <div className="button-continue">
-        <ButtonContinue />
+        <Link to="/registration/register">
+          <ButtonContinue />
+        </Link>
       </div>
     </div>
   );

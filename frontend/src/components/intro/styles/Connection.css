@@ -2,9 +2,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 88vw;
+  width: 90vw;
   max-width: 500px;
-  height: 6vh;
+  height: 15vw;
   max-height: 70px;
   background-color: #ffffff;
   color: #303364;
@@ -12,5 +12,5 @@
 }
 
 .button * {
-  font-family: var(--font);;
+  font-family: var(--font);
 }

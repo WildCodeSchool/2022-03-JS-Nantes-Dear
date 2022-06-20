@@ -1,19 +1,30 @@
 import { Routes, Route } from "react-router-dom";
-import Home from "./Home";
-import Inscription from "./Inscription";
 import Intro from "./Intro";
 import IntroAdult from "./IntroAdult";
 import SorryNotAdult from "../components/intro/SorryNotAdult";
+import Registration from "./Registration";
+import Register from "./Register";
+import CodeMail from "../components/registration/CodeMail";
+import Login from "../components/registration/Login";
+import Hello from "../components/registration/Hello";
+import Home from "./Home";
 
 export default function Body() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Intro />} />
-        <Route path="/IntroAdult" element={<IntroAdult />} />
-        <Route path="/SorryNotAdult" element={<SorryNotAdult />} />
-        <Route path="Home" element={<Home />} />
-        <Route path="Inscription" element={<Inscription />} />
+        <Route path="/introadult" element={<IntroAdult />} />
+        <Route path="/sorrynotadult" element={<SorryNotAdult />} />
+        <Route path="/registration" element={<Registration />} />
+        <Route path="/registration/register" element={<Register />} />
+        <Route path="/registration/register/codemail" element={<CodeMail />} />
+        <Route
+          path="/registration/register/codemail/hello"
+          element={<Hello />}
+        />
+        <Route path="/home" element={<Home />} />
+        <Route path="/connection" element={<Login />} />
       </Routes>
     </div>
   );

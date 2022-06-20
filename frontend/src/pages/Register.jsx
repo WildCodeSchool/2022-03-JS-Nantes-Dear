@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./styles/Register.css";
-import ButtonContinue from "../components/inscription/ButtonContinue";
+import ButtonContinue from "../components/registration/ButtonContinue";
 
 function Register() {
   return (
@@ -29,7 +30,9 @@ function Register() {
             id="password"
             placeholder="Confirmation du mot de passe"
           />
-          <ButtonContinue />
+          <Link to="/registration/register/codemail">
+            <ButtonContinue />
+          </Link>
         </form>
       </div>
     </div>

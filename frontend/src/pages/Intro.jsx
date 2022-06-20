@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import logo from "../assets/dear-logo-white.png";
 import Registration from "../components/intro/Registration";
 import Connection from "../components/intro/Connection";
@@ -15,12 +15,12 @@ function Intro() {
         <p className="bienvenue-text"> Bienvenue </p>
       </div>
       <div className="buttons-intro">
-        <NavLink to="/IntroAdult">
+        <Link to="/introadult">
           <Registration />
-        </NavLink>
-        <NavLink to="/Connection">
+        </Link>
+        <Link to="/connection">
           <Connection />
-        </NavLink>
+        </Link>
       </div>
     </div>
   );
