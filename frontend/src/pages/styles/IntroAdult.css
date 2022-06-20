@@ -22,3 +22,9 @@
 .more18 {
   color: var(--white);
 }
+
+@media screen and (min-width: 768px) {
+  .more18 {
+    margin-top: 3.1rem;
+  }
+}

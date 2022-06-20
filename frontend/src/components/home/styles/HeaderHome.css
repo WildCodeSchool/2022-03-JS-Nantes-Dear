@@ -66,28 +66,29 @@ h4 {
     max-height: 120px;
   }
 
-@media screen and (min-width: 1024px) {
-  header {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-around;
-    align-items: center;
-    height: 30vh;
-    max-height: 220px;
-  }
-  .welcome-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-  }
-  h1 {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1rem;
-  }
-  .logo {
-    max-width: 150px;
-    height: 15vh;
+  @media screen and (min-width: 1024px) {
+    header {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: space-around;
+      align-items: center;
+      height: 30vh;
+      max-height: 220px;
+    }
+    .welcome-text {
+      display: flex;
+      flex-direction: column;
+      justify-content: left;
+    }
+    h1 {
+      font-size: 2rem;
+    }
+    .subtitle {
+      font-size: 1rem;
+    }
+    .logo {
+      max-width: 150px;
+      height: 15vh;
+    }
   }
 }
