@@ -2,10 +2,14 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/Register.css";
 import ButtonContinue from "../components/registration/ButtonContinue";
+import ButtonReturn from "../components/home/ButtonReturn";
 
 function Register() {
   return (
     <div className="register">
+      <div className="div-arrow-return">
+        <ButtonReturn />
+      </div>
       <div className="register-title">
         <h3>Procédons ensemble à ton inscription</h3>
         <form className="form-register">
