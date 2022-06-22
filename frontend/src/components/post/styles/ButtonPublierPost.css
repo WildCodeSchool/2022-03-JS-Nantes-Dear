@@ -1,0 +1,21 @@
+.buttonpublierpost {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40vw;
+    max-width: 500px;
+    height: 9vw;
+    max-height: 70px;
+    background-color: var(--white);
+    color: var(--light-purple);
+    border-radius: 10px;
+    font-family: var(--font);
+  }
+  
+  @media screen and (min-width: 768px) {
+    .buttonpublierpost {
+      width: 20vw;
+      border-radius: 20px;
+    }
+  }
+  

@@ -45,3 +45,7 @@
 .inputPassword {
   color: var(--dark-blue);
 }
+
+a {
+  text-decoration: none;
+}
