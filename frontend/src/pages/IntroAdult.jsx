@@ -1,5 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import logo from "../assets/dear-logo-white.png";
 import Adult from "../components/intro/Adult";
 import NotAdult from "../components/intro/NotAdult";
@@ -13,12 +13,13 @@ function IntroAdult() {
       </div>
       <h3 className="more18">As-tu plus de 18 ans ?</h3>
       <div className="buttons-intro">
-        <NavLink to="/Inscription">
+        <Link to="/registration">
           <Adult />
-        </NavLink>
-        <NavLink to="/SorryNotAdult">
+        </Link>
+        <Link to="/sorrynotadult">
           <NotAdult />
-        </NavLink>
+        </Link>
+        <Outlet />
       </div>
     </div>
   );

@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import ButtonSuivant from "./ButtonSuivant";
 import "./styles/CodeMail.css";
 
@@ -26,7 +27,9 @@ export default function CodeMail() {
         </form>
       </div>
       <div className="button-suivant">
-        <ButtonSuivant />
+        <Link to="hello">
+          <ButtonSuivant />
+        </Link>
       </div>
     </div>
   );
