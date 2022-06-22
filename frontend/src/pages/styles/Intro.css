@@ -30,7 +30,7 @@
 
 .bienvenue-text {
   animation: bienvenue 5s;
-  color: white;
+  color: var(--white);
   font-size: 2rem;
   visibility: hidden;
 }
