@@ -31,7 +31,7 @@ class UserController {
       res.send(hash);
 
       models.user
-        .insert(user)
+        .insert((email, password, role))
         .then(([result]) => {
           res.status(201).json({ id: result.insertId, email, role });
         })
@@ -66,17 +66,21 @@ class UserController {
         if (rows[0] == null) {
           res.status(403).send({ error: "Email ou mot de passe incorrect" });
         } else {
-          const { id, email, password: hash, role } = rows[0];
+          const { email, password: hash, role } = rows[0];
 
-          const isValidPwd = await bcrypt.compare(hash, password);
+          const isValidPwd = await bcrypt.compare(hash, password); //bcrypt compare
 
           if (!isValidPwd) {
             res.status(403).send({ error: "Email ou mot de passe incorrect" });
           }
 
-          const token = jwt.sign({ id, role }, process.env.JWT_AUTH_SECRET, {
-            expiresIn: "1h",
-          });
+          const token = await jwt.sign(
+            { id, role },
+            process.env.JWT_AUTH_SECRET,
+            {
+              expiresIn: "1h",
+            }
+          );
 
           res
             .cookie("access_token", token, {

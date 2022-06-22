@@ -15,8 +15,9 @@ body {
 }
 
 .logo-not-adult {
-  width: 45vw;
-  height: 20vh;
+  width: 50vw;
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 .text-sorry {
@@ -60,4 +61,25 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+@media screen and (min-width: 768px) {
+  .logo-not-adult {
+    width: 20vw;
+  }
+
+  .sorry-title {
+    font-size: 2rem;
+    height: 6vh;
+  }
+
+  .text-adult {
+    width: 20vw;
+    height: 3vh;
+  }
+
+  .insta-pssst {
+    width: 25vw;
+    height: 8vh;
+  }
 }
