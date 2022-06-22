@@ -1,0 +1,28 @@
+.button-like-dislike-comment {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  padding: 1rem;
+  background-color: var(--white);
+}
+
+.dislike-button {
+  border: none;
+  color: var(--dark-blue);
+  background-color: var(--white);
+  margin-right: 1rem;
+}
+
+.like-button {
+  border: none;
+  color: var(--dark-blue);
+  background-color: var(--white);
+  margin-right: 1rem;
+}
+
+.comment-button {
+  border: none;
+  color: var(--dark-blue);
+  background-color: var(--white);
+  margin-right: 1rem;
+}
