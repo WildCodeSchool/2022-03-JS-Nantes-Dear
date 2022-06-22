@@ -1,0 +1,47 @@
+.register-title {
+  color: var(--white);
+  font-family: var(--font);
+}
+
+.register-title h3 {
+  font-size: 0.8rem;
+  text-align: center;
+}
+.form-register {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputEmail,
+.inputPassword,
+.inputConfirmPassword {
+  width: 90vw;
+  margin-top: 1rem;
+  border-radius: 10px;
+  height: 3.5rem;
+  border: none;
+  margin-top: 3rem;
+}
+.inputEmail,
+.inputPassword,
+.inputConfirmPassword,
+::placeholder {
+  padding-left: 20px;
+  font-size: 1.1rem;
+  color: #bdc3cf;
+}
+
+.inputConfirmPassword {
+  margin-bottom: 60px;
+  color: var(--dark-blue);
+}
+
+.inputEmail {
+  color: var(--dark-blue);
+}
+
+.inputPassword {
+  color: var(--dark-blue);
+}

@@ -1,12 +1,12 @@
 CREATE TABLE `User` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `email` varchar(255),
+  `email` mail,
   `pseudo` varchar(255),
   `password` varchar(255),
   `avatar` varchar(255),
   `role` varchar(255),
   `profession` varchar(255)
-);EXISTS
+);
 
 CREATE TABLE `Post` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
@@ -33,6 +33,6 @@ CREATE TABLE `Category` (
 
 ALTER TABLE `User` ADD FOREIGN KEY (`id`) REFERENCES `Comment` (`user_id`);
 
-ALTER TABLE Comment ADD FOREIGN KEY (user_id) REFERENCES User (id);
+ALTER TABLE `Post` ADD FOREIGN KEY (`user_id`) REFERENCES `User` (`id`);
 
 ALTER TABLE `Post` ADD FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`);

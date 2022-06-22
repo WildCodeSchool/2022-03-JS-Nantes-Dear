@@ -1,5 +1,4 @@
 import React from "react";
-// eslint-disable-next-line import/no-unresolved
 import ReactModal from "react-modal";
 import "./styles/ModalHome.css";
 
