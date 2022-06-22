@@ -9,10 +9,12 @@ header {
   display: flex;
   justify-content: flex-end;
 }
+
 .logo {
   width: 20vw;
   height: 8vh;
 }
+
 
 .welcome-container-title {
   width: 80%;
@@ -41,33 +43,34 @@ h4 {
   font-size: 0.5rem;
 }
 
-@media screen and (min-width: 768px) and (max-width: 1024px) {
-  header {
+@media screen and (min-width: 768px) and (max-width:1024px) {
+  header{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
     height: 25vh;
   }
-  .welcome-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+  .welcome-text{
+display: flex;
+flex-direction: column;
+justify-content: left;
   }
-  h1 {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1rem;
-  }
-  .logo {
-    max-width: 150px;
-    height: 12vh;
-    max-height: 120px;
-  }
+h1{
+  font-size: 2rem;
+}
+.subtitle{
+  font-size: 1rem;
+}
+.logo {
+  max-width: 120px;
+  height: 20vh;
+  max-height: 120px;
+}
+}
 
 @media screen and (min-width: 1024px) {
-  header {
+  header{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
@@ -75,19 +78,19 @@ h4 {
     height: 30vh;
     max-height: 220px;
   }
-  .welcome-text {
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
+  .welcome-text{
+display: flex;
+flex-direction: column;
+justify-content: left;
   }
-  h1 {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1rem;
-  }
-  .logo {
-    max-width: 150px;
-    height: 15vh;
-  }
+h1{
+  font-size: 2rem;
+}
+.subtitle{
+  font-size: 1rem;
+}
+.logo {
+  max-width: 150px;
+  height: 15vh;
+}
 }
