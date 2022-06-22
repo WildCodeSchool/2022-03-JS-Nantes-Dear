@@ -11,7 +11,7 @@ function Login() {
           type="pseudo"
           name="pseudo"
           id="pseudo"
-          placeholder="Pseudo"
+          placeholder="supertomate27"
         />
         <input
           className="inputLogPassword"
