@@ -8,6 +8,7 @@ import CodeMail from "../components/registration/CodeMail";
 import Login from "../components/registration/Login";
 import Hello from "../components/registration/Hello";
 import Home from "./Home";
+import FilterSearch from "../components/home/FilterSearch";
 
 export default function Body() {
   return (
@@ -25,6 +26,7 @@ export default function Body() {
         />
         <Route path="/home" element={<Home />} />
         <Route path="/connection" element={<Login />} />
+        <Route path="/test" element={<FilterSearch />} />
       </Routes>
     </div>
   );
