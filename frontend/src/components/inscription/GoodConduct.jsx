@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import { React, useState } from "react";
 import "./styles/GoodConduct.css";
 import logo from "../../assets/dear-logo-white.png";
 import Checkbox from "./Checkbox";
+import ButtonAcceptAll from "./ButtonAcceptAll";
 
 function GoodConduct() {
   const [checked, setChecked] = useState(false);
@@ -18,21 +19,21 @@ function GoodConduct() {
         <div className="conduct-text">
           <p>
             En tant que futur membre de DEAR, tu peux exprimer tes pensées
-            <strong> librement</strong> et échanger avec des personnes dans le{" "}
-            <strong>repect</strong> et la
-            <strong> bienveillance</strong>. Peu importe qui tu es et d’ou tu
+            <span> librement</span> et échanger avec des personnes dans le{" "}
+            <span>repect</span> et la
+            <span> bienveillance</span>. Peu importe qui tu es et d’ou tu
             viens, ce qui compte
-            <strong> c’est ce que tu dis !</strong>
+            <span> c’est ce que tu dis !</span>
           </p>
           <p>
             Pour s’assurer que chaque membre DEAR, vive une expérience au{" "}
-            <strong> TOP</strong>, nous avons partagé des règles de{" "}
-            <strong> bonne confiance </strong>
-            et de <strong> savoir-être !</strong>
+            <span> TOP</span>, nous avons partagé des règles de{" "}
+            <span> bonne confiance </span>
+            et de <span> savoir-être !</span>
           </p>
           <p>
-            Nous t’encourageons à les <strong> lire</strong> et à les{" "}
-            <strong> accepter</strong> pour poursuive ton inscription !
+            Nous t’encourageons à les <span> lire</span> et à les{" "}
+            <span> accepter</span> pour poursuive ton inscription !
           </p>
         </div>
         <div className="conduct-title-secondary">
@@ -69,7 +70,7 @@ function GoodConduct() {
             label="Les comportements inutiles. Tout post étant
           inutilement inamical ou hostile envers les 
           autres membres de la communauté DEAR ou 
-          un groupe de notre communauté.é."
+          un groupe de notre communauté."
             value={checked}
             onChange={onChange}
           />
@@ -120,6 +121,15 @@ function GoodConduct() {
             onChange={onChange}
           />
         </div>
+        <div className="conduct-conclusion">
+          <p>
+            En continuant, tu adhères à nos <span>règles</span>, nos <span>conditions d'utilisation </span>
+            et notre <span>Politique de confidentialité.</span>
+          </p>
+        </div>
+        <div className="button-accept-all">
+          <ButtonAcceptAll />
+         </div>
       </div>
     </div>
   );

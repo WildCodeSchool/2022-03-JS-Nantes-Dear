@@ -1,7 +1,7 @@
 import { Routes, Route } from "react-router-dom";
-import GoodConduct from "@components/inscription/GoodConduct";
-import CardPseudo from "@components/inscription/CardPseudo";
-import Login from "@components/inscription/Login";
+import GoodConduct from "../components/inscription/GoodConduct";
+import CardPseudo from "../components/inscription/CardPseudo";
+import Login from "../components/inscription/Login";
 import Home from "./Home";
 import Inscription from "./Inscription";
 import Intro from "./Intro";

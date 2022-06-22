@@ -1,16 +1,9 @@
-const argon2 = require("argon2");
+const bcrypt = require("bcrypt");
 const Joi = require("joi");
 const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class UserController {
-  static hashingOptions = {
-    type: argon2.argon2id,
-    memoryCost: 2 ** 16,
-    timeCost: 5,
-    parallelism: 1,
-  };
-
   static register = async (req, res) => {
     const { email, password, role } = req.body;
 
@@ -33,8 +26,9 @@ class UserController {
     }
 
     try {
-      const hash = await argon2.hash(password, this.hashingOptions);
-      const user = { email, password: hash, role };
+      const salt = await bcrypt.genSalt(10);
+      const hash = await bcrypt.hash(password, salt);
+      res.send(hash);
 
       models.user
         .insert(user)
@@ -74,7 +68,7 @@ class UserController {
         } else {
           const { id, email, password: hash, role } = rows[0];
 
-          const isValidPwd = await argon2.verify(hash, password);
+          const isValidPwd = await bcrypt.compare(hash, password);
 
           if (!isValidPwd) {
             res.status(403).send({ error: "Email ou mot de passe incorrect" });
@@ -175,5 +169,4 @@ class UserController {
       });
   };
 }
-
 module.exports = UserController;

@@ -1,10 +1,12 @@
 import React from "react";
 import "./styles/Register.css";
 import ButtonContinue from "../components/inscription/ButtonContinue";
+import ProgressBar from "../components/inscription/ProgressBar";
 
 function Register() {
   return (
     <div className="register">
+      <ProgressBar percent="Forty" />
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>
         <form className="form-register">
