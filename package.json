@@ -19,6 +19,7 @@
     "husky": "^7.0.0"
   },
   "dependencies": {
+    "nodemailer": "^6.7.5",
     "nodemon": "^2.0.16"
   }
 }

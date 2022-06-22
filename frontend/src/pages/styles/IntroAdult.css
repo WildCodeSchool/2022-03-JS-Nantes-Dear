@@ -21,6 +21,7 @@
 
 .more18 {
   color: var(--white);
+  margin-top: 2rem;
 }
 
 .buttons-intro a {
@@ -29,6 +30,6 @@
 
 @media screen and (min-width: 768px) {
   .more18 {
-    margin-top: 3.1rem;
+    margin-top: 8rem;
   }
 }

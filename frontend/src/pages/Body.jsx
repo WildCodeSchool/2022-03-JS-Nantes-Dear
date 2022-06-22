@@ -29,7 +29,6 @@ export default function Body() {
         <Route path="/connection" element={<Login />} />
         <Route path="/editpost" element={<EditPost />} />
         <Route path="/editpost/postcategory" element={<PostCategory />} />
-        <Route path="/test" element={<PostCategory />} />
       </Routes>
     </div>
   );
