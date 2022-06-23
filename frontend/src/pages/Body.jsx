@@ -1,4 +1,5 @@
 import { Routes, Route } from "react-router-dom";
+import UserAccount from "../components/profil/UserAccount";
 import Intro from "./Intro";
 import IntroAdult from "./IntroAdult";
 import SorryNotAdult from "../components/intro/SorryNotAdult";
@@ -14,6 +15,7 @@ export default function Body() {
     <div>
       <Routes>
         <Route path="/" element={<Intro />} />
+        <Route path="/useraccount" element={<UserAccount />} />
         <Route path="/introadult" element={<IntroAdult />} />
         <Route path="/sorrynotadult" element={<SorryNotAdult />} />
         <Route path="/registration" element={<Registration />} />
