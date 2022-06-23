@@ -24,4 +24,17 @@ Checkbox.defaultProps = {
   onChange: "",
 };
 
+Checkbox.propTypes = {
+  id: PropTypes.number,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
+
+Checkbox.defaultProps = {
+  id: PropTypes.number,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.func,
+};
 export default Checkbox;

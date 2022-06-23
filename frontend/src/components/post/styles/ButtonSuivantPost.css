@@ -1,20 +1,20 @@
-.buttoncontinue {
+.buttonsuivantpost {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
+  width: 40vw;
   max-width: 500px;
-  height: 15vw;
+  height: 9vw;
   max-height: 70px;
-  background-color: var(--mint-blue);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--mint-blue);
   border-radius: 10px;
   font-family: var(--font);
-  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
-  .buttoncontinue {
-    width: 30vw;
+  .buttonsuivantpost {
+    width: 20vw;
+    border-radius: 20px;
   }
 }

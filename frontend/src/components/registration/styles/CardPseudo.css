@@ -91,6 +91,10 @@
   border: none;
 }
 
+.button-continue a {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 768px) {
   .bloc-pseudo {
     width: 30vw;

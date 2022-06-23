@@ -1,0 +1,55 @@
+.inputformpost {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90vw;
+  height: 100vw;
+  background-color: var(--mint-blue);
+  border: none;
+  color: var(--white);
+  font-family: var(--font);
+  margin: auto;
+}
+
+.inputformpost::placeholder {
+  color: var(--white);
+  font-size: 1rem;
+  font-style: italic;
+  text-align: start;
+  padding-top: 1rem;
+}
+
+.textpost {
+  padding: 1rem;
+}
+
+.button-suivant-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 2rem;
+}
+
+.button-suivant-post a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+  .inputformpost {
+    width: 50vw;
+    height: 40vw;
+  }
+
+  .inputformpost::placeholder {
+    padding-top: 3rem;
+    font-size: 1rem;
+  }
+
+  .button-suivant-post {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 20rem;
+    text-decoration: none;
+  }
+}
