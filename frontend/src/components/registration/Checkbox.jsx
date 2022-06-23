@@ -1,7 +1,7 @@
 import React from "react";
 import "./styles/Checkbox.css";
 
-function Checkbox({ id, label, value, onChange }) {
+function Checkbox() {
   return (
     <div className="checkbox">
       <input id={id} type="checkbox" checked={value} onChange={onChange} />

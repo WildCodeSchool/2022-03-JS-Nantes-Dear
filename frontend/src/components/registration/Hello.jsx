@@ -1,6 +1,5 @@
 import React from "react";
 import "./styles/Hello.css";
-// eslint-disable-next-line import/no-unresolved
 import logo from "../../assets/dear-logo-white.png";
 
 export default function Hello() {

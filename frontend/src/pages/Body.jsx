@@ -10,12 +10,14 @@ import Hello from "../components/registration/Hello";
 import EditPost from "./EditPost";
 import Home from "./Home";
 import PostCategory from "../components/post/PostCategory";
+import FACul from "./FACul";
 
 export default function Body() {
   return (
     <div>
       <Routes>
         <Route path="/" element={<Intro />} />
+        <Route path="/facul" element={<FACul />} />
         <Route path="/introadult" element={<IntroAdult />} />
         <Route path="/sorrynotadult" element={<SorryNotAdult />} />
         <Route path="/registration" element={<Registration />} />
