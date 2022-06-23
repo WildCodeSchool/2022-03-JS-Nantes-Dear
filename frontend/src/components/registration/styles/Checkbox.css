@@ -1,4 +1,6 @@
-input {
-  margin-left: 1vw;
- 
+.checkbox {
+  margin-left: 9vw;
+  margin-right: 9vw;
+  text-align: justify;
+  padding-bottom: 1vh;
 }

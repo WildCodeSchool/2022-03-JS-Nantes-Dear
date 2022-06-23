@@ -10,6 +10,19 @@ function Checkbox({ id, label, value, onChange }) {
     </div>
   );
 }
+Checkbox.propTypes = {
+  id: PropTypes.number,
+  label: PropTypes.string,
+  value: PropTypes.string,
+  onChange: PropTypes.string,
+};
+
+Checkbox.defaultProps = {
+  id: "",
+  label: "",
+  value: "",
+  onChange: "",
+};
 
 Checkbox.propTypes = {
   id: PropTypes.number,

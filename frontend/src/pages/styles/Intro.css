@@ -88,8 +88,13 @@
 }
 
 .buttons-intro,
+.button-facul-intro,
 .buttons-intro * {
   animation: flash-accueil 5s;
+}
+
+.button-facul-intro {
+  padding: 0.7rem;
 }
 
 @keyframes flash-accueil {
