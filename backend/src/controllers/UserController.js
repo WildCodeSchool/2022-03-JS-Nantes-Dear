@@ -38,6 +38,7 @@ class UserController {
 
       models.user
         .insert(user)
+        // eslint-disable-next-line no-shadow
         .then(([result]) => {
           res.status(201).json({ id: result.insertId, email, role });
         })
@@ -72,6 +73,7 @@ class UserController {
         if (rows[0] == null) {
           res.status(403).send({ error: "Email ou mot de passe incorrect" });
         } else {
+          // eslint-disable-next-line no-shadow
           const { id, email, password: hash, role } = rows[0];
 
           const isValidPwd = await argon2.verify(hash, password);

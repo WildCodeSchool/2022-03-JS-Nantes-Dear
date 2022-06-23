@@ -24,7 +24,7 @@ const models = fs
   .readdirSync(__dirname)
   .filter((file) => file !== "AbstractManager.js" && file !== "index.js")
   .reduce((acc, file) => {
-    const Manager = require(path.join(__dirname, file));
+    const Manager = path.join(__dirname, file);
 
     acc[Manager.table] = new Manager(pool, Manager.table);
 
