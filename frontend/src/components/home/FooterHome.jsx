@@ -1,6 +1,6 @@
 import "./styles/FooterHome.css";
-import logoHome from "../../assets/logo_home.png";
-import logoProfile from "../../assets/logo_profile.png";
+import logoHome from "../../assets/home.png";
+import logoProfile from "../../assets/user.png";
 import logoPlus from "../../assets/logo_plus.png";
 
 export default function FooterHome() {
@@ -10,8 +10,14 @@ export default function FooterHome() {
         <img id="logoPlus" src={logoPlus} alt="icône créer publication" />
       </div>
       <div className="logo-footer-container">
-        <img src={logoHome} alt="logoHome" />
-        <img src={logoProfile} className="user-logo" alt="logoProfile" />
+        <div className="logo-home-container">
+          <img className="footer-logo" src={logoHome} alt="logoHome" />
+          <p> Home </p>
+        </div>
+        <div className="logo-user-container">
+          <img className="footer-logo" src={logoProfile} alt="logoProfile" />
+          <p> User </p>
+        </div>
       </div>
     </footer>
   );

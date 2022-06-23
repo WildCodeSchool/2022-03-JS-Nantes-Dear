@@ -1,6 +1,6 @@
 header {
   width: 100vw;
-  height: 20vh;
+  height: 15vh;
   background-color: #ffff;
   border-bottom: 3px rgb(128, 128, 128, 0.1) solid;
 }
@@ -13,6 +13,15 @@ header {
 .logo {
   width: 20vw;
   height: 8vh;
+  max-width: 100px;
+  max-height: 100px;
+}
+
+.welcome-text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 
@@ -20,15 +29,12 @@ header {
   width: 80%;
   margin: 0 auto;
   display: flex;
+
 }
 .title {
-  margin: 0;
+  color: var(--dark-blue);
 }
 
-h4 {
-  margin-block-start: 0;
-  margin-block-end: 0;
-}
 
 .welcome-container-subtitle {
   display: flex;
@@ -41,21 +47,24 @@ h4 {
 
 .subtitle {
   font-size: 0.5rem;
+  color: var(--dark-blue);
+  margin-block-start: 0;
+  margin-block-end: 0;
 }
 
-@media screen and (min-width: 768px) and (max-width:1024px) {
+@media screen and (min-width: 768px) and (max-width:1023px) {
   header{
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-around;
     align-items: center;
-    height: 25vh;
+    height: 20vh;
   }
-  .welcome-text{
-display: flex;
-flex-direction: column;
-justify-content: left;
+
+  .logo-container {
+    align-items: center;
   }
+
 h1{
   font-size: 2rem;
 }
@@ -63,9 +72,9 @@ h1{
   font-size: 1rem;
 }
 .logo {
-  max-width: 120px;
+  max-width: 100px;
   height: 20vh;
-  max-height: 120px;
+  max-height: 100px;
 }
 }
 
@@ -73,16 +82,16 @@ h1{
     header {
       display: flex;
       flex-direction: row-reverse;
-      justify-content: space-around;
+      justify-content: space-between;
       align-items: center;
-      height: 30vh;
+      height: 25vh;
       max-height: 220px;
     }
-    .welcome-text {
-      display: flex;
-      flex-direction: column;
-      justify-content: left;
+
+    .logo-container {
+      align-items: center;
     }
+    
     h1 {
       font-size: 2rem;
     }
@@ -94,13 +103,4 @@ h1{
       height: 15vh;
     }
   }
-h1{
-  font-size: 2rem;
-}
-.subtitle{
-  font-size: 1rem;
-}
-.logo {
-  max-width: 150px;
-  height: 15vh;
-}
+

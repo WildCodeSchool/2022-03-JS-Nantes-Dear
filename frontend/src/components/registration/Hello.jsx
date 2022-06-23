@@ -10,7 +10,7 @@ export default function Hello() {
         <img className="logo-inscription" src={logo} alt="logo Dear blanc" />
       </div>
       <div className="welcome-container">
-        <p className="welcome-text"> Hello,</p>
+        <p className="welcome-text-inscription"> Hello,</p>
       </div>
       <div className="message-welcome-inscription">
         <p className="bienvenue-text-inscription">
