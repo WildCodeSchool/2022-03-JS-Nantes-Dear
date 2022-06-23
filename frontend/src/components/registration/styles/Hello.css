@@ -5,7 +5,7 @@
   align-items: center;
 }
 
-.welcome-text {
+.welcome-text-inscription {
   font-family: var(--font);
   color: var(--white);
   font-size: 2rem;
@@ -25,7 +25,7 @@
     height: 30vh;
   }
 
-  .welcome-text {
+  .welcome-text-inscription {
     margin-left: 30rem;
   }
 
