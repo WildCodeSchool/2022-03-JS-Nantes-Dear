@@ -2,7 +2,7 @@ const express = require("express");
 const { UserController } = require("../controllers");
 
 const routes = express.Router();
-const { authorization, isAdmin } = require("../controllers/UserController");
+const { authorization, isAdmin } = require();
 
 // user DB
 routes.get("/users", authorization, isAdmin, UserController.browse);
