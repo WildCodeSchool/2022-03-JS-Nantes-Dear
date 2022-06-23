@@ -2,7 +2,8 @@
     position: fixed;
     background-color: white;
     width: 100vw;
-    bottom: 5px;
+    height: 4rem;
+    bottom: 0px;
     display: flex;
     align-items: center;
     box-sizing: border-box;
@@ -10,8 +11,7 @@
 }
 
 #logoPlus {
-    width: 16vw;
-    max-width: 60px;
+    width: 13vw;
 }
 
 .logo-footer-container{
@@ -21,20 +21,57 @@
 }
 
 .logo-home-container{
+    padding-right: 1rem;
+    margin-right: 0.5rem;
+}
+
+.logo-user-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-right: 1rem;
-}
-.logo-user-container{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-right: 1rem;
+    margin-right: 0.5rem;
 }
 
 
-.footer-logo {
-    width: 8vw;
+.footer-logo-home,
+.footer-logo-profile {
+    width: 6vw;
     max-width: 40px;
+    margin-left: 0.2rem;
 }
+
+.logo-home-container p,
+.logo-user-container p {
+    font-size: 0.6rem;
+    color: var(--dark-blue);
+}
+
+.logo-user-container p {
+    margin-top: 0.2rem;
+}
+
+@media screen and (min-width: 768px) {
+    #logoPlus {
+        width: 4vw;
+    }
+    
+    .logo-user-container {
+        padding-right: 2rem;
+    }
+
+    .logo-home-container{
+        padding-right: 2rem;
+    }
+
+    .footer-logo-home,
+    .footer-logo-profile {
+        width: 2vw;
+    }
+
+    .logo-home-container p,
+    .logo-user-container p {
+        font-size: 0.7rem;
+    }
+}
+  
