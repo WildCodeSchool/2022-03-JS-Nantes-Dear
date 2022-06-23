@@ -21,8 +21,8 @@ function GoodConduct() {
             En tant que futur membre de DEAR, tu peux exprimer tes pensées
             <span> librement</span> et échanger avec des personnes dans le{" "}
             <span>repect</span> et la
-            <span> bienveillance</span>. Peu importe qui tu es et d’ou tu
-            viens, ce qui compte
+            <span> bienveillance</span>. Peu importe qui tu es et d’ou tu viens,
+            ce qui compte
             <span> c’est ce que tu dis !</span>
           </p>
           <p>
@@ -123,13 +123,14 @@ function GoodConduct() {
         </div>
         <div className="conduct-conclusion">
           <p>
-            En continuant, tu adhères à nos <span>règles</span>, nos <span>conditions d'utilisation </span>
+            En continuant, tu adhères à nos <span>règles</span>, nos{" "}
+            <span>conditions d'utilisation </span>
             et notre <span>Politique de confidentialité.</span>
           </p>
         </div>
         <div className="button-accept-all">
           <ButtonAcceptAll />
-         </div>
+        </div>
       </div>
     </div>
   );

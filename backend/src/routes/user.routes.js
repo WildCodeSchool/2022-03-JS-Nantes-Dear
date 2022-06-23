@@ -4,7 +4,6 @@ const { UserController } = require("../controllers");
 const routes = express.Router();
 const { authorization, isAdmin } = require("../controllers/UserController");
 
-// user DB
 routes.get("/users", authorization, isAdmin, UserController.browse);
 routes.post("/users/register", UserController.register);
 routes.post("/users/login", UserController.login);

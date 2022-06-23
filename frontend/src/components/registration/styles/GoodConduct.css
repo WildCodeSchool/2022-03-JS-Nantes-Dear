@@ -37,7 +37,7 @@ span {
 
 .checking label {
   margin-left: 2vw;
-  font-size: 0.7rem; 
+  font-size: 0.7rem;
 }
 
 .conduct-conclusion p {
@@ -45,11 +45,10 @@ span {
   text-align: center;
   margin-top: 5vh;
   margin-bottom: 6vh;
-  }
+}
 
 .button-accept-all {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  }
-
+}

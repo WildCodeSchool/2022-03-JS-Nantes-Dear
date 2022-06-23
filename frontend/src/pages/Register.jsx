@@ -6,7 +6,6 @@ import ButtonContinue from "../components/registration/ButtonContinue";
 function Register() {
   return (
     <div className="register">
-      <ProgressBar percent="Forty" />
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>
         <form className="form-register">

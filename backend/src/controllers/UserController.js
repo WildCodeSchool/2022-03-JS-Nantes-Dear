@@ -5,11 +5,11 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { email, password, role } = req.body;
+    const { email, pseudo, password, role } = req.body;
 
-    const [result] = await models.user.findByMail(email);
+    const [user] = await models.user.findByMail(email);
 
-    if (result.length) {
+    if (user.length) {
       res.status(409).send({
         error: "Cet email existe déjà",
       });
@@ -17,9 +17,10 @@ class UserController {
 
     const validationErrors = Joi.object({
       email: Joi.string().email().max(255).required(),
+      pseudo: Joi.string().max(15).required(),
       password: Joi.string().max(255).required(),
       role: Joi.string().valid("ROLE_USER", "ROLE_ADMIN").max(255),
-    }).validate({ email, password, role }).error;
+    }).validate({ email, pseudo, password, role }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
@@ -28,12 +29,11 @@ class UserController {
     try {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(password, salt);
-      res.send(hash);
 
       models.user
-        .insert((email, password, role))
+        .insert({ email, pseudo, hash, role })
         .then(([result]) => {
-          res.status(201).json({ id: result.insertId, email, role });
+          res.status(201).json({ id: result.insertId, email, pseudo, role });
         })
         .catch((err) => {
           console.error(err);
@@ -49,46 +49,47 @@ class UserController {
   };
 
   static login = (req, res) => {
-    const { email, password } = req.body;
+    const { pseudo, password } = req.body;
 
     const validationErrors = Joi.object({
-      email: Joi.string().email().max(255).required(),
+      pseudo: Joi.string().max(15).required(),
       password: Joi.string().max(255).required(),
-    }).validate({ email, password }).error;
+    }).validate({ pseudo, password }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
     }
 
     models.user
-      .findByMail(email)
+      .findByPseudo(pseudo)
       .then(async ([rows]) => {
         if (rows[0] == null) {
-          res.status(403).send({ error: "Email ou mot de passe incorrect" });
+          res.status(403).send({ error: "pseudo ou mot de passe incorrect" });
         } else {
-          const { email, password: hash, role } = rows[0];
+          const { id, password: hash } = rows[0];
+          try {
+            if (await bcrypt.compare(password, hash)) {
+              const token = await jwt.sign(
+                { id, pseudo },
+                process.env.JWT_AUTH_SECRET,
+                { expiresIn: "1h" }
+              );
 
-          const isValidPwd = await bcrypt.compare(hash, password); //bcrypt compare
-
-          if (!isValidPwd) {
-            res.status(403).send({ error: "Email ou mot de passe incorrect" });
-          }
-
-          const token = await jwt.sign(
-            { id, role },
-            process.env.JWT_AUTH_SECRET,
-            {
-              expiresIn: "1h",
+              res
+                .cookie("access_token", token, {
+                  httpOnly: true,
+                  secure: process.env.NODE_ENV === "production",
+                })
+                .status(200)
+                .send({ id, pseudo });
+            } else {
+              res
+                .status(403)
+                .send("Le pseudo ou le mot de passe ne sont pas valides");
             }
-          );
-
-          res
-            .cookie("access_token", token, {
-              httpOnly: true,
-              secure: process.env.NODE_ENV === "production",
-            })
-            .status(200)
-            .send({ id, email, role });
+          } catch (err) {
+            res.status(500).send(`Erreur Interne avec bcrypt ${err}`);
+          }
         }
       })
       .catch((err) => {
@@ -113,11 +114,6 @@ class UserController {
       });
   };
 
-  static logout = (req, res) => {
-    res.clearCookie("access_token");
-    res.sendStatus(200);
-  };
-
   static authorization = (req, res, next) => {
     const token = req.cookies.access_token;
     if (!token) {
@@ -125,7 +121,6 @@ class UserController {
     }
     try {
       const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
-
       req.userId = data.id;
       req.userRole = data.role;
       return next();
@@ -135,10 +130,15 @@ class UserController {
   };
 
   static isAdmin = (req, res, next) => {
-    if (req.userRole !== "ROLE_ADMIN") {
-      res.sendStatus(401);
+    if (req.userRole === "ROLE_ADMIN") {
+      return next();
     }
-    next();
+    return res.sendStatus(403);
+  };
+
+  static logout = (req, res) => {
+    res.clearCookie("access_token");
+    res.sendStatus(204);
   };
 
   static edit = (req, res) => {

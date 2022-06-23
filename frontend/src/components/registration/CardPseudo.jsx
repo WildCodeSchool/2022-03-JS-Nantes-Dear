@@ -12,7 +12,7 @@ export default function CardPseudo() {
 
   return (
     <div className="bloc-card-pseudo">
-      <ProgressBar percent={"20%"} />
+      <ProgressBar />
 
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
