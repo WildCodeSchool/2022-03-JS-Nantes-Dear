@@ -7,7 +7,9 @@ import Register from "./Register";
 import CodeMail from "../components/registration/CodeMail";
 import Login from "../components/registration/Login";
 import Hello from "../components/registration/Hello";
+import EditPost from "./EditPost";
 import Home from "./Home";
+import PostCategory from "../components/post/PostCategory";
 
 export default function Body() {
   return (
@@ -25,6 +27,8 @@ export default function Body() {
         />
         <Route path="/home" element={<Home />} />
         <Route path="/connection" element={<Login />} />
+        <Route path="/editpost" element={<EditPost />} />
+        <Route path="/editpost/postcategory" element={<PostCategory />} />
       </Routes>
     </div>
   );

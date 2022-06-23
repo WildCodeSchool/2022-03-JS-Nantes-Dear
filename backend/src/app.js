@@ -1,7 +1,7 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const router = require("./router");
+const userRoutes = require("./routes/user.routes");
 
 const app = express();
 
@@ -28,7 +28,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
-app.use(router);
+app.use(userRoutes);
 
 // Redirect all requests to the REACT app
 app.get("*", (req, res) => {

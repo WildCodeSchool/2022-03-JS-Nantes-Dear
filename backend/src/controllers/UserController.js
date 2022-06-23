@@ -1,24 +1,46 @@
-const jwt = require("jsonwebtoken");
 const argon2 = require("argon2");
+const Joi = require("joi");
+const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class UserController {
+  static hashingOptions = {
+    type: argon2.argon2id,
+    memoryCost: 2 ** 16,
+    timeCost: 5,
+    parallelism: 1,
+  };
+
   static register = async (req, res) => {
     const { email, password, role } = req.body;
 
-    if (!email || !password) {
-      res
-        .status(400)
-        .send({ error: "Veuillez préciser l'email et le mot de passe." });
-      return;
+    const [result] = await models.user.findByMail(email);
+
+    if (result.length) {
+      res.status(409).send({
+        error: "Cet email existe déjà",
+      });
+    }
+
+    const validationErrors = Joi.object({
+      email: Joi.string().email().max(255).required(),
+      password: Joi.string().max(255).required(),
+      role: Joi.string().valid("ROLE_USER", "ROLE_ADMIN").max(255),
+    }).validate({ email, password, role }).error;
+
+    if (validationErrors) {
+      res.status(422).send(validationErrors);
     }
 
     try {
-      const hash = await argon2.hash(password);
+      const hash = await argon2.hash(password, this.hashingOptions);
+      const user = { email, password: hash, role };
 
-      models.User.insert({ email, password: hash, role })
+      models.user
+        .insert(user)
+        // eslint-disable-next-line no-shadow
         .then(([result]) => {
-          res.status(201).send({ id: result.insertId, email, role });
+          res.status(201).json({ id: result.insertId, email, role });
         })
         .catch((err) => {
           console.error(err);
@@ -27,9 +49,8 @@ class UserController {
           });
         });
     } catch (err) {
-      console.error(err);
       res.status(500).send({
-        error: err.message,
+        error: `Erreur lors du chiffrement du mot de passe : ${err.message}`,
       });
     }
   };
@@ -37,44 +58,41 @@ class UserController {
   static login = (req, res) => {
     const { email, password } = req.body;
 
-    if (!email || !password) {
-      res.status(400).send({ error: "Please specify both email and password" });
+    const validationErrors = Joi.object({
+      email: Joi.string().email().max(255).required(),
+      password: Joi.string().max(255).required(),
+    }).validate({ email, password }).error;
+
+    if (validationErrors) {
+      res.status(422).send(validationErrors);
     }
 
-    models.User.findByMail(email)
+    models.user
+      .findByMail(email)
       .then(async ([rows]) => {
         if (rows[0] == null) {
-          res.status(401).send("Email ou mot de passe incorrect");
+          res.status(403).send({ error: "Email ou mot de passe incorrect" });
         } else {
           // eslint-disable-next-line no-shadow
           const { id, email, password: hash, role } = rows[0];
 
-          if (await argon2.verify(hash, password)) {
-            const token = jwt.sign(
-              // eslint-disable-next-line object-shorthand
-              { id: id, role: role },
-              process.env.JWT_AUTH_SECRET,
-              {
-                expiresIn: "1h",
-              }
-            );
+          const isValidPwd = await argon2.verify(hash, password);
 
-            res
-              .cookie("access_token", token, {
-                httpOnly: true,
-                secure: process.env.NODE_ENV === "production",
-              })
-              .status(200)
-              .send({
-                id,
-                email,
-                role,
-              });
-          } else {
-            res.status(401).send({
-              error: "Invalid password",
-            });
+          if (!isValidPwd) {
+            res.status(403).send({ error: "Email ou mot de passe incorrect" });
           }
+
+          const token = jwt.sign({ id, role }, process.env.JWT_AUTH_SECRET, {
+            expiresIn: "1h",
+          });
+
+          res
+            .cookie("access_token", token, {
+              httpOnly: true,
+              secure: process.env.NODE_ENV === "production",
+            })
+            .status(200)
+            .send({ id, email, role });
         }
       })
       .catch((err) => {
@@ -86,14 +104,22 @@ class UserController {
   };
 
   static browse = (req, res) => {
-    models.User.findAll()
+    models.user
+      .findAll()
       .then(([rows]) => {
-        res.send(rows);
+        res.status(200).send(rows);
       })
       .catch((err) => {
         console.error(err);
-        res.sendStatus(500);
+        res.status(500).send({
+          error: err.message,
+        });
       });
+  };
+
+  static logout = (req, res) => {
+    res.clearCookie("access_token");
+    res.sendStatus(200);
   };
 
   static authorization = (req, res, next) => {
@@ -103,6 +129,7 @@ class UserController {
     }
     try {
       const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
+
       req.userId = data.id;
       req.userRole = data.role;
       return next();
@@ -112,37 +139,19 @@ class UserController {
   };
 
   static isAdmin = (req, res, next) => {
-    if (req.userRole === "ROLE_ADMIN") {
-      return next();
+    if (req.userRole !== "ROLE_ADMIN") {
+      res.sendStatus(401);
     }
-    return res.sendStatus(403);
-  };
-
-  static logout = (req, res) => {
-    return res.clearCookie("access_token").sendStatus(200);
-  };
-
-  static read = (req, res) => {
-    models.User.find(req.params.id)
-      .then(([rows]) => {
-        if (rows[0] == null) {
-          res.sendStatus(404);
-        } else {
-          res.send(rows[0]);
-        }
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
+    next();
   };
 
   static edit = (req, res) => {
-    const User = req.body;
+    const user = req.body;
 
-    User.id = parseInt(req.params.id, 10);
+    user.id = parseInt(req.params.id, 10);
 
-    models.User.update(User)
+    models.user
+      .update(user)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -156,21 +165,9 @@ class UserController {
       });
   };
 
-  static add = (req, res) => {
-    const User = req.body;
-
-    models.User.insert(User)
-      .then(([result]) => {
-        res.status(201).send({ ...User, id: result.insertId });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.sendStatus(500);
-      });
-  };
-
   static delete = (req, res) => {
-    models.User.delete(req.params.id)
+    models.user
+      .delete(req.params.id)
       .then(() => {
         res.sendStatus(204);
       })
