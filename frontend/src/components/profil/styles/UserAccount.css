@@ -46,6 +46,11 @@
     border-bottom: 1px solid lightgray;
 }
 
+.profile-category button {
+    background-color: white;
+    border: none;
+}
+
 .profile-icon {
     color: var(--light-red);
     width: 12vw;
@@ -68,4 +73,27 @@
 
 .profile-logout p {
     font-size: 0.7rem;
+}
+
+@media screen and (min-width: 1024px) {
+.profile-top {
+    width: 40vw;
+}
+
+.profile-top button {
+    width: 15vw;
+}
+
+.profile-card {
+
+}
+
+.profile-category {
+        width: 40vw;
+}
+
+.profile-logout {
+    width: 40vw;
+}
+
 }
