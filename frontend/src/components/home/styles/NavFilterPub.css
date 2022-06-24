@@ -36,9 +36,9 @@
   font-weight: 200;
 }
 
-.confirm-filter-container{
- display: flex;
- justify-content: center;
+.confirm-filter-container {
+  display: flex;
+  justify-content: center;
 }
 
 #confirmFilter {
@@ -53,16 +53,15 @@
   color: white;
 }
 
-
-input[type=checkbox] {
+input[type="checkbox"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   -ms-appearance: none;
 }
 
-input[type=checkbox] {
+input[type="checkbox"] {
   position: relative;
-  vertical-align:baseline;
+  vertical-align: baseline;
   border-radius: 3px;
   height: 15px;
   width: 15px;
@@ -71,27 +70,26 @@ input[type=checkbox] {
 
 input[type="checkbox"]:checked {
   background: var(--light-red);
-  margin:0px;
+  margin: 0px;
 }
 
 .menu.inactive {
   background-color: white;
 }
 
-.menu.inactive .confirm-filter-container{
-display: none;
-}
-
-.menu.inactive .filter-container{
-  display: block;
-  }
-.menu.inactive .categorie-container{
+.menu.inactive .confirm-filter-container {
   display: none;
 }
-  .menu .filter-container  {
-    display: none;
-  }
 
+.menu.inactive .filter-container {
+  display: block;
+}
+.menu.inactive .categorie-container {
+  display: none;
+}
+.menu .filter-container {
+  display: none;
+}
 
 #navfilter * {
   width: 8vw;
@@ -105,16 +103,3 @@ display: none;
   transform: rotate(360deg);
   transition: all 0.3s ease-in-out;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-

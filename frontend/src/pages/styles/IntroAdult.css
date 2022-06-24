@@ -28,8 +28,16 @@
   text-decoration: none;
 }
 
+.button-return-intro {
+  margin-left: -18rem;
+}
+
 @media screen and (min-width: 768px) {
   .more18 {
     margin-top: 8rem;
+  }
+
+  .button-return-intro {
+    margin-left: -80rem;
   }
 }

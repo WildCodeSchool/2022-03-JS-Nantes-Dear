@@ -18,7 +18,7 @@ function Register() {
             type="email"
             name="email"
             id="email"
-            placeholder="sophie.durand@gmail.coml"
+            placeholder="sophie.durand@gmail.com"
           />
           <input
             className="inputPassword"
