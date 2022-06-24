@@ -2,14 +2,18 @@ import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
 import ButtonContinue from "./ButtonContinue";
+import ProgressBar from "./ProgressBar";
 
 export default function CardPseudo() {
   const [pseudo, setPseudo] = useState("");
+  // const [page, setPage] = useState(0);
 
   function handleSend() {}
 
   return (
     <div className="bloc-card-pseudo">
+      <ProgressBar />
+
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
         <h2>PSEUDO ET AVATAR</h2>
