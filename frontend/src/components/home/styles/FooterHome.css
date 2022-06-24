@@ -1,17 +1,4 @@
 .footerHome {
-<<<<<<< HEAD
-  position: fixed;
-  background-color: white;
-  width: 100vw;
-  bottom: 5px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
-  justify-content: center;
-}
-
-#logoPlus {
-=======
     position: fixed;
     background-color: white;
     width: 100vw;
@@ -25,11 +12,6 @@
 
 #logoPlus {
     width: 13vw;
-
-#logoPlus {
->>>>>>> 997c1421142c6228f854e8084a2e91c20540a5d8
-  width: 16vw;
-  max-width: 60px;
 }
 
 .logo-footer-container {
@@ -38,24 +20,6 @@
   display: flex;
 }
 
-<<<<<<< HEAD
-.logo-home-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-right: 1rem;
-}
-.logo-user-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-right: 1rem;
-}
-
-.footer-logo {
-  width: 8vw;
-  max-width: 40px;
-=======
 .logo-home-container{
     padding-right: 1rem;
     margin-right: 0.5rem;
@@ -75,7 +39,6 @@
     width: 6vw;
     max-width: 40px;
     margin-left: 0.2rem;
->>>>>>> 997c1421142c6228f854e8084a2e91c20540a5d8
 }
 
 .logo-home-container p,

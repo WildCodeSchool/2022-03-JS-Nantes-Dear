@@ -75,33 +75,6 @@ header {
   }
 }
 
-<<<<<<< HEAD
-@media screen and (min-width: 1024px) {
-  header {
-    display: flex;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    align-items: center;
-    height: 25vh;
-    max-height: 220px;
-  }
-
-  .logo-container {
-    align-items: center;
-  }
-
-  h1 {
-    font-size: 2rem;
-  }
-  .subtitle {
-    font-size: 1rem;
-  }
-  .logo {
-    max-width: 150px;
-    height: 15vh;
-  }
-}
-=======
   @media screen and (min-width: 1024px) {
     header {
       display: flex;
@@ -126,4 +99,3 @@ header {
       max-width: 150px;
       width: 13vh;
     }
->>>>>>> 997c1421142c6228f854e8084a2e91c20540a5d8
