@@ -5,11 +5,12 @@ import SorryNotAdult from "../components/intro/SorryNotAdult";
 import Registration from "./Registration";
 import Register from "./Register";
 import CodeMail from "../components/registration/CodeMail";
-import Login from "../components/registration/Login";
 import Hello from "../components/registration/Hello";
 import EditPost from "./EditPost";
 import Home from "./Home";
 import PostCategory from "../components/post/PostCategory";
+import Connection from "./Connection";
+import Comment from "./Comment";
 import FACul from "./FACul";
 
 export default function Body() {
@@ -28,7 +29,8 @@ export default function Body() {
           element={<Hello />}
         />
         <Route path="/home" element={<Home />} />
-        <Route path="/connection" element={<Login />} />
+        <Route path="/comment" element={<Comment />} />
+        <Route path="/connection" element={<Connection />} />
         <Route path="/editpost" element={<EditPost />} />
         <Route path="/editpost/postcategory" element={<PostCategory />} />
       </Routes>
