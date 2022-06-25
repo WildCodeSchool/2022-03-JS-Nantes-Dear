@@ -6,6 +6,7 @@ import Registration from "./Registration";
 import Register from "./Register";
 import CodeMail from "../components/registration/CodeMail";
 import Hello from "../components/registration/Hello";
+import Bonjour from "../components/connection/Bonjour";
 import EditPost from "./EditPost";
 import Home from "./Home";
 import PostCategory from "../components/post/PostCategory";
@@ -31,6 +32,7 @@ export default function Body() {
         <Route path="/home" element={<Home />} />
         <Route path="/comment" element={<Comment />} />
         <Route path="/connection" element={<Connection />} />
+        <Route path="/connection/bonjour" element={<Bonjour />} />
         <Route path="/editpost" element={<EditPost />} />
         <Route path="/editpost/postcategory" element={<PostCategory />} />
       </Routes>

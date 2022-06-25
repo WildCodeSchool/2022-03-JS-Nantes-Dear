@@ -1,3 +1,11 @@
+body{
+  background-color: var(--dark-blue);
+}
+
+.div-facul-dear{
+  background-color: var(--dark-blue);
+}
+
 .div-logo-facul {
   display: flex;
   flex-direction: row;
@@ -54,6 +62,10 @@
 }
 .prodear {
   margin-bottom: 2rem;
+}
+
+.arrowreturn-facul {
+  margin-left: -1rem;
 }
 
 @media screen and (min-width: 768px) {

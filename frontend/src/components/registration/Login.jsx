@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import ButtonReturn from "../home/ButtonReturn";
 import ButtonContinue from "./ButtonContinue";
 import "./styles/Login.css";
@@ -25,7 +26,9 @@ function Login() {
             id="password"
             placeholder="Mot de passe"
           />
-          <ButtonContinue />
+          <Link to="/connection/bonjour">
+            <ButtonContinue />
+          </Link>
         </form>
       </div>
     </div>
