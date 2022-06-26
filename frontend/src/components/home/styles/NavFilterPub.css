@@ -17,6 +17,7 @@
   height: 80%;
   color: white;
   justify-content: center;
+  background-color: var(--dark-blue);
 }
 
 .checkbox-container {

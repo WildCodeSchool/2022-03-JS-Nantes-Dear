@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./styles/Login.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import ButtonReturn from "../components/home/ButtonReturn";
 
 function Login() {
   const [pseudo, setPseudo] = useState("");
@@ -34,6 +35,7 @@ function Login() {
 
   return (
     <div className="login">
+      <ButtonReturn />
       <form className="form-login" onSubmit={handleSubmit}>
         <input
           className="inputPseudo"
