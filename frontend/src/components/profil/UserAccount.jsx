@@ -6,6 +6,7 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { HiOutlineChatAlt2 } from "react-icons/hi";
 import { FiFileText } from "react-icons/fi";
 import "./styles/UserAccount.css";
+import UserAccountCategory from "./UserAccountCategory";
 
 function UserAccount() {
   const [category, setCategory] = React.useState("");
@@ -59,6 +60,9 @@ function UserAccount() {
       <div className="profile-logout">
         <h4>Me déconnecter</h4>
         <p>Supprimer mon compte</p>
+      </div>
+      <div className="bloc-profile-category">
+        <UserAccountCategory />
       </div>
     </div>
   );
