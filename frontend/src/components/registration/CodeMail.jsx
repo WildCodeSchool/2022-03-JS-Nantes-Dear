@@ -31,7 +31,7 @@ export default function CodeMail() {
         </form>
       </div>
       <div className="button-suivant">
-        <Link to="hello">
+        <Link to="goodconduct">
           <ButtonSuivant />
         </Link>
       </div>

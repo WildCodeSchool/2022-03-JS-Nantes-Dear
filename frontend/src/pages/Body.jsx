@@ -26,7 +26,7 @@ export default function Body() {
         <Route path="/registration/register" element={<Register />} />
         <Route path="/registration/register/codemail" element={<CodeMail />} />
         <Route
-          path="/registration/register/codemail/hello"
+          path="/registration/register/codemail/goodconduct/hello"
           element={<Hello />}
         />
         <Route path="/home" element={<Home />} />
