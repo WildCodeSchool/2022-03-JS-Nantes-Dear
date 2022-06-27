@@ -5,6 +5,7 @@ import SorryNotAdult from "../components/intro/SorryNotAdult";
 import Registration from "./Registration";
 import Register from "./Register";
 import CodeMail from "../components/registration/CodeMail";
+import GoodConduct from "../components/registration/GoodConduct";
 import Hello from "../components/registration/Hello";
 import Bonjour from "../components/connection/Bonjour";
 import EditPost from "./EditPost";
@@ -26,7 +27,11 @@ export default function Body() {
         <Route path="/registration/register" element={<Register />} />
         <Route path="/registration/register/codemail" element={<CodeMail />} />
         <Route
-          path="/registration/register/codemail/hello"
+          path="/registration/register/codemail/goodconduct"
+          element={<GoodConduct />}
+        />
+        <Route
+          path="/registration/register/codemail/goodconduct/hello"
           element={<Hello />}
         />
         <Route path="/home" element={<Home />} />
