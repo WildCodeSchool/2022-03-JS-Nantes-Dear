@@ -16,7 +16,7 @@ export default function CardPseudo() {
 
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
-        <h2>PSEUDO ET AVATAR</h2>
+        <h2>PSEUDO ET ÀGE</h2>
         <h3>Et oui, ici tout est anonyme</h3>
       </div>
       <div className="bloc-pseudo">

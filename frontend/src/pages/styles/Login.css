@@ -31,8 +31,19 @@
   margin-bottom: 10vh;
 }
 
-.buttonreturn-login {
-  margin-left: -1rem;
+.loginbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  max-width: 500px;
+  height: 15vw;
+  max-height: 70px;
+  background-color: var(--mint-blue);
+  color: var(--white);
+  border-radius: 10px;
+  font-family: var(--font);
+  text-decoration: none;
 }
 
 @media screen and (min-width: 768px) {
@@ -44,8 +55,7 @@
   .inputLogPassword {
     margin-bottom: 15vh;
   }
-
-  .buttonreturn-login {
-    margin-left: 2rem;
+  .loginbutton {
+    width: 30vw;
   }
 }
