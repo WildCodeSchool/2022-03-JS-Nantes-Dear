@@ -31,6 +31,10 @@
   margin-bottom: 10vh;
 }
 
+.buttonreturn-login {
+  margin-left: -1rem;
+}
+
 @media screen and (min-width: 768px) {
   .inputLogPassword,
   .inputPseudo {
@@ -39,5 +43,9 @@
   }
   .inputLogPassword {
     margin-bottom: 15vh;
+  }
+
+  .buttonreturn-login {
+    margin-left: 2rem;
   }
 }

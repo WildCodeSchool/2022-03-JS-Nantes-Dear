@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles/GoodConduct.css";
 import logo from "../../assets/dear-logo-white.png";
 import Checkbox from "./Checkbox";
@@ -129,7 +130,9 @@ function GoodConduct() {
           </p>
         </div>
         <div className="button-accept-all">
-          <ButtonAcceptAll />
+          <Link to="hello">
+            <ButtonAcceptAll />
+          </Link>
         </div>
       </div>
     </div>

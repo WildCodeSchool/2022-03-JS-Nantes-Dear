@@ -2,7 +2,7 @@
   background-color: var(--dark-blue);
   height: 2rem;
   width: 2rem;
-  margin-left: 3rem;
+  margin-left: 2rem;
   margin-top: 1rem;
   border: none;
 }
@@ -20,6 +20,6 @@
 
   .arrow-return {
     height: 2rem;
-    margin-left: 26rem;
+    margin-left: 28rem;
   }
 }
