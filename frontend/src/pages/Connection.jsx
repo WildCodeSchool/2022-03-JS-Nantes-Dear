@@ -1,5 +1,5 @@
 import React from "react";
-import Login from "../components/registration/Login";
+import Login from "./Login";
 import "./styles/Connection.css";
 
 export default function Registration() {

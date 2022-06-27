@@ -2,7 +2,8 @@ const express = require("express");
 const { UserController } = require("../controllers");
 
 const routes = express.Router();
-const { authorization, isAdmin } = require("../controllers/UserController");
+const { authorization } = require("../middlewares/authMiddleware");
+const { isAdmin } = require("../middlewares/isAdminMiddleware");
 
 routes.get("/users", authorization, isAdmin, UserController.browse);
 routes.post("/users/register", UserController.register);
