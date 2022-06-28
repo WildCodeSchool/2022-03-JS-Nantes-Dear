@@ -68,7 +68,12 @@
     width: 2vw;
   }
 
+<<<<<<< HEAD
   .logo-home-container p .logo-user-container p {
+=======
+  .logo-home-container p,
+  .logo-user-container p {
+>>>>>>> 94bd91457236e2ff0cf68001d26886d368c76f86
     font-size: 0.7rem;
   }
 }

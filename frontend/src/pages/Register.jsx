@@ -9,21 +9,31 @@ import ButtonReturn from "../components/home/ButtonReturn";
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [passwordverified, setPasswordVerified] = useState("");
+  const role = "ROLE_USER";
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!email || !password) {
+    if (!email || !password || !passwordverified) {
       Swal.fire({
         title: "Error!",
-        text: "Merci de spécifier votre pseudo Et votre email",
+        text: "Merci de renseigner tous les champs",
+        icon: "error",
+        confirmButtonText: "Cool",
+      });
+    } else if (password !== passwordverified) {
+      Swal.fire({
+        title: "Error!",
+        text: "Les mots de passe sont différents",
         icon: "error",
         confirmButtonText: "Cool",
       });
     } else {
+      console.log(email, password)
       axios
         .post(
           `${import.meta.env.VITE_BACKEND_URL}/users/register`,
-          { email, password },
+          { email, password, role},
           { withCredentials: true }
         )
         // eslint-disable-next-line no-restricted-syntax
@@ -67,9 +77,11 @@ function Register() {
             name="password"
             id="password"
             placeholder="Confirmation du mot de passe"
+            value={passwordverified}
+            onChange={(e) => setPasswordVerified(e.target.value)}
           />
           <Link to="/registration/register/codemail">
-            <ButtonContinue />
+            <ButtonContinue handleSubmit={handleSubmit} />
           </Link>
         </form>
       </div>

@@ -5,7 +5,7 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { email, pseudo, password, role } = req.body;
+    const { email, password, role } = req.body;
 
     const [user] = await models.user.findByMail(email);
 
@@ -17,23 +17,23 @@ class UserController {
 
     const validationErrors = Joi.object({
       email: Joi.string().email().max(255).required(),
-      pseudo: Joi.string().max(15).required(),
       password: Joi.string().max(255).required(),
-      role: Joi.string().valid("ROLE_USER", "ROLE_ADMIN").max(255),
-    }).validate({ email, pseudo, password, role }).error;
+    }).validate({ email, password }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
+      return
     }
 
     try {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(password, salt);
 
+
       models.user
-        .insert({ email, pseudo, hash, role })
+        .insert({ email, hash, role })
         .then(([result]) => {
-          res.status(201).json({ id: result.insertId, email, pseudo, role });
+          res.status(201).json({ id: result.insertId, email, role });
         })
         .catch((err) => {
           console.error(err);
@@ -58,6 +58,7 @@ class UserController {
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
+      return
     }
 
     models.user

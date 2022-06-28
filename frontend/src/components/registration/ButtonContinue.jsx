@@ -1,11 +1,11 @@
 import React from "react";
 import "./styles/ButtonContinue.css";
 
-function ButtonContinue() {
+function ButtonContinue({ handleSubmit }) {
   return (
-    <div className="buttoncontinue">
+    <button type="submit" className="buttoncontinue" onClick={handleSubmit}>
       <h3>CONTINUE</h3>
-    </div>
+    </button>
   );
 }
 
