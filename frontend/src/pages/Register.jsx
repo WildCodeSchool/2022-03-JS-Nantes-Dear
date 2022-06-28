@@ -9,6 +9,7 @@ import ButtonReturn from "../components/home/ButtonReturn";
 function Register() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
   const [passwordverified, setPasswordVerified] = useState("");
   const role = "ROLE_USER";
 
@@ -33,6 +34,7 @@ function Register() {
         .post(
           `${import.meta.env.VITE_BACKEND_URL}/users/register`,
           { email, password, role },
+
           { withCredentials: true }
         )
         // eslint-disable-next-line no-restricted-syntax

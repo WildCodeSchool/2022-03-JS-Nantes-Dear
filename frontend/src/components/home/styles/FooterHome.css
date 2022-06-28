@@ -68,8 +68,7 @@
     width: 2vw;
   }
 
-  .logo-home-container p,
-  .logo-user-container p {
+  .logo-home-container p .logo-user-container p {
     font-size: 0.7rem;
   }
 }
