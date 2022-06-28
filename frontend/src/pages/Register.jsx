@@ -29,11 +29,10 @@ function Register() {
         confirmButtonText: "Cool",
       });
     } else {
-      console.log(email, password)
       axios
         .post(
           `${import.meta.env.VITE_BACKEND_URL}/users/register`,
-          { email, password, role},
+          { email, password, role },
           { withCredentials: true }
         )
         // eslint-disable-next-line no-restricted-syntax

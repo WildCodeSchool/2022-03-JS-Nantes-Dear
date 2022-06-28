@@ -22,13 +22,12 @@ class UserController {
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
-      return
+      return;
     }
 
     try {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(password, salt);
-
 
       models.user
         .insert({ email, hash, role })
@@ -58,7 +57,7 @@ class UserController {
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
-      return
+      return;
     }
 
     models.user

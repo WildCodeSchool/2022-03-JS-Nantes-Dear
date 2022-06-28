@@ -55,13 +55,7 @@
   .inputLogPassword {
     margin-bottom: 15vh;
   }
-<<<<<<< HEAD:frontend/src/pages/styles/Login.css
   .loginbutton {
     width: 30vw;
-=======
-
-  .buttonreturn-login {
-    margin-left: 2rem;
->>>>>>> 89c4b826fa1f1716d79fdd8c6e5bd9bd9ff87023:frontend/src/components/registration/styles/Login.css
   }
 }
