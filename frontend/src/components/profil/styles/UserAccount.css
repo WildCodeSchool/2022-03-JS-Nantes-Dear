@@ -28,7 +28,6 @@
 }
 
 .profile-card {
-    width: 100vw;
     height: 50vh;
 }
 
@@ -38,7 +37,6 @@
 }
 
 .profile-category {
-    width: 96vw;
     height: 7vh;
     margin-left: 6px;
     display: flex;
@@ -74,6 +72,7 @@
 .profile-logout p {
     font-size: 0.7rem;
 }
+  
 
 @media screen and (min-width: 1024px) {
 .profile-top {
@@ -84,10 +83,6 @@
     width: 15vw;
 }
 
-.profile-card {
-
-}
-
 .profile-category {
         width: 40vw;
 }
@@ -96,4 +91,67 @@
     width: 40vw;
 }
 
+.container-profile {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    height: 60vh;
 }
+
+.profile-card {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 35px;
+    }
+      
+.active-tabs  {
+        border-bottom: 1px solid transparent;
+      }
+      
+.active-tabs::before {
+        content: "";
+        display: block;
+        position: absolute;
+        top: -5px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% + 2px);
+        height: 5px;
+      }
+      
+      button {
+        border: none;
+        
+      }
+      .content-tabs {
+        flex-grow : 1;
+      }
+      .content {
+        padding: 20px;
+        display: none;
+      }
+      .content h2 {
+        padding: 0px 0 5px 0px;
+        color: var(--white);
+        background-color: var(--light-purple);
+      }
+      .content hr {
+        width: 100px;
+        height: 2px;
+        background: #222;
+        margin-bottom: 5px;
+      }
+      .content p {
+
+      }
+ .active-content {
+    display: block;
+    background: white;
+    width: 50vw;
+    margin-left: 15px;
+    margin-top: 18px;
+}
+      }
+
