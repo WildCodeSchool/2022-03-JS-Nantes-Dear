@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
-import Swal from "sweetalert2";
+import swal from "sweetalert";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
 
@@ -15,14 +15,14 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email || !password || !passwordverified) {
-      Swal.fire({
+      swal({
         title: "Error!",
         text: "Merci de renseigner tous les champs",
         icon: "error",
         confirmButtonText: "Cool",
       });
     } else if (password !== passwordverified) {
-      Swal.fire({
+      swal({
         title: "Error!",
         text: "Les mots de passe sont différents",
         icon: "error",
