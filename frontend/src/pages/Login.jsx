@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles/Login.css";
 import axios from "axios";
 import Swal from "sweetalert2";
+import ButtonReturn from "../components/home/ButtonReturn";
+import ButtonContinue from "../components/registration/ButtonContinue";
+
 
 function Login() {
   const [pseudo, setPseudo] = useState("");
@@ -34,7 +38,9 @@ function Login() {
 
   return (
     <div className="login">
-      <form className="form-login" onSubmit={handleSubmit}>
+      <ButtonReturn />
+      <form className="form-login">
+
         <input
           className="inputPseudo"
           type="text"
@@ -53,10 +59,10 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
+        <Link to="/connection/bonjour">
+          <ButtonContinue handleSubmit={handleSubmit} />
+        </Link>
 
-        <button className="loginbutton" type="submit">
-          Continue
-        </button>
       </form>
     </div>
   );
