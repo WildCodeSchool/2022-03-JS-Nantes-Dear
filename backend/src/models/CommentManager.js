@@ -16,7 +16,7 @@ class CommentManager extends AbstractManager {
 
   update(Comment) {
     return this.connection.query(
-      `update ${CommentManager.table} set name = ? where id = ?`,
+      `update ${CommentManager.table} set  = ? where id = ?`,
       [Comment.created_at, Comment.user_id, Comment.post_id]
     );
   }

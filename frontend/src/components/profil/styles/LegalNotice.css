@@ -1,0 +1,10 @@
+.logo-legal {
+    width: 30vw;
+}
+
+
+@media screen and (min-width: 1024px) {
+    .logo-legal {
+        width: 10vw;
+    }
+}

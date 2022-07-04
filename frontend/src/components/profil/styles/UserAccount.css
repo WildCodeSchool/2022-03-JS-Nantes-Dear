@@ -72,6 +72,54 @@
 .profile-logout p {
     font-size: 0.7rem;
 }
+
+.active-tabs  {
+    border-bottom: 1px solid transparent;
+  }
+  
+.active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+  }
+  
+  button {
+    border: none;
+    
+  }
+  .content-tabs {
+    flex-grow : 1;
+  }
+
+  .content-tabs {
+    flex-grow : 1;
+  }
+  .content {
+    padding: 20px;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+    color: var(--white);
+    background-color: var(--light-purple);
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+
+.active-content {
+    display: block;
+    background: white;
+    width: 100vw;
+}
   
 
 @media screen and (min-width: 1024px) {
@@ -143,9 +191,7 @@
         background: #222;
         margin-bottom: 5px;
       }
-      .content p {
 
-      }
  .active-content {
     display: block;
     background: white;

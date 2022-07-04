@@ -6,6 +6,10 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { HiOutlineChatAlt2 } from "react-icons/hi";
 import { FiFileText } from "react-icons/fi";
 import "./styles/UserAccount.css";
+import LegalNotice from "./LegalNotice";
+import TrustCharter from "./TrustCharter";
+import MyPersonalDatas from "./MyPersonalDatas";
+import FaCul from "./FaCul";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -88,13 +92,7 @@ function UserAccount() {
               toggleState === 1 ? "content  active-content" : "content"
             }
           >
-            <h2>Mes données personnelles</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              praesentium incidunt quia aspernatur quasi quidem facilis quo
-              nihil vel voluptatum?
-            </p>
+            <MyPersonalDatas />
           </div>
           <div
             className={
@@ -113,42 +111,21 @@ function UserAccount() {
               toggleState === 3 ? "content  active-content" : "content"
             }
           >
-            <h2>Charte de Confiance</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos sed
-              nostrum rerum laudantium totam unde adipisci incidunt modi alias!
-              Accusamus in quia odit aspernatur provident et ad vel distinctio
-              recusandae totam quidem repudiandae omnis veritatis nostrum
-              laboriosam architecto optio rem, dignissimos voluptatum beatae
-              aperiam voluptatem atque. Beatae rerum dolores sunt.
-            </p>
+            <TrustCharter />
           </div>
           <div
             className={
               toggleState === 4 ? "content  active-content" : "content"
             }
           >
-            <h2>F.A.CUL</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              praesentium incidunt quia aspernatur quasi quidem facilis quo
-              nihil vel voluptatum?
-            </p>
+            <FaCul />
           </div>
           <div
             className={
               toggleState === 5 ? "content  active-content" : "content"
             }
           >
-            <h2>Mentions légales</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Obcaecati
-              praesentium incidunt quia aspernatur quasi quidem facilis quo
-              nihil vel voluptatum?
-            </p>
+            <LegalNotice />
           </div>
         </div>
       </div>
