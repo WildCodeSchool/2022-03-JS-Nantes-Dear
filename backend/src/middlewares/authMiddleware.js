@@ -8,6 +8,7 @@ class authMiddleware {
     }
     try {
       const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
+      // console.log(data)
       req.userId = data.id;
       req.userRole = data.role;
       return next();
