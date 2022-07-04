@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
 import swal from "sweetalert";
+// import "bootstrap/dist/css/bootstrap.min.css"; Voir comment déconnecter le ccs général de bootstrap
+import ProgressBar from "react-bootstrap/ProgressBar";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
 
@@ -45,9 +47,12 @@ function Register() {
   };
 
   return (
-    <div className="register">
+    <div div className="register">
       <div className="div-arrow-return">
         <ButtonReturn />
+      </div>
+      <div className="progress">
+        <ProgressBar now={60} />
       </div>
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>
@@ -57,7 +62,7 @@ function Register() {
             type="email"
             name="email"
             id="email"
-            placeholder="sophie.durand@gmail.coml"
+            placeholder="sophie.durand@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />

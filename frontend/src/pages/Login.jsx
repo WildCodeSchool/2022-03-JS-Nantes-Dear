@@ -15,7 +15,7 @@ function Login() {
     if (!pseudo || !password) {
       swal({
         title: "Error!",
-        text: "Merci de spécifier votre pseudo Et votre email",
+        text: "Merci de renseigner votre pseudo ET votre email",
         icon: "error",
         confirmButtonText: "Cool",
       });
