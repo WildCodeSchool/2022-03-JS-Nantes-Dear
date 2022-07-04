@@ -4,3 +4,14 @@ body {
 .div-connection {
   background-color: var(--dark-blue);
 }
+
+
+.buttonreturn {
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 768px) {
+  .buttonreturn {
+    margin-left: 0rem;
+  }
+}
