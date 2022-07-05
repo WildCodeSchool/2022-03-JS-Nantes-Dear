@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
-import Swal from "sweetalert2";
+import swal from "sweetalert";
+// import "bootstrap/dist/css/bootstrap.min.css"; Voir comment déconnecter le ccs général de bootstrap
+import ProgressBar from "react-bootstrap/ProgressBar";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
 
@@ -16,14 +18,14 @@ function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!email || !password || !passwordverified) {
-      Swal.fire({
+      swal({
         title: "Error!",
         text: "Merci de renseigner tous les champs",
         icon: "error",
         confirmButtonText: "Cool",
       });
     } else if (password !== passwordverified) {
-      Swal.fire({
+      swal({
         title: "Error!",
         text: "Les mots de passe sont différents",
         icon: "error",
@@ -51,6 +53,9 @@ function Register() {
       <div className="div-arrow-return">
         <ButtonReturn />
       </div>
+      <div className="progress">
+        <ProgressBar now={60} />
+      </div>
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>
         <form className="form-register" onSubmit={handleSubmit}>
@@ -59,7 +64,7 @@ function Register() {
             type="email"
             name="email"
             id="email"
-            placeholder="sophie.durand@gmail.coml"
+            placeholder="sophie.durand@gmail.com"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
