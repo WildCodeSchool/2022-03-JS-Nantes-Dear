@@ -6,9 +6,9 @@ function TrustCharter() {
   return (
     <div>
       <img className="logo-charter" src={logoBlue} alt="logo Dear bleu" />
-      <h1>Charte de confiance </h1>
+      <h1 className="chart-title">Charte de confiance </h1>
       <h2>LES ENGAGEMENTS DE LA DEAR TEAM</h2>
-      <p>
+      <p className="chart-paragraph">
         Dear c'est une application gratuite qui libère la parole et lève les
         tabous sur la sexualité. Découvrir, s'éveiller, apprendre, comprendre et
         rassurer sur l'univers de la sexualité c'estrépondre à un réel enjeu
@@ -20,7 +20,7 @@ function TrustCharter() {
         bien trop tabou pour la société.{" "}
       </p>
       <h2>ENGAGEMENT N°1 :</h2>
-      <p>
+      <p className="chart-paragraph">
         Vous vous êtes inscrit.e sur DEAR (gratuitement, on le rappelle !) et
         vous souhaitez échanger avec la communauté ? Poster un post ? Partager
         une expérience ? Poser une question ? Lancer un débat? C'est OK! Vous
@@ -33,13 +33,15 @@ function TrustCharter() {
         atteindre le bien-être sexuel.
       </p>
       <h3>Tu peux le DEAR</h3>
-      <p>sexe fesses cul anal amour vulve vagin penis fellation sucer</p>
+      <p className="chart-paragraph">
+        sexe fesses cul anal amour vulve vagin penis fellation sucer
+      </p>
       <h3>Tu ne peux pas le DEAR</h3>
-      <p>
+      <p className="chart-paragraph">
         bite chatte baiser insultes propos raciste propos homophobes Tout propos
         pouvant entraver la liberté des un.e.set des autres.{" "}
       </p>
-      <p>
+      <p className="chart-paragraph">
         Chère communauté, vous serez autorisés, grâce à vos points obtenus avec
         la gamification, à réaliser une modération pour nous venir en aide quant
         à la modération des contenus postés sur l'application.
@@ -48,7 +50,7 @@ function TrustCharter() {
         ENGAGEMENT N°2: VÉRIFICATION ET VALIDATION DES PROFILS LORS DE
         L'INSCRIPTION
       </h2>
-      <p>
+      <p className="chart-paragraph">
         Pour faire partie de la communauté DEAR, il est indispensable d'être âgé
         au minimum de 18 ans. Le membre certifie expressément qu'il remplit
         cette condition au jour de son inscription. L'inscription est interdite
@@ -72,7 +74,7 @@ function TrustCharter() {
         ENGAGEMENT N°3 : CONFIDENTIALITÉ, SÉCURITÉ ET PROTECTION DES
         DONNÉESPERSONNELLES
       </h2>
-      <p>
+      <p className="chart-paragraph">
         En accord avec la loi et les règlements en vigueur sur la protection de
         la vie privée et conformément à la Loi n°78-17 du 6 janvier 1978, dite
         Loi Informatique et Liberté, vous disposez d'un droit de consultation,
@@ -85,7 +87,7 @@ function TrustCharter() {
         peuventen aucun cas être divulguées par DEAR auprès de la communauté.
       </p>
       <h2>ENGAGEMENT N4: UN SERVICE QUALITÉ RÉACTIF ET ACCESSIBLE</h2>
-      <p>
+      <p className="chart-paragraph">
         Notre service qualité d'excellence (Aline et Lila ;) oui, même à deux on
         vous chouchoute !) estjoignable par mail dear.officiel@gmail.com et
         clairement affiché dans les CGU. Les membres peuvent également nous
@@ -97,7 +99,7 @@ function TrustCharter() {
         suites données aux réclamations.
       </p>
       <h2>ENGAGEMENT N°5: TRANSPARENCE ET LOYAUTÉ DE DEAR</h2>
-      <p>
+      <p className="chart-paragraph">
         DEAR s'engage à ne pas créer de faux profils ou à utiliser de moteurs
         dans le but d'accroîtreartificiellement la liste des personnes qui
         interagissent sur le feed d'actualités. DEAR se veut être intègre sur la
@@ -109,7 +111,7 @@ function TrustCharter() {
         ENGAGEMENT N°6: MISE EN GARDE DES MEMBRES ET GESTION DE VOTRE
         TRANQUILLITÉ.
       </h2>
-      <p>
+      <p className="chart-paragraph">
         Au travers de ses règles de prudence, DEAR sensibilise sa communauté aux
         rares, mais possiblesdérives de certains de ses utilisateurs peu
         scrupuleux présents sur l'application. DEAR présenteune série de mesures
@@ -117,7 +119,7 @@ function TrustCharter() {
         plusinteragir avec la communauté!
       </p>
       <h2>ENGAGEMENT N°7 : CLARTÉ DES INFORMATIONS D'USAGE.</h2>
-      <p>
+      <p className="chart-paragraph">
         Conditions Générales d'Utilisation DEAR sont facilement accessibles et
         rédigées dans un langage compréhensible par tous.tes. Il en va de même
         concernant les conditionsd'engagement de la communauté: “DEAR ou ne pas

@@ -6,7 +6,7 @@ function LegalNotice() {
   return (
     <div>
       <img className="logo-legal" src={logoBlue} alt="logo Dear bleu" />
-      <h1>Mentions Légales</h1>
+      <h1 className="legal-title">Mentions Légales</h1>
       <p>
         Conformément aux dispositions des articles 6-111 et 19 de la Loi n°
         2004-575 du 21 juin 2004 pour la confiance dans l'économie numérique,

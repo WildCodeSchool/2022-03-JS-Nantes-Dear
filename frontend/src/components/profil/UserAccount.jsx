@@ -10,6 +10,9 @@ import LegalNotice from "./LegalNotice";
 import TrustCharter from "./TrustCharter";
 import MyPersonalDatas from "./MyPersonalDatas";
 import FaCul from "./FaCul";
+import ContactForm from "./ContactForm";
+import FooterHome from "../home/FooterHome";
+import logoBlue from "../../assets/dear-logo-blue.png";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -21,8 +24,11 @@ function UserAccount() {
   return (
     <div className="user-account-page">
       <div className="profile-top">
-        <h1>Pseudo</h1>
-        <button type="button">Modifier mon profil</button>
+        <div className="pseudo-top">
+          <h1>Pseudo</h1>
+          <button type="button">Modifier mon profil</button>
+        </div>
+        <img className="logo-user-page" src={logoBlue} alt="logo Dear bleu" />
       </div>
       <div className="container-profile">
         <div className="profile-card">
@@ -99,12 +105,7 @@ function UserAccount() {
               toggleState === 2 ? "content  active-content" : "content"
             }
           >
-            <h2>Contacter Dear</h2>
-            <hr />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente
-              voluptatum qui adipisci.
-            </p>
+            <ContactForm />
           </div>
           <div
             className={
@@ -129,6 +130,7 @@ function UserAccount() {
           </div>
         </div>
       </div>
+      <FooterHome />
     </div>
   );
 }

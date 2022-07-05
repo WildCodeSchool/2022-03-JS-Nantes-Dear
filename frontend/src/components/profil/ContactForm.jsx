@@ -24,6 +24,7 @@ export default function ContactForm() {
   return (
     <div className="contact">
       <form name="contact" method="post">
+        <h1 className="contact-title">Nous contacter</h1>
         <label htmlFor="name">Nom - Société *</label>
         <input
           className={maximumReached ? "length-maximum-reached" : "length-ok"}
@@ -57,7 +58,7 @@ export default function ContactForm() {
         />
 
         <label htmlFor="message">Message</label>
-        <textarea id="message" name="message" placeholder="Dites-nous tout" />
+        <textarea id="message" name="message" placeholder="Dis-nous tout" />
 
         <button
           className="contactButton"

@@ -1,9 +1,10 @@
 import React from "react";
+import "./styles/FaCul.css";
 
 function FaCul() {
   return (
     <div>
-      <h1>FACUL</h1>
+      <h1 className="facul-title">FACUL</h1>
       <h3>En quoi consiste la plateforme DEAR ?</h3>
       <ul>
         <li>
