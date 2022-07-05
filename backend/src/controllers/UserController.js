@@ -66,11 +66,11 @@ class UserController {
         if (rows[0] == null) {
           res.status(403).send({ error: "pseudo ou mot de passe incorrect" });
         } else {
-          const { id, password: hash } = rows[0];
+          const { id, password: hash, role } = rows[0];
           try {
             if (await bcrypt.compare(password, hash)) {
               const token = await jwt.sign(
-                { id, pseudo },
+                { id, pseudo, role },
                 process.env.JWT_AUTH_SECRET,
                 { expiresIn: "1h" }
               );

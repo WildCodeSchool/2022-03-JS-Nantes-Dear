@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Login.css";
 import axios from "axios";
-import Swal from "sweetalert2";
+import Swal from "sweetalert";
 import ButtonReturn from "../components/home/ButtonReturn";
 import ButtonContinue from "../components/registration/ButtonContinue";
 
