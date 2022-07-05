@@ -51,29 +51,45 @@ class PostController {
   };
 
   static add = async (req, res) => {
-    const { content /*, user_id, category_id, created_at*/ } = req.body;
+    const { content, user_id, category_id, created_at, nbr_post, nbr_signals } =
+      req.body;
 
-    const [post] = await models.post.findByPost(content);
+    const [post] = await models.post.findByPost(user_id);
 
-    if (post.lenght) {
-      res.status(409).send({
-        error: "?",
-      });
-    }
+    // if (post.lenght) {
+    //   res.status(409).send({
+    //     error: "?",
+    //   });
+    // }
 
-    const validationErrors = Joi.object({
-      content: Joi.string().max(255).require(),
-    }).validate({ content }).error;
+    // const validationErrors = Joi.object({
+    //   post: Joi.string().max(255).require(),
+    // }).validate({ post }).error;
 
-    if (validationErrors) {
-      res.status(422).send(validationErrors);
-      return;
-    }
+    // if (validationErrors) {
+    //   res.status(422).send(validationErrors);
+    //   return;
+    // }
 
     models.post
-      .insert(content)
+      .insert({
+        content,
+        user_id,
+        category_id,
+        created_at,
+        nbr_post,
+        nbr_signals,
+      })
       .then(([result]) => {
-        res.status(201).send({ id: result.insertId, content });
+        res.status(201).send({
+          id: result.insertId,
+          content,
+          user_id,
+          category_id,
+          created_at,
+          nbr_post,
+          nbr_signals,
+        });
       })
       .catch((err) => {
         console.error(err);
