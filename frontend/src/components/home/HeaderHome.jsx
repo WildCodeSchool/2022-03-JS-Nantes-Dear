@@ -1,11 +1,14 @@
 import "./styles/HeaderHome.css";
+import { Link } from "react-router-dom";
 import logo from "../../assets/dear-logo-blue.png";
 
 export default function HeaderHome() {
   return (
     <header>
       <div className="logo-container">
-        <img className="logo" src={logo} alt="logo-dear-couleur" />
+        <Link to="/home">
+          <img className="logo" src={logo} alt="logo-dear-couleur" />
+        </Link>
       </div>
       <div className="welcome-text">
         <div className="welcome-container-title">

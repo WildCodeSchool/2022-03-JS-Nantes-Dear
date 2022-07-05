@@ -1,10 +1,9 @@
 .logo-charter {
-    width: 30vw;
+  width: 30vw;
 }
 
-
 @media screen and (min-width: 1024px) {
-    .logo-charter {
-        width: 10vw;
-    }
+  .logo-charter {
+    width: 10vw;
+  }
 }

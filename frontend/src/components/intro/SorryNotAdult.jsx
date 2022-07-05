@@ -1,10 +1,14 @@
 import React from "react";
 import logo from "../../assets/dear-logo-white.png";
 import "./styles/SorryNotAdult.css";
+import ButtonReturn from "../home/ButtonReturn";
 
 function SorryNotAdult() {
   return (
     <div className="div-sorry">
+      <div className="div-arrow-return">
+        <ButtonReturn />
+      </div>
       <div className="div-logo-not-adult">
         <img className="logo-not-adult" src={logo} alt="logo Dear blanc" />
       </div>

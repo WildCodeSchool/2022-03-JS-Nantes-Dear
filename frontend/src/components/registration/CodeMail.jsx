@@ -1,6 +1,7 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import ButtonSuivant from "./ButtonSuivant";
+import ButtonReturn from "../home/ButtonReturn";
 import "./styles/CodeMail.css";
 
 export default function CodeMail() {
@@ -8,6 +9,9 @@ export default function CodeMail() {
 
   return (
     <div className="bloc-code-mail">
+      <div className="div-arrow-return">
+        <ButtonReturn />
+      </div>
       <div className="title-code">
         <h1>Saisir le code</h1>
         <h2>reçu par mail</h2>
@@ -27,7 +31,7 @@ export default function CodeMail() {
         </form>
       </div>
       <div className="button-suivant">
-        <Link to="hello">
+        <Link to="goodconduct">
           <ButtonSuivant />
         </Link>
       </div>

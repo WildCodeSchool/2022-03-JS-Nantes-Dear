@@ -1,0 +1,54 @@
+.logo-conduct {
+  height: 20vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.good-conduct {
+  color: var(--white);
+}
+.conduct-title-first h2 {
+  font-size: 1.7rem;
+  margin-left: 9vw;
+  padding-bottom: 10px;
+}
+
+.conduct-text {
+  font-size: 0.7rem;
+  margin-left: 9vw;
+  margin-right: 20vw;
+}
+.conduct-text p {
+  font-size: 0.8rem;
+  padding-bottom: px;
+  padding-top: 5px;
+}
+
+span {
+  font-weight: 500;
+}
+
+.conduct-title-secondary {
+  padding-top: 60px;
+  margin-left: 9vw;
+  padding-bottom: 3vh;
+}
+
+.checking label {
+  margin-left: 2vw;
+  font-size: 0.7rem;
+}
+
+.conduct-conclusion p {
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 5vh;
+  margin-bottom: 6vh;
+}
+
+.button-accept-all {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}

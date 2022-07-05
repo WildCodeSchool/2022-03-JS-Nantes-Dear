@@ -1,3 +1,4 @@
+/* eslint-disable global-require */
 const fs = require("fs");
 const mysql = require("mysql2/promise");
 const path = require("path");
@@ -24,10 +25,9 @@ const models = fs
   .readdirSync(__dirname)
   .filter((file) => file !== "AbstractManager.js" && file !== "index.js")
   .reduce((acc, file) => {
-    // eslint-disable-next-line global-require, import/no-dynamic-require
+    // eslint-disable-next-line import/no-dynamic-require
     const Manager = require(path.join(__dirname, file));
 
-    // eslint-disable-next-line no-param-reassign
     acc[Manager.table] = new Manager(pool, Manager.table);
 
     return acc;

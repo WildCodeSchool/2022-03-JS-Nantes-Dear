@@ -1,4 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+body {
+  background-color: var(--dark-blue);
+}
 
 .intro-container {
   background-color: var(--dark-blue);
@@ -30,7 +33,7 @@
 
 .bienvenue-text {
   animation: bienvenue 5s;
-  color: white;
+  color: var(--white);
   font-size: 2rem;
   visibility: hidden;
 }
@@ -88,8 +91,13 @@
 }
 
 .buttons-intro,
+.button-facul-intro,
 .buttons-intro * {
   animation: flash-accueil 5s;
+}
+
+.button-facul-intro {
+  padding: 0.7rem;
 }
 
 @keyframes flash-accueil {
@@ -102,5 +110,16 @@
   }
   100% {
     visibility: initial;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .bienvenue-text {
+    margin-top: 8rem;
+  }
+
+  .buttons-intro {
+    margin-top: 2rem;
+    margin-bottom: 1rem;
   }
 }

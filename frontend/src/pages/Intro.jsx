@@ -4,6 +4,7 @@ import logo from "../assets/dear-logo-white.png";
 import Registration from "../components/intro/Registration";
 import Connection from "../components/intro/Connection";
 import "./styles/Intro.css";
+import ButtonFACul from "../components/intro/ButtonFACul";
 
 function Intro() {
   return (
@@ -20,6 +21,11 @@ function Intro() {
         </Link>
         <Link to="/connection">
           <Connection />
+        </Link>
+      </div>
+      <div className="button-facul-intro">
+        <Link to="/facul">
+          <ButtonFACul />
         </Link>
       </div>
     </div>

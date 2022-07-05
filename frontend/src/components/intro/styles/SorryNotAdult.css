@@ -4,6 +4,7 @@ body {
 
 .div-sorry {
   color: var(--white);
+  background-color: var(--dark-blue);
 }
 
 .div-logo-not-adult {
