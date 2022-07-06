@@ -12,7 +12,7 @@ class PostManager extends AbstractManager {
 
   findAll() {
     return this.connection.query(
-      `select id, content, user_id, category_id, created_at, nbr_post, nbr_signals from ${PostManager.table}`
+      `select post.*, user.pseudo AS user FROM ${PostManager.table} JOIN user ON user.id= post.user_id`
     );
   }
 
