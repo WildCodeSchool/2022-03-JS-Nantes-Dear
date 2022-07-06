@@ -6,7 +6,6 @@ import swal from "sweetalert";
 import ButtonReturn from "../components/home/ButtonReturn";
 import ButtonContinue from "../components/registration/ButtonContinue";
 
-
 function Login() {
   const [pseudo, setPseudo] = useState("");
   const [password, setPassword] = useState("");
@@ -40,7 +39,6 @@ function Login() {
     <div className="login">
       <ButtonReturn />
       <form className="form-login">
-
         <input
           className="inputPseudo"
           type="text"
@@ -62,7 +60,6 @@ function Login() {
         <Link to="/connection/bonjour">
           <ButtonContinue handleSubmit={handleSubmit} />
         </Link>
-
       </form>
     </div>
   );
