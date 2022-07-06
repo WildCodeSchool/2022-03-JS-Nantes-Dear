@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "./styles/Login.css";
 import axios from "axios";
-import Swal from "sweetalert2";
+import swal from "sweetalert";
+import ButtonReturn from "../components/home/ButtonReturn";
+import ButtonContinue from "../components/registration/ButtonContinue";
 
 function Login() {
   const [pseudo, setPseudo] = useState("");
@@ -10,9 +13,9 @@ function Login() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!pseudo || !password) {
-      Swal.fire({
+      swal({
         title: "Error!",
-        text: "Merci de spécifier votre pseudo Et votre email",
+        text: "Merci de renseigner votre pseudo ET votre email",
         icon: "error",
         confirmButtonText: "Cool",
       });
@@ -34,7 +37,8 @@ function Login() {
 
   return (
     <div className="login">
-      <form className="form-login" onSubmit={handleSubmit}>
+      <ButtonReturn />
+      <form className="form-login">
         <input
           className="inputPseudo"
           type="text"
@@ -53,10 +57,9 @@ function Login() {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-
-        <button className="loginbutton" type="submit">
-          Continue
-        </button>
+        <Link to="/connection/bonjour">
+          <ButtonContinue handleSubmit={handleSubmit} />
+        </Link>
       </form>
     </div>
   );

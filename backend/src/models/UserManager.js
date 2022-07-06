@@ -33,7 +33,7 @@ class UserManager extends AbstractManager {
   update(user) {
     return this.connection.query(
       `update ${UserManager.table} set email = ?, pseudo = ?, password = ?, role = ? where id = ?`,
-      [user.email, user.pseudo, user.password, user.role, user.id]
+      [user.email, user.pseudo, user.hash, user.role, user.id]
     );
   }
 }
