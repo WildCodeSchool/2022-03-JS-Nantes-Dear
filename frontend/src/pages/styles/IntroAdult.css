@@ -32,12 +32,18 @@
   margin-left: -18rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .button-return-intro {
+    margin-left: -50rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .more18 {
     margin-top: 8rem;
   }
 
   .button-return-intro {
-    margin-left: -80rem;
+    margin-left: -90rem;
   }
 }

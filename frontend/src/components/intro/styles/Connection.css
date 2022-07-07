@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 90vw;
+  width: 80vw;
   max-width: 500px;
   height: 15vw;
   max-height: 70px;
@@ -13,4 +13,19 @@
 
 .button * {
   font-family: var(--font);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .button {
+    width: 45vw;
+    height: 10vw;
+    border-radius: 10px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .button {
+    width: 25vw;
+    height: 10vw;
+  }
 }
