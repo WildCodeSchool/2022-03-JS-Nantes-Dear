@@ -14,6 +14,7 @@ import PostCategory from "../components/post/PostCategory";
 import Connection from "./Connection";
 import Comment from "./Comment";
 import FACul from "./FACul";
+import AdminAccount from "../components/admin/AdminAccount";
 
 export default function Body() {
   return (
@@ -26,6 +27,7 @@ export default function Body() {
         <Route path="/registration" element={<Registration />} />
         <Route path="/registration/register" element={<Register />} />
         <Route path="/registration/register/codemail" element={<CodeMail />} />
+        <Route path="/adminaccount" element={<AdminAccount />} />
         <Route
           path="/registration/register/codemail/goodconduct"
           element={<GoodConduct />}
