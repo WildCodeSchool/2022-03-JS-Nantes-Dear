@@ -52,7 +52,6 @@ class PostController {
   };
 
   static add = async (req, res) => {
-  
     const { content } = req.body;
 
     const [post] = await models.post.findByPseudo(user_id);
