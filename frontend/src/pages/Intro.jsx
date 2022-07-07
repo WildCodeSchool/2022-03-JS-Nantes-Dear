@@ -12,6 +12,14 @@ function Intro() {
       <div className="div-logo-intro">
         <img className="logo-intro" src={logo} alt="logo Dear blanc" />
       </div>
+      <div className="description-container">
+        <div className="description-text">
+          <div className="description-text-first">
+            ET SI ON PARLAIT SEXUALITÉ
+          </div>
+          <div className="description-text-bis">SANS TABOU ? 😇 </div>
+        </div>
+      </div>
       <div className="bienvenue-container">
         <p className="bienvenue-text"> Bienvenue </p>
       </div>
