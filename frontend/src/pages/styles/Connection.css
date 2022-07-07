@@ -5,12 +5,17 @@ body {
   background-color: var(--dark-blue);
 }
 
-
 .buttonreturn {
   margin-left: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttonreturn {
+    margin-left: -15rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .buttonreturn {
     margin-left: 0rem;
   }

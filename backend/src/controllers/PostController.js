@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 const Joi = require("joi");
 const models = require("../models");
 
@@ -51,9 +52,10 @@ class PostController {
   };
 
   static add = async (req, res) => {
-    const { content /*, user_id, category_id, created_at*/ } = req.body;
+  
+    const { content } = req.body;
 
-    const [post] = await models.post.findByPost(content);
+    const [post] = await models.post.findByPseudo(user_id);
 
     if (post.lenght) {
       res.status(409).send({
@@ -62,7 +64,7 @@ class PostController {
     }
 
     const validationErrors = Joi.object({
-      content: Joi.string().max(255).require(),
+      content: Joi.string().max(255).required(),
     }).validate({ content }).error;
 
     if (validationErrors) {
@@ -71,9 +73,18 @@ class PostController {
     }
 
     models.post
-      .insert(content)
+      .insert({
+        content,
+        userId: user_id,
+        createdAt: created_at,
+      })
       .then(([result]) => {
-        res.status(201).send({ id: result.insertId, content });
+        res.status(201).send({
+          id: result.insertId,
+          content,
+          userId: user_id,
+          createdAt: created_at,
+        });
       })
       .catch((err) => {
         console.error(err);

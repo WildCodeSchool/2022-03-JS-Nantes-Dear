@@ -3,15 +3,16 @@ const AbstractManager = require("./AbstractManager");
 class PostManager extends AbstractManager {
   static table = "post";
 
-  findByPost(post) {
-    return this.connection.query(`select * from ${post.table} where post = ?`, [
-      post,
-    ]);
+  findByPseudo(id) {
+    return this.connection.query(
+      `select post.*, user.pseudo AS user FROM ${PostManager.table} JOIN user ON post.id= post.user_id WHERE post.id = ?`,
+      [id]
+    );
   }
 
   findAll() {
     return this.connection.query(
-      `select id, user_id, category_id from ${PostManager.table}`
+      `select post.*, user.pseudo AS user FROM ${PostManager.table} JOIN user ON user.id= post.user_id`
     );
   }
 
