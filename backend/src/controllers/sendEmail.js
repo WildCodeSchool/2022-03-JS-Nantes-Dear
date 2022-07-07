@@ -1,4 +1,4 @@
-const emailer = require("./mailer");
+/* const emailer = require("./mailer");
 
 emailer.sendMail(
   {
@@ -14,3 +14,5 @@ emailer.sendMail(
     else console.log(info);
   }
 );
+
+*/

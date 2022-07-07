@@ -15,13 +15,13 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .buttoncontinue {
-  width: 50vw;
-  height: 6rem;
-  margin-bottom: 2rem;
-}
+    width: 50vw;
+    height: 6rem;
+    margin-bottom: 2rem;
+  }
   .buttoncontinue h3 {
-  font-size: 1.5rem;
-}
+    font-size: 1.5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
