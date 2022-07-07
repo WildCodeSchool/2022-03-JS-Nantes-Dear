@@ -32,43 +32,45 @@ function AdminAccount() {
         />
       </div>
       <div className="container-admin">
-        <div className="admin-card">
-          <div className="admin-category">
-            <BsListTask className="admin-icon" />
-            <h3>La modération</h3>
-            <button
-              type="button"
-              className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(1)}
-            >
-              <IoIosArrowDroprightCircle className="arrow-admin" />
-            </button>
+        <div className="container-cat-admin">
+          <div className="admin-card">
+            <div className="admin-category">
+              <BsListTask className="admin-icon" />
+              <h3>La modération</h3>
+              <button
+                type="button"
+                className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                onClick={() => toggleTab(1)}
+              >
+                <IoIosArrowDroprightCircle className="arrow-admin" />
+              </button>
+            </div>
+            <div className="admin-category">
+              <FaUserFriends className="admin-icon" />
+              <h3>Les utilisateurs</h3>
+              <button
+                type="button"
+                className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                onClick={() => toggleTab(2)}
+              >
+                <IoIosArrowDroprightCircle className="arrow-admin" />
+              </button>
+            </div>
+            <div className="admin-category">
+              <BsPencilSquare className="admin-icon" />
+              <h3>Gérer la FACul</h3>
+              <button
+                type="button"
+                className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+                onClick={() => toggleTab(3)}
+              >
+                <IoIosArrowDroprightCircle className="arrow-admin" />
+              </button>
+            </div>
           </div>
-          <div className="admin-category">
-            <FaUserFriends className="admin-icon" />
-            <h3>Les utilisateurs</h3>
-            <button
-              type="button"
-              className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(2)}
-            >
-              <IoIosArrowDroprightCircle className="arrow-admin" />
-            </button>
+          <div className="admin-logout">
+            <h4>Me déconnecter</h4>
           </div>
-          <div className="admin-category">
-            <BsPencilSquare className="admin-icon" />
-            <h3>Gérer la FACul</h3>
-            <button
-              type="button"
-              className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-              onClick={() => toggleTab(3)}
-            >
-              <IoIosArrowDroprightCircle className="arrow-admin" />
-            </button>
-          </div>
-        </div>
-        <div className="admin-logout">
-          <h4>Me déconnecter</h4>
         </div>
         <div className="content-tabs">
           <div
