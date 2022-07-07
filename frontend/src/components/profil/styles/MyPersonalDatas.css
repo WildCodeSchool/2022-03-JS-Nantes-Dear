@@ -1,0 +1,27 @@
+.modify-button {
+    background: var(--dark-blue);
+    color: white;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    width: 40vw;
+    height: 3.2vh;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.container-pseudo {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+.container-modify {
+    display: flex;
+    justify-content: center;
+}
+
+@media screen and (min-width: 1024px) {
+    .modify-button {
+     width: 20vw;
+    }
+  }
