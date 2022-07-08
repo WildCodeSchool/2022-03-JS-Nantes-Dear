@@ -1,3 +1,4 @@
+/* eslint-disable import/no-named-as-default-member */
 import React, { useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BsListTask } from "react-icons/bs";
@@ -13,6 +14,7 @@ import FaCul from "./FaCul";
 import ContactForm from "./ContactForm";
 import FooterHome from "../home/FooterHome";
 import logoBlue from "../../assets/dear-logo-blue.png";
+import Logout from "./Logout";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -88,7 +90,7 @@ function UserAccount() {
             </button>
           </div>
           <div className="profile-logout">
-            <h4>Me déconnecter</h4>
+            <Logout />
             <p>Supprimer mon compte</p>
           </div>
         </div>

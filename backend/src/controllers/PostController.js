@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 /* eslint-disable camelcase */
 const Joi = require("joi");
 const models = require("../models");
@@ -52,7 +53,7 @@ class PostController {
   };
 
   static add = async (req, res) => {
-    const { content, user_id, created_at } = req.body;
+    const { content } = req.body;
 
     const [post] = await models.post.findByPseudo(user_id);
 
