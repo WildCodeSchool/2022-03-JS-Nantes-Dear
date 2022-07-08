@@ -1,11 +1,36 @@
 import { React, useState } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import "./styles/PostText.css";
+import axios from "axios";
+import swal from "sweetalert";
 import ButtonSuivantPost from "./ButtonSuivantPost";
 
-function PostTexte() {
-  const [post, setPost] = useState("");
+function PostText() {
+  const [content, setContent] = useState("");
 
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!content) {
+      swal({
+        title: "Error!",
+        text: "Merci de publier",
+        icon: "error",
+        confirmButtonText: "parfait",
+      });
+    } else {
+      axios
+        .post(
+          `${import.meta.env.VITE_BACKEND_URL}/post/postText`,
+          { content },
+          { withCredentials: true }
+        )
+        // eslint-disable-next-line no-restricted-syntax
+        .then((res) => console.log(res.data))
+        .catch((err) => {
+          console.error(err);
+        });
+    }
+  };
   return (
     <div className="div-post-texte">
       <div className="bloc-texte-post">
@@ -13,23 +38,23 @@ function PostTexte() {
           <label className="postform" htmlFor="post">
             <textarea
               className="inputformpost"
-              type="text"
-              name="textpost"
-              id="textpost"
+              type="content"
+              name="content"
+              id="content"
               placeholder="Partagez un message, une question, une expérience, un doute... avec la communauté! La sexualité n'est plus un tabou! Ta publication est anonyme."
-              value={post}
-              onChange={(e) => setPost(e.target.value)}
+              value={content}
+              onChange={(e) => setContent(e.target.value)}
             />
           </label>
         </form>
       </div>
       <div className="button-suivant-post">
-        <Link to="/editpost/postcategory">
-          <ButtonSuivantPost />
-        </Link>
+        {/* <Link to="/editpost/postcategory"> */}
+        <ButtonSuivantPost handleSubmit={handleSubmit} />
+        {/* </Link> */}
       </div>
     </div>
   );
 }
 
-export default PostTexte;
+export default PostText;

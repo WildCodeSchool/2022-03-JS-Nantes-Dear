@@ -1,4 +1,5 @@
 const Joi = require("joi");
+
 const models = require("../models");
 
 class CommentController {
@@ -86,6 +87,7 @@ class CommentController {
   static delete = (req, res) => {
     models.comment
       .delete(req.params.id)
+
       .then(() => {
         res.sendStatus(204);
       })
