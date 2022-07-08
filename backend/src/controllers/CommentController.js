@@ -1,8 +1,11 @@
+const Joi = require("joi");
+
 const models = require("../models");
 
 class CommentController {
   static browse = (req, res) => {
-    models.Comment.findAll()
+    models.comment
+      .findAll()
       .then(([rows]) => {
         res.send(rows);
       })
@@ -13,7 +16,8 @@ class CommentController {
   };
 
   static read = (req, res) => {
-    models.Comment.find(req.params.id)
+    models.comment
+      .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
           res.sendStatus(404);
@@ -28,9 +32,12 @@ class CommentController {
   };
 
   static edit = (req, res) => {
-    const Comment = req.body;
+    const comment = req.body;
 
-    models.Comment.update(Comment)
+    comment.id = parseInt(req.params.id, 10);
+
+    models.comment
+      .update(comment)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -44,21 +51,43 @@ class CommentController {
       });
   };
 
-  static add = (req, res) => {
-    const Comment = req.body;
+  static add = async (req, res) => {
+    const { content /* , user_id, post_id, created_at */ } = req.body;
 
-    models.Comment.insert(Comment)
+    const [comment] = await models.comment.findByPost(content);
+
+    if (comment.lenght) {
+      res.status(409).send({
+        error: "?",
+      });
+    }
+
+    const validationErrors = Joi.object({
+      content: Joi.string().max(155).require(),
+    }).validate({ content }).error;
+
+    if (validationErrors) {
+      res.status(422).send(validationErrors);
+      return;
+    }
+
+    models.comment
+      .insert(content)
       .then(([result]) => {
-        res.status(201).send({ ...Comment, id: result.insertId });
+        res.status(201).send({ id: result.insertId, content });
       })
       .catch((err) => {
         console.error(err);
-        res.sendStatus(500);
+        res.status(500).send({
+          error: err.message,
+        });
       });
   };
 
   static delete = (req, res) => {
-    models.Comment.delete(req.params.id)
+    models.comment
+      .delete(req.params.id)
+
       .then(() => {
         res.sendStatus(204);
       })
