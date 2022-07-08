@@ -51,7 +51,7 @@ class CommentController {
   };
 
   static add = async (req, res) => {
-    const { content /*, user_id, post_id, created_at*/ } = req.body;
+    const { content /* , user_id, post_id, created_at */ } = req.body;
 
     const [comment] = await models.comment.findByPost(content);
 

@@ -7,7 +7,7 @@ function FilterSearch() {
   const [datas, setDatas] = useState([]);
   const [searchTerm, setSearchTerm] = useState("");
   useEffect(() => {
-    fetch("https://jsonplaceholder.typicode.com/posts")
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/posts`)
       .then((response) => response.json())
       .then((json) => setDatas(json));
   }, []);
