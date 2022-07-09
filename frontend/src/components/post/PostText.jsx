@@ -35,7 +35,7 @@ function PostText() {
     <div className="div-post-texte">
       <div className="bloc-texte-post">
         <form className="form-post">
-       <PostHeader />
+          <PostHeader />
           <label className="postform" htmlFor="post">
             <textarea
               className="inputformpost"

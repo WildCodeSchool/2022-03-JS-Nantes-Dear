@@ -1,14 +1,12 @@
-import { React, useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
 import ButtonContinue from "./ButtonContinue";
 import ProgressBar from "./ProgressBar";
+import UserContext from "../../contexts/UserContext";
 
 export default function CardPseudo() {
-  const [pseudo, setPseudo] = useState("");
-  // const [page, setPage] = useState(0);
-
-  function handleSend() {}
+  const { register, setRegister } = useContext(UserContext);
 
   return (
     <div className="bloc-card-pseudo">
@@ -27,24 +25,28 @@ export default function CardPseudo() {
               className="inputformpseudo"
               id="pseudo"
               type="text"
+              name="pseudo"
+              value={register.pseudo}
               placeholder="Indique ton pseudo"
-              value={pseudo}
-              onChange={(e) => setPseudo(e.target.value)}
+              onChange={(e) =>
+                setRegister({ ...register, pseudo: e.target.value })
+              }
             />
           </label>
           <h2 className="stringform">Ma tranche d'âge</h2>
-          <select className="option-age" id="share-select">
-            <option value="">--Choisir une tranche d'âge--</option>
-            <option value="">18 - 25 ans</option>
-            <option value="">26 - 35 ans</option>
-            <option value="">36 - 45 ans</option>
-            <option value="">45 et +</option>
-          </select>
-          <button
-            className="inputformsubmit"
-            type="button"
-            onClick={handleSend}
+          <select
+            className="option-age"
+            id="share-select"
+            value={register.age}
+            onChange={(e) => setRegister({ age: e.target.value })}
           >
+            <option value="">--Choisir une tranche d'âge--</option>
+            <option value="18-25">18 - 25 ans</option>
+            <option value="26-35">26 - 35 ans</option>
+            <option value="36-45">36 - 45 ans</option>
+            <option value="45+">45 ans et +</option>
+          </select>
+          <button className="inputformsubmit" type="button">
             Valider
           </button>
         </form>

@@ -1,51 +1,30 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
-import swal from "sweetalert";
-// import "bootstrap/dist/css/bootstrap.min.css"; Voir comment déconnecter le ccs général de bootstrap
-import ProgressBar from "react-bootstrap/ProgressBar";
+import UserContext from "../contexts/UserContext";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
 
 function Register() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { initialRegister, register, setRegister } = useContext(UserContext);
 
-  const [passwordverified, setPasswordVerified] = useState("");
-  const role = "ROLE_USER";
+  const handleRegister = () => {
+    axios
+      .post(
+        `${import.meta.env.VITE_BACKEND_URL}/users/register`,
+        { data: register },
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (!email || !password || !passwordverified) {
-      swal({
-        title: "Error!",
-        text: "Merci de renseigner tous les champs",
-        icon: "error",
-        confirmButtonText: "Cool",
+        { withCredentials: true }
+      )
+
+      // eslint-disable-next-line no-restricted-syntax
+      .then((response) => console.log(response.data))
+      .catch((err) => {
+        // alert(err.response.data.error);
+        console.error(err);
       });
-    } else if (password !== passwordverified) {
-      swal({
-        title: "Error!",
-        text: "Les mots de passe sont différents",
-        icon: "error",
-        confirmButtonText: "Cool",
-      });
-    } else {
-      axios
-        .post(
-          `${import.meta.env.VITE_BACKEND_URL}/users/register`,
-          { email, password, role },
-
-          { withCredentials: true }
-        )
-        // eslint-disable-next-line no-restricted-syntax
-        .then((response) => console.log(response.data))
-        .catch((err) => {
-          // eslint-disable-next-line no-alert
-          alert(err.response.data.error);
-        });
-    }
+    setRegister(initialRegister);
   };
 
   return (
@@ -53,20 +32,19 @@ function Register() {
       <div className="div-arrow-return">
         <ButtonReturn />
       </div>
-      <div className="progress">
-        <ProgressBar now={60} />
-      </div>
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>
-        <form className="form-register" onSubmit={handleSubmit}>
+        <form className="form-register">
           <input
             className="inputEmail"
             type="email"
             name="email"
             id="email"
             placeholder="sophie.durand@gmail.com"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
+            value={register.email}
+            onChange={(e) =>
+              setRegister({ ...register, email: e.target.value })
+            }
           />
           <input
             className="inputPassword"
@@ -74,8 +52,10 @@ function Register() {
             name="password"
             id="password"
             placeholder="Mot de passe"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
+            value={register.password}
+            onChange={(e) =>
+              setRegister({ ...register, password: e.target.value })
+            }
           />
           <input
             className="inputConfirmPassword"
@@ -83,11 +63,13 @@ function Register() {
             name="password"
             id="password"
             placeholder="Confirmation du mot de passe"
-            value={passwordverified}
-            onChange={(e) => setPasswordVerified(e.target.value)}
+            value={register.setPasswordverified}
+            onChange={(e) =>
+              setRegister({ ...register, passwordverified: e.target.value })
+            }
           />
           <Link to="/registration/register/codemail">
-            <ButtonContinue handleSubmit={handleSubmit} />
+            <ButtonContinue onClick={handleRegister} />
           </Link>
         </form>
       </div>

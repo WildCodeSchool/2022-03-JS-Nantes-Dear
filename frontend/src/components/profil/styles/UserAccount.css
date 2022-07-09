@@ -4,8 +4,8 @@
 }
 
 .logo-user-page {
-    display: none;
-  }
+  display: none;
+}
 
 .profile-top {
   display: flex;
@@ -32,9 +32,9 @@
 }
 
 .pseudo-top {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .profile-card {
@@ -143,7 +143,7 @@ button {
   .logo-user-page {
     width: 10vw;
     display: block;
-}
+  }
 
   .profile-top button {
     width: 15vw;

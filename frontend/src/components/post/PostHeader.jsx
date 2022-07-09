@@ -3,8 +3,8 @@ import axios from "axios";
 
 function PostHeader() {
   const [pseudo, setpseudo] = useState("");
-  const [time, setTime] = useState("");
-  const createdAt = new Date();
+  // const [time, setTime] = useState("");
+  // const createdAt = new Date();
 
   useEffect(() => {
     axios
@@ -17,7 +17,9 @@ function PostHeader() {
 
   return (
     <div className="post-header">
-      <div className="post-pseudo" pseudo={pseudo} >salut</div>
+      <div className="post-pseudo" pseudo={pseudo}>
+        salut
+      </div>
       <div className="post-time" />
     </div>
   );
