@@ -4,7 +4,7 @@ import "./styles/Register.css";
 import axios from "axios";
 import swal from "sweetalert";
 // import "bootstrap/dist/css/bootstrap.min.css"; Voir comment déconnecter le ccs général de bootstrap
-import ProgressBar from "react-bootstrap/ProgressBar";
+import ProgressBar from "../components/registration/ProgressBar";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
 
@@ -50,10 +50,10 @@ function Register() {
 
   return (
     <div className="register">
-      <div className="div-arrow-return">
+      <div className="register-arrow-return">
         <ButtonReturn />
       </div>
-      <div className="progress">
+      <div className="register-progressbar">
         <ProgressBar now={60} />
       </div>
       <div className="register-title">

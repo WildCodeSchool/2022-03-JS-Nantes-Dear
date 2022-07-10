@@ -2,26 +2,26 @@ const emailer = require("../services/mailer");
 
 class MailController {
   static send = (req, res) => {
-    const { emailfrom, subject, message } = req.body;
+    const { email, subject, message } = req.body;
 
     emailer.sendMail(
       {
-        from: emailfrom,
+        from: email,
         to: "contact@dear.com",
         subject,
         text: message,
         html: `<strong>${message}</strong>`,
       },
-      (err /* info */) => {
+      (err) => {
         if (err) {
           res.status(424).json({
             status: "error",
-            message: "Problème lors de l'envoi",
+            message: "Erreur lors de l'envoi",
           });
         } else {
           res.status(200).json({
             status: "success",
-            message: "Message envoyé",
+            message: "Email envoyé",
           });
         }
       }

@@ -53,6 +53,10 @@
     border-radius: 10px;
     height: 4rem;
   }
+
+  .buttonreturnlogin {
+    margin-left: -1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -66,5 +70,8 @@
   }
   .loginbutton {
     width: 30vw;
+  }
+  .buttonreturnlogin {
+    margin-left: -5rem;
   }
 }

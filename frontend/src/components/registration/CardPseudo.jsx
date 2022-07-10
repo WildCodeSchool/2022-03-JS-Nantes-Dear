@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
 import ButtonContinue from "./ButtonContinue";
 import ProgressBar from "./ProgressBar";
+import ButtonReturn from "../home/ButtonReturn";
 
 export default function CardPseudo() {
   const [pseudo, setPseudo] = useState("");
@@ -12,8 +13,12 @@ export default function CardPseudo() {
 
   return (
     <div className="bloc-card-pseudo">
-      <ProgressBar />
-
+      <div className="pseudoreturnarrow">
+        <ButtonReturn />
+      </div>
+      <div className="pseudo-progressbar">
+        <ProgressBar now={40} />
+      </div>
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
         <h2>PSEUDO ET ÂGE</h2>

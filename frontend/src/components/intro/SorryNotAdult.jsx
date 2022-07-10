@@ -6,7 +6,7 @@ import ButtonReturn from "../home/ButtonReturn";
 function SorryNotAdult() {
   return (
     <div className="div-sorry">
-      <div className="div-arrow-return">
+      <div className="sorry-arrow-return">
         <ButtonReturn />
       </div>
       <div className="div-logo-not-adult">
