@@ -1,4 +1,4 @@
-const emailer = require("./mailer");
+/* const emailer = require("./mailer");
 
 emailer.sendMail(
   {
@@ -8,9 +8,9 @@ emailer.sendMail(
     text: "Hello world",
     html: "<p>Hello <em>world</em></p>",
   },
-  (err, info) => {
+  (err) => {
     if (err) console.error(err);
-    // eslint-disable-next-line no-restricted-syntax
-    else console.log(info);
   }
 );
+
+*/

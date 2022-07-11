@@ -10,7 +10,7 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
-  margin-right: 1rem;
+  margin-right: 5rem;
 }
 .logo-facul {
   width: 5rem;
@@ -68,12 +68,57 @@ body {
   margin-left: -1rem;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .div-logo-facul {
-    margin-right: 22rem;
+    margin-right: 10rem;
   }
   .logo-facul {
-    width: 10rem;
+    width: 5rem;
+  }
+  .titlefacul h1 {
+    font-size: 1.2rem;
+  }
+  .explicationsdear p {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .titleexplicationsdear,
+  .titleconceptdear,
+  .titlecontentdear,
+  .titlefreedear,
+  .titleanonymousdear,
+  .titlelimitepublicationdear,
+  .titlerulesdear,
+  .titlebreakrulesdear,
+  .titleprodear {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+
+  .conceptdear p,
+  .numbersdear p,
+  .contentdear p,
+  .freedear p,
+  .anonymousdear p,
+  .limitepublicationdear p,
+  .rulesdear p,
+  .breakrulesdear p,
+  .prodear p {
+    margin-left: 10rem;
+    margin-right: 10rem;
+  }
+  .arrowreturn-facul {
+    margin-left: -18rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .div-logo-facul {
+    margin-right: 18rem;
+  }
+  .logo-facul {
+    width: 7rem;
   }
   .titlefacul h1 {
     font-size: 1.8rem;

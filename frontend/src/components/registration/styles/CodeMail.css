@@ -44,7 +44,22 @@
   color: #bdc3cf;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .title-code h1,
+  .title-code h2 {
+    font-size: 1.8rem;
+    margin-left: 12rem;
+  }
+  .inputformcode {
+    width: 55%;
+    height: 5rem;
+  }
+  ::placeholder {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .inputformcode {
     width: 30vw;
     height: 5.5vw;
