@@ -8,13 +8,13 @@ import ButtonReturn from "../components/home/ButtonReturn";
 
 function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
+  // const role = "ROLE_USER";
 
   const handleRegister = () => {
     axios
       .post(
         `${import.meta.env.VITE_BACKEND_URL}/users/register`,
         { data: register },
-
         { withCredentials: true }
       )
 
@@ -63,7 +63,7 @@ function Register() {
             name="password"
             id="password"
             placeholder="Confirmation du mot de passe"
-            value={register.setPasswordverified}
+            value={register.passwordverified}
             onChange={(e) =>
               setRegister({ ...register, passwordverified: e.target.value })
             }

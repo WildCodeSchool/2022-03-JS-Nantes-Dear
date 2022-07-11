@@ -5,9 +5,9 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { email, password, role } = req.body;
+    const { pseudo, age, email, password, role } = req.body;
 
-    const [user] = await models.user.findByMail(email);
+    const [user] = await models.user.findByMPseudo(pseudo);
 
     if (user.length) {
       res.status(409).send({
@@ -16,9 +16,11 @@ class UserController {
     }
 
     const validationErrors = Joi.object({
+      pseudo: Joi.string.max(20).required(),
+      age: Joi.string.max(30).required(),
       email: Joi.string().email().max(255).required(),
       password: Joi.string().max(255).required(),
-    }).validate({ email, password }).error;
+    }).validate({ pseudo, age, email, password }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
@@ -30,9 +32,11 @@ class UserController {
       const hash = await bcrypt.hash(password, salt);
 
       models.user
-        .insert({ email, hash, role })
+        .insert({ pseudo, age, email, hash, role })
         .then(([result]) => {
-          res.status(201).json({ id: result.insertId, email, role });
+          res
+            .status(201)
+            .json({ id: result.insertId, pseudo, age, email, role });
         })
         .catch((err) => {
           console.error(err);

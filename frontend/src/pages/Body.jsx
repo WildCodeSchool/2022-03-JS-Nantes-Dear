@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
+import PropTypes from "prop-types";
 import UserContext from "../contexts/UserContext";
 import UserAccount from "../components/profil/UserAccount";
 import Intro from "./Intro";
@@ -25,7 +26,8 @@ export default function Body() {
     age: "",
     email: "",
     password: "",
-    // passwordverified: "",
+    passwordverified: "",
+    role: "",
   };
   const [register, setRegister] = useState(initialRegister);
 
@@ -69,3 +71,21 @@ export default function Body() {
     </div>
   );
 }
+
+Body.protoTypes = {
+  pseudo: PropTypes.string,
+  age: PropTypes.number,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  passwordverified: PropTypes.string,
+  role: PropTypes.string,
+};
+
+Body.defaultProps = {
+  pseudo: PropTypes.string,
+  age: PropTypes.number,
+  email: PropTypes.string,
+  password: PropTypes.string,
+  passwordverified: PropTypes.string,
+  role: PropTypes.string,
+};
