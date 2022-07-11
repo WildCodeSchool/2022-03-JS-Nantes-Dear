@@ -1,5 +1,5 @@
 import { Routes, Route } from "react-router-dom";
-import UserAccount from "../components/profil/UserAccount";
+import UserAccount from "../components/profile/UserAccount";
 import Intro from "./Intro";
 import IntroAdult from "./IntroAdult";
 import SorryNotAdult from "../components/intro/SorryNotAdult";
