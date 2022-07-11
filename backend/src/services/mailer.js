@@ -1,5 +1,5 @@
-require("dotenv").config();
 const nodemailer = require("nodemailer");
+require("dotenv").config();
 
 const mailer = nodemailer.createTransport({
   host: "smtp.mailtrap.io",

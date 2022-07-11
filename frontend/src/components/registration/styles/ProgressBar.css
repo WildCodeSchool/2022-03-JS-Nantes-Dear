@@ -39,3 +39,15 @@
   border-radius: 10px;
   background-color: var(--white);
 }
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .progressbar {
+    height: 7px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .progressbar {
+    width: 30%;
+    margin-left: 28rem;
+  }
+}

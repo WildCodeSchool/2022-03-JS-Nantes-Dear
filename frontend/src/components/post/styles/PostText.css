@@ -9,6 +9,7 @@
   color: var(--white);
   font-family: var(--font);
   margin: auto;
+  resize: none;
 }
 
 .inputformpost::placeholder {
@@ -34,7 +35,26 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .inputformpost {
+    width: 60vw;
+    height: 50vw;
+  }
+
+  .inputformpost::placeholder {
+    padding-top: 3rem;
+    font-size: 1.3rem;
+  }
+
+  .button-suivant-post {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-right: 10rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .inputformpost {
     width: 50vw;
     height: 40vw;
@@ -50,6 +70,5 @@
     flex-direction: row;
     justify-content: flex-end;
     margin-right: 20rem;
-    text-decoration: none;
   }
 }
