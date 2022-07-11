@@ -9,8 +9,6 @@ export default function CardPseudo() {
   const [pseudo, setPseudo] = useState("");
   // const [page, setPage] = useState(0);
 
-  function handleSend() {}
-
   return (
     <div className="bloc-card-pseudo">
       <div className="pseudoreturnarrow">
@@ -45,13 +43,6 @@ export default function CardPseudo() {
             <option value="">36 - 45 ans</option>
             <option value="">45 et +</option>
           </select>
-          <button
-            className="inputformsubmit"
-            type="button"
-            onClick={handleSend}
-          >
-            Valider
-          </button>
         </form>
       </div>
       <div className="button-continue">
