@@ -51,4 +51,75 @@ span {
   display: flex;
   flex-direction: row;
   justify-content: center;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .conduct-title-first h2 {
+    font-size: 1.8rem;
+    margin-left: 12vw;
+  }
+
+  .conduct-text {
+    font-size: 1rem;
+    margin-left: 12vw;
+  }
+
+  .conduct-text p {
+    font-size: 1rem;
+  }
+
+  .conduct-title-secondary {
+    margin-left: 12vw;
+  }
+
+  .checking label {
+    font-size: 1rem;
+  }
+
+  .conduct-conclusion p {
+    font-size: 1rem;
+    margin-left: 7vw;
+    margin-right: 10vw;
+  }
+
+  .checking {
+    margin-left: 3vw;
+    margin-right: 10vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .conduct-title-first h2 {
+    font-size: 1.2rem;
+    margin-left: 20vw;
+  }
+
+  .conduct-text {
+    font-size: 0.8rem;
+    margin-left: 20vw;
+  }
+
+  .conduct-text p {
+    font-size: 0.8rem;
+  }
+
+  .conduct-title-secondary {
+    margin-left: 20vw;
+  }
+
+  .checking label {
+    font-size: 0.8rem;
+  }
+
+  .conduct-conclusion p {
+    font-size: 0.8rem;
+    margin-left: 9vw;
+    margin-right: 10vw;
+  }
+
+  .checking {
+    margin-left: 11vw;
+    margin-right: 10vw;
+  }
 }

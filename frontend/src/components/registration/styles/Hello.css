@@ -20,16 +20,52 @@
   margin-left: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+.button-go-inscription {
+  margin-top: 5rem;
+  margin-left: 9rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .logo-inscription {
-    height: 30vh;
+    height: 25vh;
   }
 
   .welcome-text-inscription {
-    margin-left: 30rem;
+    margin-top: 3rem;
+    margin-left: 10rem;
+    font-size: 3rem;
   }
 
   .bienvenue-text-inscription {
-    margin-left: 30rem;
+    margin-left: 10rem;
+    font-size: 1.5rem;
+  }
+
+  .button-go-inscription {
+    margin-top: 6rem;
+    margin-left: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-inscription {
+    height: 20vh;
+  }
+
+  .welcome-text-inscription {
+    margin-top: 3rem;
+    margin-left: 20rem;
+    font-size: 1.8rem;
+  }
+
+  .bienvenue-text-inscription {
+    margin-left: 20rem;
+    font-size: 1.3rem;
+  }
+
+  .button-go-inscription {
+    margin-top: 7rem;
+    margin-left: 37rem;
   }
 }

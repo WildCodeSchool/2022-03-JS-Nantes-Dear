@@ -27,7 +27,7 @@
   align-items: center;
   justify-content: center;
   width: 80vw;
-  height: 115vw;
+  height: 100vw;
   background-color: var(--white);
   border-radius: 10px;
   margin: auto;
@@ -95,6 +95,10 @@
   text-decoration: none;
 }
 
+.pseudoreturnarrow {
+  margin-left: 0.5rem;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .title-card h1 {
     font-size: 2rem;
@@ -106,22 +110,26 @@
     font-size: 1.9rem;
   }
   .bloc-pseudo {
-    height: 90vw;
+    width: 65vw;
+    height: 80vw;
   }
   .stringform {
-    font-size: 2.5rem;
-    padding: 2.5rem;
+    font-size: 2.2rem;
+    padding: 2rem;
   }
   .inputformpseudo {
-    height: 8rem;
+    width: 55vw;
+    height: 7rem;
     font-size: 2rem;
   }
+
   .option-age {
-    height: 8rem;
+    width: 55vw;
+    height: 7rem;
     font-size: 1.8rem;
   }
   ::placeholder {
-    font-size: 2rem;
+    font-size: 3rem;
   }
   .inputformsubmit {
     font-size: 1.5rem;
@@ -129,12 +137,15 @@
   .button-continue {
     font-size: 1.5rem;
   }
+  .pseudoreturnarrow {
+    margin-left: -9rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
   .bloc-pseudo {
     width: 30vw;
-    height: 40vw;
+    height: 36vw;
   }
 
   .inputformpseudo {
@@ -153,5 +164,9 @@
     width: 15vw;
     height: 4vw;
     margin-top: 3rem;
+  }
+
+  .pseudoreturnarrow {
+    margin-left: -5rem;
   }
 }

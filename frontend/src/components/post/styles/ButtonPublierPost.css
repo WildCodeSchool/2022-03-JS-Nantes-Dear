@@ -12,9 +12,22 @@
   font-family: var(--font);
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttonpublierpost {
+    width: 30vw;
+    border-radius: 20px;
+  }
+  .buttonpublierpost h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .buttonpublierpost {
     width: 20vw;
-    border-radius: 20px;
+    border-radius: 25px;
+  }
+  .buttonpublierpost h3 {
+    font-size: 1rem;
   }
 }
