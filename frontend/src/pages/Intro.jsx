@@ -15,6 +15,14 @@ function Intro() {
       <div className="bienvenue-container">
         <p className="bienvenue-text"> Bienvenue </p>
       </div>
+      <div className="description-container">
+        <div className="description-text">
+          <div className="description-text-first">
+            ET SI ON PARLAIT SEXUALITÉ
+          </div>
+          <div className="description-text-bis">SANS TABOU ? 😇 </div>
+        </div>
+      </div>
       <div className="buttons-intro">
         <Link to="/introadult">
           <Registration />

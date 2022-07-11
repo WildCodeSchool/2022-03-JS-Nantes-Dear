@@ -9,6 +9,7 @@ import ManageFaCul from "./ManageFaCul";
 import logoBlue from "../../assets/dear-logo-blue.png";
 import logoCircle from "../../assets/logo-dear-rond.png";
 import "./styles/AdminAccount.css";
+import Logout from "../profile/Logout";
 
 function AdminAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -69,7 +70,7 @@ function AdminAccount() {
             </div>
           </div>
           <div className="admin-logout">
-            <h4>Me déconnecter</h4>
+            <Logout />
           </div>
         </div>
         <div className="content-tabs">

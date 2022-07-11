@@ -14,7 +14,7 @@ import Connection from "./Connection";
 import Comment from "./Comment";
 import FACul from "./FACul";
 import AdminAccount from "../components/admin/AdminAccount";
-import UserAccount from "../components/profil/UserAccount";
+import UserAccount from "../components/profile/UserAccount";
 
 export default function Body() {
   return (
