@@ -95,7 +95,43 @@
   text-decoration: none;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .title-card h1 {
+    font-size: 2rem;
+  }
+  .title-card h2 {
+    font-size: 2.2rem;
+  }
+  .title-card h3 {
+    font-size: 1.9rem;
+  }
+  .bloc-pseudo {
+    height: 90vw;
+  }
+  .stringform {
+    font-size: 2.5rem;
+    padding: 2.5rem;
+  }
+  .inputformpseudo {
+    height: 8rem;
+    font-size: 2rem;
+  }
+  .option-age {
+    height: 8rem;
+    font-size: 1.8rem;
+  }
+  ::placeholder {
+    font-size: 2rem;
+  }
+  .inputformsubmit {
+    font-size: 1.5rem;
+  }
+  .button-continue {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .bloc-pseudo {
     width: 30vw;
     height: 40vw;

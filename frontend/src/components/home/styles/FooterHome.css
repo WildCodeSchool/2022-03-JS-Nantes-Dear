@@ -8,6 +8,7 @@
   align-items: center;
   box-sizing: border-box;
   justify-content: center;
+  box-shadow: 5px 0px 5px 5px lightgrey;
 }
 
 #logoPlus {
