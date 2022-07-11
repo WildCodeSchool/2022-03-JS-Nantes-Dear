@@ -1,12 +1,13 @@
 import React from "react";
+import { ProgressBar } from "react-bootstrap";
 import "./styles/ProgressBar.css";
 
-function ProgressBar(percent) {
+function ProgressBarComponent() {
   return (
     <div className="progressbar">
-      <div className={`progressbar${percent}`} />
+      <ProgressBar />
     </div>
   );
 }
 
-export default ProgressBar;
+export default ProgressBarComponent;
