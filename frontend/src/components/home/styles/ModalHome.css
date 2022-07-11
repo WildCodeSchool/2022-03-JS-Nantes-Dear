@@ -1,7 +1,13 @@
 * {
   font-family: var(--font);
 }
+
+.modal-container {
+ border: 0px;
+}
+
 .modal {
+  outline: 0;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -10,13 +16,18 @@
   transform: translate(-50%, -50%);
   width: 75vw;
   max-width: 440px;
-  height: 45vh;
+  height: 48vh;
   max-height: 400px;
   border-radius: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   padding: 1rem;
+  background-color: white;
+}
+
+.modal :focus {
+  outline:0;
 }
 
 .button-container {

@@ -7,7 +7,6 @@ class CommentManager extends AbstractManager {
     return this.connection.query(
       `select * from ${comment.table} where comment = ?`,
       [comment]
-
     );
   }
 
@@ -28,7 +27,6 @@ class CommentManager extends AbstractManager {
     return this.connection.query(
       `update ${CommentManager.table} set user_id = ?, post_id = ?, created_at = ? where id = ?`,
       [comment.user_id, comment.post_id, comment.created_at]
-
     );
   }
 }
