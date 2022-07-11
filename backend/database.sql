@@ -28,7 +28,7 @@ CREATE TABLE `Comment` (
 CREATE TABLE `Category` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
-  `couleur` varchar(255)
+  `color` varchar(255)
 );
 
 ALTER TABLE `User` ADD FOREIGN KEY (`id`) REFERENCES `Comment` (`user_id`);
