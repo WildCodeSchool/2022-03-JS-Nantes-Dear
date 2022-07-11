@@ -64,6 +64,10 @@ body {
   align-items: center;
 }
 
+.sorry-arrow-return {
+  margin-left: 3rem;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .logo-not-adult {
     width: 30vw;
@@ -81,6 +85,9 @@ body {
   }
   .insta-pssst {
     width: 60vw;
+  }
+  .sorry-arrow-return {
+    margin-left: -3rem;
   }
 }
 
@@ -102,5 +109,9 @@ body {
   .insta-pssst {
     width: 25vw;
     height: 8vh;
+  }
+
+  .sorry-arrow-return {
+    margin-left: -2rem;
   }
 }

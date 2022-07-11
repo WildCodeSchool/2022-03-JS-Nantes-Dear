@@ -1,7 +1,9 @@
 import React from "react";
 import "./styles/Hello.css";
+import { Link } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
 import logo from "../../assets/dear-logo-white.png";
+import ButtonGo from "./ButtonGo";
 
 export default function Hello() {
   return (
@@ -17,6 +19,11 @@ export default function Hello() {
           {" "}
           Bienvenue dans la TEAM DEAR!
         </p>
+      </div>
+      <div className="button-go-inscription">
+        <Link to="/home">
+          <ButtonGo />
+        </Link>
       </div>
     </div>
   );

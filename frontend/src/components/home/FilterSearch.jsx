@@ -22,14 +22,15 @@ function FilterSearch() {
     <div className="div-filter-search">
       <div className="filter-search">
         <div className="logosearch">
-          <img src={logosearch} className="logosearch" alt="logosearch" />
           <input
+            className="inputsearch"
             type="text"
             name="searchbar"
             id="searchbar"
             placeholder="Rechercher"
             onChange={handleSearchTerm}
           />
+          <img src={logosearch} className="logosearch" alt="logosearch" />
         </div>
         <div className="logofilter">
           <NavFilterPub />

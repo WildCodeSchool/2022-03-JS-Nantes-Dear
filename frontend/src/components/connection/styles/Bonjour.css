@@ -10,15 +10,45 @@
   color: var(--white);
   font-size: 2rem;
   font-weight: bold;
-  margin-left: 5rem;
+  margin-left: 1rem;
 }
 
-@media screen and (min-width: 768px) {
+.button-go-connection {
+  margin-top: 5rem;
+  margin-left: 9rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .logo-connection {
-    height: 30vh;
+    height: 25vh;
   }
 
   .bonjour-text-connection {
-    margin-left: 30rem;
+    margin-top: 3rem;
+    margin-left: 10rem;
+    font-size: 3rem;
+  }
+
+  .button-go-connection {
+    margin-top: 6rem;
+    margin-left: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-connection {
+    height: 20vh;
+  }
+
+  .bonjour-text-connection {
+    margin-top: 3rem;
+    margin-left: 20rem;
+    font-size: 1.8rem;
+  }
+
+  .button-go-connection {
+    margin-top: 7rem;
+    margin-left: 37rem;
   }
 }
