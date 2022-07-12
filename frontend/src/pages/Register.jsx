@@ -8,14 +8,14 @@ import ButtonReturn from "../components/home/ButtonReturn";
 
 function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
-  // const role = "ROLE_USER";
 
   const handleRegister = () => {
+    // console.log(register);
     axios
       .post(
         `${import.meta.env.VITE_BACKEND_URL}/users/register`,
-        { data: register },
-        { withCredentials: true }
+        register // { data: register },
+        // { withCredentials: true }
       )
 
       // eslint-disable-next-line no-restricted-syntax
@@ -69,11 +69,12 @@ function Register() {
             }
           />
           <Link to="/registration/register/codemail">
-            <ButtonContinue onClick={handleRegister} />
+            <ButtonContinue handleSubmit={handleRegister} />
           </Link>
         </form>
       </div>
     </div>
   );
 }
+
 export default Register;

@@ -7,23 +7,23 @@ class UserController {
   static register = async (req, res) => {
     const { pseudo, age, email, password, role } = req.body;
 
-    const [user] = await models.user.findByMPseudo(pseudo);
+    const [user] = await models.user.findByPseudo(pseudo);
 
     if (user.length) {
       res.status(409).send({
-        error: "Cet email existe déjà",
+        error: "Cet pseudo existe déjà",
       });
     }
 
     const validationErrors = Joi.object({
-      pseudo: Joi.string.max(20).required(),
-      age: Joi.string.max(30).required(),
+      pseudo: Joi.string().max(20).required(),
+      age: Joi.string().max(30).required(),
       email: Joi.string().email().max(255).required(),
-      password: Joi.string().max(255).required(),
+      password: Joi.string().max(15).required(),
     }).validate({ pseudo, age, email, password }).error;
 
     if (validationErrors) {
-      res.status(422).send(validationErrors);
+      res.status(422).send(req.body);
       return;
     }
 
@@ -56,7 +56,7 @@ class UserController {
 
     const validationErrors = Joi.object({
       pseudo: Joi.string().max(15).required(),
-      password: Joi.string().max(255).required(),
+      password: Joi.string().max(15).required(),
     }).validate({ pseudo, password }).error;
 
     if (validationErrors) {

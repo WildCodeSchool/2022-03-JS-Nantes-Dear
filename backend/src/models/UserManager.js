@@ -25,15 +25,15 @@ class UserManager extends AbstractManager {
 
   insert(user) {
     return this.connection.query(
-      `insert into ${UserManager.table} (email, pseudo, password, role) values (?, ?, ?, ?)`,
-      [user.email, user.pseudo, user.hash, user.role]
+      `insert into ${UserManager.table} (email, pseudo, age, password, role) values (?, ?, ?, ?, ?)`,
+      [user.email, user.pseudo, user.age, user.hash, user.role]
     );
   }
 
   update(user) {
     return this.connection.query(
-      `update ${UserManager.table} set email = ?, pseudo = ?, password = ?, role = ? where id = ?`,
-      [user.email, user.pseudo, user.hash, user.role, user.id]
+      `update ${UserManager.table} set email = ?, pseudo = ?, age = ?, password = ?, role = ? where id = ?`,
+      [user.email, user.pseudo, user.age, user.hash, user.role, user.id]
     );
   }
 }

@@ -32,6 +32,7 @@
   color: #bdc3cf;
 }
 
+.inputPassword,
 .inputConfirmPassword,
 .inputEmail {
   color: var(--dark-blue);

@@ -2,7 +2,6 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
 import ButtonContinue from "./ButtonContinue";
-import ProgressBar from "./ProgressBar";
 import UserContext from "../../contexts/UserContext";
 
 export default function CardPseudo() {
@@ -10,8 +9,6 @@ export default function CardPseudo() {
 
   return (
     <div className="bloc-card-pseudo">
-      <ProgressBar />
-
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
         <h2>PSEUDO ET ÂGE</h2>
@@ -38,7 +35,7 @@ export default function CardPseudo() {
             className="option-age"
             id="share-select"
             value={register.age}
-            onChange={(e) => setRegister({ age: e.target.value })}
+            onChange={(e) => setRegister({ ...register, age: e.target.value })}
           >
             <option value="">--Choisir une tranche d'âge--</option>
             <option value="18-25">18 - 25 ans</option>
@@ -59,3 +56,15 @@ export default function CardPseudo() {
     </div>
   );
 }
+
+// CardPseudo.propTypes = {
+//   pseudo: PropTypes.string,
+//   age: PropTypes.number,
+
+// };
+
+// CardPseudo.defaultProps = {
+//   pseudo: PropTypes.string,
+//   age: PropTypes.number,
+
+// };
