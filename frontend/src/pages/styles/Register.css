@@ -38,10 +38,6 @@
   color: var(--dark-blue);
 }
 
-.div-arrow-return {
-  margin-left: -1rem;
-}
-
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .inputEmail,
   .inputPassword,
@@ -52,6 +48,9 @@
   }
   .register-title h2 {
     font-size: 1.3rem;
+  }
+  .register-arrow-return {
+    margin-left: -1rem;
   }
 }
 
@@ -65,8 +64,10 @@
   .register-title h2 {
     font-size: 1.1rem;
   }
-}
-
-a {
-  text-decoration: none;
+  a {
+    text-decoration: none;
+  }
+  .register-arrow-return {
+    margin-left: -5rem;
+  }
 }

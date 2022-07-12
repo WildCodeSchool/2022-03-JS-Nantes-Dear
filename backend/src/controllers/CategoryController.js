@@ -1,10 +1,8 @@
-const Joi = require("joi");
-
 const models = require("../models");
 
-class CommentController {
+class CategoryController {
   static browse = (req, res) => {
-    models.comment
+    models.category
       .findAll()
       .then(([rows]) => {
         res.send(rows);
@@ -16,7 +14,7 @@ class CommentController {
   };
 
   static read = (req, res) => {
-    models.comment
+    models.category
       .find(req.params.id)
       .then(([rows]) => {
         if (rows[0] == null) {
@@ -32,12 +30,14 @@ class CommentController {
   };
 
   static edit = (req, res) => {
-    const comment = req.body;
+    const category = req.body;
 
-    comment.id = parseInt(req.params.id, 10);
+    // TODO validations (length, format...)
 
-    models.comment
-      .update(comment)
+    category.id = parseInt(req.params.id, 10);
+
+    models.category
+      .update(category)
       .then(([result]) => {
         if (result.affectedRows === 0) {
           res.sendStatus(404);
@@ -51,43 +51,25 @@ class CommentController {
       });
   };
 
-  static add = async (req, res) => {
-    const { content /* , user_id, post_id, created_at */ } = req.body;
+  static add = (req, res) => {
+    const category = req.body;
 
-    const [comment] = await models.comment.findByPost(content);
+    // TODO validations (length, format...)
 
-    if (comment.lenght) {
-      res.status(409).send({
-        error: "?",
-      });
-    }
-
-    const validationErrors = Joi.object({
-      content: Joi.string().max(155).require(),
-    }).validate({ content }).error;
-
-    if (validationErrors) {
-      res.status(422).send(validationErrors);
-      return;
-    }
-
-    models.comment
-      .insert(content)
+    models.category
+      .insert(category)
       .then(([result]) => {
-        res.status(201).send({ id: result.insertId, content });
+        res.status(201).send({ ...category, id: result.insertId });
       })
       .catch((err) => {
         console.error(err);
-        res.status(500).send({
-          error: err.message,
-        });
+        res.sendStatus(500);
       });
   };
 
   static delete = (req, res) => {
-    models.comment
+    models.category
       .delete(req.params.id)
-
       .then(() => {
         res.sendStatus(204);
       })
@@ -98,4 +80,4 @@ class CommentController {
   };
 }
 
-module.exports = CommentController;
+module.exports = CategoryController;

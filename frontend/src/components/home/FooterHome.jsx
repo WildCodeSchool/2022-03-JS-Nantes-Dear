@@ -20,12 +20,14 @@ export default function FooterHome() {
           </Link>
         </div>
         <div className="logo-user-container">
-          <img
-            className="footer-logo-profile"
-            src={logoProfile}
-            alt="logoProfile"
-          />
-          <p> User </p>
+          <Link to="/useraccount">
+            <img
+              className="footer-logo-profile"
+              src={logoProfile}
+              alt="logoProfile"
+            />
+            <p> User </p>
+          </Link>
         </div>
       </div>
     </footer>

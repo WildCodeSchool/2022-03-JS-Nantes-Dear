@@ -29,7 +29,7 @@ function Register() {
 
   return (
     <div className="register">
-      <div className="div-arrow-return">
+      <div className="register-arrow-return">
         <ButtonReturn />
       </div>
       <div className="register-title">

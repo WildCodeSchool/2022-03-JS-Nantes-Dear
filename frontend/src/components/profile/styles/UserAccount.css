@@ -78,6 +78,7 @@
   flex-direction: column;
   align-items: center;
   color: var(--dark-blue);
+  background-color: white;
 }
 
 .profile-logout p {
@@ -99,7 +100,7 @@
   height: 5px;
 }
 
-button {
+.profile-category button {
   border: none;
 }
 .content-tabs {
@@ -111,7 +112,6 @@ button {
 }
 .content {
   padding: 20px;
-  display: none;
 }
 .content h2 {
   padding: 0px 0 5px 0px;

@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
 import ButtonContinue from "./ButtonContinue";
+import ButtonReturn from "../home/ButtonReturn";
 import UserContext from "../../contexts/UserContext";
 
 export default function CardPseudo() {
@@ -9,6 +10,9 @@ export default function CardPseudo() {
 
   return (
     <div className="bloc-card-pseudo">
+      <div className="pseudoreturnarrow">
+        <ButtonReturn />
+      </div>
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
         <h2>PSEUDO ET ÂGE</h2>
@@ -56,15 +60,3 @@ export default function CardPseudo() {
     </div>
   );
 }
-
-// CardPseudo.propTypes = {
-//   pseudo: PropTypes.string,
-//   age: PropTypes.number,
-
-// };
-
-// CardPseudo.defaultProps = {
-//   pseudo: PropTypes.string,
-//   age: PropTypes.number,
-
-// };

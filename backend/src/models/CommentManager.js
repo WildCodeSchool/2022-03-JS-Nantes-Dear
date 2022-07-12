@@ -1,23 +1,32 @@
 const AbstractManager = require("./AbstractManager");
 
 class CommentManager extends AbstractManager {
-  static table = "Comment";
+  static table = "comment";
 
-  insert(Comment) {
+  findByPost(comment) {
     return this.connection.query(
-      `insert into ${CommentManager.table} (created_at, user_id, post_id,) values (?, ?, ?)`,
-      [Comment.created_at, Comment.user_id, Comment.post_id]
+      `select * from ${comment.table} where comment = ?`,
+      [comment]
     );
   }
 
   findAll() {
-    return this.connection.query(`SELECT `);
+    return this.connection.query(
+      `select id, user_id, post_id from ${CommentManager.table}`
+    );
   }
 
-  update(Comment) {
+  insert(comment) {
     return this.connection.query(
-      `update ${CommentManager.table} set  = ? where id = ?`,
-      [Comment.created_at, Comment.user_id, Comment.post_id]
+      `insert into ${CommentManager.table} (user_id, post_id, created_at) values (?, ?, ?)`,
+      [comment.user_id, comment.post_id, comment.created_at]
+    );
+  }
+
+  update(comment) {
+    return this.connection.query(
+      `update ${CommentManager.table} set user_id = ?, post_id = ?, created_at = ? where id = ?`,
+      [comment.user_id, comment.post_id, comment.created_at]
     );
   }
 }

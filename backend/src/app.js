@@ -2,7 +2,9 @@ const express = require("express");
 const path = require("path");
 const cors = require("cors");
 const userRoutes = require("./routes/user.routes");
+const categoryRoutes = require("./routes/category.routes");
 const postRoutes = require("./routes/post.routes");
+const router = require("./router");
 
 const app = express();
 
@@ -30,7 +32,9 @@ app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
 
 // API routes
 app.use(userRoutes);
+app.use(categoryRoutes);
 app.use(postRoutes);
+app.use(router);
 
 // Redirect all requests to the REACT app
 app.get("*", (req, res) => {

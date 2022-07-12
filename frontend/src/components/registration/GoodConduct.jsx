@@ -38,7 +38,7 @@ function GoodConduct() {
           </p>
         </div>
         <div className="conduct-title-secondary">
-          <h3>Ne sont pas autoriséss :</h3>
+          <h3>Ne sont pas autorisés :</h3>
         </div>
 
         <div className="checking">

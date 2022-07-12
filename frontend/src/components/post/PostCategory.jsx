@@ -22,7 +22,7 @@ function PostCategory() {
             type="checkbox"
             id="category-post"
             name="category-post"
-            value="Relation sexuelle"
+            label="Relation sexuelle"
             onChange={handleOnChange}
           />
           Relation sexuelle
@@ -32,7 +32,7 @@ function PostCategory() {
             type="checkbox"
             id="category-post"
             name="category-post"
-            value="Vulve"
+            label="Vulve"
             onChange={handleOnChange}
           />
           Vulve
@@ -42,7 +42,7 @@ function PostCategory() {
             type="checkbox"
             id="category-post"
             name="category-post"
-            value="Pénis"
+            label="Pénis"
             onChange={handleOnChange}
           />
           Pénis
@@ -52,7 +52,7 @@ function PostCategory() {
             type="checkbox"
             id="category-post"
             name="category-post"
-            value="Non-binaire"
+            label="Non-binaire"
             onChange={handleOnChange}
           />
           Non-binaire
@@ -62,7 +62,7 @@ function PostCategory() {
             type="checkbox"
             id="category-post"
             name="category-post"
-            value="Autre"
+            label="Autre"
             onChange={handleOnChange}
           />
           Autre
