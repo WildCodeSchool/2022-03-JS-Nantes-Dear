@@ -11,7 +11,7 @@ class UserController {
 
     if (user.length) {
       res.status(409).send({
-        error: "Cet pseudo existe déjà",
+        error: "Ce pseudo existe déjà",
       });
     }
 

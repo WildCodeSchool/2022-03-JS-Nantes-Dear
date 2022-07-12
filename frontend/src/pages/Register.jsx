@@ -12,11 +12,7 @@ function Register() {
   const handleRegister = () => {
     // console.log(register);
     axios
-      .post(
-        `${import.meta.env.VITE_BACKEND_URL}/users/register`,
-        register // { data: register },
-        // { withCredentials: true }
-      )
+      .post(`${import.meta.env.VITE_BACKEND_URL}/users/register`, register)
 
       // eslint-disable-next-line no-restricted-syntax
       .then((response) => console.log(response.data))

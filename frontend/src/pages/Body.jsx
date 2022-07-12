@@ -62,7 +62,7 @@ export default function Body() {
           <Route path="/editpost/postcategory" element={<PostCategory />} />
         </Routes>
       </UserContext.Provider>
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/facul" element={<FACul />} />
         <Route path="/introadult" element={<IntroAdult />} />
@@ -85,7 +85,7 @@ export default function Body() {
         <Route path="/connection" element={<Connection />} />
         <Route path="/editpost" element={<EditPost />} />
         <Route path="/editpost/postcategory" element={<PostCategory />} />
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
