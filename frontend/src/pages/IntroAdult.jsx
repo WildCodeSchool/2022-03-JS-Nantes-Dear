@@ -16,7 +16,7 @@ function IntroAdult() {
         <img className="logo-intro-adult" src={logo} alt="logo Dear blanc" />
       </div>
       <h3 className="more18">As-tu plus de 18 ans ?</h3>
-      <div className="buttons-intro">
+      <div className="buttons-intro-adult">
         <Link to="/registration">
           <Adult />
         </Link>
