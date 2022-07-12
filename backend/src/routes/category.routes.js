@@ -8,3 +8,5 @@ routes.get("/category/:id", CategoryController.read);
 routes.post("/category", CategoryController.add);
 routes.put("/category/:id", CategoryController.edit);
 routes.delete("/category/:id", CategoryController.delete);
+
+module.exports = routes;
