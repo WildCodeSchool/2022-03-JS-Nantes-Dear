@@ -47,11 +47,11 @@ export default function Body() {
           <Route path="/registration/register" element={<Register />} />
           <Route path="/adminaccount" element={<AdminAccount />} />
           <Route
-            path="/registration/register/codemail/goodconduct"
+            path="/registration/register/goodconduct"
             element={<GoodConduct />}
           />
           <Route
-            path="/registration/register/codemail/goodconduct/hello"
+            path="/registration/register/goodconduct/hello"
             element={<Hello />}
           />
           <Route path="/home" element={<Home />} />
@@ -62,30 +62,6 @@ export default function Body() {
           <Route path="/editpost/postcategory" element={<PostCategory />} />
         </Routes>
       </UserContext.Provider>
-      {/* <Routes>
-        <Route path="/" element={<Intro />} />
-        <Route path="/facul" element={<FACul />} />
-        <Route path="/introadult" element={<IntroAdult />} />
-        <Route path="/sorrynotadult" element={<SorryNotAdult />} />
-        <Route path="/registration" element={<Registration />} />
-        <Route path="/registration/register" element={<Register />} />
-        <Route
-          path="/registration/register/goodconduct"
-          element={<GoodConduct />}
-        />
-        <Route
-          path="/registration/register/goodconduct/hello"
-          element={<Hello />}
-        />
-        <Route path="/connection/bonjour" element={<Bonjour />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/adminaccount" element={<AdminAccount />} />
-        <Route path="/useraccount" element={<UserAccount />} />
-        <Route path="/comment" element={<Comment />} />
-        <Route path="/connection" element={<Connection />} />
-        <Route path="/editpost" element={<EditPost />} />
-        <Route path="/editpost/postcategory" element={<PostCategory />} />
-      </Routes> */}
     </div>
   );
 }

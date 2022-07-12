@@ -10,7 +10,6 @@ function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
 
   const handleRegister = () => {
-    // console.log(register);
     axios
       .post(`${import.meta.env.VITE_BACKEND_URL}/users/register`, register)
 

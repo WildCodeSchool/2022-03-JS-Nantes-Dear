@@ -143,6 +143,22 @@ class UserController {
       });
   };
 
+  static checkPseudo = (req, res) => {
+    models.user
+      .findByPseudo(req.query.pseudo)
+      .then(([rows]) => {
+        if (rows[0] == null) {
+          res.sendStatus(200);
+        } else {
+          res.sendStatus(422);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
   static delete = (req, res) => {
     models.user
       .delete(req.params.id)

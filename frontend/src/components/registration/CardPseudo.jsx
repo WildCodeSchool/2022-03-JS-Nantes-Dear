@@ -1,12 +1,46 @@
 import React, { useContext } from "react";
-import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
+import axios from "axios";
+import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 import ButtonContinue from "./ButtonContinue";
 import ButtonReturn from "../home/ButtonReturn";
 import UserContext from "../../contexts/UserContext";
 
 export default function CardPseudo() {
   const { register, setRegister } = useContext(UserContext);
+
+  const navigate = useNavigate();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!register.pseudo || !register.age) {
+      swal({
+        title: "error!",
+        text: "Merci de renseigner un pseudo et une tranche d'âge",
+        icon: "error",
+        confirmButtonText: "Parfait !!",
+      });
+    } else {
+      axios
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/users/pseudo?pseudo=${
+            register.pseudo
+          }`
+        )
+
+        .then(() => navigate("/registration/register", { replace: true }))
+
+        .catch(() => {
+          swal({
+            title: "error!",
+            text: "Ce pseudo existe déjà",
+            icon: "error",
+            confirmButtonText: "Ok je change",
+          });
+        });
+    }
+  };
 
   return (
     <div className="bloc-card-pseudo">
@@ -53,9 +87,7 @@ export default function CardPseudo() {
         </form>
       </div>
       <div className="button-continue">
-        <Link to="/registration/register">
-          <ButtonContinue />
-        </Link>
+        <ButtonContinue handleSubmit={handleSubmit} />
       </div>
     </div>
   );
