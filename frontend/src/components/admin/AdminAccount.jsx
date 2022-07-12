@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BsListTask, BsPencilSquare } from "react-icons/bs";
 import { FaUserFriends } from "react-icons/fa";
-import FooterHome from "../home/FooterHome";
 import Moderation from "./Moderation";
 import Users from "./Users";
 import ManageFaCul from "./ManageFaCul";
@@ -96,7 +95,6 @@ function AdminAccount() {
             <ManageFaCul />
           </div>
         </div>
-        <FooterHome />
       </div>
     </div>
   );
