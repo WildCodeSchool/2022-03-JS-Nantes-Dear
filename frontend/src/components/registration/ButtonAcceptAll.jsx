@@ -4,7 +4,7 @@ import "./styles/ButtonAcceptAll.css";
 function ButtonAcceptAll() {
   return (
     <div className="buttonacceptall">
-      <h3>TOUT ACCEPTER</h3>
+      <h3>CONTINUER</h3>
     </div>
   );
 }
