@@ -1,3 +1,8 @@
+.pseudo-progressbar {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+}
 .title-card {
   color: var(--white);
   font-family: var(--font);

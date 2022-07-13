@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/CardPseudo.css";
-import ButtonContinue from "./ButtonContinue";
 import ProgressBar from "./ProgressBar";
+import ButtonContinue from "./ButtonContinue";
 import ButtonReturn from "../home/ButtonReturn";
 
 export default function CardPseudo() {
@@ -15,7 +15,7 @@ export default function CardPseudo() {
         <ButtonReturn />
       </div>
       <div className="pseudo-progressbar">
-        <ProgressBar now={40} />
+        <ProgressBar color="white" width="80vw" value={33} max={100} />
       </div>
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>
