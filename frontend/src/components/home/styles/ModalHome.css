@@ -3,7 +3,7 @@
 }
 
 .modal-container {
- border: 0px;
+  border: 0px;
 }
 
 .modal {
@@ -27,7 +27,7 @@
 }
 
 .modal :focus {
-  outline:0;
+  outline: 0;
 }
 
 .button-container {

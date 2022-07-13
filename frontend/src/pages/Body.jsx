@@ -7,9 +7,8 @@ import Register from "./Register";
 import GoodConduct from "../components/registration/GoodConduct";
 import Hello from "../components/registration/Hello";
 import Bonjour from "../components/connection/Bonjour";
-import EditPost from "./EditPost";
+import AddPost from "./AddPost";
 import Home from "./Home";
-import PostCategory from "../components/post/PostCategory";
 import Connection from "./Connection";
 import Comment from "./Comment";
 import FACul from "./FACul";
@@ -44,8 +43,7 @@ export default function Body() {
         <Route path="/useraccount" element={<UserAccount />} />
         <Route path="/comment" element={<Comment />} />
         <Route path="/connection" element={<Connection />} />
-        <Route path="/editpost" element={<EditPost />} />
-        <Route path="/editpost/postcategory" element={<PostCategory />} />
+        <Route path="/addpost" element={<AddPost />} />
       </Routes>
     </div>
   );
