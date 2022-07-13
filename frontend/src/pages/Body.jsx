@@ -17,6 +17,7 @@ import Comment from "./Comment";
 import FACul from "./FACul";
 import AdminAccount from "../components/admin/AdminAccount";
 import LoginAdmin from "./LoginAdmin";
+import UserActivities from "../components/admin/UserActivities";
 
 export default function Body() {
   const initialRegister = {
@@ -62,6 +63,7 @@ export default function Body() {
           <Route path="/addpost" element={<AddPost />} />
         </Routes>
       </UserContext.Provider>
+
     </div>
   );
 }

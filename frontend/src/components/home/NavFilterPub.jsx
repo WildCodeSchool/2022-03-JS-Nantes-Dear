@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./styles/NavFilterPub.css";
-import filter from "../../assets/filter-black.png";
+import filter from "../../assets/filter-blue.png";
 
 export default function NavFilterPub() {
   const [inactive, setInactive] = useState(true);
