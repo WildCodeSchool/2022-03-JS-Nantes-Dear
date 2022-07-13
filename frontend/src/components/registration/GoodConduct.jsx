@@ -111,7 +111,7 @@ function GoodConduct() {
         <div className="button-accept-all">
           <Link to="hello">
             <button
-              className="button-goodconduct"
+              className="chart-active"
               type="button"
               disabled={disabled}
               onClick={handleClick}
