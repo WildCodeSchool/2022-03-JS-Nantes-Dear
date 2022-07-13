@@ -21,8 +21,9 @@
   height: 70vh;
   display: flex;
   flex-direction: column;
-  color: white;
   justify-content: center;
+  text-align: center;
+  color: white;
   background-color: var(--dark-blue);
 }
 

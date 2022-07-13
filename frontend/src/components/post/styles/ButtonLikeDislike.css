@@ -34,27 +34,15 @@ path {
   transform-origin: center;
 }
 
-<<<<<<< HEAD
   .heart-background {
     width: 5vw;
     max-width: 30px;
     position: absolute;
     left: 0;
     right: 0;
-    z-index: -2;
+    z-index: -1;
     stroke: none;
   }
-=======
-.heart-background {
-  width: 5vw;
-  max-width: 30px;
-  position: absolute;
-  left: 0;
-  right: 0;
-  z-index: -1;
-  stroke: none;
-}
->>>>>>> 717c584606b278d201c9a25b13266f0998a11247
 
 .heart-main.active path {
   animation: stroke-animation 2s ease-in-out forwards;
