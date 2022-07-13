@@ -16,12 +16,12 @@
 .logo-intro-adult {
   width: 90vw;
   max-width: 400px;
-  margin: 0 auto;
 }
 
 .more18 {
   color: var(--white);
   margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .buttons-intro a {
@@ -44,6 +44,6 @@
   }
 
   .button-return-intro {
-    margin-left: -84rem;
+    margin-left: -95rem;
   }
 }

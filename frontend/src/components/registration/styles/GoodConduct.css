@@ -1,3 +1,8 @@
+.good-conduct {
+  background-color: var(--dark-blue);
+  height: 375vw;
+}
+
 .logo-conduct {
   height: 20vh;
   margin: 0 auto;
@@ -58,9 +63,14 @@ span {
   flex-direction: row;
   justify-content: center;
   text-decoration: none;
+  margin-bottom: 5rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .good-conduct {
+    height: 200vw;
+  }
+
   .conduct-title-first h2 {
     font-size: 1.8rem;
     margin-left: 12vw;
@@ -96,6 +106,10 @@ span {
 }
 
 @media screen and (min-width: 1024px) {
+  .good-conduct {
+    height: 100vw;
+  }
+
   .conduct-title-first h2 {
     font-size: 1.2rem;
     margin-left: 20vw;

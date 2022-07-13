@@ -4,7 +4,6 @@ import ButtonPublications from "./ButtonPublications";
 import "./styles/UserActivities.css";
 
 function UserActivities() {
-
   return (
     <div className="container-page-user-activities">
       <div className="userpageactivities">

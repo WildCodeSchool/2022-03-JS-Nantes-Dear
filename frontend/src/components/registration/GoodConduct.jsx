@@ -15,7 +15,6 @@ function GoodConduct() {
     <div className="good-conduct">
       <div className="goodconduct-progressbar">
         <ProgressBar color="white" width="80vw" value={90} max={100} />
-
       </div>
       <div className="div-logo-conduct">
         <img className="logo-conduct" src={logo} alt="logo Dear blanc" />
