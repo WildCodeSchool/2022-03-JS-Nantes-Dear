@@ -16,14 +16,16 @@ export default function PostCard({ post }) {
   return (
     <div className="postcard">
       <div className="headercard">
-        <h2> {user} user1100 </h2>
+        <h2>
+          <span className="dateText"> {postdate} 2020-02-12 </span> {user}
+          user1100{" "}
+        </h2>
         <p> {category} porno </p>
       </div>
       <div className="contentcard">
         <p>{content}</p>
       </div>
       <div className="footercard">
-        <p> {postdate} 2020-02-12 </p>
         <ButtonLikeDislike />
       </div>
     </div>
