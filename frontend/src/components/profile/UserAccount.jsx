@@ -28,7 +28,6 @@ function UserAccount() {
       <div className="profile-top">
         <div className="pseudo-top">
           <h1>Pseudo</h1>
-          <button type="button">Modifier mon profil</button>
         </div>
         <img className="logo-user-page" src={logoBlue} alt="logo Dear bleu" />
       </div>

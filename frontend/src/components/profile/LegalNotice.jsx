@@ -13,7 +13,7 @@ function LegalNotice() {
         dite L.C.E.N., nous portons à la connaissance des utilisateurs et
         visiteurs du site : dear-application.fr les informationssuivantes :
       </p>
-      <h2>ÉDITEUR </h2>
+      <h2 className="titlelegalnotice">ÉDITEUR </h2>
       <p>
         Le site dear-application.fr est la propriété exclusive de xxxx DEAR, qui
         l'édite. DEAR xxx au capital de xxxx€ Tél : 07 7101 11 29 Adresse : 02
@@ -24,7 +24,7 @@ function LegalNotice() {
         responsable de la publication : dear.officiel@gmail.com HÉBERGEMENT : Le
         site est hébergé par XXXXX
       </p>
-      <h2>DESCRIPTION DES SERVICES FOURNIS </h2>
+      <h2 className="titlelegalnotice">DESCRIPTION DES SERVICES FOURNIS </h2>
       <p>
         L'application DEAR a pour objet de fournir une information concernant
         l'ensemble des activités de la société. Le propriétaire de l'application
@@ -37,7 +37,7 @@ function LegalNotice() {
         sont susceptibles d'évoluer. Elles sont données sous réserve de
         modifications ayant été apportées depuis leur mise en ligne.
       </p>
-      <h2>
+      <h2 className="titlelegalnotice">
         Conditions générales d'utilisation de l'application et des services
         proposés.
       </h2>
@@ -58,7 +58,9 @@ function LegalNotice() {
         l'utilisateur qui est invité à s'yréférer le plus souvent possible afin
         d'en prendre connaissance.
       </p>
-      <h2>PROPRIÉTÉ INTELLECTUELLE ET CONTREFAÇONS</h2>
+      <h2 className="titlelegalnotice">
+        PROPRIÉTÉ INTELLECTUELLE ET CONTREFAÇONS
+      </h2>
       <p>
         Le propriétaire de l'application DEAR est propriétaire des droits de
         propriété intellectuelle ou détient les droits d'usage sur tous les
@@ -73,7 +75,7 @@ function LegalNotice() {
         conformément aux dispositions des articles L.335-2 et suivants du Code
         de Propriété Intellectuelle.
       </p>
-      <h2>LIENS HYPERTEXTES ET COOKIES</h2>
+      <h2 className="titlelegalnotice">LIENS HYPERTEXTES ET COOKIES</h2>
       <p>
         L'application DEAR contient un certain nombre de liens hypertextes vers
         d'autres sites (partenaires, informations ...) mis en place avec
@@ -96,7 +98,7 @@ function LegalNotice() {
         l'utilisateur peut refuser l'installation des cookies directement via le
         site ouapplication en question.{" "}
       </p>
-      <h2>Limitations de responsabilité.</h2>
+      <h2 className="titlelegalnotice">Limitations de responsabilité.</h2>
       <p>
         Dear ne pourra être tenue responsable des dommages directs et indirects
         causés au matériel de l'utilisateur, lors de l'accès à sa landing page
@@ -112,10 +114,10 @@ function LegalNotice() {
         raciste, injurieux, diffamant, ou pornographique, quel que soit le
         support utilisé (texte, photographie...).
       </p>
-      <h2>
+      <h2 className="titlelegalnotice">
         PROTECTION DES BIENS ET DES PERSONNES - GESTION DES DONNÉES PERSONNELLES
       </h2>
-      <p>
+      <p className="lastparagraphlegalnotice">
         En France, les données personnelles sont notamment protégées par la loi
         n° 78-87 du 6 janvier 1978, la loi no 2004-801 du 6 août 2004, l'article
         L. 226-13 du Code pénal et la Directive Européenne du 24 octobre 1995.

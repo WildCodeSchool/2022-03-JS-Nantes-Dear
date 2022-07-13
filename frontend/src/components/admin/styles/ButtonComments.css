@@ -1,0 +1,19 @@
+.buttoncommentsuser {
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    width: 7rem;
+    height: 1.5rem;
+    background-color: var(--light-red);
+    color: var(--white);
+    border-radius: 5rem;
+    margin-top: 1rem;
+}
+
+.buttoncommentsuser h3 {
+    font-size: 0.7rem;
+}
+
+.buttoncommentsuser:hover {
+    background: var(--mustard);
+}

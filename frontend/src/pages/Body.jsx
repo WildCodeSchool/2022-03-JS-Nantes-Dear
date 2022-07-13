@@ -16,6 +16,7 @@ import FACul from "./FACul";
 import AdminAccount from "../components/admin/AdminAccount";
 import UserAccount from "../components/profile/UserAccount";
 import LoginAdmin from "./LoginAdmin";
+import UserActivities from "../components/admin/UserActivities";
 
 export default function Body() {
   return (
@@ -39,6 +40,7 @@ export default function Body() {
         <Route path="/home" element={<Home />} />
         <Route path="/loginadmin" element={<LoginAdmin />} />
         <Route path="/adminaccount" element={<AdminAccount />} />
+        <Route path="/useractivities" element={<UserActivities />} />
         <Route path="/useraccount" element={<UserAccount />} />
         <Route path="/comment" element={<Comment />} />
         <Route path="/connection" element={<Connection />} />

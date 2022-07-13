@@ -6,9 +6,9 @@ function MyPersonalDatas() {
   return (
     <div className="container-pseudo">
       <form>
-        <label htmlFor="name">
+        <label htmlFor="namepseudo">
           Nouveau Pseudo :
-          <input type="text" name="name" />
+          <input className="inputpseudo" type="text" name="name" />
         </label>
         <div className="container-modify">
           <button className="modify-button" type="button">

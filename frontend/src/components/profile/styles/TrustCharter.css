@@ -10,9 +10,20 @@
   height: 4vh;
 }
 
-.chart-paragraph {
+.chart-paragraph,
+.chart-paragraph-2 {
   margin-bottom: 12px;
   margin-top: 6px;
+}
+
+.chart-paragraph-2 {
+  margin-bottom: 5rem
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .logo-charter {
+    width: 8vw;
+  }
 }
 
 @media screen and (min-width: 1024px) {
