@@ -1,4 +1,6 @@
 .menu {
+  position: absolute;
+  left: 0;
   width: 100vw;
   height: 80vh;
   font-family: var(--font);
@@ -74,8 +76,10 @@ input[type="checkbox"]:checked {
   margin: 0px;
 }
 
-.menu.inactive {
+.menu.inactive .categorie-container {
+  display: none;
   background-color: white;
+
 }
 
 .menu.inactive .confirm-filter-container {

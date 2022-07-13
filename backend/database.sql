@@ -3,9 +3,7 @@ CREATE TABLE `User` (
   `email` varchar(255),
   `pseudo` varchar(255),
   `password` varchar(255),
-  `avatar` varchar(255),
   `role` varchar(255),
-  `profession` varchar(255)
 );EXISTS
 
 CREATE TABLE `Post` (

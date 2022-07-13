@@ -6,6 +6,10 @@
  border: 0px;
 }
 
+body.ReactModal__Body--open{
+  background-color: white;
+}
+
 .modal {
   outline: 0;
   position: fixed;

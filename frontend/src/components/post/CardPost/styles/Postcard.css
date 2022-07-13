@@ -1,0 +1,48 @@
+.postcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin: 1.5rem;
+    /* border: rgb(128, 128, 128,0.5) solid 0.5px; */
+    height: 25vh;
+    width: 100vw;
+}
+
+.postcard * {
+    font-size: 0.8rem;
+    font-family: var(--font);
+}
+
+.headercard {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    background-color: var(--light-purple);
+    
+}
+
+.headercard h2 {
+    font-weight: 600;
+}
+
+.contentcard {
+    height: 70%;
+    background-color: var(--light-purple);
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+}
+
+.contentcard * {
+    font-weight: 300;
+}
+
+.footercard{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+
+}

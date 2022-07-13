@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/FilterSearch.css";
-import logofilter from "../../assets/filter-blue.png";
 import logosearch from "../../assets/search.png";
+import NavFilterPub from "./NavFilterPub";
 
 function FilterSearch() {
   const [datas, setDatas] = useState([]);
@@ -9,7 +9,7 @@ function FilterSearch() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/posts`)
       .then((response) => response.json())
-      .then((json) => setDatas(json));
+      .then((json) => setDatas(json[0]));
   }, []);
 
   const handleSearchTerm = (e) => {
@@ -33,7 +33,7 @@ function FilterSearch() {
           <img src={logosearch} className="logosearch" alt="logosearch" />
         </div>
         <div className="logofilter">
-          <img src={logofilter} className="logofilter" alt="logofilter" />
+          <NavFilterPub />
         </div>
       </div>
       <div className="search-result">
