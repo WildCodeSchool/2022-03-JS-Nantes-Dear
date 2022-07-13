@@ -8,7 +8,7 @@ export default function FooterHome() {
   return (
     <footer className="footerHome">
       <div className="publication-button">
-        <Link to="/editpost">
+        <Link to="/addpost">
           <img id="logoPlus" src={logoPlus} alt="icône créer publication" />
         </Link>
       </div>
