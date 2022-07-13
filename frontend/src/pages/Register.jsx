@@ -1,31 +1,79 @@
-import React, { useContext } from "react";
-import { Link } from "react-router-dom";
+import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
+import swal from "sweetalert";
+import ProgressBar from "../components/registration/ProgressBar";
 import UserContext from "../contexts/UserContext";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
 
-function Register() {
+export default function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
+  const [verifyEmail, setVerifyEmail] = useState(false);
 
-  const handleRegister = () => {
-    axios
-      .post(`${import.meta.env.VITE_BACKEND_URL}/users/register`, register)
+  const navigate = useNavigate();
 
-      // eslint-disable-next-line no-restricted-syntax
-      .then((response) => console.log(response.data))
-      .catch((err) => {
-        // alert(err.response.data.error);
-        console.error(err);
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!register.email || !register.password || !register.passwordverified) {
+      swal({
+        title: "error!",
+        text: "Merci de renseigner tous les champs",
+        icon: "error",
+        confirmButtonText: "Parfait !!",
       });
-    setRegister(initialRegister);
+    } else {
+      axios
+        .get(
+          `${import.meta.env.VITE_BACKEND_URL}/users/email?email=${
+            register.email
+          }`
+        )
+        .then(() => setVerifyEmail(true))
+
+        .catch(() => {
+          swal({
+            title: "Error!",
+            text: "Cet email existe déjà",
+            icon: "error",
+            confirmButtonText: "ok",
+          });
+        });
+    }
+    if (verifyEmail && register.password !== register.passwordverified) {
+      swal({
+        title: "Error!",
+        text: "Les mots de passe sont différents",
+        icon: "error",
+        confirmButtonText: "Match !!",
+      });
+    } else {
+      axios
+        .post(`${import.meta.env.VITE_BACKEND_URL}/users/register`, register)
+
+        .then(() =>
+          navigate("/registration/register/goodconduct", { replace: true })
+        )
+        .catch(() => {
+          swal({
+            title: "error!",
+            text: "Ce email existe déjà",
+            icon: "error",
+            confirmButtonText: "Ok je change",
+          });
+        });
+      setRegister(initialRegister);
+    }
   };
 
   return (
     <div className="register">
       <div className="register-arrow-return">
         <ButtonReturn />
+      </div>
+      <div className="register-progressbar">
+        <ProgressBar color="white" width="80vw" value={66} max={100} />
       </div>
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>
@@ -63,13 +111,11 @@ function Register() {
               setRegister({ ...register, passwordverified: e.target.value })
             }
           />
-          <Link to="/registration/register/codemail">
-            <ButtonContinue handleSubmit={handleRegister} />
-          </Link>
+          <div className="button-continue">
+            <ButtonContinue handleSubmit={handleSubmit} />
+          </div>
         </form>
       </div>
     </div>
   );
 }
-
-export default Register;

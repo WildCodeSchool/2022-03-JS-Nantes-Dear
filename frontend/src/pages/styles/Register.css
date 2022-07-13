@@ -7,6 +7,11 @@
   margin-bottom: 1vh;
 }
 
+.register-progressbar {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
 .form-register {
   display: flex;
   flex-direction: column;

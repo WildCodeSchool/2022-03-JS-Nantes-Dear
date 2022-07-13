@@ -3,7 +3,6 @@ import "./styles/PostText.css";
 import axios from "axios";
 import swal from "sweetalert";
 import ButtonSuivantPost from "./ButtonSuivantPost";
-import PostHeader from "./PostHeader";
 
 function PostText() {
   const [content, setContent] = useState("");
@@ -35,7 +34,6 @@ function PostText() {
     <div className="div-post-texte">
       <div className="bloc-texte-post">
         <form className="form-post">
-          <PostHeader />
           <label className="postform" htmlFor="post">
             <textarea
               className="inputformpost"

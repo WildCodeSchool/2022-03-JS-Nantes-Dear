@@ -7,6 +7,7 @@ const { isAdmin } = require("../middlewares/isAdminMiddleware");
 
 routes.get("/users", authorization, isAdmin, UserController.browse);
 routes.get("/users/pseudo", UserController.checkPseudo);
+routes.get("/users/email", UserController.checkEmail);
 routes.post("/users/register", UserController.register);
 routes.post("/users/login", UserController.login);
 routes.get("/users/logout", authorization, UserController.logout);

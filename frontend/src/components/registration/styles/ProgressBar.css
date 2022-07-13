@@ -1,0 +1,43 @@
+/* .progressbarTwenty {
+  width: 20%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+.progressbarForty {
+  width: 40%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+.progressbarSixty {
+  width: 60%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+.progressbarHeighty {
+  width: 80%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--white);
+}
+
+.progressbarHundred {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background-color: var(--white);
+} */
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .progressbar {
+    height: 7px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .progressbar {
+    width: 30%;
+    margin-left: 28rem;
+  }
+}

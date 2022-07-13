@@ -17,6 +17,7 @@ import Connection from "./Connection";
 import Comment from "./Comment";
 import FACul from "./FACul";
 import AdminAccount from "../components/admin/AdminAccount";
+import LoginAdmin from "./LoginAdmin";
 
 export default function Body() {
   const initialRegister = {
@@ -39,13 +40,11 @@ export default function Body() {
       <UserContext.Provider value={values}>
         <Routes>
           <Route path="/" element={<Intro />} />
-          <Route path="/useraccount" element={<UserAccount />} />
           <Route path="/facul" element={<FACul />} />
           <Route path="/introadult" element={<IntroAdult />} />
           <Route path="/sorrynotadult" element={<SorryNotAdult />} />
           <Route path="/registration" element={<Registration />} />
           <Route path="/registration/register" element={<Register />} />
-          <Route path="/adminaccount" element={<AdminAccount />} />
           <Route
             path="/registration/register/goodconduct"
             element={<GoodConduct />}
@@ -54,10 +53,13 @@ export default function Body() {
             path="/registration/register/goodconduct/hello"
             element={<Hello />}
           />
+          <Route path="/connection/bonjour" element={<Bonjour />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/loginadmin" element={<LoginAdmin />} />
+          <Route path="/adminaccount" element={<AdminAccount />} />
+          <Route path="/useraccount" element={<UserAccount />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/connection" element={<Connection />} />
-          <Route path="/connection/bonjour" element={<Bonjour />} />
           <Route path="/editpost" element={<EditPost />} />
           <Route path="/editpost/postcategory" element={<PostCategory />} />
         </Routes>

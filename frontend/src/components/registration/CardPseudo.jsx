@@ -3,6 +3,7 @@ import "./styles/CardPseudo.css";
 import axios from "axios";
 import swal from "sweetalert";
 import { useNavigate } from "react-router-dom";
+import ProgressBar from "./ProgressBar";
 import ButtonContinue from "./ButtonContinue";
 import ButtonReturn from "../home/ButtonReturn";
 import UserContext from "../../contexts/UserContext";
@@ -46,6 +47,9 @@ export default function CardPseudo() {
     <div className="bloc-card-pseudo">
       <div className="pseudoreturnarrow">
         <ButtonReturn />
+      </div>
+      <div className="pseudo-progressbar">
+        <ProgressBar color="white" width="80vw" value={33} max={100} />
       </div>
       <div className="title-card">
         <h1>Procédons ensemble à ton inscription</h1>

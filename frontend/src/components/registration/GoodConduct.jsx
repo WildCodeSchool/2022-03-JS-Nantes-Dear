@@ -4,6 +4,7 @@ import "./styles/GoodConduct.css";
 import logo from "../../assets/dear-logo-white.png";
 import Checkbox from "./Checkbox";
 import ButtonAcceptAll from "./ButtonAcceptAll";
+import ProgressBar from "./ProgressBar";
 
 function GoodConduct() {
   const [checked, setChecked] = useState(false);
@@ -12,6 +13,9 @@ function GoodConduct() {
   };
   return (
     <div className="good-conduct">
+      <div className="goodconduct-progressbar">
+        <ProgressBar color="white" width="80vw" value={90} max={100} />
+      </div>
       <div className="div-logo-conduct">
         <img className="logo-conduct" src={logo} alt="logo Dear blanc" />
       </div>
