@@ -1,16 +1,21 @@
-import { React, useState } from "react";
+import { React, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/GoodConduct.css";
 import logo from "../../assets/dear-logo-white.png";
-import Checkbox from "./Checkbox";
-import ButtonAcceptAll from "./ButtonAcceptAll";
 import ProgressBar from "./ProgressBar";
 
 function GoodConduct() {
-  const [checked, setChecked] = useState(false);
-  const onChange = () => {
-    setChecked(!checked);
+  const ref = useRef(null);
+  const [disabled, setDisabled] = useState(false);
+
+  const handleClick = (e) => {
+    if (ref.current.checked) {
+      setDisabled(true);
+    } else {
+      e.preventDefault();
+    }
   };
+
   return (
     <div className="good-conduct">
       <div className="goodconduct-progressbar">
@@ -46,85 +51,59 @@ function GoodConduct() {
         </div>
 
         <div className="checking">
-          <Checkbox
-            id="checkbox"
-            label="La Divulgation d’informations personnelles."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Le harcèlement moral, les menaces, les discours
-          haineux, la diffamation ayant pour but 
-          d’intimider ou de porter atteintes aux membres
-          de la communauté."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="La discrimination. Tout post visant une personne
-          ou un groupe sur la base de la race, l’origine 
-          éthique, le genre, la religion, l’orientation sexuelle,
-          ou le handicap."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Les comportements inutiles. Tout post étant
-          inutilement inamical ou hostile envers les 
-          autres membres de la communauté DEAR ou 
-          un groupe de notre communauté."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Mauvais comportements sexuels. N’est pas
-          autorisé la demande ou le partage de contact
-          non sollicités. Le harcèlement sexuel, demande
-          agressive de rencontres. Supplier quelqu’un de 
-          répondre à une demande, spammer les membres
-          dans l’espoir de trouver des rencards."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Le harcèlement moral, les menaces, les discours
-          haineux, la diffamation ayant pour but 
-          d’intimider ou de porter atteintes aux membres
-          de la communauté."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Demande de sexe. Tout post à la recherche de 
-          sexe, sexfriends ou faveurs sexuelles."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Toute activités illégales non autorisées. Tout
-          post planifiant, coordonnant ou exécutant des
-          infractions pénales interdites (escroquerie,etc…)
-          ainsi que promouvoir ou inciter d’autres personnes
-          à s’engager dans des activités illégales."
-            value={checked}
-            onChange={onChange}
-          />
-          <Checkbox
-            id="checkbox"
-            label="Toutes photos postées montrant des parties 
-          génitales, du spermes, des sécrétions vaginales,
-          de l’urine et des excréments sont strictement 
-          interdites."
-            value={checked}
-            onChange={onChange}
-          />
+          <label htmlFor="box">
+            <input className="box" ref={ref} id="box" type="checkbox" />
+            La Divulgation d’informations personnelles.
+          </label>
+          <label htmlFor="box">
+            <input className="box" ref={ref} id="box" type="checkbox" />
+            Le harcèlement moral, les menaces, les discours haineux, la
+            diffamation ayant pour but d’intimider ou de porter atteintes aux
+            membres de la communauté.
+          </label>
+          <label htmlFor="box">
+            <input className="box" ref={ref} id="box" type="checkbox" />
+            La discrimination. Tout post visant une personne ou un groupe sur la
+            base de la race, l’origine éthique, le genre, la religion,
+            l’orientation sexuelle, ou le handicap.
+          </label>
+          <label htmlFor="box">
+            <input ref={ref} id="box" type="checkbox" />
+            Les comportements inutiles. Tout post étant inutilement inamical ou
+            hostile envers les autres membres de la communauté DEAR ou un groupe
+            de notre communauté.
+          </label>
+          <label htmlFor="box">
+            <input ref={ref} id="box" type="checkbox" />
+            Mauvais comportements sexuels. N’est pas autorisé la demande ou le
+            partage de contact non sollicités. Le harcèlement sexuel, demande
+            agressive de rencontres. Supplier quelqu’un de répondre à une
+            demande, spammer les membres dans l’espoir de trouver des rencards.
+          </label>
+          <label htmlFor="box">
+            <input ref={ref} id="box" type="checkbox" />
+            Le harcèlement moral, les menaces, les discours haineux, la
+            diffamation ayant pour but d’intimider ou de porter atteintes aux
+            membres de la communauté.
+          </label>
+          <label htmlFor="box">
+            <input ref={ref} id="box" type="checkbox" />
+            Demande de sexe. Tout post à la recherche de sexe, sexfriends ou
+            faveurs sexuelles.
+          </label>
+          <label htmlFor="box">
+            <input ref={ref} id="box" type="checkbox" />
+            Toute activités illégales non autorisées. Tout post planifiant,
+            coordonnant ou exécutant des infractions pénales interdites
+            (escroquerie,etc…) ainsi que promouvoir ou inciter d’autres
+            personnes à s’engager dans des activités illégales.
+          </label>
+          <label htmlFor="box">
+            <input ref={ref} id="box" type="checkbox" />
+            Toutes photos postées montrant des parties génitales, du sperme, des
+            sécrétions vaginales, de l’urine et des excréments sont strictement
+            interdites.
+          </label>
         </div>
         <div className="conduct-conclusion">
           <p>
@@ -135,7 +114,14 @@ function GoodConduct() {
         </div>
         <div className="button-accept-all">
           <Link to="hello">
-            <ButtonAcceptAll />
+            <button
+              className="chart-active"
+              type="button"
+              disabled={disabled}
+              onClick={handleClick}
+            >
+              CONTINUER
+            </button>
           </Link>
         </div>
       </div>

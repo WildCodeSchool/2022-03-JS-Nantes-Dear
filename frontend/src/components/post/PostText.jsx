@@ -2,7 +2,7 @@ import { React, useState } from "react";
 import "./styles/PostText.css";
 import axios from "axios";
 import swal from "sweetalert";
-import ButtonSuivantPost from "./ButtonSuivantPost";
+import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
   const [content, setContent] = useState("");
@@ -30,9 +30,28 @@ function PostText() {
         });
     }
   };
+
   return (
     <div className="div-post-texte">
+      <div className="title-post-category">
+        <h1>À quelle catégorie</h1>
+        <h1>appartient ce post?</h1>
+      </div>
+      <div className="form-post-text">
+        <select className="option-category-post" id="share-select">
+          <option value="">--Choisir une catégorie--</option>
+          <option value="">Témoignage</option>
+          <option value="">Bien être sexuel</option>
+          <option value="">Amour</option>
+          <option value="">Polyamoure</option>
+          <option value="">Relation sexuelle</option>
+          <option value="">Vulve</option>
+          <option value="">Pénis</option>
+          <option value="">Non-binaire</option>
+        </select>
+      </div>
       <div className="bloc-texte-post">
+        <h1 className="title-post-message"> Écrit ton message ici :</h1>
         <form className="form-post">
           <label className="postform" htmlFor="post">
             <textarea
@@ -47,8 +66,10 @@ function PostText() {
           </label>
         </form>
       </div>
-      <div className="button-suivant-post">
-        <ButtonSuivantPost handleSubmit={handleSubmit} />
+      <div className="button-publier-post">
+        {/* <Link to="/editpost/postcategory"> */}
+        <ButtonPublierPost handleSubmit={handleSubmit} />
+        {/* </Link> */}
       </div>
     </div>
   );

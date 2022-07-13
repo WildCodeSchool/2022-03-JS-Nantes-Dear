@@ -8,10 +8,16 @@ class UserController {
     const { pseudo, age, email, password, role } = req.body;
 
     const [user] = await models.user.findByPseudo(pseudo);
-
     if (user.length) {
       res.status(409).send({
         error: "Ce pseudo existe déjà",
+      });
+    }
+
+    const [mail] = await models.user.findByMail(email);
+    if (mail.length) {
+      res.status(409).send({
+        error: "Cet email existe déjà",
       });
     }
 
