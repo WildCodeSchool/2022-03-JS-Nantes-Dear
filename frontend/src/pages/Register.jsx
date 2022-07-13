@@ -54,7 +54,7 @@ function Register() {
         <ButtonReturn />
       </div>
       <div className="register-progressbar">
-        <ProgressBar now={60} />
+        <ProgressBar color="white" width="80vw" value={66} max={100} />
       </div>
       <div className="register-title">
         <h2>Procédons ensemble à ton inscription</h2>

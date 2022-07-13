@@ -11,7 +11,6 @@ export default function Home() {
       <HeaderHome />
       <FilterSearch />
       <PostList />
-
       <div className="Home-Modal">
         <ModalHome />
       </div>

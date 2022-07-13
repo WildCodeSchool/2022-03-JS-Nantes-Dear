@@ -11,7 +11,7 @@ export default function ModalHome() {
   };
 
   return (
-    <div>
+    <div className="modal-container">
       <ReactModal
         isOpen={modalIsOpen}
         onRequestClose={closeModal}
