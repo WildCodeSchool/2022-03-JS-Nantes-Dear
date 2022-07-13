@@ -1,6 +1,7 @@
 import { React, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/GoodConduct.css";
+import ProgressBar from "./ProgressBar";
 import logo from "../../assets/dear-logo-white.png";
 
 function GoodConduct() {
@@ -17,7 +18,9 @@ function GoodConduct() {
 
   return (
     <div className="good-conduct">
-      <div className="goodconduct-progressbar" />
+      <div className="goodconduct-progressbar">
+        <ProgressBar color="white" width="80vw" value={90} max={100} />
+      </div>
       <div className="div-logo-conduct">
         <img className="logo-conduct" src={logo} alt="logo Dear blanc" />
       </div>

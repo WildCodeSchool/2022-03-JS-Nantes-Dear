@@ -119,7 +119,7 @@ function TrustCharter() {
         plusinteragir avec la communauté!
       </p>
       <h2>ENGAGEMENT N°7 : CLARTÉ DES INFORMATIONS D'USAGE.</h2>
-      <p className="chart-paragraph">
+      <p className="chart-paragraph-2">
         Conditions Générales d'Utilisation DEAR sont facilement accessibles et
         rédigées dans un langage compréhensible par tous.tes. Il en va de même
         concernant les conditionsd'engagement de la communauté: “DEAR ou ne pas
