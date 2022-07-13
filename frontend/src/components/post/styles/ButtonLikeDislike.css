@@ -28,35 +28,35 @@
   position: relative;
 }
 
-  svg {
-    overflow: visible;
-    width: 5vw;
-    max-width: 30px;
-  }
+svg {
+  overflow: visible;
+  width: 5vw;
+  max-width: 30px;
+}
 
-  path {
-    stroke-dashoffset: 0;
-    stroke-dasharray: 1550;
-    transform-origin: center;
-  }
+path {
+  stroke-dashoffset: 0;
+  stroke-dasharray: 1550;
+  transform-origin: center;
+}
 
-  .heart-background {
-    width: 5vw;
-    max-width: 30px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    stroke: none;
-  }
+.heart-background {
+  width: 5vw;
+  max-width: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  stroke: none;
+}
 
-  .heart-main.active path {
-    animation: stroke-animation 2s ease-in-out forwards;
-  }
+.heart-main.active path {
+  animation: stroke-animation 2s ease-in-out forwards;
+}
 
-  .heart-main.active ~ .heart-background path {
-    animation: fade-animation 2s ease-in-out forwards;
-  }
+.heart-main.active ~ .heart-background path {
+  animation: fade-animation 2s ease-in-out forwards;
+}
 
 @keyframes stroke-animation {
   0% {
@@ -101,4 +101,3 @@
     opacity: 0;
   }
 }
-
