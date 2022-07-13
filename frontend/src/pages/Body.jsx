@@ -16,10 +16,11 @@ import FACul from "./FACul";
 import AdminAccount from "../components/admin/AdminAccount";
 import UserAccount from "../components/profile/UserAccount";
 import LoginAdmin from "./LoginAdmin";
+import LayoutAdmin from "../components/layout/LayoutAdmin";
 
 export default function Body() {
   return (
-    <div>
+    <div className="Body">
       <Routes>
         <Route path="/" element={<Intro />} />
         <Route path="/facul" element={<FACul />} />
@@ -36,14 +37,18 @@ export default function Body() {
           element={<Hello />}
         />
         <Route path="/connection/bonjour" element={<Bonjour />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/loginadmin" element={<LoginAdmin />} />
-        <Route path="/adminaccount" element={<AdminAccount />} />
         <Route path="/useraccount" element={<UserAccount />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/comment" element={<Comment />} />
         <Route path="/connection" element={<Connection />} />
         <Route path="/editpost" element={<EditPost />} />
         <Route path="/editpost/postcategory" element={<PostCategory />} />
+
+        <Route path="/admin" element={<LayoutAdmin />}>
+          <Route index element={<LoginAdmin />} />
+          <Route path="/admin/login" element={<LoginAdmin />} />
+          <Route path="/admin/account" element={<AdminAccount />} />
+        </Route>
       </Routes>
     </div>
   );
