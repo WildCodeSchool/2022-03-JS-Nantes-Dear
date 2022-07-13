@@ -3,7 +3,7 @@
 }
 
 .modal-container {
- border: 0px;
+  border: 0px;
 }
 
 body.ReactModal__Body--open{
@@ -36,7 +36,7 @@ body.ReactModal__Body--open{
 }
 
 .modal :focus {
-  outline:0;
+  outline: 0;
 }
 
 .button-container {
