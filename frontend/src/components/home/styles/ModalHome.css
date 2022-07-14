@@ -6,6 +6,14 @@
   border: 0px;
 }
 
+body.ReactModal__Body--open{
+  background-color: white;
+}
+
+.ReactModal__Overlay,.ReactModal__Overlay--after-open{
+  z-index: 2;
+}
+
 .modal {
   outline: 0;
   position: fixed;
@@ -24,6 +32,7 @@
   justify-content: space-around;
   padding: 1rem;
   background-color: white;
+  z-index: 1;
 }
 
 .modal :focus {

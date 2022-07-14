@@ -6,10 +6,6 @@ export default function ModalHome() {
   let subtitle;
   const [modalIsOpen, setIsOpen] = React.useState(true);
 
-  const afterOpenModal = () => {
-    subtitle.style.color = "#f00";
-  };
-
   const closeModal = () => {
     setIsOpen(false);
   };
@@ -18,9 +14,9 @@ export default function ModalHome() {
     <div className="modal-container">
       <ReactModal
         isOpen={modalIsOpen}
-        onAfterOpen={afterOpenModal}
         onRequestClose={closeModal}
         className="modal"
+        ariaHideApp={false}
       >
         <div className="text-modal-container">
           <h2 className="welcome" ref={subtitle}>
