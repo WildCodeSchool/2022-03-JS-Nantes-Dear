@@ -1,5 +1,5 @@
-/* eslint-disable no-undef */
 /* eslint-disable camelcase */
+/* eslint-disable no-undef */
 const Joi = require("joi");
 const models = require("../models");
 
@@ -82,7 +82,9 @@ class PostController {
         res.status(201).send({
           id: result.insertId,
           content,
+          // eslint-disable-next-line no-undef
           userId: user_id,
+          // eslint-disable-next-line no-undef
           createdAt: created_at,
         });
       })

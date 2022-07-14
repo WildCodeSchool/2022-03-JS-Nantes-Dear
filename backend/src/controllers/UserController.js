@@ -5,23 +5,31 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { email, password, role } = req.body;
+    const { pseudo, age, email, password, role } = req.body;
 
-    const [user] = await models.user.findByMail(email);
-
+    const [user] = await models.user.findByPseudo(pseudo);
     if (user.length) {
+      res.status(409).send({
+        error: "Ce pseudo existe déjà",
+      });
+    }
+
+    const [mail] = await models.user.findByMail(email);
+    if (mail.length) {
       res.status(409).send({
         error: "Cet email existe déjà",
       });
     }
 
     const validationErrors = Joi.object({
+      pseudo: Joi.string().max(20).required(),
+      age: Joi.string().max(30).required(),
       email: Joi.string().email().max(255).required(),
-      password: Joi.string().max(255).required(),
-    }).validate({ email, password }).error;
+      password: Joi.string().max(15).required(),
+    }).validate({ pseudo, age, email, password }).error;
 
     if (validationErrors) {
-      res.status(422).send(validationErrors);
+      res.status(422).send(req.body);
       return;
     }
 
@@ -30,9 +38,11 @@ class UserController {
       const hash = await bcrypt.hash(password, salt);
 
       models.user
-        .insert({ email, hash, role })
+        .insert({ pseudo, age, email, hash, role })
         .then(([result]) => {
-          res.status(201).json({ id: result.insertId, email, role });
+          res
+            .status(201)
+            .json({ id: result.insertId, pseudo, age, email, role });
         })
         .catch((err) => {
           console.error(err);
@@ -52,7 +62,7 @@ class UserController {
 
     const validationErrors = Joi.object({
       pseudo: Joi.string().max(15).required(),
-      password: Joi.string().max(255).required(),
+      password: Joi.string().max(15).required(),
     }).validate({ pseudo, password }).error;
 
     if (validationErrors) {
@@ -131,6 +141,38 @@ class UserController {
           res.sendStatus(404);
         } else {
           res.sendStatus(204);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static checkPseudo = (req, res) => {
+    models.user
+      .findByPseudo(req.query.pseudo)
+      .then(([rows]) => {
+        if (rows[0] == null) {
+          res.sendStatus(200);
+        } else {
+          res.sendStatus(422);
+        }
+      })
+      .catch((err) => {
+        console.error(err);
+        res.sendStatus(500);
+      });
+  };
+
+  static checkEmail = (req, res) => {
+    models.user
+      .findByMail(req.query.email)
+      .then(([rows]) => {
+        if (rows[0] == null) {
+          res.sendStatus(200);
+        } else {
+          res.sendStatus(422);
         }
       })
       .catch((err) => {
