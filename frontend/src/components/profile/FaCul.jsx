@@ -7,20 +7,20 @@ function FaCul() {
       <h1 className="facul-title">FACUL</h1>
       <h3>En quoi consiste la plateforme DEAR ?</h3>
       <ul>
-        <li>
+        <p>
           {" "}
           🚀 Répondre à un enjeu sociétal grâce à une solution qui a du sens,
           pour toutes et tous.
-        </li>
-        <li> 🚀 Bannir l’analphabétisme sexuel et la désinformation !</li>
-        <li>
+        </p>
+        <p> 🚀 Bannir l’analphabétisme sexuel et la désinformation !</p>
+        <p>
           🚀 Libérer la parole sur la sexualité trop souvent laissée sous
           silence faute de tabou et de gêne !
-        </li>
-        <li>
+        </p>
+        <p>
           🚀 Partager ensemble dans la bienveillance et apprendre d’autrui et de
           leurs propres vécus.
-        </li>
+        </p>
       </ul>
       <p>
         Alors, DEAR c’est la petite application qui fait du bien au quotidien.
@@ -101,7 +101,7 @@ function FaCul() {
       <h3>
         Puis-je parler aux professionnel.le.s disponibles sur la plateforme ?
       </h3>
-      <p>
+      <p className="lastparagraph">
         Il n’y aura pas de système de tchat privé dans lequel vous pourrez
         discuter avec un.e professionnel.le disponible sur la plateforme. En
         revanche, les professionnel.le.s qui seront sur la plateforme ne seront

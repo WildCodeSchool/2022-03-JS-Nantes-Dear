@@ -1,6 +1,7 @@
 import { React, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import "./styles/GoodConduct.css";
+import ProgressBar from "./ProgressBar";
 import logo from "../../assets/dear-logo-white.png";
 import ProgressBar from "./ProgressBar";
 
