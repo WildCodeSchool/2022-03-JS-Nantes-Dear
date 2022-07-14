@@ -1,8 +1,8 @@
-/* eslint-disable react/prop-types */
 import "./styles/Postcard.css";
+import { propTypes } from "react-bootstrap/esm/Image";
 import ButtonLikeDislike from "../ButtonLikeDislike";
 
-export default function PostCard({ post }) {
+function PostCard({ post }) {
   const { user, content, category, postdate } = post;
   // const backgroundColorList = [
   //   "#303364",
@@ -31,3 +31,20 @@ export default function PostCard({ post }) {
     </div>
   );
 }
+PostCard.propTypes = {
+  post: propTypes.string,
+  user: propTypes.string,
+  content: propTypes.string,
+  category: propTypes.string,
+  postdate: propTypes.instanceOf(Date),
+};
+
+PostCard.defaultProps = {
+  post: propTypes.string,
+  user: propTypes.string,
+  content: propTypes.string,
+  category: propTypes.string,
+  postdate: propTypes.instanceOf(Date),
+};
+
+export default PostCard;

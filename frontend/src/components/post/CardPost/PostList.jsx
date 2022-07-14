@@ -4,13 +4,6 @@ import PostCard from "./PostCard";
 import "./styles/PostList.css";
 
 export default function PostList() {
-  // const backgroundColorList = [
-  //   "#303364",
-  //   "#EC4D4D",
-  //   "#A7D1CD",
-  //   "#F8C053",
-  //   "#A098C9",
-  // ];
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
