@@ -15,6 +15,7 @@ import ContactForm from "./ContactForm";
 import FooterHome from "../home/FooterHome";
 import logoBlue from "../../assets/dear-logo-blue.png";
 import Logout from "./Logout";
+import ScrollButton from "../home/ScrollButton";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -131,6 +132,7 @@ function UserAccount() {
           </div>
         </div>
       </div>
+      <ScrollButton />
       <FooterHome />
     </div>
   );

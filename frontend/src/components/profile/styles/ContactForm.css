@@ -174,9 +174,10 @@
   }
   .contact textarea {
     width: 52vw;
-    height: 10vh;
+    height: 15vh;
     margin-bottom: 4vh;
     padding-left: 10px;
+    resize: none;
   }
   .contactButton {
     text-decoration: none;

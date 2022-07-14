@@ -3,7 +3,7 @@ import "./styles/Moderation.css";
 
 function Moderation() {
   return (
-    <div>
+    <div className="contain-moderation">
       <h1 className="title-moderation">La modération</h1>
       <h3 className="subtitle-moderation">
         Ces publications n'ont pas été modérées, c'est à toi !
