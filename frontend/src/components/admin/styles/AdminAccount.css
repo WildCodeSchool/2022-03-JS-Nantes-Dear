@@ -282,10 +282,6 @@ button {
     margin-right: 12px;
   }
 
-  .admin-logout {
-    width: 40vw;
-  }
-
   .container-admin {
     display: flex;
     flex-direction: row;
@@ -345,14 +341,9 @@ button {
   .active-content {
     display: block;
     background: white;
-    width: 50vw;
+    width: 55vw;
     margin-left: 15px;
     border-radius: 10px;
     color: var(--dark-blue);
-  }
-
-  .admin-logout {
-    background-color: white;
-    width: 25rem;
   }
 }

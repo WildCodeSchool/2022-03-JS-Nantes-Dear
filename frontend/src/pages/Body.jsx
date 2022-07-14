@@ -18,6 +18,7 @@ import FACul from "./FACul";
 import AdminAccount from "../components/admin/AdminAccount";
 import LoginAdmin from "./LoginAdmin";
 import UserActivities from "../components/admin/UserActivities";
+import UserDelete from "../components/admin/UserDelete";
 
 export default function Body() {
   const initialRegister = {
@@ -57,13 +58,14 @@ export default function Body() {
           <Route path="/home" element={<Home />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
           <Route path="/adminaccount" element={<AdminAccount />} />
+          <Route path="/useractivities" element={<UserActivities />} />
+          <Route path="/userdelete" element={<UserDelete />} />
           <Route path="/useraccount" element={<UserAccount />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/connection" element={<Connection />} />
           <Route path="/addpost" element={<AddPost />} />
         </Routes>
       </UserContext.Provider>
-
     </div>
   );
 }

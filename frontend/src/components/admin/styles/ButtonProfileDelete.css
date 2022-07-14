@@ -1,45 +1,46 @@
-.buttonpublicationsuser {
+.buttonprofiledete {
     display: flex;
     justify-content: center;
     align-items: center; 
-    width: 7rem;
-    height: 1.5rem;
+    width: 10rem;
+    height: 3rem;
     background-color: var(--light-red);
     color: var(--white);
     border-radius: 5rem;
     margin-top: 1rem;
+    margin-bottom: 2rem;
 }
 
-.buttonpublicationsuser h3 {
+.buttonprofiledete h3 {
     font-size: 0.7rem;
 }
 
-.buttonpublicationsuser:hover {
+.buttonprofiledete:hover {
     background: var(--mustard);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .buttonpublicationsuser {
-        width: 10rem;
-        height: 2.3rem;
-        border-radius: 5rem;
+    .buttonprofiledete {
+        width: 17rem;
+        height: 4rem;
         margin-top: 1rem;
     }
     
-    .buttonpublicationsuser h3 {
+    .buttonprofiledete h3 {
         font-size: 0.9rem;
+        font-weight: 300;
     }
 }
 
 @media screen and (min-width: 1024px) {
-    .buttonpublicationsuser {
-        width: 10rem;
-        height: 2.3rem;
-        border-radius: 5rem;
+    .buttonprofiledete {
+        width: 17rem;
+        height: 4rem;
         margin-top: 1rem;
     }
     
-    .buttonpublicationsuser h3 {
+    .buttonprofiledete h3 {
         font-size: 0.9rem;
+        font-weight: 300;
     }
 }
