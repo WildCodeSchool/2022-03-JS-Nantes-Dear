@@ -1,14 +1,16 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 import "./styles/Login.css";
 import axios from "axios";
 import swal from "sweetalert";
+import { useNavigate } from "react-router-dom";
 import ButtonReturn from "../components/home/ButtonReturn";
 import ButtonContinue from "../components/registration/ButtonContinue";
 
 function Login() {
   const [pseudo, setPseudo] = useState("");
   const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -27,7 +29,7 @@ function Login() {
           { withCredentials: true }
         )
         // eslint-disable-next-line no-restricted-syntax
-        .then((response) => console.log(response.data))
+        .then(() => navigate("/connection/bonjour", { replace: true }))
         .catch((err) => {
           // alert(err.response.data.error);
           console.error(err);
@@ -60,9 +62,7 @@ function Login() {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
-          <Link to="/connection/bonjour">
-            <ButtonContinue handleSubmit={handleSubmit} />
-          </Link>
+          <ButtonContinue handleSubmit={handleSubmit} />
         </form>
       </div>
     </div>

@@ -1,12 +1,16 @@
-CREATE TABLE `User` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `email` varchar(255),
-  `pseudo` varchar(255),
-  `password` varchar(255),
-  `role` varchar(255),
-);EXISTS
+CREATE DATABASE  IF NOT EXISTS `dear`;
 
-CREATE TABLE `Post` (
+DROP TABLE IF EXISTS `user`;
+CREATE TABLE `user` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `email` varchar(255) UNIQUE,
+  `pseudo` varchar(255) UNIQUE,
+  `password` varchar(255),
+  `role` varchar(255)  
+);
+
+DROP TABLE IF EXISTS `post`;
+CREATE TABLE `post` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `content` varchar(255),
   `user_id` int,
@@ -16,21 +20,23 @@ CREATE TABLE `Post` (
   `nbr_signals` int
 );
 
-CREATE TABLE `Comment` (
+DROP TABLE IF EXISTS `comment`;
+CREATE TABLE `comment` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `created_at` datetime,
   `user_id` int,
   `post_id` int
 );
 
-CREATE TABLE `Category` (
+DROP TABLE IF EXISTS `category`;
+CREATE TABLE `category` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255),
   `color` varchar(255)
 );
 
-ALTER TABLE `User` ADD FOREIGN KEY (`id`) REFERENCES `Comment` (`user_id`);
+ALTER TABLE `user` ADD FOREIGN KEY (`id`) REFERENCES `comment` (`user_id`);
 
-ALTER TABLE Comment ADD FOREIGN KEY (user_id) REFERENCES User (id);
+ALTER TABLE `comment` ADD FOREIGN KEY (user_id) REFERENCES User (id);
 
-ALTER TABLE `Post` ADD FOREIGN KEY (`category_id`) REFERENCES `Category` (`id`);
+ALTER TABLE `post` ADD FOREIGN KEY (`category_id`) REFERENCES `category` (`id`);

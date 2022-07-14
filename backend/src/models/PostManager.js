@@ -5,14 +5,14 @@ class PostManager extends AbstractManager {
 
   findByPseudo(id) {
     return this.connection.query(
-      `select post.*, user.pseudo AS user FROM ${PostManager.table} JOIN user ON post.id= post.user_id WHERE post.id = ?`,
+      `select post.*, user.pseudo AS pseudo FROM ${PostManager.table} JOIN user ON post.id= post.user_id WHERE post.id = ?`,
       [id]
     );
   }
 
   findAll() {
     return this.connection.query(
-      `select post.*, user.pseudo AS user FROM ${PostManager.table} JOIN user ON user.id= post.user_id`
+      `select post.*, user.pseudo AS pseudo FROM ${PostManager.table} JOIN user ON user.id= post.user_id`
     );
   }
 
