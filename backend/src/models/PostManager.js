@@ -18,8 +18,8 @@ class PostManager extends AbstractManager {
 
   insert(post) {
     return this.connection.query(
-      `insert into ${PostManager.table} (content, user_id, category_id, created_at) values (?, ?, ?, ?)`,
-      [post.content, post.user_id, post.category_id, post.created_at]
+      `insert into ${PostManager.table} (content, pseudo, category_id, created_at) values (?, ?, ?, ?)`,
+      [post.content, post.pseudo, post.category_id, post.created_at]
     );
   }
 

@@ -1,4 +1,5 @@
 import { React, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/PostText.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -6,6 +7,8 @@ import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
   const [content, setContent] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -23,10 +26,9 @@ function PostText() {
           { content },
           { withCredentials: true }
         )
-        // eslint-disable-next-line no-restricted-syntax
-        .then((res) => console.log(res.data))
+        .then(() => navigate("/addpost/home", { replace: true }))
         .catch((err) => {
-          console.error(err);
+          console.warn(err);
         });
     }
   };
@@ -67,9 +69,7 @@ function PostText() {
         </form>
       </div>
       <div className="button-publier-post">
-        {/* <Link to="/editpost/postcategory"> */}
         <ButtonPublierPost handleSubmit={handleSubmit} />
-        {/* </Link> */}
       </div>
     </div>
   );
