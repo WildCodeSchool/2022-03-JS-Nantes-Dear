@@ -110,15 +110,11 @@ body {
 .content-tabs {
   flex-grow: 1;
 }
-
-.content-tabs {
-  flex-grow: 1;
-}
 .content {
   padding: 20px;
 }
 .content h2 {
-  padding: 0px 0 5px 0px;
+  padding: 4px 0 5px 4px;
   color: var(--white);
   background-color: var(--light-purple);
 }
@@ -181,7 +177,7 @@ body {
     background-color: #f0f0f0;
     width: 100vw;
   }
-  
+
   .profile-card {
     display: flex;
     width: 45vw;
@@ -219,7 +215,7 @@ body {
     display: none;
   }
   .content h2 {
-    padding: 0px 0 5px 0px;
+    padding: 4px 0 5px 4px;
     color: var(--white);
     background-color: var(--light-purple);
   }
@@ -316,7 +312,7 @@ body {
     display: none;
   }
   .content h2 {
-    padding: 0px 0 5px 0px;
+    padding: 4px 0 5px 4px;
     color: var(--white);
     background-color: var(--light-purple);
   }

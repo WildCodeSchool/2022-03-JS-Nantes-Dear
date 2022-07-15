@@ -26,7 +26,7 @@ export default function FooterHome() {
               src={logoProfile}
               alt="logoProfile"
             />
-            <p> User </p>
+            <p> Profil </p>
           </Link>
         </div>
       </div>

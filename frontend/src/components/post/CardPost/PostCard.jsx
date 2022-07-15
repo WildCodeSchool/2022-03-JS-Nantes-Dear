@@ -1,3 +1,4 @@
+/* import React from "react";
 import "./styles/Postcard.css";
 import { propTypes } from "react-bootstrap/esm/Image";
 import ButtonLikeDislike from "../ButtonLikeDislike";
@@ -47,4 +48,4 @@ PostCard.defaultProps = {
   postdate: propTypes.instanceOf(Date),
 };
 
-export default PostCard;
+export default PostCard; */

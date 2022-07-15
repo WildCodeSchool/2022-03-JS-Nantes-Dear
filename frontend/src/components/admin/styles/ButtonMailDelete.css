@@ -1,46 +1,46 @@
 .buttonmaildelete {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 10rem;
-    height: 3rem;
-    background-color: var(--dark-blue);
-    color: var(--white);
-    border-radius: 5rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 5rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .buttonmaildelete h3 {
-    font-size: 0.7rem;
+  font-size: 0.7rem;
 }
 
 .buttonmaildelete:hover {
-    background: var(--light-purple);
+  background: var(--light-purple);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .buttonmaildelete {
-        width: 17rem;
-        height: 4rem;
-        margin-top: 1rem;
-    }
-    
-    .buttonmaildelete h3 {
-        font-size: 0.9rem;
-        font-weight: 300;
-    }
+  .buttonmaildelete {
+    width: 17rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .buttonmaildelete h3 {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .buttonmaildelete {
-        width: 17rem;
-        height: 4rem;
-        margin-top: 1rem;
-    }
-    
-    .buttonmaildelete h3 {
-        font-size: 0.9rem;
-        font-weight: 300;
-    }
+  .buttonmaildelete {
+    width: 17rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .buttonmaildelete h3 {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
 }

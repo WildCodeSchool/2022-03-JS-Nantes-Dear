@@ -86,7 +86,6 @@ input[type="checkbox"]:checked {
 .categorie-container.inactive {
   background-color: white;
   display: none;
-
 }
 
 .categorie-container.inactive .confirm-filter-container {
