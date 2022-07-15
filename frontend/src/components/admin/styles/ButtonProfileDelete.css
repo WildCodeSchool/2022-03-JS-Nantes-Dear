@@ -1,46 +1,47 @@
-.buttonprofiledete {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 10rem;
-    height: 3rem;
-    background-color: var(--light-red);
-    color: var(--white);
-    border-radius: 5rem;
-    margin-top: 1rem;
-    margin-bottom: 2rem;
+.buttonprofiledelete {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 3rem;
+  background-color: var(--light-red);
+  color: var(--white);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
-.buttonprofiledete h3 {
-    font-size: 0.7rem;
+.buttonprofiledelete h3 {
+  font-size: 0.7rem;
+  font-weight: 400;
 }
 
-.buttonprofiledete:hover {
-    background: var(--mustard);
+.buttonprofiledelete:hover {
+  background: var(--mustard);
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .buttonprofiledete {
-        width: 17rem;
-        height: 4rem;
-        margin-top: 1rem;
-    }
-    
-    .buttonprofiledete h3 {
-        font-size: 0.9rem;
-        font-weight: 300;
-    }
+  .buttonprofiledelete {
+    width: 17rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .buttonprofiledelete h3 {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .buttonprofiledete {
-        width: 17rem;
-        height: 4rem;
-        margin-top: 1rem;
-    }
-    
-    .buttonprofiledete h3 {
-        font-size: 0.9rem;
-        font-weight: 300;
-    }
+  .buttonprofiledelete {
+    width: 17rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .buttonprofiledelete h3 {
+    font-size: 0.9rem;
+    font-weight: 300;
+  }
 }

@@ -1,4 +1,3 @@
-
 .like-button {
   border: none;
   color: var(--dark-blue);
@@ -34,15 +33,15 @@ path {
   transform-origin: center;
 }
 
-  .heart-background {
-    width: 5vw;
-    max-width: 30px;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: -1;
-    stroke: none;
-  }
+.heart-background {
+  width: 5vw;
+  max-width: 30px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: -1;
+  stroke: none;
+}
 
 .heart-main.active path {
   animation: stroke-animation 2s ease-in-out forwards;
