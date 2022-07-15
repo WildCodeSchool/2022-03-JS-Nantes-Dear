@@ -1,24 +1,16 @@
+import React from "react";
 import "./styles/Postcard.css";
 import { propTypes } from "react-bootstrap/esm/Image";
 import ButtonLikeDislike from "../ButtonLikeDislike";
 
 function PostCard({ post }) {
-  const { user, content, category, postdate } = post;
-  // const backgroundColorList = [
-  //   "#303364",
-  //   "#EC4D4D",
-  //   "#A7D1CD",
-  //   "#F8C053",
-  //   "#A098C9",
-  // ];
-  // const rand = Math.floor(Math.random() * backgroundColorList.length);
-  // const valueColor = backgroundColorList[rand];
+  const { pseudo, content, category, postdate } = post;
+
   return (
     <div className="postcard">
       <div className="headercard">
         <h2>
-          <span className="dateText"> {postdate} 2020-02-12 </span> {user}
-          user1100{" "}
+          <span className="dateText"> {postdate} 2020-02-12 </span> {pseudo}
         </h2>
         <p> {category} porno </p>
       </div>
@@ -33,18 +25,18 @@ function PostCard({ post }) {
 }
 PostCard.propTypes = {
   post: propTypes.string,
-  user: propTypes.string,
+  pseudo: propTypes.string,
   content: propTypes.string,
   category: propTypes.string,
-  postdate: propTypes.instanceOf(Date),
+  // postdate: propTypes.instanceOf(Date),
 };
 
 PostCard.defaultProps = {
   post: propTypes.string,
-  user: propTypes.string,
+  pseudo: propTypes.string,
   content: propTypes.string,
   category: propTypes.string,
-  postdate: propTypes.instanceOf(Date),
+  // postdate: propTypes.instanceOf(Date),
 };
 
 export default PostCard;

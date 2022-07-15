@@ -7,23 +7,24 @@ import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
   const [content, setContent] = useState("");
+  const [category, setCategory] = useState("");
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!content) {
+    if (!content || !category) {
       swal({
         title: "Error!",
-        text: "Merci de publier",
+        text: "Merci de spécifier la categorie et de remplir le contenu",
         icon: "error",
         confirmButtonText: "parfait",
       });
     } else {
       axios
         .post(
-          `${import.meta.env.VITE_BACKEND_URL}/post/postText`,
-          { content },
+          `${import.meta.env.VITE_BACKEND_URL}/post/posttext`,
+          { content, category },
           { withCredentials: true }
         )
         .then(() => navigate("/addpost/home", { replace: true }))
@@ -40,16 +41,21 @@ function PostText() {
         <h1>appartient ce post?</h1>
       </div>
       <div className="form-post-text">
-        <select className="option-category-post" id="share-select">
+        <select
+          className="option-category-post"
+          id="share-select"
+          value={category}
+          onChange={(e) => setCategory(e.target.value)}
+        >
           <option value="">--Choisir une catégorie--</option>
-          <option value="">Témoignage</option>
-          <option value="">Bien être sexuel</option>
-          <option value="">Amour</option>
-          <option value="">Polyamoure</option>
-          <option value="">Relation sexuelle</option>
-          <option value="">Vulve</option>
-          <option value="">Pénis</option>
-          <option value="">Non-binaire</option>
+          <option value="Témoignage">Témoignage</option>
+          <option value="Bien être sexuel">Bien être sexuel</option>
+          <option value="Amour">Amour</option>
+          <option value="Polyamoure">Polyamoure</option>
+          <option value="Relation sexuelle">Relation sexuelle</option>
+          <option value="Vulve">Vulve</option>
+          <option value="Pénis">Pénis</option>
+          <option value="Non-binaire">Non-binaire</option>
         </select>
       </div>
       <div className="bloc-texte-post">

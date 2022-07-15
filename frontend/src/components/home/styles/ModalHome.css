@@ -6,11 +6,12 @@
   border: 0px;
 }
 
-body.ReactModal__Body--open{
+body.ReactModal__Body--open {
   background-color: white;
 }
 
-.ReactModal__Overlay,.ReactModal__Overlay--after-open{
+.ReactModal__Overlay,
+.ReactModal__Overlay--after-open {
   z-index: 2;
 }
 

@@ -16,8 +16,8 @@ CREATE TABLE `post` (
   `user_id` int,
   `category_id` int,
   `created_at` datetime,
-  `nbr_post` int,
-  `nbr_signals` int
+  `like` int,
+  `signals` int
 );
 
 DROP TABLE IF EXISTS `comment`;

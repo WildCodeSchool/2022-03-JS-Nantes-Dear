@@ -1,84 +1,84 @@
 .tilte-userspage {
-    background-color: var(--light-purple);
-    color: var(--white);
-    height: 2.5rem;;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  background-color: var(--light-purple);
+  color: var(--white);
+  height: 2.5rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
 }
 
 .subtilteuserspage {
-    color: var(--dark-blue);
-    font-size: 0.8rem;
-    margin-top: 2rem;
-    margin-left: 2rem;
-    margin-right: 2em;
+  color: var(--dark-blue);
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2em;
 }
 
 .filter-search-users {
-    margin-left: 2rem;
-    margin-right: 2rem;
-    margin-top: 1rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
 }
 
 .inputsearchusers {
-    border-radius: 5rem;
-    border: 1px solid #bdc3cf;
-    width: 18rem;
-    height: 2rem;
+  border-radius: 5rem;
+  border: 1px solid #bdc3cf;
+  width: 18rem;
+  height: 2rem;
 }
 
 ::placeholder {
-    font-size: 0.5rem;
+  font-size: 0.5rem;
 }
 
 .users-list-test {
-    margin-bottom: 3rem;
+  margin-bottom: 3rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-    .tilte-userspage h1 {
-        font-size: 1rem;
-    }
+  .tilte-userspage h1 {
+    font-size: 1rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .tilte-userspage {
+  .tilte-userspage {
     background-color: var(--light-purple);
     color: var(--white);
     height: 5rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    }
+  }
 
-    .tilte-userspage h1{
-        margin-left: 2rem;
-    }
+  .tilte-userspage h1 {
+    margin-left: 2rem;
+  }
 
-    .subtilte-userspage h2{
-        background-color: var(--white);
-        color: var(--dark-blue);
-        margin-left: 2rem;
-        margin-top: 5rem;
-    }
+  .subtilte-userspage h2 {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    margin-left: 2rem;
+    margin-top: 5rem;
+  }
 
-    .filter-search-users {
-        display: flex;
-        flex-direction: row;
-        justify-content:space-between;
-        margin-left: 2rem;
-        margin-right: 2rem;
-        margin-top: 1rem;
-    }
+  .filter-search-users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+  }
 
-    .inputsearchusers {
-        border-radius: 5rem;
-        border: 2px solid #bdc3cf;
-        width: 24rem;
-    }
+  .inputsearchusers {
+    border-radius: 5rem;
+    border: 2px solid #bdc3cf;
+    width: 24rem;
+  }
 
-    ::placeholder {
-        font-size: 0.8rem;
-    }
+  ::placeholder {
+    font-size: 0.8rem;
+  }
 }
