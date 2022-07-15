@@ -1,22 +1,21 @@
-
 .buttonrechercher {
-    display: flex;
-    justify-content: center;
-    align-items: center; 
-    width: 7rem;
-    height: 2rem;
-    background-color: var(--dark-blue);
-    color: var(--white);
-    border-radius: 5rem;
-    margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 7rem;
+  height: 2rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 5rem;
+  margin-top: 1rem;
 }
 
 .buttonrechercher h3 {
-    font-size: 0.7rem;
+  font-size: 0.7rem;
 }
 
 @media screen and (min-width: 1024px) {
-    .buttonrechercher {
+  .buttonrechercher {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,9 +24,9 @@
     background-color: var(--dark-blue);
     color: var(--white);
     border-radius: 5rem;
-}
+  }
 
-.buttonrechercher h3 {
+  .buttonrechercher h3 {
     font-size: 0.8rem;
-}
+  }
 }
