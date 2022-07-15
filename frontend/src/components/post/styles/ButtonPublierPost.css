@@ -7,7 +7,7 @@
   height: 9vw;
   max-height: 70px;
   background-color: var(--white);
-  color: var(--light-purple);
+  color: var(--mint-blue);
   border-radius: 10px;
   font-family: var(--font);
 }
@@ -18,16 +18,16 @@
     border-radius: 20px;
   }
   .buttonpublierpost h3 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
   .buttonpublierpost {
-    width: 20vw;
+    width: 15vw;
     border-radius: 25px;
   }
   .buttonpublierpost h3 {
-    font-size: 1rem;
+    font-size: 1.2rem;
   }
 }

@@ -1,0 +1,33 @@
+.tilte-managefacul {
+    background-color: var(--light-purple);
+    color: var(--white);
+    height: 2.5rem;;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.subtilte-managefacul {
+    color: var(--dark-blue);
+    font-size: 0.8rem;
+    margin-top: 2rem;
+    margin-left: 2rem;
+    margin-right: 2em;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .title-managefacul {
+        font-size: 1.2rem;
+    }
+}
+
+
+@media screen and (min-width: 1024px) {
+    .tilte-managefacul {
+        height: 5rem;
+    }
+
+    .subtilte-managefacul {
+        margin-left: 4rem;
+    }
+  }

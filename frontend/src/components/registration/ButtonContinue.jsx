@@ -17,4 +17,5 @@ ButtonContinue.propTypes = {
 ButtonContinue.defaultProps = {
   handleSubmit: PropTypes.func,
 };
+
 export default ButtonContinue;

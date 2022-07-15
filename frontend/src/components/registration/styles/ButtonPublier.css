@@ -1,4 +1,4 @@
-.buttonsuivant {
+.buttonpublier {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -6,21 +6,21 @@
   max-width: 500px;
   height: 15vw;
   max-height: 70px;
-  background-color: var(--mint-blue);
-  color: var(--white);
+  background-color: var(--white);
+  color: var(--mint-blue);
   border-radius: 10px;
   font-family: var(--font);
   text-decoration: none;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .buttonsuivant {
+  .buttonpublier {
     width: 55vw;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .buttonsuivant {
+  .buttonpublier {
     width: 30vw;
   }
 }

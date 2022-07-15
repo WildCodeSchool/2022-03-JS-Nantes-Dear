@@ -1,3 +1,8 @@
+.hello-inscription {
+  background-color: var(--dark-blue);
+  height: 220vw;
+}
+
 .logo-inscription {
   height: 20vh;
   margin: 0 auto;
@@ -27,6 +32,10 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hello-inscription {
+    height: 150vw;
+  }
+
   .logo-inscription {
     height: 25vh;
   }
@@ -49,6 +58,10 @@
 }
 
 @media screen and (min-width: 1024px) {
+  .hello-inscription {
+    height: 100vw;
+  }
+
   .logo-inscription {
     height: 20vh;
   }

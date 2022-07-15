@@ -9,7 +9,7 @@ function FilterSearch() {
   useEffect(() => {
     fetch(`${import.meta.env.VITE_BACKEND_URL}/posts`)
       .then((response) => response.json())
-      .then((json) => setDatas(json));
+      .then((json) => setDatas(json[0]));
   }, []);
 
   const handleSearchTerm = (e) => {
