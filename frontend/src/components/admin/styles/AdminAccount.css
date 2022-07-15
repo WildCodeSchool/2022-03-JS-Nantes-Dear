@@ -47,7 +47,6 @@
 .admin-card {
   height: 21vh;
   width: 92vw;
-  box-shadow: 4px 4px 4px 4px lightgrey;
   border-radius: 10px;
   margin: auto;
 }
@@ -74,6 +73,7 @@
   color: var(--light-red);
   width: 12vw;
   height: 3vh;
+  margin-right: 1rem;
 }
 
 .arrow-admin {
@@ -82,13 +82,8 @@
 }
 
 .admin-logout {
-  width: 100vw;
-  height: 25vh;
-  display: flex;
-  justify-content: space-evenly;
-  flex-direction: column;
-  align-items: center;
   color: var(--dark-blue);
+  margin-left: 0.7rem;
 }
 
 .admin-logout p {
@@ -115,7 +110,6 @@ button {
 }
 .content-tabs {
   flex-grow: 1;
-  display: none;
 }
 
 .content {
@@ -145,6 +139,115 @@ button {
   font-weight: 500;
 }
 
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .admin-top {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .logo-admin-page {
+    width: 15vw;
+    display: block;
+  }
+
+  .logo-admin-rond {
+    display: none;
+  }
+
+  .admin-top button {
+    width: 15vw;
+  }
+
+  .admin-category {
+    width: 40vw;
+  }
+
+  .admin-icon {
+    width: 9vw;
+  }
+
+  .arrow-admin {
+    margin-right: 12px;
+  }
+
+  .admin-logout {
+    width: 40vw;
+  }
+
+  .container-admin {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    height: 70vh;
+    align-items: baseline;
+  }
+
+  .admin-card {
+    display: flex;
+    width: 43vw;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-left: 12px;
+  }
+
+  .active-tabs {
+    border-bottom: 1px solid transparent;
+  }
+
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+  }
+
+  button {
+    border: none;
+  }
+  .content-tabs {
+    flex-grow: 1;
+    display: block;
+  }
+  .content {
+    padding: 20px;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+    color: var(--white);
+    background-color: var(--light-purple);
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+
+  .active-content {
+    display: block;
+    background: white;
+    width: 50vw;
+    margin-left: 15px;
+    border-radius: 10px;
+    color: var(--dark-blue);
+  }
+
+  .admin-logout {
+    background-color: white;
+    width: 20.6rem;
+  }
+}
+  
 @media screen and (min-width: 1024px) {
   .admin-top {
     width: 95vw;
@@ -179,15 +282,11 @@ button {
     margin-right: 12px;
   }
 
-  .admin-logout {
-    width: 40vw;
-  }
-
   .container-admin {
     display: flex;
     flex-direction: row;
     background-color: #f0f0f0;
-    height: 60vh;
+    height: 70vh;
     align-items: baseline;
   }
 
@@ -242,7 +341,7 @@ button {
   .active-content {
     display: block;
     background: white;
-    width: 50vw;
+    width: 55vw;
     margin-left: 15px;
     border-radius: 10px;
     color: var(--dark-blue);

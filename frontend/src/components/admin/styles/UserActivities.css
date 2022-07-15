@@ -1,0 +1,99 @@
+.container-page-user-activities {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+.userpageactivities {
+    background-color: var(--light-purple);
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+.head-tilte-userpageactivities,
+.head-subtilte-userpageactivities {
+    color: var(--white);
+    margin-left: 3rem;
+}
+
+.head-tilte-userpageactivities {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.head-subtilte-userpageactivities {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.subtilte-userpage {
+    color: var(--dark-blue);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+
+.buttons-userpageacitivities {
+    display: flex;
+    flex-direction: row;
+    justify-content:space-evenly;
+    margin-top: 1rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .userpageactivities {
+        height: 12rem;
+    }
+    .head-tilte-userpageactivities,
+    .head-subtilte-userpageactivities {
+    margin-left: 5rem;
+    }
+    .head-tilte-userpageactivities {
+        font-size: 2rem;
+    }
+    .head-subtilte-userpageactivities {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    
+    .subtilte-userpage {
+        margin-top: 3rem;
+        margin-left: 5rem;
+    }
+    
+    .buttons-userpageacitivities {
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .userpageactivities {
+        height: 12rem;
+    }
+    .head-tilte-userpageactivities,
+    .head-subtilte-userpageactivities {
+    margin-left: 5rem;
+    }
+    .head-tilte-userpageactivities {
+        font-size: 2rem;
+    }
+    .head-subtilte-userpageactivities {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    
+    .subtilte-userpage {
+        margin-top: 3rem;
+        margin-left: 5rem;
+    }
+    
+    .buttons-userpageacitivities {
+        margin-top: 2rem;
+    }
+}

@@ -1,0 +1,104 @@
+.container-page-user-delete {
+    background-color: white;
+    width: 100vw;
+    height: 100vh;
+}
+
+.userpagedelete {
+    background-color: var(--light-purple);
+    height: 9rem;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-start;
+    justify-content: center;
+    color: var(--white);
+}
+
+.head-tilte-userpagedelete h1,
+.head-subtilte-userpagedelete h2 {
+    margin-left: 3rem;
+}
+
+.head-tilte-userpagedelete {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.head-subtilte-userpagedelete {
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    font-weight: 200;
+    font-style: italic;
+}
+
+.subtilte-userpage-delete {
+    color: var(--dark-blue);
+    font-size: 1rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    margin-left: 2rem;
+}
+.subtilte-userpage-delete h1 {
+    margin-bottom: 3rem;
+}
+
+.buttons-userpagedelete {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .userpagedelete {
+        height: 12rem;
+    }
+    .head-tilte-userpagedelete h1,
+    .head-subtilte-userpagedelete h2 {
+    margin-left: 5rem;
+    }
+    .head-tilte-userpagedelete {
+        font-size: 2rem;
+    }
+    .head-subtilte-userpagedelete {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    
+    .subtilte-userpage-delete {
+        margin-top: 3rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
+    }
+    
+    .buttons-userpagedelete {
+        margin-top: 10rem;
+
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .userpagedelete {
+        height: 12rem;
+    }
+    .head-tilte-userpagedelete h1,
+    .head-subtilte-userpagedelete h2 {
+    margin-left: 5rem;
+    }
+    .head-tilte-userpagedelete  {
+        font-size: 2rem;
+    }
+    .head-subtilte-userpagedelete {
+        font-size: 1.2rem;
+        margin-top: 1rem;
+    }
+    
+    .subtilte-userpage-delete {
+        margin-top: 3rem;
+        margin-left: 5rem;
+    }
+    
+    .buttons-userpagedelete {
+        margin-top: 12rem;
+    }
+}

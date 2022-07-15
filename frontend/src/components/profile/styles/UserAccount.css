@@ -1,10 +1,13 @@
+body {
+  background-color: #f0f0f0;
+}
 .user-account-page {
   background-color: var(--white);
   height: 100vh;
 }
 
 .logo-user-page {
-  display: none;
+  width: 0vw;
 }
 
 .profile-top {
@@ -64,6 +67,7 @@
   color: var(--light-red);
   width: 12vw;
   height: 3vh;
+  margin-right: 1rem;
 }
 
 .arrow-profile {
@@ -131,22 +135,28 @@
   width: 100vw;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 768px) and (max-width: 1024px) {
   .profile-top {
-    width: 95vw;
+    width: 90vw;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     margin: auto;
+    margin-left: 5rem;
+    background-color: white;
   }
 
   .logo-user-page {
-    width: 10vw;
-    display: block;
-  }
-
-  .profile-top button {
     width: 15vw;
+    margin-right: 5rem;
+  }
+  .profile-category {
+    height: 7vh;
+    width: 39vw;
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid lightgray;
   }
 
   .profile-category {
@@ -169,17 +179,18 @@
     display: flex;
     flex-direction: row;
     background-color: #f0f0f0;
-    height: 60vh;
+    width: 100vw;
   }
-
+  
   .profile-card {
     display: flex;
-    width: 42vw;
+    width: 45vw;
     flex-direction: column;
     background-color: white;
-    border-radius: 5px;
-    margin-top: 35px;
+    border-radius: 10px;
+    margin-top: 18px;
     margin-left: 12px;
+    margin-bottom: 10rem;
   }
 
   .active-tabs {
@@ -225,5 +236,102 @@
     width: 50vw;
     margin-left: 15px;
     margin-top: 18px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .profile-top {
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .logo-user-page {
+    width: 10vw;
+    display: block;
+  }
+
+  .profile-top button {
+    width: 15vw;
+  }
+
+  .profile-category {
+    width: 40vw;
+  }
+
+  .profile-icon {
+    width: 9vw;
+  }
+
+  .arrow-profile {
+    margin-right: 12px;
+  }
+
+  .profile-logout {
+    width: 40vw;
+  }
+
+  .container-profile {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+  }
+
+  .profile-card {
+    display: flex;
+    width: 42vw;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 17px;
+    margin-left: 12px;
+    margin-bottom: 10rem;
+  }
+
+  .active-tabs {
+    border-bottom: 1px solid transparent;
+  }
+
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+  }
+
+  button {
+    border: none;
+  }
+  .content-tabs {
+    flex-grow: 1;
+  }
+  .content {
+    padding: 20px;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+    color: var(--white);
+    background-color: var(--light-purple);
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+
+  .active-content {
+    display: block;
+    background: white;
+    width: 55vw;
+    margin-left: 15px;
+    margin-top: 15px;
   }
 }

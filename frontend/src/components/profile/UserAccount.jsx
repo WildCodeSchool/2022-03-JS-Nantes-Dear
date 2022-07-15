@@ -15,6 +15,7 @@ import ContactForm from "./ContactForm";
 import FooterHome from "../home/FooterHome";
 import logoBlue from "../../assets/dear-logo-blue.png";
 import Logout from "./Logout";
+import ScrollButton from "../home/ScrollButton";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -28,7 +29,6 @@ function UserAccount() {
       <div className="profile-top">
         <div className="pseudo-top">
           <h1>Pseudo</h1>
-          <button type="button">Modifier mon profil</button>
         </div>
         <img className="logo-user-page" src={logoBlue} alt="logo Dear bleu" />
       </div>
@@ -132,6 +132,7 @@ function UserAccount() {
           </div>
         </div>
       </div>
+      <ScrollButton />
       <FooterHome />
     </div>
   );
