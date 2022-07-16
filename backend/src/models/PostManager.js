@@ -5,28 +5,35 @@ class PostManager extends AbstractManager {
 
   findByPseudo(userId) {
     return this.connection.query(
-      `select post.*, user.pseudo AS pseudo FROM ${PostManager.table} JOIN user ON post.id= post.user_id WHERE post.id = ?`,
+      `select post.*, user.pseudo AS pseudo FROM ${PostManager.table} JOIN user ON post.id= post.userId WHERE post.id = ?`,
       [userId]
     );
   }
 
   findByCategory(category) {
     return this.connection.query(
-      `select *me FROM ${PostManager.table} JOIN category ON post.id = post.category_id WHERE post.id = ?`,
+      `select *me FROM ${PostManager.table} JOIN category ON post.id = post.categoryId WHERE post.id = ?`,
       [category]
     );
   }
 
   findAll() {
     return this.connection.query(
-      `select post.*, category.name AS category FROM ${PostManager.table} JOIN category ON category.id= post.category_id`
+      `select post.*, category.name AS category FROM ${PostManager.table} JOIN category ON category.id= post.categoryId`
     );
   }
 
   insert(post) {
     return this.connection.query(
-      `insert into ${PostManager.table} (content, category_id) values (?, ?)`,
-      [post.content, post.category_id]
+      `insert into ${PostManager.table} (content, userId, categoryId, createdAt, likes, signals) values (?, ?, ?, ?, ?, ?)`,
+      [
+        post.content,
+        post.userId,
+        post.categoryId,
+        post.createdAt,
+        post.likes,
+        post.signals,
+      ]
     );
   }
 

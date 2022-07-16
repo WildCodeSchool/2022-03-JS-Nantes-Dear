@@ -2,7 +2,7 @@ const jwt = require("jsonwebtoken");
 
 class authMiddleware {
   static authorization = (req, res, next) => {
-    const token = req.cookies.access_token;
+    const token = req.cookies.accessToken;
     if (!token) {
       return res.sendStatus(401);
     }

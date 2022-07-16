@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/PostText.css";
 import axios from "axios";
@@ -8,13 +8,23 @@ import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
   const [content, setContent] = useState("");
-  const [category, setCategory] = useState("");
+  const [categoryId, setCategoryId] = useState("");
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/category`)
+      .then((res) => setCategories(res.data))
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!content || !category) {
+    if (!content || !categoryId) {
       swal({
         title: "Error!",
         text: "Merci de spécifier la categorie et de publier un post",
@@ -25,7 +35,7 @@ function PostText() {
       axios
         .post(
           `${import.meta.env.VITE_BACKEND_URL}/post/posttext`,
-          { content, category },
+          { content, categoryId },
           { withCredentials: true }
         )
         // .then((res) => console.log(content, category))
@@ -47,18 +57,15 @@ function PostText() {
         <select
           className="option-category-post"
           id="share-select"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
+          value={categoryId}
+          onChange={(e) => setCategoryId(e.target.value)}
         >
-          <option value="">--Choisir une catégorie--</option>
-          <option value="Témoignage">Témoignage</option>
-          <option value="Bien être sexuel">Bien être sexuel</option>
-          <option value="Amour">Amour</option>
-          <option value="Polyamoure">Polyamour</option>
-          <option value="Relation sexuelle">Relation sexuelle</option>
-          <option value="Vulve">Vulve</option>
-          <option value="Pénis">Pénis</option>
-          <option value="Non-binaire">Non-binaire</option>
+          <option value="0">--Choisir une catégorie--</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
         </select>
       </div>
       <div className="bloc-texte-post">

@@ -13,19 +13,19 @@ DROP TABLE IF EXISTS `post`;
 CREATE TABLE `post` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
   `content` varchar(255),
-  `user_id` int,
-  `category_id` int,
-  `created_at` datetime,
-  `like` int,
+  `userId` int,
+  `categoryId` int,
+  `createdAt` datetime,
+  `likes` int,
   `signals` int
 );
 
 DROP TABLE IF EXISTS `comment`;
 CREATE TABLE `comment` (
   `id` int PRIMARY KEY AUTO_INCREMENT,
-  `created_at` datetime,
-  `user_id` int,
-  `post_id` int
+  `createdAt` datetime,
+  `userId` int,
+  `postId` int
 );
 
 DROP TABLE IF EXISTS `category`;

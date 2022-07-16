@@ -1,4 +1,6 @@
 const Joi = require("joi");
+const dayjs = require("dayjs");
+const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class PostController {
@@ -51,19 +53,14 @@ class PostController {
   };
 
   static add = async (req, res) => {
-    const { content, category } = req.body;
-
-    const [post] = await models.post.findByCategory(category);
-
-    if (post.lenght) {
-      res.status(409).send({
-        error: "?",
-      });
-    }
+    const { content, categoryId } = req.body;
+    const { accessToken } = req.cookies;
+    const user = jwt.verify(accessToken, process.env.JWT_AUTH_SECRET);
 
     const validationErrors = Joi.object({
       content: Joi.string().max(255).required(),
-    }).validate({ content }).error;
+      categoryId: Joi.number().required(),
+    }).validate({ content, categoryId }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
@@ -73,13 +70,16 @@ class PostController {
     models.post
       .insert({
         content,
-        category,
+        userId: user.id,
+        categoryId: parseInt(categoryId, 10),
+        createdAt: dayjs().format("YYYY-MM-DD"),
+        likes: 0,
+        signals: 0,
       })
       .then(([result]) => {
         res.status(201).send({
+          ...result,
           id: result.insertId,
-          content,
-          category,
         });
       })
       .catch((err) => {
