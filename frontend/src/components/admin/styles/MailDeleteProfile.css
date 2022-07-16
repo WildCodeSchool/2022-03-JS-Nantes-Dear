@@ -1,10 +1,10 @@
-.container-page-user-delete {
+.container-page-mail-delete-profile {
   background-color: white;
   width: 100vw;
   height: 100vh;
 }
 
-.userpagedelete {
+.maildeleteprofile {
   background-color: var(--light-purple);
   height: 9rem;
   display: flex;
@@ -14,24 +14,24 @@
   color: var(--white);
 }
 
-.head-tilte-userpagedelete h1,
-.head-subtilte-userpagedelete h2 {
+.head-tilte-maildeleteprofile,
+.head-subtilte-maildeleteprofile {
   margin-left: 3rem;
 }
 
-.head-tilte-userpagedelete {
+.head-tilte-maildeleteprofile {
   font-size: 1.5rem;
   font-weight: 400;
 }
 
-.head-subtilte-userpagedelete {
+.head-subtilte-maildeleteprofile {
   font-size: 1rem;
   margin-top: 0.5rem;
   font-weight: 200;
   font-style: italic;
 }
 
-.subtilte-userpage-delete {
+.subtilte-maildeleteprofile {
   color: var(--dark-blue);
   font-size: 1rem;
   font-weight: 400;
@@ -39,11 +39,16 @@
   margin-left: 2rem;
   margin-right: 2rem;
 }
-.subtilte-userpage-delete h1 {
+
+.subtilte-maildeleteprofile h1 {
   margin-bottom: 3rem;
 }
 
-.buttons-userpagedelete {
+.subtilte-mail-delete-profile {
+  margin-bottom: 1rem;
+}
+
+.buttons-maildeleteprofile {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -51,54 +56,57 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  .userpagedelete {
+  .maildeleteprofile {
     height: 12rem;
   }
-  .head-tilte-userpagedelete h1,
-  .head-subtilte-userpagedelete h2 {
+  .head-tilte-maildeleteprofile,
+  .head-subtilte-maildeleteprofile {
     margin-left: 5rem;
   }
-  .head-tilte-userpagedelete {
+  .head-tilte-maildeleteprofile {
     font-size: 2rem;
   }
-  .head-subtilte-userpagedelete {
+  .head-subtilte-maildeleteprofile {
     font-size: 1.2rem;
     margin-top: 1rem;
   }
-
-  .subtilte-userpage-delete {
+  .subtilte-maildeleteprofile h1 {
+    font-weight: 500;
+  }
+  .subtilte-mail-delete-profile {
     margin-top: 3rem;
     margin-left: 5rem;
     margin-right: 5rem;
   }
-
-  .buttons-userpagedelete {
+  .buttons-maildeleteprofile {
     margin-top: 10rem;
   }
 }
 
 @media screen and (min-width: 1024px) {
-  .userpagedelete {
+  .maildeleteprofile {
     height: 12rem;
   }
-  .head-tilte-userpagedelete h1,
-  .head-subtilte-userpagedelete h2 {
+  .head-tilte-maildeleteprofile,
+  .head-subtilte-maildeleteprofile {
     margin-left: 5rem;
   }
-  .head-tilte-userpagedelete {
+  .head-tilte-maildeleteprofile {
     font-size: 2rem;
   }
-  .head-subtilte-userpagedelete {
+  .head-subtilte-maildeleteprofile {
     font-size: 1.2rem;
     margin-top: 1rem;
   }
-
-  .subtilte-userpage-delete {
+  .subtilte-maildeleteprofile h1 {
+    font-weight: 500;
+  }
+  .subtilte-mail-delete-profile {
     margin-top: 3rem;
     margin-left: 5rem;
+    margin-right: 5rem;
   }
-
-  .buttons-userpagedelete {
+  .buttons-maildeleteprofile {
     margin-top: 12rem;
   }
 }

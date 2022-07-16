@@ -1,4 +1,8 @@
+
 /* eslint-disable camelcase */
+
+/* import React from "react";
+
 import "./styles/Postcard.css";
 import propTypes from "prop-types";
 import TimeAgo from "javascript-time-ago";
@@ -52,4 +56,4 @@ PostCard.propTypes = {
   }).isRequired,
 };
 
-export default PostCard;
+export default PostCard; */
