@@ -1,6 +1,5 @@
 import axios from "axios";
-import { React, useEffect, useState } from "react";
-// import PostCard from "./PostCard";
+import React, { useEffect, useState } from "react";
 import "./styles/PostList.css";
 
 export default function PostList() {

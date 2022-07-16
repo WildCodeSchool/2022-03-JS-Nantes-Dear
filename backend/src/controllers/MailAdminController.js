@@ -1,13 +1,13 @@
 const emailer = require("../services/mailer");
 
-class MailController {
+class MailAdminController {
   static send = (req, res) => {
     const { email, subject, message } = req.body;
 
     emailer.sendSorryMail(
       {
-        from: email,
-        to: "contact@dear.com",
+        from: "contact@dear.com",
+        to: email,
         subject,
         text: message,
         html: `<strong>${message}</strong>`,
@@ -29,4 +29,4 @@ class MailController {
   };
 }
 
-module.exports = MailController;
+module.exports = MailAdminController;
