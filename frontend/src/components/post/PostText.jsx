@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import "./styles/PostText.css";
 import axios from "axios";
 import swal from "sweetalert";
+import ButtonReturnGreen from "./ButtonReturnGreen";
 import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
@@ -27,6 +28,7 @@ function PostText() {
           { content, category },
           { withCredentials: true }
         )
+        // .then((res) => console.log(content, category))
         .then(() => navigate("/addpost/home", { replace: true }))
         .catch((err) => {
           console.warn(err);
@@ -37,6 +39,7 @@ function PostText() {
   return (
     <div className="div-post-texte">
       <div className="title-post-category">
+        <ButtonReturnGreen />
         <h1>À quelle catégorie</h1>
         <h1>appartient ce post?</h1>
       </div>
@@ -51,7 +54,7 @@ function PostText() {
           <option value="Témoignage">Témoignage</option>
           <option value="Bien être sexuel">Bien être sexuel</option>
           <option value="Amour">Amour</option>
-          <option value="Polyamoure">Polyamoure</option>
+          <option value="Polyamoure">Polyamour</option>
           <option value="Relation sexuelle">Relation sexuelle</option>
           <option value="Vulve">Vulve</option>
           <option value="Pénis">Pénis</option>

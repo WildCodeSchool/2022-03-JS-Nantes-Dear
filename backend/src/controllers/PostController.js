@@ -1,5 +1,3 @@
-/* eslint-disable camelcase */
-/* eslint-disable no-undef */
 const Joi = require("joi");
 const models = require("../models");
 
