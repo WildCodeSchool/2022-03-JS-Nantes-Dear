@@ -53,9 +53,9 @@ class PostController {
   };
 
   static add = async (req, res) => {
-    const { content, user_id, category, created_at } = req.body;
+    const { content, category } = req.body;
 
-    const [post] = await models.post.findByPseudo(user_id);
+    const [post] = await models.post.findByCategory(category);
 
     if (post.lenght) {
       res.status(409).send({
@@ -75,17 +75,13 @@ class PostController {
     models.post
       .insert({
         content,
-        user_id,
         category,
-        created_at,
       })
       .then(([result]) => {
         res.status(201).send({
           id: result.insertId,
           content,
-          user_id,
           category,
-          created_at,
         });
       })
       .catch((err) => {

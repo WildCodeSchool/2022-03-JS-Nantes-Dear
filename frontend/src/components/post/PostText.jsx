@@ -16,7 +16,7 @@ function PostText() {
     if (!content || !category) {
       swal({
         title: "Error!",
-        text: "Merci de spécifier la categorie et de remplir le contenu",
+        text: "Merci de spécifier la categorie et de publier un post",
         icon: "error",
         confirmButtonText: "parfait",
       });
@@ -80,5 +80,4 @@ function PostText() {
     </div>
   );
 }
-
 export default PostText;

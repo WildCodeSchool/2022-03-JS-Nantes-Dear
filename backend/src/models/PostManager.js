@@ -10,16 +10,21 @@ class PostManager extends AbstractManager {
     );
   }
 
-  findAll() {
+  findByCategory(category) {
     return this.connection.query(
-      `select post.*, user.pseudo AS pseudo FROM ${PostManager.table} JOIN user ON user.id = post.user_id`
+      `select post.*, category.name AS name FROM ${PostManager.table} JOIN category ON post.id = post.category_id WHERE post.id = ?`,
+      [category]
     );
+  }
+
+  findAll() {
+    return this.connection.query(`select id, name, color ${PostManager.table}`);
   }
 
   insert(post) {
     return this.connection.query(
-      `insert into ${PostManager.table} (content, user_id, category_id, created_at) values (?, ?, ?, ?)`,
-      [post.content, post.user_id, post.category_id, post.created_at]
+      `insert into ${PostManager.table} (content, category_id) values (?, ?)`,
+      [post.content, post.category_id]
     );
   }
 
