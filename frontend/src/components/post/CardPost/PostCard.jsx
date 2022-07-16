@@ -45,20 +45,20 @@ function PostCard({ post }) {
 }
 PostCard.propTypes = {
   post: propTypes.shape({
-    user_id: propTypes.number,
-    content: propTypes.string,
-    category_id: propTypes.number,
-    created_at: propTypes.instanceOf(Date),
-  }),
+    user_id: propTypes.number.isRequired,
+    content: propTypes.string.isRequired,
+    category_id: propTypes.number.isRequired,
+    created_at: propTypes.instanceOf(Date).isRequired,
+  }).isRequired,
 };
 
-PostCard.defaultProps = {
-  post: propTypes.shape({
-    user_id: propTypes.number,
-    content: propTypes.string,
-    category_id: propTypes.number,
-    created_at: propTypes.instanceOf(Date),
-  }),
-};
+// PostCard.defaultProps = {
+//   post: propTypes.shape({
+//     user_id: propTypes.number,
+//     content: propTypes.string,
+//     category_id: propTypes.number,
+//     created_at: propTypes.instanceOf(Date),
+//   }),
+// };
 
 export default PostCard;
