@@ -4,7 +4,7 @@ import { propTypes } from "react-bootstrap/esm/Image";
 import ButtonLikeDislike from "../ButtonLikeDislike";
 
 function PostCard({ post }) {
-  const { user, content, category, postdate } = post;
+  const { userId, content, category, createdAt } = post;
   // const backgroundColorList = [
   //   "#303364",
   //   "#EC4D4D",
@@ -18,10 +18,9 @@ function PostCard({ post }) {
     <div className="postcard">
       <div className="headercard">
         <h2>
-          <span className="dateText"> {postdate} 2020-02-12 </span> {user}
-          user1100{" "}
+          <span className="dateText"> {createdAt}</span> {userId}
         </h2>
-        <p> {category} porno </p>
+        <p> {category}</p>
       </div>
       <div className="contentcard">
         <p>{content}</p>
@@ -34,14 +33,14 @@ function PostCard({ post }) {
 }
 PostCard.propTypes = {
   post: propTypes.string,
-  user: propTypes.string,
+  userId: propTypes.string,
   content: propTypes.string,
   category: propTypes.string,
   // postdate: propTypes.instanceOf(Date),
 };
 PostCard.defaultProps = {
   post: propTypes.string,
-  user: propTypes.string,
+  userId: propTypes.string,
   content: propTypes.string,
   category: propTypes.string,
   // postdate: propTypes.instanceOf(Date),

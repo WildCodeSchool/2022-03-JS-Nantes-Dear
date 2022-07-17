@@ -1,10 +1,12 @@
 /* eslint-disable prettier/prettier */
-import React from "react";
+import React, { useState } from "react";
 import ButtonReturnPurple from "./ButtonReturnPurple";
 import ButtonMailSend from "./ButtonMailSend";
 import "./styles/MailDeleteProfile.css";
 
 function MailDeleteProfile() {
+  const [message, setMessage] = useState("");
+
   return (
     <div className="container-page-mail-delete-profile">
       <div className="maildeleteprofile">
@@ -15,17 +17,22 @@ function MailDeleteProfile() {
         </h2>
       </div>
       <div className="subtilte-maildeleteprofile">
-        <h1 className="subtilte-maildeleteprofile">
-          Envoie Mail Automatique :
-        </h1>
-        <p className="subtilte-mail-delete-profile">
-          {" "}
-          Bonjour "PetitFenouil10"
-        </p>
-        <p className="subtilte-mail-delete-profile"> Blablabla</p>
-        <p className="subtilte-mail-delete-profile">Blablabla</p>
+        <h1 className="subtilte-maildeleteprofile">Envoie Mail :</h1>
+        <form className="contactuser" htmlFor="sendsorrymail">
+          <label className="contactuserform" htmlFor="sendsorrymail">
+            <textarea
+              className="inputuserform"
+              type="content"
+              name="content"
+              id="content"
+              placeholder="Bonjour c'est la team DEAR,"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+            />
+          </label>
+        </form>
       </div>
-      <div className="buttons-maildeleteprofile">
+      <div className="button-maildeleteprofile">
         <ButtonMailSend />
       </div>
     </div>
