@@ -39,7 +39,7 @@ function PostText() {
           { withCredentials: true }
         )
 
-        .then(() => navigate("/addpost/home", { replace: true }))
+        .then(() => navigate("/home", { replace: true }))
         .catch((err) => {
           console.warn(err);
         });
