@@ -1,7 +1,13 @@
 import React from "react";
 import "./styles/Postcard.css";
-import { propTypes } from "react-bootstrap/esm/Image";
+import propTypes from "prop-types";
+import TimeAgo from "javascript-time-ago";
+import fr from "javascript-time-ago/locale/fr";
+import ReactTimeAgo from "react-time-ago";
 import ButtonLikeDislike from "../ButtonLikeDislike";
+
+TimeAgo.addDefaultLocale(fr);
+TimeAgo.addLocale(fr);
 
 function PostCard({ post }) {
   const { userId, content, category, createdAt } = post;
@@ -10,9 +16,13 @@ function PostCard({ post }) {
     <div className="postcard">
       <div className="headercard">
         <h2>
-          <span className="dateText"> {createdAt}</span> {userId}
+          <span className="dateText">
+            {" "}
+            <ReactTimeAgo date={createdAt} relocale="fr" />{" "}
+          </span>
+          par user{userId}
         </h2>
-        <p> {category}</p>
+        <p>{category}</p>
       </div>
       <div className="contentcard">
         <p>{content}</p>

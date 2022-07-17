@@ -1,5 +1,6 @@
 .footerHome {
   position: fixed;
+  z-index: 2;
   background-color: white;
   width: 100vw;
   height: 4rem;
