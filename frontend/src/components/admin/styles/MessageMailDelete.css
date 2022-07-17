@@ -1,0 +1,17 @@
+.tilte-message-delete {
+    margin-top: 2rem;
+    color: var(--dark-blue);
+    font-size: 0.9rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .tilte-message-delete {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .tilte-message-delete {
+        font-size: 1.7rem;
+    }
+}
