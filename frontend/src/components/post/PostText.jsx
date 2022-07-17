@@ -2,6 +2,7 @@ import { React, useState } from "react";
 import "./styles/PostText.css";
 import axios from "axios";
 import swal from "sweetalert";
+import ButtonReturnGreen from "./ButtonReturnGreen";
 import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
@@ -34,6 +35,7 @@ function PostText() {
   return (
     <div className="div-post-texte">
       <div className="title-post-category">
+        <ButtonReturnGreen />
         <h1>À quelle catégorie</h1>
         <h1>appartient ce post?</h1>
       </div>

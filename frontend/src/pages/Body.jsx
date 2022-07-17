@@ -19,6 +19,8 @@ import AdminAccount from "../components/admin/AdminAccount";
 import LoginAdmin from "./LoginAdmin";
 import UserActivities from "../components/admin/UserActivities";
 import UserDelete from "../components/admin/UserDelete";
+import MailDeleteProfile from "../components/admin/MailDeleteProfile";
+import DeleteProfile from "../components/admin/DeleteProfile";
 
 export default function Body() {
   const initialRegister = {
@@ -61,6 +63,8 @@ export default function Body() {
           <Route path="/useractivities" element={<UserActivities />} />
           <Route path="/userdelete" element={<UserDelete />} />
           <Route path="/useraccount" element={<UserAccount />} />
+          <Route path="/maildeleteprofile" element={<MailDeleteProfile />} />
+          <Route path="userdelete/deleteprofile" element={<DeleteProfile />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/connection" element={<Connection />} />
           <Route path="/addpost" element={<AddPost />} />

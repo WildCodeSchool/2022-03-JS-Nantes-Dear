@@ -84,7 +84,7 @@
     height: 55vh;
     margin-top: 4em;
   }
-  
+
   .contact-title {
     font-size: 1.1rem;
     font-weight: 400;
@@ -94,11 +94,11 @@
     justify-content: center;
     margin-bottom: 1rem;
   }
-  
+
   .contact label {
     margin-bottom: 0.5vh;
   }
-  
+
   .contact input {
     width: 45vw;
     height: 4vh;
@@ -106,7 +106,7 @@
     padding-left: 20px;
     border: 1px solid var(--light-purple);
   }
-  
+
   .contact textarea {
     width: 45vw;
     height: 15vh;
@@ -115,17 +115,17 @@
     border-radius: 5px;
     border: 1px solid var(--light-purple);
   }
-  
+
   .contact input ::placeholder {
     color: var(--light-purple);
     opacity: 1;
   }
-  
+
   .contact textarea ::placeholder {
     color: var(--light-purple);
     opacity: 1;
   }
-  
+
   .contactButton {
     text-decoration: none;
     padding: 7px;
@@ -135,19 +135,19 @@
     box-shadow: 3px 3px 12px #444444;
     margin-bottom: 8rem;
   }
-  
+
   .contactButton:hover {
     padding: 10px;
     background-color: var(--dark-blue);
     border-radius: 24px;
     box-shadow: 1px 1px 4px #777777;
   }
-  
+
   .length-ok {
     border: 1px solid black;
     border-radius: 4px;
   }
-  
+
   .length-maximum-reached {
     border: 1px solid black;
   }

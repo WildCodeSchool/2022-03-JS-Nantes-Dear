@@ -247,7 +247,7 @@ button {
     width: 20.6rem;
   }
 }
-  
+
 @media screen and (min-width: 1024px) {
   .admin-top {
     width: 95vw;

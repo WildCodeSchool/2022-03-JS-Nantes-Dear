@@ -21,7 +21,7 @@ function Users() {
   return (
     <div className="container-page-users">
       <div className="tilte-userspage">
-        <h1>Les utilisateurs</h1>
+        <h1 className="tilte-users-page">Les utilisateurs</h1>
       </div>
       <div className="subtilte-userspage">
         <h1 className="subtilteuserspage">Les utilisateurs DEAR</h1>

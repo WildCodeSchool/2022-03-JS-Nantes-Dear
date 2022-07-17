@@ -1,4 +1,6 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import ButtonReturnPurple from "./ButtonReturnPurple";
 import ButtonMailDelete from "./ButtonMailDelete";
 import ButtonProfileDelete from "./ButtonProfileDelete";
 import "./styles/UserDelete.css";
@@ -7,8 +9,9 @@ function UserDelete() {
   return (
     <div className="container-page-user-delete">
       <div className="userpagedelete">
+        <ButtonReturnPurple />
         <h1 className="head-tilte-userpageactivities">Les utilisateurs</h1>
-        <h2 className="head-subtilte-userpageactivities">Suppresion profil</h2>
+        <h2 className="head-subtilte-userpageactivities">Suppression profil</h2>
       </div>
       <div className="subtilte-useruserpageadelete">
         <h1 className="subtilte-userpage-delete">
@@ -29,8 +32,12 @@ function UserDelete() {
         </p>
       </div>
       <div className="buttons-userpagedelete">
-        <ButtonMailDelete />
-        <ButtonProfileDelete />
+        <Link to="/maildeleteprofile">
+          <ButtonMailDelete />
+        </Link>
+        <Link to="deleteprofile">
+          <ButtonProfileDelete />
+        </Link>
       </div>
     </div>
   );
