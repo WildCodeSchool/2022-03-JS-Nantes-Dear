@@ -106,6 +106,7 @@ input[type="checkbox"]:checked {
   width: 6vw;
   max-width: 30px;
   margin-bottom: 0.5rem;
+  background-color: white;
 }
 .categorie-container.inactive .open-close {
   transform: rotate(180deg);
@@ -116,9 +117,6 @@ input[type="checkbox"]:checked {
   transition: all 0.3s ease-in-out;
 }
 .logofilter {
-  background-color: white;
-}
-.navfilter {
   background-color: white;
 }
 

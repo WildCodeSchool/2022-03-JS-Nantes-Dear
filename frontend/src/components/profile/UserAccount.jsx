@@ -34,6 +34,7 @@ function UserAccount() {
       </div>
       <div className="container-profile">
         <div className="profile-card">
+          <ScrollButton />
           <div className="profile-category">
             <BsListTask className="profile-icon" />
             <h3>Mes données personnelles</h3>
@@ -132,7 +133,6 @@ function UserAccount() {
           </div>
         </div>
       </div>
-      <ScrollButton />
       <FooterHome />
     </div>
   );

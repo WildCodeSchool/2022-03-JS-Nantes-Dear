@@ -9,9 +9,8 @@ function UserList() {
   return (
     <div className="container-user-list">
       <div className="align-pseudo-pictos">
-        <div className="user-list">
-          <ScrollButton />
-          <p className="user-pseudo-exemple">Petitfenouil10</p>
+        <div className="user-pseudo-exemple">
+          <p>Petitfenouil10</p>
         </div>
         <div className="pictos-list-user">
           <Link to="/useractivities">
@@ -20,6 +19,7 @@ function UserList() {
           <Link to="/userdelete">
             <img className="iconcross" src={iconcross} alt="icon-cross" />
           </Link>
+          <ScrollButton />
         </div>
       </div>
     </div>

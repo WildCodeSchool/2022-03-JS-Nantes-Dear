@@ -1,12 +1,20 @@
 import React from "react";
 import "./styles/ButtonPublierPost.css";
+import PropTypes from "prop-types";
 
-function ButtonPublierPost() {
+function ButtonPublierPost({ handleSubmit }) {
   return (
-    <div className="buttonpublierpost">
+    <button type="submit" className="buttonpublierpost" onClick={handleSubmit}>
       <h3>Publier</h3>
-    </div>
+    </button>
   );
 }
+ButtonPublierPost.propTypes = {
+  handleSubmit: PropTypes.func,
+};
+
+ButtonPublierPost.defaultProps = {
+  handleSubmit: PropTypes.func,
+};
 
 export default ButtonPublierPost;
