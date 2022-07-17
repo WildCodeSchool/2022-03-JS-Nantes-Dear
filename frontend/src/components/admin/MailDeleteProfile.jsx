@@ -2,10 +2,29 @@
 import React, { useState } from "react";
 import ButtonReturnPurple from "./ButtonReturnPurple";
 import ButtonMailSend from "./ButtonMailSend";
+import MessageMailDelete from "./MessageMailDelete";
 import "./styles/MailDeleteProfile.css";
 
 function MailDeleteProfile() {
   const [message, setMessage] = useState("");
+  const [isAdminClick, setIsAdminClick] = useState(false);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    setIsAdminClick(!isAdminClick);
+
+    fetch(`${import.meta.env.VITE_BACKEND_URL}/sendsorrymail`, {
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+      body: JSON.stringify(),
+    }).then((response) => {
+      if (response.status === 200);
+      return response.json();
+    });
+  }
 
   return (
     <div className="container-page-mail-delete-profile">
@@ -35,7 +54,8 @@ function MailDeleteProfile() {
         </form>
       </div>
       <div className="button-maildeleteprofile">
-        <ButtonMailSend />
+        <ButtonMailSend handleClick={handleClick} />
+        {isAdminClick && <MessageMailDelete />}
       </div>
     </div>
   );

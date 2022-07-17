@@ -88,7 +88,7 @@ function TrustCharter() {
       </p>
       <h2>ENGAGEMENT N4: UN SERVICE QUALITÉ RÉACTIF ET ACCESSIBLE</h2>
       <p className="chart-paragraph">
-        Notre service qualité d'excellence (Aline et Lila ;) oui, même à deux on
+        Notre service qualité d'excellence (Aline et Lila ; oui, même à deux on
         vous chouchoute !) estjoignable par mail dear.officiel@gmail.com et
         clairement affiché dans les CGU. Les membres peuvent également nous
         contacter sur nos réseaux sociaux. Or, toutes les réclamations doivent

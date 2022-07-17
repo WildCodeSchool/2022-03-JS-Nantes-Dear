@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./styles/UserList.css";
+import ScrollButton from "../home/ScrollButton";
 import iconcross from "../../assets/icon-cross.png";
 import iconeye from "../../assets/icon-eye.png";
 
@@ -9,6 +10,7 @@ function UserList() {
     <div className="container-user-list">
       <div className="align-pseudo-pictos">
         <div className="user-list">
+          <ScrollButton />
           <p className="user-pseudo-exemple">Petitfenouil10</p>
         </div>
         <div className="pictos-list-user">
