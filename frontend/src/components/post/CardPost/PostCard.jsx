@@ -1,21 +1,36 @@
-import axios from "axios";
-import React, { useEffect, useState } from "react";
-import "./styles/PostList.css";
+import React from "react";
+import "./styles/Postcard.css";
+import { propTypes } from "react-bootstrap/esm/Image";
+import ButtonLikeDislike from "../ButtonLikeDislike";
 
-export default function PostList() {
-  const [/* posts, */ setPosts] = useState([]);
+function PostCard({ post }) {
+  const { userId, content, category, createdAt } = post;
 
-  useEffect(() => {
-    axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/post`)
-      .then((res) => setPosts(res.data))
-      .catch((err) => {
-        console.warn(err.response.data.error);
-      });
-  }, []);
   return (
-    <div className="postList">
-      <div className="post" />
+    <div className="postcard">
+      <div className="headercard">
+        <h2>
+          <span className="dateText"> {createdAt}</span> {userId}
+        </h2>
+        <p> {category}</p>
+      </div>
+      <div className="contentcard">
+        <p>{content}</p>
+      </div>
+      <div className="footercard">
+        <ButtonLikeDislike />
+      </div>
     </div>
   );
 }
+
+PostCard.propTypes = {
+  post: propTypes.shape({
+    userId: propTypes.number.isRequired,
+    content: propTypes.string.isRequired,
+    category: propTypes.string.isRequired,
+    createdAt: propTypes.string.isRequired,
+  }).isRequired,
+};
+
+export default PostCard;

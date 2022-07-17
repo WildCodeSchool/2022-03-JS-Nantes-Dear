@@ -1,5 +1,6 @@
 import React from "react";
 import PostText from "../components/post/PostText";
+
 import "./styles/AddPost.css";
 
 export default function AddPost() {

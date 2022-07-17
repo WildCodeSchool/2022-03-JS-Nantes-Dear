@@ -3,7 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const cookieParser = require("cookie-parser");
 const userRoutes = require("./routes/user.routes");
-// const categoryRoutes = require("./routes/category.routes");
+const categoryRoutes = require("./routes/category.routes");
 const postRoutes = require("./routes/post.routes");
 const router = require("./router");
 
@@ -27,7 +27,7 @@ app.use(express.static(path.join(__dirname, "../public")));
 
 // API routes
 app.use(userRoutes);
-// app.use(categoryRoutes);
+app.use(categoryRoutes);
 app.use(postRoutes);
 app.use(router);
 
