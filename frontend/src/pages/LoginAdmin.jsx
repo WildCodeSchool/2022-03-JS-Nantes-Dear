@@ -28,7 +28,7 @@ function LoginAdmin() {
           { pseudo, password },
           { withCredentials: true }
         )
-        .then(() => navigate("/adminaccount", { replace: true }))
+        .then(() => navigate("/accountadmin", { replace: true }))
         .catch((err) => {
           console.error(err);
         });
