@@ -11,6 +11,8 @@ function PostText() {
   const [categoryId, setCategoryId] = useState("");
   const [categories, setCategories] = useState([]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     axios
       .get(`${import.meta.env.VITE_BACKEND_URL}/category`)
@@ -19,8 +21,6 @@ function PostText() {
         console.error(err);
       });
   }, []);
-
-  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -38,7 +38,7 @@ function PostText() {
           { content, categoryId },
           { withCredentials: true }
         )
-        // .then((res) => console.log(content, category))
+
         .then(() => navigate("/addpost/home", { replace: true }))
         .catch((err) => {
           console.warn(err);
@@ -56,6 +56,7 @@ function PostText() {
       <div className="form-post-text">
         <select
           className="option-category-post"
+          name="category"
           id="share-select"
           value={categoryId}
           onChange={(e) => setCategoryId(e.target.value)}
