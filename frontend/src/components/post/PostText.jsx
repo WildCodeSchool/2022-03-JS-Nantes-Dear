@@ -1,4 +1,5 @@
-import { React, useState } from "react";
+import { React, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./styles/PostText.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -7,27 +8,40 @@ import ButtonPublierPost from "./ButtonPublierPost";
 
 function PostText() {
   const [content, setContent] = useState("");
+  const [categoryId, setCategoryId] = useState("");
+  const [categories, setCategories] = useState([]);
+
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/category`)
+      .then((res) => setCategories(res.data))
+      .catch((err) => {
+        console.error(err);
+      });
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!content) {
+    if (!content || !categoryId) {
       swal({
         title: "Error!",
-        text: "Merci de publier",
+        text: "Merci de spécifier la categorie et de publier un post",
         icon: "error",
         confirmButtonText: "parfait",
       });
     } else {
       axios
         .post(
-          `${import.meta.env.VITE_BACKEND_URL}/post/postText`,
-          { content },
+          `${import.meta.env.VITE_BACKEND_URL}/post/posttext`,
+          { content, categoryId },
           { withCredentials: true }
         )
-        // eslint-disable-next-line no-restricted-syntax
-        .then((res) => console.log(res.data))
+
+        .then(() => navigate("/home", { replace: true }))
         .catch((err) => {
-          console.error(err);
+          console.warn(err);
         });
     }
   };
@@ -40,16 +54,19 @@ function PostText() {
         <h1>appartient ce post?</h1>
       </div>
       <div className="form-post-text">
-        <select className="option-category-post" id="share-select">
-          <option value="">--Choisir une catégorie--</option>
-          <option value="">Témoignage</option>
-          <option value="">Bien être sexuel</option>
-          <option value="">Amour</option>
-          <option value="">Polyamoure</option>
-          <option value="">Relation sexuelle</option>
-          <option value="">Vulve</option>
-          <option value="">Pénis</option>
-          <option value="">Non-binaire</option>
+        <select
+          className="option-category-post"
+          name="category"
+          id="share-select"
+          value={categoryId}
+          onChange={(e) => setCategoryId(e.target.value)}
+        >
+          <option value="0">--Choisir une catégorie--</option>
+          {categories.map((category) => (
+            <option key={category.id} value={category.id}>
+              {category.name}
+            </option>
+          ))}
         </select>
       </div>
       <div className="bloc-texte-post">
@@ -69,12 +86,9 @@ function PostText() {
         </form>
       </div>
       <div className="button-publier-post">
-        {/* <Link to="/editpost/postcategory"> */}
         <ButtonPublierPost handleSubmit={handleSubmit} />
-        {/* </Link> */}
       </div>
     </div>
   );
 }
-
 export default PostText;
