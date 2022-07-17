@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import "./styles/LoginAdmin.css";
 import axios from "axios";
 import swal from "sweetalert";
@@ -7,12 +7,14 @@ import ButtonConnexion from "../components/admin/ButtonConnexion";
 import logoCircle from "../assets/logo-dear-rond.png";
 
 function LoginAdmin() {
-  const [pseudoAdmin, setPseudoAdmin] = useState("");
-  const [passwordAdmin, setPasswordAdmin] = useState("");
+  const [pseudo, setPseudo] = useState("");
+  const [password, setPassword] = useState("");
+
+  const navigate = useNavigate();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!pseudoAdmin || !passwordAdmin) {
+    if (!pseudo || !password) {
       swal({
         title: "Error!",
         text: "Merci de renseigner votre pseudo ET votre email",
@@ -23,13 +25,11 @@ function LoginAdmin() {
       axios
         .post(
           `${import.meta.env.VITE_BACKEND_URL}/users/login`,
-          { pseudoAdmin, passwordAdmin },
+          { pseudo, password },
           { withCredentials: true }
         )
-        // eslint-disable-next-line no-restricted-syntax
-        .then((response) => console.log(response.data))
+        .then(() => navigate("/adminaccount", { replace: true }))
         .catch((err) => {
-          // alert(err.response.data.error);
           console.error(err);
         });
     }
@@ -53,8 +53,8 @@ function LoginAdmin() {
             name="pseudo"
             id="pseudo"
             placeholder="Lila ou Aline"
-            value={pseudoAdmin}
-            onChange={(e) => setPseudoAdmin(e.target.value)}
+            value={pseudo}
+            onChange={(e) => setPseudo(e.target.value)}
           />
           <input
             className="inputLogPasswordAdmin"
@@ -62,13 +62,11 @@ function LoginAdmin() {
             name="password"
             id="password"
             placeholder="Mot de passe"
-            value={passwordAdmin}
-            onChange={(e) => setPasswordAdmin(e.target.value)}
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
           />
           <div className="buttoncontinueadmin">
-            <Link to="/accountadmin">
-              <ButtonConnexion handleSubmit={handleSubmit} />
-            </Link>
+            <ButtonConnexion handleSubmit={handleSubmit} />
           </div>
         </form>
       </div>
