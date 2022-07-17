@@ -24,7 +24,7 @@ function MailDeleteProfile() {
       if (response.status === 200);
       return response.json();
     });
-  }
+  };
 
   return (
     <div className="container-page-mail-delete-profile">
@@ -36,9 +36,7 @@ function MailDeleteProfile() {
         </h2>
       </div>
       <div className="subtilte-maildeleteprofile">
-        <h1 className="subtilte-maildeleteprofile">
-          Envoie Mail :
-        </h1>
+        <h1 className="subtilte-maildeleteprofile">Envoie Mail :</h1>
         <form className="contactuser" htmlFor="sendsorrymail">
           <label className="contactuserform" htmlFor="sendsorrymail">
             <textarea

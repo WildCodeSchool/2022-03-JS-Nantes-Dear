@@ -34,7 +34,6 @@ input[placeholder="Rechercher"] {
   border: 1px solid #bdc3cf;
 }
 
-
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .logofilter {
     height: 1.8rem;

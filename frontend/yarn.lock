@@ -849,11 +849,6 @@
   "resolved" "https://registry.npmjs.org/es6-object-assign/-/es6-object-assign-1.1.0.tgz"
   "version" "1.1.0"
 
-"esbuild-darwin-arm64@0.14.49":
-  "integrity" "sha512-XMaqDxO846srnGlUSJnwbijV29MTKUATmOLyQSfswbK/2X5Uv28M9tTLUJcKKxzoo9lnkYPsx2o8EJcTYwCs/A=="
-  "resolved" "https://registry.npmjs.org/esbuild-darwin-arm64/-/esbuild-darwin-arm64-0.14.49.tgz"
-  "version" "0.14.49"
-
 "esbuild@^0.14.27", "esbuild@^0.14.49":
   "integrity" "sha512-/TlVHhOaq7Yz8N1OJrjqM3Auzo5wjvHFLk+T8pIue+fhnhIMpfAzsG6PLVMbFveVxqD2WOp3QHei+52IMUNmCw=="
   "resolved" "https://registry.npmjs.org/esbuild/-/esbuild-0.14.49.tgz"
@@ -1484,6 +1479,13 @@
   "resolved" "https://registry.npmjs.org/isexe/-/isexe-2.0.0.tgz"
   "version" "2.0.0"
 
+"javascript-time-ago@^2.5.6":
+  "integrity" "sha512-uqnLU334Dtu6lC2pIOnPyH8GkG0UnSlDLD19sfEaAITIg5zR3x0O0MkFYJEVXtY4Q9JWOcxFJoXoxxT5/B5Okg=="
+  "resolved" "https://registry.npmjs.org/javascript-time-ago/-/javascript-time-ago-2.5.6.tgz"
+  "version" "2.5.6"
+  dependencies:
+    "relative-time-format" "^1.1.4"
+
 "js-tokens@^3.0.0 || ^4.0.0", "js-tokens@^4.0.0":
   "integrity" "sha512-RdJUflcE3cUzKiMqQgsCu06FPu9UdIJO0beYbPhHN4k6apgJtifcoCtT9bcxOpYBtpD2kCM6Sbzg4CausW/PKQ=="
   "resolved" "https://registry.npmjs.org/js-tokens/-/js-tokens-4.0.0.tgz"
@@ -1930,6 +1932,11 @@
   "resolved" "https://registry.npmjs.org/regexpp/-/regexpp-3.2.0.tgz"
   "version" "3.2.0"
 
+"relative-time-format@^1.1.4":
+  "integrity" "sha512-WRWEDEZFTD/95oYMd58kzlYHI6QzexMpPkxvi4/P+NLdzli/tteNonmAa5jYLm8ehJVTGiM2siNg7i1Dkn/gDw=="
+  "resolved" "https://registry.npmjs.org/relative-time-format/-/relative-time-format-1.1.4.tgz"
+  "version" "1.1.4"
+
 "resolve-from@^4.0.0":
   "integrity" "sha512-pb/MYmXstAkysRFx8piNI1tGFNQIFA3vkE3Gq4EuA1dF6gHp/+vgZqsCGJapvy8N3Q+4o7FwvquPJcnZ7RYy4g=="
   "resolved" "https://registry.npmjs.org/resolve-from/-/resolve-from-4.0.0.tgz"
@@ -2113,6 +2120,7 @@
   dependencies:
     "nodemailer" "^6.7.5"
     "nodemon" "^2.0.16"
+    "styled-components" "^5.3.5"
 
 "text-table@^0.2.0":
   "integrity" "sha512-N+8UisAXDGk8PFXP4HAzVR9nbfmVJ3zYLAWiTIoqC5v5isinhr+r5uaO8+7r3BMfuNIufIsA7RdpVgacC2cSpw=="
