@@ -1,25 +1,8 @@
-import React, { useState } from "react";
-import MessageMailDelete from "./MessageMailDelete";
+import React from "react";
+import PropTypes from "prop-types";
 import "./styles/ButtonMailSend.css";
 
-function ButtonMailSend() {
-  const [isAdminClick, setIsAdminClick] = useState(false);
-  function handleClick(e) {
-    e.preventDefault();
-    setIsAdminClick(!isAdminClick);
-
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/sendsorrymail`, {
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify(),
-    }).then((response) => {
-      if (response.status === 200);
-      return response.json();
-    });
-  }
+function ButtonMailSend({ handleClick }) {
   return (
     <div className="containbuttonmailsend">
       <button
@@ -30,9 +13,16 @@ function ButtonMailSend() {
       >
         <h3>Envoyer</h3>
       </button>
-      {isAdminClick && <MessageMailDelete />}
     </div>
   );
 }
+
+ButtonMailSend.propTypes = {
+  handleClick: PropTypes.func,
+};
+
+ButtonMailSend.defaultProps = {
+  handleClick: PropTypes.func,
+};
 
 export default ButtonMailSend;

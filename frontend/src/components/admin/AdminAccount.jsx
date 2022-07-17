@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
-import { BsListTask, BsPencilSquare } from "react-icons/bs";
+import { BsListTask } from "react-icons/bs";
 import { FaUserFriends } from "react-icons/fa";
-import Moderation from "./FilActu";
+import FilActu from "./FilActu";
 import Users from "./Users";
 import ManageFaCul from "./ManageFaCul";
 import logoBlue from "../../assets/dear-logo-blue.png";
@@ -56,17 +56,6 @@ function AdminAccount() {
                 <IoIosArrowDroprightCircle className="arrow-admin" />
               </button>
             </div>
-            <div className="admin-category">
-              <BsPencilSquare className="admin-icon" />
-              <h3>Gérer la FACul</h3>
-              <button
-                type="button"
-                className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
-                onClick={() => toggleTab(3)}
-              >
-                <IoIosArrowDroprightCircle className="arrow-admin" />
-              </button>
-            </div>
           </div>
           <div className="admin-logout">
             <Logout />
@@ -78,7 +67,7 @@ function AdminAccount() {
               toggleState === 1 ? "content  active-content" : "content"
             }
           >
-            <Moderation />
+            <FilActu />
           </div>
           <div
             className={

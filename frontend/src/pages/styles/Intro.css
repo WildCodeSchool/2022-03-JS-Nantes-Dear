@@ -183,7 +183,6 @@ body {
 
   .buttons-intro {
     margin-top: 2rem;
-    margin-bottom: 1rem;
   }
 }
 @media screen and (orientation: landscape) {
@@ -195,7 +194,7 @@ body {
   }
   .button {
     height: 12vh;
-    width: 40vw;
+    width: 25vw;
     margin: 0.5rem;
   }
 }
