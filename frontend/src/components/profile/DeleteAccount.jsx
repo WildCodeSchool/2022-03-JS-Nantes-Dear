@@ -7,7 +7,7 @@ function DeleteAccount() {
   const handleDelete = (event) => {
     event.preventDefault();
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/:id"`)
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/userId`)
       .then(() => {
         alert("Your account has been successfully deleted");
       })
@@ -21,7 +21,7 @@ function DeleteAccount() {
   return (
     <div>
       <Link to="/">
-        <ButtonDeleteAccount handleSubmit={handleDelete} />
+        <ButtonDeleteAccount handleDelete={handleDelete} />
       </Link>
     </div>
   );
