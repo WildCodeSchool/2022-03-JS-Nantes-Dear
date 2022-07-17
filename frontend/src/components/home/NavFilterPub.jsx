@@ -12,8 +12,8 @@ export default function NavFilterPub() {
   return (
     <nav className="menuResearch">
       <div className="filter-container">
-        <button id="navfilter" type="button" onClick={handleShowNav}>
-          <img src={filter} alt="filter" />
+        <button className="navfilter" type="button" onClick={handleShowNav}>
+          <img src={filter} className="logofilter" alt="filter" />
         </button>
       </div>
       <div className={`categorie-container ${inactive ? "inactive" : ""}`}>

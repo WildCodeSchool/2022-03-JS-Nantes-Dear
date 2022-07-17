@@ -18,7 +18,7 @@
   z-index: 2;
   left: 0;
   width: 100vw;
-  height: 70vh;
+  height: 69vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -30,7 +30,7 @@
 .checkbox-container {
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: flex-end;
   gap: 2rem;
   margin: 0 auto;
 }
@@ -103,8 +103,10 @@ input[type="checkbox"]:checked {
 }
 
 #navfilter * {
-  width: 8vw;
+  width: 6vw;
   max-width: 30px;
+  margin-bottom: 0.5rem;
+  background-color: white;
 }
 .categorie-container.inactive .open-close {
   transform: rotate(180deg);
@@ -113,4 +115,34 @@ input[type="checkbox"]:checked {
 .categorie-container .open-close {
   transform: rotate(360deg);
   transition: all 0.3s ease-in-out;
+}
+.logofilter {
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .logofilter {
+    height: 1.8rem;
+  }
+  .categorie-container {
+    width: 50vw;
+    height: 68vh;
+  }
+
+  .categorie-container label {
+    width: 23vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logofilter {
+    height: 1.6rem;
+  }
+  .categorie-container {
+    width: 30vw;
+    height: 68vh;
+  }
+  .categorie-container label {
+    width: 13vw;
+  }
 }

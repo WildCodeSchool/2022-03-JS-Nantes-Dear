@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "./styles/User.css";
 import ButtonRechercher from "./ButtonRechercher";
+import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
 
 function Users() {
@@ -20,6 +21,7 @@ function Users() {
 
   return (
     <div className="container-page-users">
+      <ScrollButton />
       <div className="tilte-userspage">
         <h1 className="tilte-users-page">Les utilisateurs</h1>
       </div>

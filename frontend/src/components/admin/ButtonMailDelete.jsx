@@ -5,7 +5,7 @@ function ButtonMailDelete() {
   return (
     <div className="containbuttonmaildelete">
       <button type="submit" className="buttonmaildelete">
-        <h3>Envoyer le mail automatique</h3>
+        <h3>Envoyer le mail</h3>
       </button>
     </div>
   );

@@ -85,9 +85,6 @@ export default function CardPseudo() {
             <option value="36-45">36 - 45 ans</option>
             <option value="45+">45 ans et +</option>
           </select>
-          <button className="inputformsubmit" type="button">
-            Valider
-          </button>
         </form>
       </div>
       <div className="button-continue">

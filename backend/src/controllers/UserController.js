@@ -86,7 +86,7 @@ class UserController {
               );
 
               res
-                .cookie("access_token", token, {
+                .cookie("accessToken", token, {
                   httpOnly: true,
                   secure: process.env.NODE_ENV === "production",
                 })
@@ -125,7 +125,7 @@ class UserController {
   };
 
   static logout = (req, res) => {
-    res.clearCookie("access_token");
+    res.clearCookie("accessToken");
     res.sendStatus(204);
   };
 

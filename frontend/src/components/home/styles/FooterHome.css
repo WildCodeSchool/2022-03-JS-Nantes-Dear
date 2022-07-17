@@ -1,5 +1,6 @@
 .footerHome {
   position: fixed;
+  z-index: 2;
   background-color: white;
   width: 100vw;
   height: 4rem;
@@ -19,6 +20,8 @@
   position: fixed;
   right: 0;
   display: flex;
+  justify-content: space-between;
+  width: 95vw;
 }
 
 .logo-home-container {
