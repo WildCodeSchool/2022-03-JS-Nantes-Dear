@@ -56,6 +56,8 @@ export default function Body() {
             path="/registration/register/goodconduct/hello"
             element={<Hello />}
           />
+          <Route path="/addpost" element={<AddPost />} />
+          <Route path="/addpost/home" element={<AddPost />} />
           <Route path="/connection/bonjour" element={<Bonjour />} />
           <Route path="/home" element={<Home />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
@@ -67,7 +69,6 @@ export default function Body() {
           <Route path="userdelete/deleteprofile" element={<DeleteProfile />} />
           <Route path="/comment" element={<Comment />} />
           <Route path="/connection" element={<Connection />} />
-          <Route path="/addpost" element={<AddPost />} />
         </Routes>
       </UserContext.Provider>
     </div>

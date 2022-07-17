@@ -1,7 +1,4 @@
-/* eslint-disable camelcase */
-
 import React from "react";
-
 import "./styles/Postcard.css";
 import propTypes from "prop-types";
 import TimeAgo from "javascript-time-ago";
@@ -13,17 +10,7 @@ TimeAgo.addDefaultLocale(fr);
 TimeAgo.addLocale(fr);
 
 function PostCard({ post }) {
-  const { user_id, content, category_id, created_at } = post;
-
-  // const backgroundColorList = [
-  //   "#303364",
-  //   "#EC4D4D",
-  //   "#A7D1CD",
-  //   "#F8C053",
-  //   "#A098C9",
-  // ];
-  // const rand = Math.floor(Math.random() * backgroundColorList.length);
-  // const valueColor = backgroundColorList[rand];
+  const { userId, content, category, createdAt } = post;
 
   return (
     <div className="postcard">
@@ -31,11 +18,11 @@ function PostCard({ post }) {
         <h2>
           <span className="dateText">
             {" "}
-            <ReactTimeAgo date={created_at} relocale="fr" />{" "}
+            <ReactTimeAgo date={createdAt} relocale="fr" />{" "}
           </span>
-          par user{user_id}
+          par user{userId}
         </h2>
-        <p> {category_id} porno </p>
+        <p>{category}</p>
       </div>
       <div className="contentcard">
         <p>{content}</p>
@@ -46,12 +33,13 @@ function PostCard({ post }) {
     </div>
   );
 }
+
 PostCard.propTypes = {
   post: propTypes.shape({
-    user_id: propTypes.number.isRequired,
+    userId: propTypes.number.isRequired,
     content: propTypes.string.isRequired,
-    category_id: propTypes.number.isRequired,
-    created_at: propTypes.instanceOf(Date).isRequired,
+    category: propTypes.string.isRequired,
+    createdAt: propTypes.string.isRequired,
   }).isRequired,
 };
 

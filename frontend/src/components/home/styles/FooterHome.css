@@ -20,6 +20,8 @@
   position: fixed;
   right: 0;
   display: flex;
+  justify-content: space-between;
+  width: 95vw;
 }
 
 .logo-home-container {
