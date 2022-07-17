@@ -1,26 +1,28 @@
 import React from "react";
 import "./styles/Postcard.css";
-import { propTypes } from "react-bootstrap/esm/Image";
+import propTypes from "prop-types";
+import TimeAgo from "javascript-time-ago";
+import fr from "javascript-time-ago/locale/fr";
+import ReactTimeAgo from "react-time-ago";
 import ButtonLikeDislike from "../ButtonLikeDislike";
+
+TimeAgo.addDefaultLocale(fr);
+TimeAgo.addLocale(fr);
 
 function PostCard({ post }) {
   const { userId, content, category, createdAt } = post;
-  // const backgroundColorList = [
-  //   "#303364",
-  //   "#EC4D4D",
-  //   "#A7D1CD",
-  //   "#F8C053",
-  //   "#A098C9",
-  // ];
-  // const rand = Math.floor(Math.random() * backgroundColorList.length);
-  // const valueColor = backgroundColorList[rand];
+
   return (
     <div className="postcard">
       <div className="headercard">
         <h2>
-          <span className="dateText"> {createdAt}</span> {userId}
+          <span className="dateText">
+            {" "}
+            <ReactTimeAgo date={createdAt} relocale="fr" />{" "}
+          </span>
+          par user{userId}
         </h2>
-        <p> {category}</p>
+        <p>{category}</p>
       </div>
       <div className="contentcard">
         <p>{content}</p>
@@ -31,18 +33,14 @@ function PostCard({ post }) {
     </div>
   );
 }
+
 PostCard.propTypes = {
-  post: propTypes.string,
-  userId: propTypes.string,
-  content: propTypes.string,
-  category: propTypes.string,
-  // postdate: propTypes.instanceOf(Date),
+  post: propTypes.shape({
+    userId: propTypes.number.isRequired,
+    content: propTypes.string.isRequired,
+    category: propTypes.string.isRequired,
+    createdAt: propTypes.string.isRequired,
+  }).isRequired,
 };
-PostCard.defaultProps = {
-  post: propTypes.string,
-  userId: propTypes.string,
-  content: propTypes.string,
-  category: propTypes.string,
-  // postdate: propTypes.instanceOf(Date),
-};
+
 export default PostCard;
