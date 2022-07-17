@@ -5,7 +5,7 @@ import ButtonLikeDislike from "../ButtonLikeDislike";
 
 function PostCard({ post }) {
   const { userId, content, category, createdAt } = post;
-  
+
   return (
     <div className="postcard">
       <div className="headercard">
@@ -30,7 +30,7 @@ PostCard.propTypes = {
     content: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
     createdAt: propTypes.string.isRequired,
-  });
+  }).isRequired,
 };
 
 export default PostCard;

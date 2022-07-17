@@ -12,7 +12,12 @@ export default function NavFilterPub() {
   return (
     <nav className="menuResearch">
       <div className="filter-container">
-        <button id="navfilter" className="navfilter" type="button" onClick={handleShowNav}>
+        <button
+          id="navfilter"
+          className="navfilter"
+          type="button"
+          onClick={handleShowNav}
+        >
           <img src={filter} className="logofilter" alt="filter" />
         </button>
       </div>
