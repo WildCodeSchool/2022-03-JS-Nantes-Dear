@@ -48,11 +48,11 @@ ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 ALTER TABLE admin ADD FOREIGN KEY (userId) REFERENCES user (id);
 
 INSERT INTO user (email, pseudo, password, role) VALUES 
-("lila@lpp-agency.com", "Lila", "Rillettes", "ROLE_ADMIN"),
-("aline@lpp-agency.com", "Aline", "Caribou", "ROLE_ADMIN"),
-("Petitfenouil10@gmail.com", "Petitfenouil10", "Petitfenouil10", "ROLE_USER"),
-("Supertomate27@gmail.com", "Supertomate27", "Supertomate27", "ROLE_USER"),
-("Ananasrose5@gmail.com", "Ananasrose5", "Ananasrose5", "ROLE_USER");
+("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN"),
+("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq", "ROLE_ADMIN"),
+("Petitfenouil10@gmail.com", "Petitfenouil10", "$2b$10$WUbrfR6d2QgyJmJswACuMethqHszW1b3gWXuC4/oKD3FjxRCRgRt6", "ROLE_USER"),
+("Supertomate27@gmail.com", "Supertomate27", "$2b$10$yteXWz72uXVXyrf5wL4xBeWBSpXvhXdADcaMntt1koxECGtwzXaHC", "ROLE_USER"),
+("Ananasrose5@gmail.com", "Ananasrose5", "$2b$10$8MBdZRO9si6eHC7lbdGx9eqGftGUvGVwPwbm5xeJi7nOM4jDfikDe", "ROLE_USER");
 
 INSERT INTO category (name) VALUES 
 ("Amour"),
