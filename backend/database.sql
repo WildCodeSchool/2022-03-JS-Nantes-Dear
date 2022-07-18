@@ -12,6 +12,7 @@ CREATE TABLE user (
   pseudo varchar(255) UNIQUE,
   password varchar(255),
   role varchar(255)
+  adminId int
 );
 
 DROP TABLE IF EXISTS post;
@@ -40,13 +41,11 @@ CREATE TABLE category (
   color varchar(255)
 );
 
-ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES comment (user_id);
+ALTER TABLE comment ADD FOREIGN KEY (userId) REFERENCES user (id);
 
-ALTER TABLE comment ADD FOREIGN KEY (user_id) REFERENCES User (id);
+ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 
-ALTER TABLE post ADD FOREIGN KEY (category_id) REFERENCES category (id);
-
-ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES admin (user_id);
+ALTER TABLE admin ADD FOREIGN KEY (userId) REFERENCES user (id);
 
 INSERT INTO user (email, pseudo, password, role) VALUES 
 ("lila@lpp-agency.com", "Lila", "Rillettes", "ROLE_ADMIN"),
