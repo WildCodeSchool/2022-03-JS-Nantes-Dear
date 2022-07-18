@@ -2,6 +2,7 @@ import { useState, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
 import UserAccount from "../components/profile/UserAccount";
+import DeleteAccount from "../components/profile/DeleteAccount";
 import Intro from "./Intro";
 import IntroAdult from "./IntroAdult";
 import SorryNotAdult from "../components/intro/SorryNotAdult";
@@ -65,6 +66,10 @@ export default function Body() {
           <Route path="/useractivities" element={<UserActivities />} />
           <Route path="/userdelete" element={<UserDelete />} />
           <Route path="/useraccount" element={<UserAccount />} />
+          <Route
+            path="/useraccount/deleteaccount/:userId"
+            element={<DeleteAccount />}
+          />
           <Route path="/maildeleteprofile" element={<MailDeleteProfile />} />
           <Route path="userdelete/deleteprofile" element={<DeleteProfile />} />
           <Route path="/comment" element={<Comment />} />

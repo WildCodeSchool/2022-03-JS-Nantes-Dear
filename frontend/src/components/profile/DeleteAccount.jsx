@@ -1,13 +1,13 @@
-import React from "react";
+import { React, useParams } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import ButtonDeleteAccount from "./ButtonDeleteAccount";
 
 function DeleteAccount() {
-  const handleDelete = (event) => {
-    event.preventDefault();
+  const handleDelete = () => {
+    const { userId } = useParams();
     axios
-      .delete(`${import.meta.env.VITE_BACKEND_URL}/userId`)
+      .delete(`${import.meta.env.VITE_BACKEND_URL}/useraccount/${userId}`)
       .then(() => {
         alert("Your account has been successfully deleted");
       })
