@@ -1,5 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS dear;
-
+DROP TABLE IF EXISTS admin;
+CREATE TABLE admin (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  message varchar(255) UNIQUE,
+  userId int
+);
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -9,23 +14,23 @@ CREATE TABLE user (
   role varchar(255)
 );
 
-DROP TABLE IF EXISTS `post`;
-CREATE TABLE `post` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `content` varchar(255),
-  `userId` int,
-  `categoryId` int,
-  `createdAt` datetime,
-  `likes` int,
-  `signals` int
+DROP TABLE IF EXISTS post;
+CREATE TABLE post (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  content varchar(255),
+  userId int,
+  categoryId int,
+  createdAt datetime,
+  likes int,
+  signals int
 );
 
-DROP TABLE IF EXISTS `comment`;
-CREATE TABLE `comment` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `createdAt` datetime,
-  `userId` int,
-  `postId` int
+DROP TABLE IF EXISTS comment;
+CREATE TABLE comment (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  createdAt datetime,
+  userId int,
+  postId int
 );
 
 DROP TABLE IF EXISTS category;
@@ -40,3 +45,9 @@ ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES comment (user_id);
 ALTER TABLE comment ADD FOREIGN KEY (user_id) REFERENCES User (id);
 
 ALTER TABLE post ADD FOREIGN KEY (category_id) REFERENCES category (id);
+
+ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES admin (user_id);
+
+INSERT INTO user (email, pseudo, password, role) VALUES 
+("lila@lpp-agency.com", "Lila", "Rillettes", "ROLE_ADMIN"),
+("aline@lpp-agency.com", "Aline", "Caribou", "ROLE_ADMIN");
