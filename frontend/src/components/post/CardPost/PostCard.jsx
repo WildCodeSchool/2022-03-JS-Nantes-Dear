@@ -18,9 +18,9 @@ function PostCard({ post }) {
         <h2>
           <span className="dateText">
             {" "}
-            <ReactTimeAgo date={createdAt} relocale="fr" />{" "}
+            <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />{" "}
           </span>
-          par user{userId}
+          {userId}
         </h2>
         <p>{category}</p>
       </div>

@@ -72,7 +72,7 @@ class PostController {
         content,
         userId: user.id,
         categoryId: parseInt(categoryId, 10),
-        createdAt: dayjs().format("YYYY-MM-DD"),
+        createdAt: dayjs().format("L LT"),
         likes: 0,
         signals: 0,
       })
