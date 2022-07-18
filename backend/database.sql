@@ -1,5 +1,10 @@
 CREATE DATABASE  IF NOT EXISTS dear;
-
+DROP TABLE IF EXISTS admin;
+CREATE TABLE admin (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  message varchar(255) UNIQUE,
+  `userId` int
+);
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
   id int PRIMARY KEY AUTO_INCREMENT,

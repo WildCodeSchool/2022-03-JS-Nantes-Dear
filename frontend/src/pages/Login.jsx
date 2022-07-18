@@ -28,10 +28,8 @@ function Login() {
           { pseudo, password },
           { withCredentials: true }
         )
-        // eslint-disable-next-line no-restricted-syntax
         .then(() => navigate("/connection/bonjour", { replace: true }))
         .catch((err) => {
-          // alert(err.response.data.error);
           console.error(err);
         });
     }
