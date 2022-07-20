@@ -1,0 +1,45 @@
+.title-managefacul {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5rem;
+  background-color: var(--light-purple);
+}
+
+.tilte-manage-facul {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.subtilte-manage-facul {
+  color: var(--dark-blue);
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2em;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .title-managefacul {
+    height: 4rem;
+  }
+  .tilte-manage-facul {
+    font-size: 1.2rem;
+  }
+  .subtilte-manage-facul {
+    font-size: 0.9rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title-managefacul {
+    height: 5rem;
+  }
+  .tilte-manage-facul {
+    font-size: 1.4rem;
+  }
+  .subtilte-manage-facul {
+    font-size: 1rem;
+  }
+}

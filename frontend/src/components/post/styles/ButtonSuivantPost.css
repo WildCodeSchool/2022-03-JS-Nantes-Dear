@@ -1,0 +1,33 @@
+.buttonsuivantpost {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  max-width: 500px;
+  height: 9vw;
+  max-height: 70px;
+  background-color: var(--white);
+  color: var(--mint-blue);
+  border-radius: 10px;
+  font-family: var(--font);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttonsuivantpost {
+    width: 30vw;
+    border-radius: 20px;
+  }
+  .buttonsuivantpost h3 {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttonsuivantpost {
+    width: 20vw;
+    border-radius: 25px;
+  }
+  .buttonsuivantpost h3 {
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,36 @@
+.buttongo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20vw;
+  max-width: 500px;
+  height: 9vw;
+  max-height: 70px;
+  background-color: var(--mint-blue);
+  color: var(--white);
+  border-radius: 25px;
+  font-family: var(--font);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttongo {
+    width: 15vw;
+    height: 7vw;
+    border-radius: 30px;
+  }
+  .buttongo h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttongo {
+    width: 7vw;
+    height: 4vw;
+    border-radius: 60px;
+  }
+  .buttongo h3 {
+    font-size: 1.2rem;
+  }
+}

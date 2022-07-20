@@ -1,0 +1,152 @@
+.menu {
+  position: absolute;
+  left: 0;
+  width: 100vw;
+  height: 80vh;
+  font-family: var(--font);
+}
+
+.categorie-container h4 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  padding-bottom: 2rem;
+  margin: 0 auto;
+}
+
+.categorie-container {
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  width: 100vw;
+  height: 69vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  background-color: var(--dark-blue);
+}
+
+.checkbox-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2rem;
+  margin: 0 auto;
+}
+
+.categorie-container label {
+  display: flex;
+  align-items: center;
+  width: 50vw;
+  justify-content: space-between;
+  font-weight: 200;
+}
+
+.confirm-filter-container {
+  display: flex;
+  justify-content: center;
+}
+
+#confirmFilter {
+  border: none;
+  font-family: var(--font);
+  font-weight: 400;
+  font-size: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 20px;
+  background-color: var(--light-red);
+  color: white;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+}
+
+input[type="checkbox"] {
+  position: relative;
+  vertical-align: baseline;
+  border-radius: 3px;
+  height: 15px;
+  width: 15px;
+  background: #fff;
+}
+
+input[type="checkbox"]:checked {
+  background: var(--light-red);
+  margin: 0px;
+}
+
+.menu.inactive .categorie-container {
+  display: none;
+}
+.categorie-container.inactive {
+  background-color: white;
+  display: none;
+}
+
+.categorie-container.inactive .confirm-filter-container {
+  display: none;
+}
+
+.categorie-container.inactive .filter-container {
+  display: block;
+}
+.categorie-container.inactive .categorie-container {
+  display: none;
+}
+.categorie-container .filter-container {
+  display: none;
+}
+
+#navfilter * {
+  width: 6vw;
+  max-width: 30px;
+  margin-bottom: 0.5rem;
+  background-color: white;
+}
+.categorie-container.inactive .open-close {
+  transform: rotate(180deg);
+  transition: all 0.3s ease-in-out;
+}
+.categorie-container .open-close {
+  transform: rotate(360deg);
+  transition: all 0.3s ease-in-out;
+}
+.logofilter {
+  background-color: white;
+}
+
+.navfilter {
+  background-color: white;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .logofilter {
+    height: 1.8rem;
+  }
+  .categorie-container {
+    width: 50vw;
+    height: 68vh;
+  }
+
+  .categorie-container label {
+    width: 23vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logofilter {
+    height: 1.6rem;
+  }
+  .categorie-container {
+    width: 30vw;
+    height: 68vh;
+  }
+  .categorie-container label {
+    width: 13vw;
+  }
+}

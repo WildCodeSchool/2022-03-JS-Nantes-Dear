@@ -1,0 +1,41 @@
+.title-filactu {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5rem;
+  background-color: var(--light-purple);
+}
+
+.title-fil-actu {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .contain-filactu {
+    height: 30rem;
+  }
+
+  .title-filactu {
+    height: 4rem;
+  }
+  .title-fil-actu {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .contain-filactu {
+    height: 30rem;
+  }
+  .title-filactu {
+    height: 5rem;
+  }
+  .title-fil-actu {
+    font-size: 1.4rem;
+  }
+  .filactu-posts {
+    height: 30rem;
+  }
+}

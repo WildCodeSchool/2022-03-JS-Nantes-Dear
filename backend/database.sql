@@ -1,63 +1,70 @@
--- phpMyAdmin SQL Dump
--- version 4.5.4.1deb2ubuntu2
--- http://www.phpmyadmin.net
---
--- Client :  localhost
--- Généré le :  Jeu 26 Octobre 2017 à 13:53
--- Version du serveur :  5.7.19-0ubuntu0.16.04.1
--- Version de PHP :  7.0.22-0ubuntu0.16.04.1
+CREATE DATABASE  IF NOT EXISTS dear;
+DROP TABLE IF EXISTS admin;
+CREATE TABLE `admin` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `message` varchar(255) UNIQUE,
+  `userId` int
+);
+DROP TABLE IF EXISTS user;
+CREATE TABLE `user`(
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `email` varchar(255) UNIQUE,
+  `pseudo` varchar(255) UNIQUE,
+  `password` varchar(255),
+  `role` varchar(255),
+  `adminId` int
+);
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET time_zone = "+00:00";
+DROP TABLE IF EXISTS post;
+CREATE TABLE `post` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `content` varchar(255),
+  `userId` int,
+  `categoryId` int,
+  `createdAt` datetime,
+  `likes` int,
+  `signals` int
+);
 
+DROP TABLE IF EXISTS comment;
+CREATE TABLE comment (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `createdAt` datetime,
+  `userId` int,
+  `postId` int
+);
 
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
+DROP TABLE IF EXISTS category;
+CREATE TABLE category (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(255),
+  `color` varchar(255)
+);
 
---
--- Base de données :  `simple-mvc`
---
+ALTER TABLE comment ADD FOREIGN KEY (userId) REFERENCES user (id);
 
--- --------------------------------------------------------
+ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 
---
--- Structure de la table `item`
---
+ALTER TABLE admin ADD FOREIGN KEY (userId) REFERENCES user (id);
 
-CREATE TABLE `item` (
-  `id` int(11) UNSIGNED NOT NULL,
-  `title` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+INSERT INTO user (email, pseudo, password, role) VALUES 
+("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN"),
+("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq", "ROLE_ADMIN"),
+("Petitfenouil10@gmail.com", "Petitfenouil10", "$2b$10$WUbrfR6d2QgyJmJswACuMethqHszW1b3gWXuC4/oKD3FjxRCRgRt6", "ROLE_USER"),
+("Supertomate27@gmail.com", "Supertomate27", "$2b$10$yteXWz72uXVXyrf5wL4xBeWBSpXvhXdADcaMntt1koxECGtwzXaHC", "ROLE_USER"),
+("Ananasrose5@gmail.com", "Ananasrose5", "$2b$10$8MBdZRO9si6eHC7lbdGx9eqGftGUvGVwPwbm5xeJi7nOM4jDfikDe", "ROLE_USER");
 
---
--- Contenu de la table `item`
---
+INSERT INTO category (name) VALUES 
+("Amour"),
+("Bien-être sexuel"),
+("Non-binaire"),
+("Pénis"),
+("Polyamour"),
+("Relation sexuelle"),
+("Témoignage"),
+("Vagin");
 
-INSERT INTO `item` (`id`, `title`) VALUES
-(1, 'Stuff'),
-(2, 'Doodads');
-
---
--- Index pour les tables exportées
---
-
---
--- Index pour la table `item`
---
-ALTER TABLE `item`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT pour les tables exportées
---
-
---
--- AUTO_INCREMENT pour la table `item`
---
-ALTER TABLE `item`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO post (content, userId, categoryId, createdAt) VALUES
+("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 3, 6, "2022-07-18"),
+("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 4, 6, "2022-07-17"),
+("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 5, 8, "2022-07-16");

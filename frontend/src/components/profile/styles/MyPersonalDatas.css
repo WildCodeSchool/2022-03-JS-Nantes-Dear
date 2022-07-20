@@ -1,0 +1,86 @@
+.modify-button {
+  background: var(--dark-blue);
+  color: white;
+  border-radius: 10px;
+  font-size: 0.9rem;
+  width: 40vw;
+  height: 3.2vh;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.container-pseudo {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+}
+
+.inputpseudo {
+  border-radius: 5rem;
+  margin-left: 0.5rem;
+  width: 12rem;
+  height: 1.8rem;
+  border: 2px solid #bdc3cf;
+}
+
+.container-modify {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .modify-button {
+    border-radius: 10px;
+    font-size: 0.9rem;
+    width: 20vw;
+    height: 3.2vh;
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  .container-pseudo {
+    height: 15vh;
+    display: flex;
+    align-items: center;
+  }
+
+  .inputpseudo {
+    border-radius: 5rem;
+    margin-left: 0.5rem;
+    width: 20rem;
+    height: 2rem;
+    border: 2px solid #bdc3cf;
+  }
+
+  .container-modify {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .modify-button {
+    border-radius: 10px;
+    font-size: 0.9rem;
+    width: 15vw;
+    height: 5vh;
+    margin-top: 15px;
+  }
+
+  .container-pseudo {
+    height: 20vh;
+  }
+
+  .inputpseudo {
+    border-radius: 5rem;
+    margin-left: 1rem;
+    width: 30rem;
+    height: 2.5rem;
+  }
+
+  .container-modify {
+    margin-bottom: 1rem;
+  }
+}

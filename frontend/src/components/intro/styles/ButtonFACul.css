@@ -1,0 +1,34 @@
+* {
+  text-decoration: none;
+}
+
+.buttonfacul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vw;
+  max-width: 500px;
+  height: 9vw;
+  max-height: 70px;
+  background-color: var(--light-red);
+  color: var(--white);
+  border-radius: 25px;
+  font-family: var(--font);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttonfacul {
+    width: 15vw;
+    height: 7vw;
+    border-radius: 30px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttonfacul {
+    width: 8vw;
+    height: 4vw;
+    border-radius: 60px;
+  }
+}

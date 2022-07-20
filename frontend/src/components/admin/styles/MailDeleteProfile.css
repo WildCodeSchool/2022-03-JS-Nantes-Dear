@@ -1,0 +1,170 @@
+.container-page-mail-delete-profile {
+  background-color: white;
+  width: 100vw;
+  height: 140vh;
+}
+
+.maildeleteprofile {
+  background-color: var(--light-purple);
+  height: 9rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  color: var(--white);
+}
+
+.head-tilte-maildeleteprofile,
+.head-subtilte-maildeleteprofile {
+  margin-left: 3rem;
+}
+
+.head-tilte-maildeleteprofile {
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.head-subtilte-maildeleteprofile {
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  font-weight: 200;
+  font-style: italic;
+}
+
+.subtilte-maildeleteprofile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--dark-blue);
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.subtilte-maildeleteprofile h1 {
+  margin-bottom: 2rem;
+}
+
+.inputuserform {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 80vw;
+  height: 80vw;
+  border-color: var(--dark-blue);
+  border-radius: 2rem;
+  color: var(--dark-blue);
+  font-family: var(--font);
+  font-size: 1rem;
+  margin: auto;
+  resize: none;
+}
+
+.inputuserform::placeholder {
+  color: #bdc3cf;
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+textarea {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.button-maildeleteprofile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .maildeleteprofile {
+    height: 12rem;
+  }
+  .head-tilte-maildeleteprofile,
+  .head-subtilte-maildeleteprofile {
+    margin-left: 5rem;
+  }
+  .head-tilte-maildeleteprofile {
+    font-size: 2rem;
+  }
+  .head-subtilte-maildeleteprofile {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .subtilte-maildeleteprofile h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  .subtilte-mail-delete-profile {
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .inputuserform {
+    width: 85vw;
+    height: 60vw;
+    font-size: 1.2rem;
+    margin-top: 2rem;
+  }
+  .inputuserform::placeholder {
+    padding-top: 1rem;
+    font-size: 1rem;
+  }
+  textarea {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+  }
+  .buttons-maildeleteprofile {
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .maildeleteprofile {
+    height: 12rem;
+  }
+  .head-tilte-maildeleteprofile,
+  .head-subtilte-maildeleteprofile {
+    margin-left: 5rem;
+  }
+  .head-tilte-maildeleteprofile {
+    font-size: 2rem;
+  }
+  .head-subtilte-maildeleteprofile {
+    font-size: 1.2rem;
+    margin-top: 1rem;
+  }
+  .subtilte-maildeleteprofile h1 {
+    font-weight: 500;
+    font-size: 1.2rem;
+  }
+  .subtilte-mail-delete-profile {
+    margin-top: 3rem;
+    margin-left: 5rem;
+    margin-right: 5rem;
+  }
+  .inputuserform {
+    width: 90vw;
+    height: 25vw;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .inputuserform::placeholder {
+    padding-top: 1rem;
+    font-size: 1rem;
+  }
+  textarea {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    padding-top: 2rem;
+  }
+  .buttons-maildeleteprofile {
+    margin-top: 12rem;
+  }
+}

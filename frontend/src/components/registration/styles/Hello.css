@@ -1,0 +1,84 @@
+.hello-inscription {
+  background-color: var(--dark-blue);
+  height: 220vw;
+}
+
+.logo-inscription {
+  height: 20vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.welcome-text-inscription {
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.bienvenue-text-inscription {
+  font-family: var(--font);
+  color: var(--white);
+  margin-top: 0.5rem;
+  margin-left: 1rem;
+}
+
+.button-go-inscription {
+  margin-top: 5rem;
+  margin-left: 9rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hello-inscription {
+    height: 150vw;
+  }
+
+  .logo-inscription {
+    height: 25vh;
+  }
+
+  .welcome-text-inscription {
+    margin-top: 3rem;
+    margin-left: 10rem;
+    font-size: 3rem;
+  }
+
+  .bienvenue-text-inscription {
+    margin-left: 10rem;
+    font-size: 1.5rem;
+  }
+
+  .button-go-inscription {
+    margin-top: 6rem;
+    margin-left: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .hello-inscription {
+    height: 100vw;
+  }
+
+  .logo-inscription {
+    height: 20vh;
+  }
+
+  .welcome-text-inscription {
+    margin-top: 3rem;
+    margin-left: 20rem;
+    font-size: 1.8rem;
+  }
+
+  .bienvenue-text-inscription {
+    margin-left: 20rem;
+    font-size: 1.3rem;
+  }
+
+  .button-go-inscription {
+    margin-top: 7rem;
+    margin-left: 37rem;
+  }
+}

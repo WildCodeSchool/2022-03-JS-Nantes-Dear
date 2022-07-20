@@ -1,0 +1,152 @@
+.title-post-category,
+.title-post-message {
+  color: var(--white);
+  font-family: var(--font);
+  padding-top: 2rem;
+  margin-left: 2rem;
+}
+.title-post-category h1,
+.title-post-message h1 {
+  font-size: 1rem;
+  font-family: var(--font);
+}
+
+.title-post-message {
+  margin-top: 5rem;
+}
+
+.option-category-post {
+  color: var(--light-purple);
+  font-family: var(--font);
+  text-align: center;
+  font-size: 0.9rem;
+  padding: 0.2rem;
+  border-radius: 5rem;
+  border: none;
+  margin-top: 1rem;
+  margin-left: 2rem;
+  height: 2rem;
+}
+
+.inputformpost {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 90vw;
+  height: 90vw;
+  background-color: var(--mint-blue);
+  border-color: var(--white);
+  border-radius: 2rem;
+  color: var(--dark-blue);
+  font-family: var(--font);
+  font-size: 1rem;
+  margin: auto;
+  resize: none;
+  margin-top: 1rem;
+}
+
+.inputformpost::placeholder {
+  color: var(--white);
+  font-size: 0.85rem;
+  font-style: italic;
+}
+
+textarea {
+  padding-left: 0.5rem;
+  padding-right: 1rem;
+  padding-top: 1rem;
+}
+
+.textpost {
+  padding: 1rem;
+}
+
+.button-publier-post {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+.button-publier-post a {
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .title-post-category,
+  .title-post-message {
+    padding-top: 4rem;
+    margin-left: 4rem;
+  }
+  .title-post-category h1,
+  .title-post-message h1 {
+    font-size: 1.5rem;
+  }
+
+  .title-post-message {
+    margin-top: 3rem;
+  }
+
+  .option-category-post {
+    font-size: 1.5rem;
+    padding: 0.6rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    height: 4rem;
+  }
+  .inputformpost {
+    width: 85vw;
+    height: 60vw;
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+
+  .inputformpost::placeholder {
+    padding-top: 1rem;
+    font-size: 1.5rem;
+  }
+
+  .button-publier-post {
+    margin-right: 4rem;
+    margin-top: 2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .title-post-category,
+  .title-post-message {
+    padding-top: 4rem;
+    margin-left: 4rem;
+  }
+  .title-post-category h1,
+  .title-post-message h1 {
+    font-size: 1rem;
+  }
+  .title-post-message {
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+  .option-category-post {
+    font-size: 1rem;
+    padding: 0.6rem;
+    margin-top: 2rem;
+    margin-left: 4rem;
+    height: 3rem;
+  }
+  .inputformpost {
+    width: 90vw;
+    height: 30vw;
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+  .inputformpost::placeholder {
+    padding-top: 1rem;
+    font-size: 1rem;
+  }
+
+  .button-publier-post {
+    margin-right: 4rem;
+    margin-top: 2rem;
+  }
+}

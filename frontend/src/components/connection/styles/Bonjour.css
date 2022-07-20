@@ -1,0 +1,67 @@
+.bonjour-connection {
+  background-color: var(--dark-blue);
+  height: 220vw;
+}
+
+.logo-connection {
+  height: 20vh;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.bonjour-text-connection {
+  font-family: var(--font);
+  color: var(--white);
+  font-size: 2rem;
+  font-weight: bold;
+  margin-left: 1rem;
+}
+
+.button-go-connection {
+  margin-top: 5rem;
+  margin-left: 9rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .bonjour-connection {
+    height: 150vw;
+  }
+
+  .logo-connection {
+    height: 25vh;
+  }
+
+  .bonjour-text-connection {
+    margin-top: 3rem;
+    margin-left: 10rem;
+    font-size: 3rem;
+  }
+
+  .button-go-connection {
+    margin-top: 6rem;
+    margin-left: 20rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .bonjour-connection {
+    height: 100vw;
+  }
+
+  .logo-connection {
+    height: 20vh;
+  }
+
+  .bonjour-text-connection {
+    margin-top: 3rem;
+    margin-left: 20rem;
+    font-size: 1.8rem;
+  }
+
+  .button-go-connection {
+    margin-top: 7rem;
+    margin-left: 37rem;
+  }
+}

@@ -1,0 +1,32 @@
+.buttoncontinue {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  max-width: 500px;
+  height: 15vw;
+  max-height: 70px;
+  background-color: var(--mint-blue);
+  color: var(--white);
+  border-radius: 10px;
+  font-family: var(--font);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttoncontinue {
+    width: 50vw;
+    height: 6rem;
+    margin-bottom: 5rem;
+  }
+  .buttoncontinue h3 {
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttoncontinue {
+    width: 30vw;
+    margin-bottom: 2rem;
+  }
+}

@@ -17,5 +17,10 @@
   "devDependencies": {
     "concurrently": "^7.0.0",
     "husky": "^7.0.0"
+  },
+  "dependencies": {
+    "nodemailer": "^6.7.5",
+    "nodemon": "^2.0.16",
+    "styled-components": "^5.3.5"
   }
 }

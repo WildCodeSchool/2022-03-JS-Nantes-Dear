@@ -1,0 +1,349 @@
+.admin-account-page {
+  background-color: var(--white);
+  height: 100vh;
+}
+
+.logo-admin-page {
+  display: none;
+}
+
+.admin-top {
+  display: flex;
+  width: 100vw;
+  height: 30vh;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-direction: row-reverse;
+  align-items: center;
+}
+
+.admin-top h1 {
+  font-size: 2rem;
+  color: var(--dark-blue);
+}
+
+.backoffice-top {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.backoffice-top h2 {
+  font-weight: 300;
+  font-size: 1.5rem;
+}
+
+.logo-admin-rond {
+  width: 24vw;
+  height: 11vh;
+}
+
+.container-admin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.admin-card {
+  height: 21vh;
+  width: 92vw;
+  border-radius: 10px;
+  margin: auto;
+}
+
+.admin-card h3 {
+  margin-right: auto;
+  opacity: 0.7;
+}
+
+.admin-category {
+  height: 7vh;
+  margin-left: 6px;
+  display: flex;
+  align-items: center;
+  border-bottom: 1px solid lightgray;
+}
+
+.admin-category button {
+  background-color: white;
+  border: none;
+}
+
+.admin-icon {
+  color: var(--light-red);
+  width: 12vw;
+  height: 3vh;
+  margin-right: 1rem;
+}
+
+.arrow-admin {
+  color: lightgray;
+  margin-right: 6px;
+}
+
+.admin-logout {
+  color: var(--dark-blue);
+  margin-left: 0.7rem;
+}
+
+.admin-logout p {
+  font-size: 0.7rem;
+}
+
+.active-tabs {
+  border-bottom: 1px solid transparent;
+}
+
+.active-tabs::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: calc(100% + 2px);
+  height: 5px;
+}
+
+button {
+  border: none;
+}
+.content-tabs {
+  flex-grow: 1;
+}
+
+.content {
+  padding: 20px;
+  display: none;
+}
+.content h2 {
+  padding: 0px 0 5px 0px;
+  color: var(--white);
+  background-color: var(--light-purple);
+}
+.content hr {
+  width: 100px;
+  height: 2px;
+  background: #222;
+  margin-bottom: 5px;
+}
+
+.active-content {
+  display: block;
+  background: white;
+  width: 100vw;
+}
+
+.admin-logout h4 {
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .admin-top {
+    width: 90vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .logo-admin-page {
+    width: 15vw;
+    display: block;
+  }
+
+  .logo-admin-rond {
+    display: none;
+  }
+
+  .admin-top button {
+    width: 15vw;
+  }
+
+  .admin-category {
+    width: 40vw;
+  }
+
+  .admin-icon {
+    width: 9vw;
+  }
+
+  .arrow-admin {
+    margin-right: 12px;
+  }
+
+  .admin-logout {
+    width: 40vw;
+  }
+
+  .container-admin {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    height: 70vh;
+    align-items: baseline;
+  }
+
+  .admin-card {
+    display: flex;
+    width: 43vw;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-left: 12px;
+  }
+
+  .active-tabs {
+    border-bottom: 1px solid transparent;
+  }
+
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+  }
+
+  button {
+    border: none;
+  }
+  .content-tabs {
+    flex-grow: 1;
+    display: block;
+  }
+  .content {
+    padding: 20px;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+    color: var(--white);
+    background-color: var(--light-purple);
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+
+  .active-content {
+    display: block;
+    background: white;
+    width: 50vw;
+    margin-left: 15px;
+    border-radius: 10px;
+    color: var(--dark-blue);
+  }
+
+  .admin-logout {
+    background-color: white;
+    width: 20.6rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .admin-top {
+    width: 95vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin: auto;
+  }
+
+  .logo-admin-page {
+    width: 10vw;
+    display: block;
+  }
+
+  .logo-admin-rond {
+    display: none;
+  }
+
+  .admin-top button {
+    width: 15vw;
+  }
+
+  .admin-category {
+    width: 40vw;
+  }
+
+  .admin-icon {
+    width: 9vw;
+  }
+
+  .arrow-admin {
+    margin-right: 12px;
+  }
+
+  .container-admin {
+    display: flex;
+    flex-direction: row;
+    background-color: #f0f0f0;
+    height: 70vh;
+    align-items: baseline;
+  }
+
+  .admin-card {
+    display: flex;
+    width: 42vw;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 5px;
+    margin-top: 35px;
+    margin-left: 12px;
+  }
+
+  .active-tabs {
+    border-bottom: 1px solid transparent;
+  }
+
+  .active-tabs::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% + 2px);
+    height: 5px;
+  }
+
+  button {
+    border: none;
+  }
+  .content-tabs {
+    flex-grow: 1;
+    display: block;
+  }
+  .content {
+    padding: 20px;
+    display: none;
+  }
+  .content h2 {
+    padding: 0px 0 5px 0px;
+    color: var(--white);
+    background-color: var(--light-purple);
+  }
+  .content hr {
+    width: 100px;
+    height: 2px;
+    background: #222;
+    margin-bottom: 5px;
+  }
+
+  .active-content {
+    display: block;
+    background: white;
+    width: 55vw;
+    margin-left: 15px;
+    border-radius: 10px;
+    color: var(--dark-blue);
+  }
+}

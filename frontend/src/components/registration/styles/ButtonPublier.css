@@ -1,0 +1,26 @@
+.buttonpublier {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
+  max-width: 500px;
+  height: 15vw;
+  max-height: 70px;
+  background-color: var(--white);
+  color: var(--mint-blue);
+  border-radius: 10px;
+  font-family: var(--font);
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttonpublier {
+    width: 55vw;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttonpublier {
+    width: 30vw;
+  }
+}

@@ -1,0 +1,30 @@
+body {
+  background-color: var(--dark-blue);
+}
+.div-connection {
+  background-color: var(--dark-blue);
+  height: 250vw;
+}
+
+.buttonreturn {
+  margin-left: 1rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .div-connection {
+    height: 150vw;
+  }
+
+  .buttonreturn {
+    margin-left: -15rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttonreturn {
+    margin-left: 0rem;
+  }
+  .div-connection {
+    height: 100vw;
+  }
+}

@@ -1,0 +1,101 @@
+.footerHome {
+  position: fixed;
+  z-index: 2;
+  background-color: white;
+  width: 100vw;
+  height: 4rem;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+  justify-content: center;
+  box-shadow: 5px 0px 5px 5px lightgrey;
+}
+
+#logoPlus {
+  width: 13vw;
+}
+
+.logo-footer-container {
+  position: fixed;
+  right: 0;
+  display: flex;
+  justify-content: space-between;
+  width: 95vw;
+}
+
+.logo-home-container {
+  padding-right: 1rem;
+  margin-right: 0.5rem;
+}
+
+.logo-user-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 1rem;
+  margin-right: 0.5rem;
+}
+
+.footer-logo-home,
+.footer-logo-profile {
+  width: 6vw;
+  max-width: 40px;
+  margin-left: 0.2rem;
+}
+
+.logo-home-container p,
+.logo-user-container p {
+  font-size: 0.6rem;
+  color: var(--dark-blue);
+  text-decoration: none;
+}
+
+.logo-user-container p {
+  margin-top: 0rem;
+  margin-left: 0.1rem;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  #logoPlus {
+    width: 7vw;
+  }
+
+  .logo-home-container {
+    padding-right: 2rem;
+  }
+
+  .footer-logo-home,
+  .footer-logo-profile {
+    width: 4vw;
+  }
+  .logo-home-container p,
+  .logo-user-container p {
+    font-size: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  #logoPlus {
+    width: 4vw;
+  }
+
+  .logo-user-container {
+    padding-right: 2rem;
+  }
+
+  .logo-home-container {
+    padding-right: 2rem;
+  }
+
+  .footer-logo-home,
+  .footer-logo-profile {
+    width: 2vw;
+  }
+
+  .logo-home-container p,
+  .logo-user-container p {
+    font-size: 0.7rem;
+  }
+}

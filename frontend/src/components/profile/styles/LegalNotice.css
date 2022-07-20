@@ -1,0 +1,43 @@
+.logo-legal {
+  width: 30vw;
+}
+
+.legal-title {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin-bottom: 30px;
+  width: 40vw;
+  height: 4vh;
+}
+
+.titlelegalnotice {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.lastparagraphlegalnotice {
+  margin-bottom: 5rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .logo-legal {
+    width: 9vw;
+  }
+  .legal-title {
+    font-size: 1.2rem;
+  }
+  .titlelegalnotice {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .logo-legal {
+    width: 10vw;
+  }
+  .titlelegalnotice {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

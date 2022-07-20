@@ -1,0 +1,46 @@
+.buttonmailsend {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6rem;
+  height: 3rem;
+  background-color: var(--dark-blue);
+  color: var(--white);
+  border-radius: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.buttonmailsend h3 {
+  font-size: 0.7rem;
+}
+
+.buttonmailsend:hover {
+  background: var(--light-purple);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .buttonmailsend {
+    width: 10rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .buttonmailsend h3 {
+    font-size: 1.1rem;
+    font-weight: 300;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .buttonmailsend {
+    width: 11rem;
+    height: 4rem;
+    margin-top: 1rem;
+  }
+
+  .buttonmailsend h3 {
+    font-size: 1.2rem;
+    font-weight: 300;
+  }
+}
