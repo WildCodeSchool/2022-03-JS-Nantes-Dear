@@ -40,6 +40,7 @@ function AdminAccount() {
               <button
                 type="button"
                 className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+                style={{ cursor: "pointer" }}
                 onClick={() => toggleTab(1)}
               >
                 <IoIosArrowDroprightCircle className="arrow-admin" />
@@ -51,6 +52,7 @@ function AdminAccount() {
               <button
                 type="button"
                 className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+                style={{ cursor: "pointer" }}
                 onClick={() => toggleTab(2)}
               >
                 <IoIosArrowDroprightCircle className="arrow-admin" />

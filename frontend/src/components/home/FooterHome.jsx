@@ -9,13 +9,22 @@ export default function FooterHome() {
     <footer className="footerHome">
       <div className="publication-button">
         <Link to="/addpost">
-          <img id="logoPlus" src={logoPlus} alt="icône créer publication" />
+          <img
+            className="logoPlus"
+            src={logoPlus}
+            alt="icône créer publication"
+          />
         </Link>
       </div>
       <div className="logo-footer-container">
         <div className="logo-home-container">
           <Link to="/home">
-            <img className="footer-logo-home" src={logoHome} alt="logoHome" />
+            <img
+              className="footer-logo-home"
+              src={logoHome}
+              alt="logoHome"
+              style={{ cursor: "pointer" }}
+            />
             <p> Home </p>
           </Link>
         </div>
