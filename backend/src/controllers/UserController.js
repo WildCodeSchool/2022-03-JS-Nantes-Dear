@@ -26,11 +26,10 @@ class UserController {
       pseudo: Joi.string().max(50).required(),
       password: Joi.string().max(255).required(),
       age: Joi.string().max(30).required(),
-    }).validate({ email, pseudo, password, age, role }).error;
+    }).validate({ email, pseudo, password, age }).error;
 
     if (validationErrors) {
       res.status(422).send(req.body);
-      //  console.log(req.body)
       return;
     }
 
