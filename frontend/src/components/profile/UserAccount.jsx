@@ -16,6 +16,7 @@ import FooterHome from "../home/FooterHome";
 import logoBlue from "../../assets/dear-logo-blue.png";
 import Logout from "./Logout";
 import ScrollButton from "../home/ScrollButton";
+import ButtonDeleteAccount from "./ButtonDeleteAccount";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -92,7 +93,7 @@ function UserAccount() {
           </div>
           <div className="profile-logout">
             <Logout />
-            <p>Supprimer mon compte</p>
+            <ButtonDeleteAccount />
           </div>
         </div>
         <div className="content-tabs">
