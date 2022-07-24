@@ -5,7 +5,7 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { pseudo, age, email, password, role } = req.body;
+    const { email, pseudo, password, age, role } = req.body;
 
     const [user] = await models.user.findByPseudo(pseudo);
     if (user.length) {
@@ -22,14 +22,15 @@ class UserController {
     }
 
     const validationErrors = Joi.object({
-      pseudo: Joi.string().max(20).required(),
-      age: Joi.string().max(30).required(),
       email: Joi.string().email().max(255).required(),
-      password: Joi.string().max(15).required(),
-    }).validate({ pseudo, age, email, password }).error;
+      pseudo: Joi.string().max(50).required(),
+      password: Joi.string().max(255).required(),
+      age: Joi.string().max(30).required(),
+    }).validate({ email, pseudo, password, age, role }).error;
 
     if (validationErrors) {
       res.status(422).send(req.body);
+      //  console.log(req.body)
       return;
     }
 
@@ -38,11 +39,16 @@ class UserController {
       const hash = await bcrypt.hash(password, salt);
 
       models.user
-        .insert({ pseudo, age, email, hash, role })
+        .insert({ email, pseudo, hash, age, role })
         .then(([result]) => {
-          res
-            .status(201)
-            .json({ id: result.insertId, pseudo, age, email, role });
+          res.status(201).json({
+            id: result.insertId,
+            email,
+            pseudo,
+            hash,
+            age,
+            role,
+          });
         })
         .catch((err) => {
           console.error(err);
