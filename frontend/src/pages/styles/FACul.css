@@ -73,14 +73,15 @@ body {
     margin-right: 10rem;
   }
   .logo-facul {
-    width: 5rem;
+    width: 6rem;
   }
   .titlefacul h1 {
-    font-size: 1.2rem;
+    font-size: 1.5rem;
   }
   .explicationsdear p {
     margin-left: 10rem;
     margin-right: 10rem;
+    font-size: 0.9rem;
   }
 
   .titleexplicationsdear,
@@ -107,7 +108,9 @@ body {
   .prodear p {
     margin-left: 10rem;
     margin-right: 10rem;
+    font-size: 0.9rem;
   }
+
   .arrowreturn-facul {
     margin-left: -3rem;
   }
@@ -118,15 +121,29 @@ body {
     margin-right: 18rem;
   }
   .logo-facul {
-    width: 7rem;
+    width: 8rem;
   }
   .titlefacul h1 {
-    font-size: 1.8rem;
+    font-size: 2rem;
   }
+
+  .titleexplicationsdear h2,
+  .titleconceptdear h2,
+  .titlecontentdear h2,
+  .titlefreedear h2,
+  .titleanonymousdear h2,
+  .titlelimitepublicationdear h2,
+  .titlerulesdear h2,
+  .titlebreakrulesdear h2,
+  .titleprodear h2 {
+    font-size: 1.2rem;
+  }
+
   .explicationsdear p {
     margin-left: 20rem;
     margin-right: 20rem;
     padding: 0.1rem;
+    font-size: 1rem;
   }
   .conceptdear p,
   .numbersdear p,
@@ -139,6 +156,7 @@ body {
   .prodear p {
     margin-left: 20rem;
     margin-right: 20rem;
+    font-size: 1rem;
   }
   .arrowreturn-facul {
     margin-left: -13rem;

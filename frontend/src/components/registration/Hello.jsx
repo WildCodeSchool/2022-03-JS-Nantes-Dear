@@ -22,7 +22,7 @@ export default function Hello() {
       </div>
       <div className="button-go-inscription">
         <Link to="/home">
-          <ButtonGo />
+          <ButtonGo style={{ cursor: "pointer" }} />
         </Link>
       </div>
     </div>
