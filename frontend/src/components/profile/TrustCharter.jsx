@@ -8,7 +8,9 @@ function TrustCharter() {
       <img className="logo-charter" src={logoBlue} alt="logo Dear bleu" />
       <h1 className="chart-title">Charte de confiance </h1>
       <div className="subtitle-chart">
-        <h2>LES ENGAGEMENTS DE LA DEAR TEAM</h2>
+        <h2 className="subtitle-chart-title">
+          LES ENGAGEMENTS DE LA DEAR TEAM
+        </h2>
       </div>
       <p className="chart-paragraph">
         Dear c'est une application gratuite qui libère la parole et lève les

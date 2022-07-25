@@ -14,11 +14,12 @@
 }
 
 .categorie-container {
+  margin-top: 0.5rem;
   position: absolute;
   z-index: 2;
   left: 0;
   width: 100vw;
-  height: 69vh;
+  height: 77vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,7 +39,7 @@
 .categorie-container label {
   display: flex;
   align-items: center;
-  width: 50vw;
+  width: 45vw;
   justify-content: space-between;
   font-weight: 200;
 }
@@ -130,7 +131,7 @@ input[type="checkbox"]:checked {
   }
   .categorie-container {
     width: 50vw;
-    height: 68vh;
+    height: 77vh;
   }
 
   .categorie-container label {
@@ -144,7 +145,7 @@ input[type="checkbox"]:checked {
   }
   .categorie-container {
     width: 30vw;
-    height: 68vh;
+    height: 77vh;
   }
   .categorie-container label {
     width: 13vw;
