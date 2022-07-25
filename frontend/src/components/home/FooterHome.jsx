@@ -7,15 +7,7 @@ import logoPlus from "../../assets/logo_plus.png";
 export default function FooterHome() {
   return (
     <footer className="footerHome">
-      <div className="publication-button">
-        <Link to="/addpost">
-          <img
-            className="logoPlus"
-            src={logoPlus}
-            alt="icône créer publication"
-          />
-        </Link>
-      </div>
+   
       <div className="logo-footer-container">
         <div className="logo-home-container">
           <Link to="/home">
