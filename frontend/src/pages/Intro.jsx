@@ -25,15 +25,15 @@ function Intro() {
       </div>
       <div className="buttons-intro">
         <Link to="/introadult">
-          <Registration />
+          <Registration style={{ cursor: "pointer" }} />
         </Link>
         <Link to="/connection">
-          <Connection />
+          <Connection style={{ cursor: "pointer" }} />
         </Link>
       </div>
       <div className="button-facul-intro">
         <Link to="/facul">
-          <ButtonFACul />
+          <ButtonFACul style={{ cursor: "pointer" }} />
         </Link>
       </div>
     </div>
