@@ -7,7 +7,6 @@ import logoPlus from "../../assets/logo_plus.png";
 export default function FooterHome() {
   return (
     <footer className="footerHome">
-   
       <div className="logo-footer-container">
         <div className="logo-home-container">
           <Link to="/home">
