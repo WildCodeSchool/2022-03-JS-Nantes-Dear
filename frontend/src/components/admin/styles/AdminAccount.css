@@ -117,7 +117,7 @@ button {
   display: none;
 }
 .content h2 {
-  padding: 0px 0 5px 0px;
+  padding: 0.4rem;
   color: var(--white);
   background-color: var(--light-purple);
 }
@@ -222,7 +222,7 @@ button {
     display: none;
   }
   .content h2 {
-    padding: 0px 0 5px 0px;
+    padding: 0.5rem;
     color: var(--white);
     background-color: var(--light-purple);
   }
@@ -271,7 +271,7 @@ button {
   }
 
   .admin-category {
-    width: 40vw;
+    width: 39vw;
   }
 
   .admin-icon {
@@ -292,7 +292,7 @@ button {
 
   .admin-card {
     display: flex;
-    width: 42vw;
+    width: 40vw;
     flex-direction: column;
     background-color: white;
     border-radius: 5px;
@@ -327,7 +327,7 @@ button {
     display: none;
   }
   .content h2 {
-    padding: 0px 0 5px 0px;
+    padding: 0.5rem;
     color: var(--white);
     background-color: var(--light-purple);
   }

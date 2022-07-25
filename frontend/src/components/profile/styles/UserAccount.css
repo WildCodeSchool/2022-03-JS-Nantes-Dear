@@ -113,11 +113,6 @@ body {
 .content {
   padding: 20px;
 }
-.content h2 {
-  padding: 4px 0 5px 4px;
-  color: var(--white);
-  background-color: var(--light-purple);
-}
 .content hr {
   width: 100px;
   height: 2px;
