@@ -12,8 +12,9 @@ function UserList() {
 
   useEffect(() => {
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users`)
-      // .then((res) => console.log(res.data))
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users`, {
+        withCredentials: true,
+      })
       .then((res) => setUsers(res.data))
       .catch((err) => {
         console.warn(err.response.data.error);
