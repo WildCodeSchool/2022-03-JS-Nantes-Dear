@@ -10,6 +10,7 @@ export default function ButtonReturnPurple() {
       <button
         className="button-return-purple"
         type="button"
+        style={{ cursor: "pointer" }}
         onClick={() => navigate(-1)}
       >
         <img

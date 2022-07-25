@@ -7,7 +7,7 @@ function FACul() {
   return (
     <div className="div-facul-dear">
       <div className="arrowreturn-facul">
-        <ButtonReturn />
+        <ButtonReturn style={{ cursor: "pointer" }} />
       </div>
       <div className="div-logo-facul">
         <img className="logo-facul" src={logo} alt="logo Dear blanc" />

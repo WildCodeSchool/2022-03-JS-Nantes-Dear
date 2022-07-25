@@ -11,7 +11,11 @@ function MyPersonalDatas() {
           <input className="inputpseudo" type="text" name="name" />
         </label>
         <div className="container-modify">
-          <button className="modify-button" type="button">
+          <button
+            className="modify-button"
+            style={{ cursor: "pointer" }}
+            type="button"
+          >
             Modifier
           </button>
         </div>

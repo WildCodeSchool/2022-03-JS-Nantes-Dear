@@ -1,0 +1,68 @@
+.postcard {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    height: 25vh;
+    width: 95vw;
+  }
+  
+  .dateText h2 span {
+    font-size: 0.5rem;
+  }
+  
+  .postcard * {
+    font-size: 0.8rem;
+    font-family: var(--font);
+  }
+  
+  .headercard {
+    display: flex;
+    justify-content: space-around;
+    padding: 0.5rem;
+    background-color: var(--light-purple);
+  }
+  
+  .headercard h2 {
+    font-weight: 600;
+  }
+  
+  .contentcard {
+    height: 70%;
+    background-color: var(--light-purple);
+    display: flex;
+    text-align: justify;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    color: white;
+  }
+  
+  .contentcard * {
+    font-weight: 300;
+  }
+  
+  .footercard {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 0.5rem;
+  }
+
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    .postcard {
+        height: 15vh;
+        width: 45vw;
+      }
+  }
+  
+  @media screen and (min-width: 1024px) {
+    .postcard {
+        height: 20vh;
+        width: 51.5vw;
+    }
+    .postcard * {
+      font-size: 1.1rem;
+    }
+  }
+  

@@ -1,4 +1,3 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { useState } from "react";
 import ContactMessage from "./ContactMessage";
 import "./styles/ContactForm.css";
@@ -99,6 +98,7 @@ export default function ContactForm() {
           className="contactButton"
           type="submit"
           value="submit"
+          style={{ cursor: "pointer" }}
           onClick={handleClick}
         >
           Envoyer
