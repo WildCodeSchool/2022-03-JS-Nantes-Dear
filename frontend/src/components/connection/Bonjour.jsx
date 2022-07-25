@@ -11,7 +11,7 @@ export default function Bonjour() {
         <img className="logo-connection" src={logo} alt="logo Dear blanc" />
       </div>
       <div className="bonjour-container">
-        <p className="bonjour-text-connection"> Bonjour</p>
+        <p className="bonjour-text-connection">Bonjour</p>
       </div>
       <div className="button-go-connection">
         <Link to="/home">
