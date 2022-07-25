@@ -58,7 +58,7 @@ export default function Register() {
         .catch(() => {
           swal({
             title: "error!",
-            text: "Ce email existe déjà",
+            text: "Cet email existe déjà",
             icon: "error",
             confirmButtonText: "Ok je change",
           });

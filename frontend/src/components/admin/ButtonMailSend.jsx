@@ -9,6 +9,7 @@ function ButtonMailSend({ handleClick }) {
         type="submit"
         className="buttonmailsend"
         value="submit"
+        style={{ cursor: "pointer" }}
         onClick={handleClick}
       >
         <h3>Envoyer</h3>

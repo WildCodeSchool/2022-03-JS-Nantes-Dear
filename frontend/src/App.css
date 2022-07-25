@@ -20,5 +20,9 @@
 }
 
 input {
-  color: #bdc3cf;
+  color: #767676;
+}
+
+::placeholder {
+  color: #767676;
 }

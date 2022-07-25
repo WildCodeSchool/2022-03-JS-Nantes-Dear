@@ -10,6 +10,7 @@ export default function ButtonReturn() {
       <button
         className="buttonreturn"
         type="button"
+        style={{ cursor: "pointer" }}
         onClick={() => navigate(-1)}
       >
         <img className="arrow-return" src={arrow} alt="arrow-return-white" />

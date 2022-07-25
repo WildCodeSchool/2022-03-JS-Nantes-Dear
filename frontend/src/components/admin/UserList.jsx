@@ -14,10 +14,20 @@ function UserList() {
         </div>
         <div className="pictos-list-user">
           <Link to="/useractivities">
-            <img className="iconeye" src={iconeye} alt="icon-eye" />
+            <img
+              className="iconeye"
+              src={iconeye}
+              style={{ cursor: "pointer" }}
+              alt="icon-eye"
+            />
           </Link>
           <Link to="/userdelete">
-            <img className="iconcross" src={iconcross} alt="icon-cross" />
+            <img
+              className="iconcross"
+              src={iconcross}
+              style={{ cursor: "pointer" }}
+              alt="icon-cross"
+            />
           </Link>
           <ScrollButton />
         </div>

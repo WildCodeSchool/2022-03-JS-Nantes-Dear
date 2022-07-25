@@ -118,6 +118,7 @@ function GoodConduct() {
               className="chart-active"
               type="button"
               disabled={disabled}
+              style={{ cursor: "pointer" }}
               onClick={handleClick}
             >
               CONTINUER

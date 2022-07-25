@@ -62,7 +62,12 @@ export default function ModalHome() {
           </div>
         </div>
         <div className="button-container">
-          <button className="exit-button" type="button" onClick={closeModal}>
+          <button
+            className="exit-button"
+            type="button"
+            style={{ cursor: "pointer" }}
+            onClick={closeModal}
+          >
             GO
           </button>
         </div>

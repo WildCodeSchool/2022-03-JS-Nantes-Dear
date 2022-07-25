@@ -4,7 +4,12 @@ import PropTypes from "prop-types";
 
 function ButtonContinue({ handleSubmit }) {
   return (
-    <button type="submit" className="buttoncontinue" onClick={handleSubmit}>
+    <button
+      type="submit"
+      className="buttoncontinue"
+      style={{ cursor: "pointer" }}
+      onClick={handleSubmit}
+    >
       <h3>CONTINUE</h3>
     </button>
   );

@@ -12,8 +12,9 @@
   box-shadow: 5px 0px 5px 5px lightgrey;
 }
 
-#logoPlus {
-  width: 13vw;
+.logoPlus {
+  width: 12vw;
+  margin-top: 0.2rem;
 }
 
 .logo-footer-container {
@@ -64,7 +65,7 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
-  #logoPlus {
+  .logoPlus {
     width: 7vw;
   }
 
@@ -84,7 +85,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  #logoPlus {
+  .logoPlus {
     width: 4vw;
   }
 
