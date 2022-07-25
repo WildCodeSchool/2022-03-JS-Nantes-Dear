@@ -18,7 +18,6 @@
 }
 
 .logo-footer-container {
-  position: fixed;
   right: 0;
   display: flex;
   justify-content: space-between;
@@ -28,6 +27,7 @@
 .logo-home-container {
   padding-right: 1rem;
   margin-right: 0.5rem;
+  margin-left: 0.5rem;
 }
 
 .logo-user-container {
@@ -35,7 +35,7 @@
   flex-direction: column;
   align-items: center;
   padding-right: 1rem;
-  margin-right: 0.5rem;
+  margin-right: -0.5rem;
 }
 
 .footer-logo-home,
@@ -43,6 +43,8 @@
   width: 6vw;
   max-width: 40px;
   margin-left: 0.2rem;
+  margin-top: 0.5rem;
+  
 }
 
 .logo-home-container p,
@@ -58,6 +60,10 @@
   text-decoration: none;
 }
 
+.publication-button {
+  margin-right: 2rem;
+}
+
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .logoPlus {
     width: 7vw;
@@ -70,6 +76,7 @@
   .footer-logo-home,
   .footer-logo-profile {
     width: 4vw;
+    margin-top: 0.4rem;
   }
   .logo-home-container p,
   .logo-user-container p {
@@ -93,6 +100,7 @@
   .footer-logo-home,
   .footer-logo-profile {
     width: 2vw;
+    margin-top: 0.5rem;
   }
 
   .logo-home-container p,
