@@ -1,5 +1,6 @@
 /* eslint-disable import/no-named-as-default-member */
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BsListTask } from "react-icons/bs";
 import { AiFillCustomerService } from "react-icons/ai";
@@ -16,6 +17,7 @@ import FooterHome from "../home/FooterHome";
 import logoBlue from "../../assets/dear-logo-blue.png";
 import Logout from "./Logout";
 import ScrollButton from "../home/ScrollButton";
+import ButtonDeleteAccount from "./ButtonDeleteAccount";
 
 function UserAccount() {
   const [toggleState, setToggleState] = useState(1);
@@ -30,7 +32,9 @@ function UserAccount() {
         <div className="pseudo-top">
           <h1>Pseudo</h1>
         </div>
-        <img className="logo-user-page" src={logoBlue} alt="logo Dear bleu" />
+        <Link to="/home">
+          <img className="logo-user-page" src={logoBlue} alt="logo Dear bleu" />
+        </Link>
       </div>
       <div className="container-profile">
         <div className="profile-card">
@@ -41,6 +45,7 @@ function UserAccount() {
             <button
               type="button"
               className={toggleState === 1 ? "tabs active-tabs" : "tabs"}
+              style={{ cursor: "pointer" }}
               onClick={() => toggleTab(1)}
             >
               <IoIosArrowDroprightCircle className="arrow-profile" />
@@ -52,6 +57,7 @@ function UserAccount() {
             <button
               type="button"
               className={toggleState === 2 ? "tabs active-tabs" : "tabs"}
+              style={{ cursor: "pointer" }}
               onClick={() => toggleTab(2)}
             >
               <IoIosArrowDroprightCircle className="arrow-profile" />
@@ -63,6 +69,7 @@ function UserAccount() {
             <button
               type="button"
               className={toggleState === 3 ? "tabs active-tabs" : "tabs"}
+              style={{ cursor: "pointer" }}
               onClick={() => toggleTab(3)}
             >
               <IoIosArrowDroprightCircle className="arrow-profile" />
@@ -74,6 +81,7 @@ function UserAccount() {
             <button
               type="button"
               className={toggleState === 4 ? "tabs active-tabs" : "tabs"}
+              style={{ cursor: "pointer" }}
               onClick={() => toggleTab(4)}
             >
               <IoIosArrowDroprightCircle className="arrow-profile" />
@@ -85,6 +93,7 @@ function UserAccount() {
             <button
               type="button"
               className={toggleState === 5 ? "tabs active-tabs" : "tabs"}
+              style={{ cursor: "pointer" }}
               onClick={() => toggleTab(5)}
             >
               <IoIosArrowDroprightCircle className="arrow-profile" />
@@ -92,7 +101,7 @@ function UserAccount() {
           </div>
           <div className="profile-logout">
             <Logout />
-            <p>Supprimer mon compte</p>
+            <ButtonDeleteAccount />
           </div>
         </div>
         <div className="content-tabs">

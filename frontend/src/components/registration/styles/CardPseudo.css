@@ -14,8 +14,9 @@
 }
 
 .title-card h1 {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
+  margin-top: 0.5rem;
 }
 
 .title-card h2 {
@@ -87,7 +88,7 @@
 }
 
 ::placeholder {
-  color: #bdc3cf;
+  color: #767676;
 }
 
 .option-age {
@@ -111,7 +112,8 @@
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .title-card h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
   }
   .title-card h2 {
     font-size: 2.2rem;
