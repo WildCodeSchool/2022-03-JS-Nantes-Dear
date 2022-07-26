@@ -26,7 +26,7 @@ function FACul() {
         <p>🚀 Bannir l’analphabétisme sexuel et la désinformation !</p>
         <p>
           🚀 Libérer la parole sur la sexualité trop souvent laissée sous
-          silence faute de tabou et de gêne !
+          silence à cause des tabous et de la gêne !
         </p>
         <p>
           🚀 Partager ensemble dans la bienveillance et apprendre d’autrui et de

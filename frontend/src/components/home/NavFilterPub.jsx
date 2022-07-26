@@ -25,38 +25,50 @@ export default function NavFilterPub() {
         <h4> Catégories </h4>
         <div className="checkbox-container">
           <div className="checkbox">
-            <label htmlFor="Chiffres">
-              Chiffres clefs
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Témoignages">
-              Témoignages
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Débat">
-              Débats
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Bien être">
-              Bien-être sexuel
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
             <label htmlFor="Amour">
               Amour
               <input type="checkbox" />
             </label>
           </div>
           <div className="checkbox">
-            <label htmlFor="Polyamoure">
+            <label htmlFor="Bien-être sexuel">
+              Bien-être sexuel
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Non-binaire">
+              Non-binaire
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Pénis">
+              Pénis
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Polyamour">
               Polyamour
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Relation Sexuelle">
+              Relation Sexuelle
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Témoignage">
+              Témoignage
+              <input type="checkbox" />
+            </label>
+          </div>
+          <div className="checkbox">
+            <label htmlFor="Vagin">
+              Vagin
               <input type="checkbox" />
             </label>
           </div>
