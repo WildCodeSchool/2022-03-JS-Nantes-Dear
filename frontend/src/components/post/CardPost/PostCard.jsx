@@ -10,7 +10,7 @@ TimeAgo.addDefaultLocale(fr);
 TimeAgo.addLocale(fr);
 
 function PostCard({ post }) {
-  const { userId, content, category, createdAt } = post;
+  const { user, content, category, createdAt } = post;
 
   return (
     <div className="postcard">
@@ -20,7 +20,7 @@ function PostCard({ post }) {
             {" "}
             <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />{" "}
           </span>
-          {userId}
+          {user}
         </h2>
         <p>{category}</p>
       </div>
@@ -36,7 +36,7 @@ function PostCard({ post }) {
 
 PostCard.propTypes = {
   post: propTypes.shape({
-    userId: propTypes.number.isRequired,
+    user: propTypes.number.isRequired,
     content: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
     createdAt: propTypes.string.isRequired,
