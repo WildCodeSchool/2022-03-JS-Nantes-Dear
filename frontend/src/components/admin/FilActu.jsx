@@ -1,5 +1,5 @@
 import React from "react";
-import PostListAdmin from "./PostListAdmin";
+import PostList from "../post/CardPost/PostList";
 import ScrollButton from "../home/ScrollButton";
 import "./styles/FilActu.css";
 
@@ -11,7 +11,7 @@ function FilActu() {
       </div>
       <div className="filactu-posts">
         <ScrollButton />
-        <PostListAdmin />
+        <PostList />
       </div>
     </div>
   );

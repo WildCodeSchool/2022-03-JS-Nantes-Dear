@@ -46,11 +46,13 @@ CREATE TABLE category (
 
 ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES comment (userId);
 
-ALTER TABLE comment ADD FOREIGN KEY (userId) REFERENCES User (id);
+ALTER TABLE comment ADD FOREIGN KEY (userId) REFERENCES user (id);
 
 ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 
 ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES admin (userId);
+
+ALTER TABLE post ADD FOREIGN KEY (userId) REFERENCES user (id);
 
 INSERT INTO user (email, pseudo, password, role, age) VALUES 
 ("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN", "18-25"),
@@ -72,6 +74,6 @@ INSERT INTO category (name) VALUES
 ("Vagin");
 
 INSERT INTO post (content, userId, categoryId, createdAt) VALUES
-("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 3, 6, "2022-07-18"),
-("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 4, 6, "2022-07-17"),
-("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 5, 8, "2022-07-16");
+("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 9, 6, "2022-07-18"),
+("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 10, 6, "2022-07-17"),
+("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 11, 8, "2022-07-16");
