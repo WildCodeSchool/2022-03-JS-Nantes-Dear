@@ -55,6 +55,7 @@
   font-weight: 400;
   font-size: 0.6rem;
   margin-top: 1.5rem;
+  margin-bottom: 2rem;
   padding: 0.5rem;
   border-radius: 20px;
   background-color: var(--light-red);
@@ -137,6 +138,10 @@ input[type="checkbox"]:checked {
   .categorie-container label {
     width: 23vw;
   }
+
+  #confirmFilter {
+    margin-bottom: 5rem;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -149,5 +154,8 @@ input[type="checkbox"]:checked {
   }
   .categorie-container label {
     width: 13vw;
+  }
+  #confirmFilter {
+    margin-bottom: 5rem;
   }
 }

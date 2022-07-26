@@ -3,6 +3,7 @@
   flex-direction: column;
   align-items: center;
   margin-top: 17vh;
+  font-size: 2rem;
 }
 
 .inputPseudo,
@@ -14,16 +15,14 @@
   margin-bottom: 40px;
 }
 
-.inputPseudo,
-.inputLogPassword,
 ::placeholder {
-  padding-left: 20px;
   font-size: 1.1rem;
   color: #767676;
 }
 
 .inputLogPassword,
 .inputPseudo {
+  padding-left: 20px;
   color: var(--dark-blue);
 }
 
@@ -63,7 +62,7 @@
   .inputLogPassword,
   .inputPseudo {
     width: 30vw;
-    height: 3.8rem;
+    height: 3.8rem; 
   }
   .inputLogPassword {
     margin-bottom: 15vh;

@@ -56,6 +56,7 @@ INSERT INTO user (email, pseudo, password, role, age) VALUES
 ("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN", "18-25"),
 ("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq", "ROLE_ADMIN","26-35"),
 ("severinevilleneuve@gmail.com", "severine", "$2y$10$IQJiTdQ9Stu6VxObtn/34un8Vzv/kVB9HlBvcxXjKh7GpmU2Mil", "ROLE_ADMIN", "45+"),
+("aline.saint-lanne@orange.fr", "astl", "$2b$10$bqXzfwdxfAF99ub5BAqNGeKHkeZEZEXTkm2.B1pBev9TvccUyIOsC", "ROLE_ADMIN", "26-35"),
 ("Petitfenouil10@gmail.com", "Petitfenouil10", "$2b$10$WUbrfR6d2QgyJmJswACuMethqHszW1b3gWXuC4/oKD3FjxRCRgRt6", "ROLE_USER", "26-34"),
 ("Supertomate27@gmail.com", "Supertomate27",  "$2b$10$yteXWz72uXVXyrf5wL4xBeWBSpXvhXdADcaMntt1koxECGtwzXaHC", "ROLE_USER", "36-45" ),
 ("Ananasrose5@gmail.com", "Ananasrose5", "$2b$10$8MBdZRO9si6eHC7lbdGx9eqGftGUvGVwPwbm5xeJi7nOM4jDfikDe", "ROLE_USER", "18-25" );

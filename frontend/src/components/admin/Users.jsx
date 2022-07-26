@@ -1,23 +1,26 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./styles/User.css";
 import ButtonRechercher from "./ButtonRechercher";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
+import FilterUsers from "./FilterUsers";
 
 function Users() {
-  const [datas, setDatas] = useState([]);
-  const [searchUsers, setSearchUsers] = useState("");
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/users`)
-      .then((response) => response.json())
-      .then((json) => setDatas(json));
-  }, []);
+  const [users, setUsers] = useState([]);
+  const [searchUser, setSearchUser] = useState("");
 
-  const handleSearchUsers = (e) => {
-    const { value } = e.target;
-    // eslint-disable-next-line no-unused-expressions
-    value.length > 2 && setSearchUsers(value);
-  };
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users`)
+      .then((res) => res.data)
+      .then((data) => {
+        setUsers(data);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }, []);
 
   return (
     <div className="container-page-users">
@@ -29,36 +32,19 @@ function Users() {
         <h1 className="subtilteuserspage">Les utilisateurs DEAR</h1>
       </div>
       <div className="filter-search-users">
-        <input
-          className="inputsearchusers"
-          type="text"
-          name="searchbar"
-          id="searchbar"
-          placeholder="Recherche utillisateurs"
-          onChange={handleSearchUsers}
-        />
+        <FilterUsers searchUser={searchUser} setSearchUser={setSearchUser} />
         <ButtonRechercher />
       </div>
       <div className="search-result-users">
-        {datas
-          .filter((val) => {
-            return val.post.toLowerCase().includes(searchUsers.toLowerCase());
-          })
-          .map((val) => {
-            return (
-              <div className="search-result-users" key={val.id}>
-                {val.post}
-              </div>
-            );
-          })}
-      </div>
-      <div className="users-list">
-        {datas.map((user) => (
-          <UserList pseudo={user.pseudo} />
-        ))}
-      </div>
-      <div className="users-list-test">
-        <UserList />
+        {users
+          .filter((user) =>
+            searchUser === ""
+              ? true
+              : user.pseudo.toLowerCase().includes(searchUser.toLowerCase())
+          )
+          .map((user) => (
+            <UserList user={user} key={users.id} />
+          ))}
       </div>
     </div>
   );
