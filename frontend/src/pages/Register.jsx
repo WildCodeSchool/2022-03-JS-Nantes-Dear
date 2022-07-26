@@ -43,7 +43,8 @@ export default function Register() {
             axios
               .post(
                 `${import.meta.env.VITE_BACKEND_URL}/users/register`,
-                register
+                register,
+                { withCredentials: true }
               )
 
               .then(() => {
