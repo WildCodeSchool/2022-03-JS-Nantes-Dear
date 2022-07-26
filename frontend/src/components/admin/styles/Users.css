@@ -26,6 +26,17 @@
   margin-top: 1rem;
 }
 
+.inputsearchusers {
+  border-radius: 5rem;
+  border: 1px solid #bdc3cf;
+  width: 18rem;
+  height: 2rem;
+}
+
+::placeholder {
+  font-size: 0.5rem;
+}
+
 .users-list-test {
   margin-bottom: 3rem;
 }
@@ -74,3 +85,4 @@
   ::placeholder {
     font-size: 0.8rem;
   }
+}
