@@ -1,3 +1,43 @@
-.user-container {
-  background-color: pink;
+.iconeye,
+.iconcross {
+  width: 2rem;
+  height: 2rem;
+  margin-left: 0.5rem;
+}
+
+.align-pseudo-pictos {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.user-title {
+  margin-top: 0.6rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .user-title {
+    font-size: 1.3rem;
+    margin-top: 3rem;
+  }
+  .iconeye,
+  .iconcross {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.8rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .user-title {
+    font-size: 1.3rem;
+    margin-top: 0.5rem;
+  }
+  .iconeye,
+  .iconcross {
+    width: 2.5rem;
+    height: 2.5rem;
+    margin-left: 0.8rem;
+  }
 }

@@ -1,27 +1,6 @@
-.user-pseudo,
-.user-pseudo-exemple {
+.users-pseudo-list {
   color: var(--dark-blue);
   margin-top: 3rem;
-}
-
-.iconeye,
-.iconcross {
-  width: 2rem;
-  height: 2rem;
-  margin-top: 2.5rem;
-}
-
-.pictos-list-user {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-}
-
-.align-pseudo-pictos {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  margin-bottom: 1rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

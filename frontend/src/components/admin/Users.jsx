@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./styles/Users.css";
-import ButtonRechercher from "./ButtonRechercher";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
 
@@ -34,10 +33,9 @@ function Users() {
           type="text"
           name="searchbar"
           id="searchbar"
-          placeholder="Recherche utillisateurs"
+          placeholder="Recherche utilisateur"
           onChange={handleSearchUsers}
         />
-        <ButtonRechercher />
       </div>
       <div className="search-result-users">
         {datas
