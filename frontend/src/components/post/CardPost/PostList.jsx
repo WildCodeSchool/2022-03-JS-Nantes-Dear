@@ -28,7 +28,7 @@ export default function PostList() {
         />
       </div>
       <div className="postList">
-        <div className="post">
+        <div className="post-filter">
           {posts
             .filter((post) =>
               searchValue === ""

@@ -1,3 +1,76 @@
-.user-container {
-  background-color: pink;
+.tilte-userspage {
+  color: var(--white);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 2.5rem;
+  background-color: var(--light-purple);
 }
+
+.tilte-users-page {
+  font-size: 1rem;
+  margin-left: 1rem;
+}
+
+.subtilteuserspage {
+  color: var(--dark-blue);
+  font-size: 0.8rem;
+  margin-top: 2rem;
+  margin-left: 2rem;
+  margin-right: 2em;
+}
+
+.filter-search-users {
+  margin-left: 2rem;
+  margin-right: 2rem;
+  margin-top: 1rem;
+}
+
+.users-list-test {
+  margin-bottom: 3rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .tilte-userspage {
+    height: 4rem;
+  }
+
+  .tilte-users-page {
+    font-size: 1.2rem;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .tilte-userspage {
+    height: 5rem;
+  }
+
+  .tilte-users-page {
+    font-size: 1.4rem;
+  }
+
+  .subtilte-userspage h2 {
+    background-color: var(--white);
+    color: var(--dark-blue);
+    margin-left: 2rem;
+    margin-top: 5rem;
+  }
+
+  .filter-search-users {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-left: 2rem;
+    margin-right: 2rem;
+    margin-top: 1rem;
+  }
+
+  .inputsearchusers {
+    border-radius: 5rem;
+    border: 2px solid #bdc3cf;
+    width: 24rem;
+  }
+
+  ::placeholder {
+    font-size: 0.8rem;
+  }

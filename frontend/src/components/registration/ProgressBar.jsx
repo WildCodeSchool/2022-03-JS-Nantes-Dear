@@ -29,8 +29,8 @@ const Container = Styled.div`
 
   @media screen and (min-width: 1024px) {
     progress[value]::-webkit-progress-bar {
-      width: 38%;
-      margin-left: 21rem;
+      width: 39%;
+      margin-left: 19.5rem;
     }
   }
 
