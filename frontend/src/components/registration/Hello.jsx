@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/Hello.css";
 import { Link } from "react-router-dom";
-// eslint-disable-next-line import/no-unresolved
 import logo from "../../assets/dear-logo-white.png";
 import ButtonGo from "./ButtonGo";
 
