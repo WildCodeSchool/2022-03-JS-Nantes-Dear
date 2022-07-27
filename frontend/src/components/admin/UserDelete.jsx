@@ -14,17 +14,15 @@ function UserDelete() {
         <h2 className="head-subtilte-userpageactivities">Suppression profil</h2>
       </div>
       <div className="subtilte-useruserpageadelete">
-        <h1 className="subtilte-userpage-delete">
-          Supprimer le profil de "Petitfenouil10":
-        </h1>
+        <h1 className="subtilte-userpage-delete">Supprimer le profil :</h1>
         <p className="subtilte-userpage-delete">
           {" "}
-          Le profil de "Petitfenouil10" sera définitivement supprimé.
+          Le profil sera définitivement supprimé.
         </p>
         <p className="subtilte-userpage-delete">
           {" "}
-          "Petitfenouil10" n'aura plus accès à son compte et recevra un mail
-          pour justifier le choix de l'équipe à stopper son accès.
+          L'utilisateur n'aura plus accès à son compte et recevra un mail
+          justifier le choix de l'équipe à stopper son accès.
         </p>
         <p className="subtilte-userpage-delete">
           Seule les publications, commentaires qui ont été modérées de

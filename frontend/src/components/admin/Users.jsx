@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import "./styles/User.css";
-import ButtonRechercher from "./ButtonRechercher";
+import "./styles/Users.css";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
 import FilterUsers from "./FilterUsers";
@@ -32,8 +30,14 @@ function Users() {
         <h1 className="subtilteuserspage">Les utilisateurs DEAR</h1>
       </div>
       <div className="filter-search-users">
-        <FilterUsers searchUser={searchUser} setSearchUser={setSearchUser} />
-        <ButtonRechercher />
+        <input
+          className="inputsearchusers"
+          type="text"
+          name="searchbar"
+          id="searchbar"
+          placeholder="Recherche utilisateur"
+          onChange={handleSearchUsers}
+        />
       </div>
       <div className="search-result-users">
         {users
