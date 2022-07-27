@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "./styles/User.css";
+import "./styles/Users.css";
 import ButtonRechercher from "./ButtonRechercher";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";

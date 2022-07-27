@@ -45,7 +45,12 @@ export default function NavFilterPub() {
           ))}
         </div>
         <div className="confirm-filter-container">
-          <button id="confirmFilter" type="button" onClick={handleShowNav}>
+          <button
+            id="confirmFilter"
+            type="button"
+            style={{ cursor: "pointer" }}
+            onClick={handleShowNav}
+          >
             VALIDER LES FILTRES
           </button>
           {posts
