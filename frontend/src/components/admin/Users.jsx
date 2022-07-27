@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
 import "./styles/Users.css";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
-import FilterUsers from "./FilterUsers";
 
 function Users() {
   const [users, setUsers] = useState([]);
-  const [searchUser, setSearchUser] = useState("");
+  const [searchUser] = useState("");
 
   useEffect(() => {
     axios
@@ -36,7 +36,6 @@ function Users() {
           name="searchbar"
           id="searchbar"
           placeholder="Recherche utilisateur"
-          onChange={handleSearchUsers}
         />
       </div>
       <div className="search-result-users">

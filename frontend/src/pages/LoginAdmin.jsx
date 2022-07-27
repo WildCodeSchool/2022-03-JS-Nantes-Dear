@@ -36,11 +36,11 @@ function LoginAdmin() {
             status: true,
             user: data,
           })
-            .then(() => navigate("/adminaccount", { replace: true }))
-            .catch((err) => {
-              console.error(err);
-            })
-        );
+        )
+        .then(() => navigate("/adminaccount", { replace: true }))
+        .catch((err) => {
+          console.error(err);
+        });
     }
   };
 
