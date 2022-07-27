@@ -2,21 +2,23 @@ import React, { useState, useEffect } from "react";
 import "./styles/Users.css";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
+import FilterUsers from "./FilterUsers";
 
 function Users() {
-  const [datas, setDatas] = useState([]);
-  const [searchUsers, setSearchUsers] = useState("");
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/users`)
-      .then((response) => response.json())
-      .then((json) => setDatas(json));
-  }, []);
+  const [users, setUsers] = useState([]);
+  const [searchUser, setSearchUser] = useState("");
 
-  const handleSearchUsers = (e) => {
-    const { value } = e.target;
-    // eslint-disable-next-line no-unused-expressions
-    value.length > 2 && setSearchUsers(value);
-  };
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/users`)
+      .then((res) => res.data)
+      .then((data) => {
+        setUsers(data);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }, []);
 
   return (
     <div className="container-page-users">
@@ -38,25 +40,15 @@ function Users() {
         />
       </div>
       <div className="search-result-users">
-        {datas
-          .filter((val) => {
-            return val.post.toLowerCase().includes(searchUsers.toLowerCase());
-          })
-          .map((val) => {
-            return (
-              <div className="search-result-users" key={val.id}>
-                {val.post}
-              </div>
-            );
-          })}
-      </div>
-      <div className="users-list">
-        {datas.map((user) => (
-          <UserList pseudo={user.pseudo} />
-        ))}
-      </div>
-      <div className="users-list-test">
-        <UserList />
+        {users
+          .filter((user) =>
+            searchUser === ""
+              ? true
+              : user.pseudo.toLowerCase().includes(searchUser.toLowerCase())
+          )
+          .map((user) => (
+            <UserList user={user} key={users.id} />
+          ))}
       </div>
     </div>
   );
