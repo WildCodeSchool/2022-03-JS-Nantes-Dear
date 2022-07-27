@@ -2,7 +2,7 @@ import React from "react";
 import propTypes from "prop-types";
 import "./styles/FilterUsers.css";
 
-function FilterUsers({ searchUser, setSearchUser }) {
+function FilterUsers({ searchValue, setSearchValue }) {
   return (
     <div className="div-filter-users">
       <div className="filter-users">
@@ -15,7 +15,6 @@ function FilterUsers({ searchUser, setSearchUser }) {
             placeholder="Rechercher par utilisateur"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
-
           />
         </div>
       </div>

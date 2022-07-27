@@ -9,9 +9,7 @@ import ButtonLikeDislike from "../post/ButtonLikeDislike";
 TimeAgo.addDefaultLocale(fr);
 TimeAgo.addLocale(fr);
 
-
 function PostCardAdmin({ post }) {
-
   const { user, content, category, createdAt } = post;
 
   return (
