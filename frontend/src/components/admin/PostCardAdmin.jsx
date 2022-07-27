@@ -4,11 +4,14 @@ import propTypes from "prop-types";
 import TimeAgo from "javascript-time-ago";
 import fr from "javascript-time-ago/locale/fr";
 import ReactTimeAgo from "react-time-ago";
+import ButtonLikeDislike from "../post/ButtonLikeDislike";
 
 TimeAgo.addDefaultLocale(fr);
 TimeAgo.addLocale(fr);
 
+
 function PostCardAdmin({ post }) {
+
   const { user, content, category, createdAt } = post;
 
   return (
@@ -25,6 +28,9 @@ function PostCardAdmin({ post }) {
       </div>
       <div className="contentcard">
         <p>{content}</p>
+      </div>
+      <div className="footercard">
+        <ButtonLikeDislike />
       </div>
     </div>
   );

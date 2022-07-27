@@ -5,9 +5,9 @@ function FilterCategories({ category }) {
   return (
     <div className="div-filter-categories">
       <div className="checkbox-category">
-        <label htmlFor="Bien-être sexuel">
+        <label htmlFor={`c_${category.id}`}>
           {category.name}
-          <input type="checkbox" />
+          <input type="checkbox" id={`c_${category.id}`} />
         </label>
       </div>
     </div>
@@ -16,6 +16,7 @@ function FilterCategories({ category }) {
 FilterCategories.propTypes = {
   category: propTypes.shape({
     name: propTypes.string.isRequired,
+    id: propTypes.number.isRequired,
   }).isRequired,
 };
 

@@ -1,12 +1,10 @@
 import React from "react";
 import "./styles/FilterSearch.css";
+import propTypes from "prop-types";
 import logosearch from "../../assets/search.png";
 import NavFilterPub from "./NavFilterPub";
 
-function FilterSearch(props) {
-  // eslint-disable-next-line react/prop-types
-  const { searchValue, setSearchValue } = props;
-
+function FilterSearch({ searchValue, setSearchValue }) {
   return (
     <div className="div-filter-search">
       <div className="filter-search">
@@ -29,5 +27,10 @@ function FilterSearch(props) {
     </div>
   );
 }
+
+FilterSearch.propTypes = {
+  searchValue: propTypes.string.isRequired,
+  setSearchValue: propTypes.func.isRequired,
+}.isRequired;
 
 export default FilterSearch;
