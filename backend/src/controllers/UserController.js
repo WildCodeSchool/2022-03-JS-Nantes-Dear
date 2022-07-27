@@ -154,6 +154,24 @@ class UserController {
       });
   };
 
+  static checkToken = (req, res) => {
+    const token = req.cookie.access_token;
+    if (token) {
+      return res.sendStatus(401);
+    }
+    try {
+      const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
+
+      return res.status(200).json({
+        id: data.id,
+        email: data.email,
+        role: data.role,
+      });
+    } catch {
+      return res.sendStatus(401);
+    }
+  };
+
   static checkPseudo = (req, res) => {
     models.user
       .findByPseudo(req.query.pseudo)

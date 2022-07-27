@@ -6,11 +6,14 @@ import { useNavigate } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
 import ButtonReturn from "../components/home/ButtonReturn";
 import ButtonContinue from "../components/registration/ButtonContinue";
+import AuthContext from "../contexts/AuthContext";
 
 function Login() {
   const { register, setRegister } = useContext(UserContext);
 
   const navigate = useNavigate();
+
+  const { setLoggedUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -26,6 +29,12 @@ function Login() {
         .post(`${import.meta.env.VITE_BACKEND_URL}/users/login`, register, {
           withCredentials: true,
         })
+        .then(({ data }) =>
+          setLoggedUser({
+            status: true,
+            user: data,
+          })
+        )
         .then(() => navigate("/connection/bonjour", { replace: true }))
         .catch((err) => {
           console.error(err);
