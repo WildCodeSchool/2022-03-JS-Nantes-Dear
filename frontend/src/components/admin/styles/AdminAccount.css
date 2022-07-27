@@ -182,7 +182,7 @@ button {
     display: flex;
     flex-direction: row;
     background-color: #f0f0f0;
-    height: 70vh;
+    height: 95vh;
     align-items: baseline;
   }
 
@@ -287,7 +287,7 @@ button {
     display: flex;
     flex-direction: row;
     background-color: #f0f0f0;
-    height: 90vh;
+    height: 130vh;
     align-items: baseline;
   }
 

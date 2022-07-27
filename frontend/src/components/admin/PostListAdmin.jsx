@@ -17,8 +17,8 @@ export default function PostListAdmin() {
   return (
     <div className="postList">
       <div className="post">
-        {posts.map((el) => (
-          <PostCardAdmin key={el.id} post={el} />
+        {posts.map((post) => (
+          <PostCardAdmin key={post.id} post={post.id} />
         ))}
       </div>
     </div>

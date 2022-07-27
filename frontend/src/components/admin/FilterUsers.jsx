@@ -12,9 +12,10 @@ function FilterUsers({ searchUser, setSearchUser }) {
             type="text"
             name="searchbar"
             id="searchbar"
-            placeholder="Rechercher par nom d'utilisateur"
-            value={searchUser}
-            onChange={(event) => setSearchUser(event.target.value)}
+            placeholder="Rechercher par utilisateur"
+            value={searchValue}
+            onChange={(event) => setSearchValue(event.target.value)}
+
           />
         </div>
       </div>

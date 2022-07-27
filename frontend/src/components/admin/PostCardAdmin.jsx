@@ -9,7 +9,9 @@ import ButtonLikeDislike from "../post/ButtonLikeDislike";
 TimeAgo.addDefaultLocale(fr);
 TimeAgo.addLocale(fr);
 
-function PostCard({ post }) {
+
+function PostCardAdmin({ post }) {
+
   const { user, content, category, createdAt } = post;
 
   return (
@@ -34,7 +36,7 @@ function PostCard({ post }) {
   );
 }
 
-PostCard.propTypes = {
+PostCardAdmin.propTypes = {
   post: propTypes.shape({
     user: propTypes.number.isRequired,
     content: propTypes.string.isRequired,
@@ -43,4 +45,4 @@ PostCard.propTypes = {
   }).isRequired,
 };
 
-export default PostCard;
+export default PostCardAdmin;
