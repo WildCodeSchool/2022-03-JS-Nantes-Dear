@@ -14,7 +14,7 @@ function FilterUsers(props) {
             type="text"
             name="searchbar"
             id="searchbar"
-            placeholder="Rechercher par nom d'utilisateur"
+            placeholder="Rechercher par utilisateur"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />

@@ -26,7 +26,7 @@ function UserDelete() {
         </p>
         <p className="subtilte-userpage-delete">
           Seule les publications, commentaires qui ont été modérées de
-          "Petitfenouil10" ont été supprimées au sein de l'application
+          l'utilisateur ont été supprimées au sein de l'application
         </p>
       </div>
       <div className="buttons-userpagedelete">

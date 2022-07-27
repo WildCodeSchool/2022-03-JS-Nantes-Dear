@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import PostCard from "./PostCardAdmin";
+import PostCardAdmin from "./PostCardAdmin";
 import "./styles/PostListAdmin.css";
 
-export default function PostList() {
+export default function PostListAdmin() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
@@ -17,8 +17,8 @@ export default function PostList() {
   return (
     <div className="postList">
       <div className="post">
-        {posts.map((el) => (
-          <PostCard key={el.id} post={el} />
+        {posts.map((post) => (
+          <PostCardAdmin key={post.id} post={post.id} />
         ))}
       </div>
     </div>

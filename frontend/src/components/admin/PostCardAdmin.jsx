@@ -8,8 +8,8 @@ import ReactTimeAgo from "react-time-ago";
 TimeAgo.addDefaultLocale(fr);
 TimeAgo.addLocale(fr);
 
-function PostCard({ post }) {
-  const { userId, content, category, createdAt } = post;
+function PostCardAdmin({ post }) {
+  const { user, content, category, createdAt } = post;
 
   return (
     <div className="postcard">
@@ -19,7 +19,7 @@ function PostCard({ post }) {
             {" "}
             <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />{" "}
           </span>
-          {userId}
+          {user}
         </h2>
         <p>{category}</p>
       </div>
@@ -30,13 +30,13 @@ function PostCard({ post }) {
   );
 }
 
-PostCard.propTypes = {
+PostCardAdmin.propTypes = {
   post: propTypes.shape({
-    userId: propTypes.number.isRequired,
+    user: propTypes.number.isRequired,
     content: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
     createdAt: propTypes.string.isRequired,
   }).isRequired,
 };
 
-export default PostCard;
+export default PostCardAdmin;
