@@ -83,8 +83,8 @@ export default function Body() {
             <Route path="/loginadmin" element={<LoginAdmin />} />
             <Route path="/connection" element={<Connection />} />
             <Route element={<PrivateRoutes />}>
-              <Route path="/useraccount" element={<UserAccount />} />
               <Route path="/adminaccount" element={<AdminAccount />} />
+              <Route path="/useraccount" element={<UserAccount />} />
             </Route>
           </Routes>
         </UserContext.Provider>

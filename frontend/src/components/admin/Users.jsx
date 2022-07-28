@@ -1,17 +1,9 @@
-import React, { useState, useEffect } from "react";
 import "./styles/Users.css";
 import ScrollButton from "../home/ScrollButton";
 import UserList from "./UserList";
 import FilterUsers from "./FilterUsers";
 
 function Users() {
-  const [datas, setDatas] = useState([]);
-  useEffect(() => {
-    fetch(`${import.meta.env.VITE_BACKEND_URL}/users`)
-      .then((response) => response.json())
-      .then((json) => setDatas(json));
-  }, []);
-
   return (
     <div className="container-page-users">
       <ScrollButton />
@@ -24,11 +16,7 @@ function Users() {
       <div className="filter-search-users">
         <FilterUsers />
       </div>
-      <div className="users-list">
-        {datas.map((user) => (
-          <UserList pseudo={user.pseudo} />
-        ))}
-      </div>
+      <div className="users-list" />
       <div className="users-list-test">
         <UserList />
       </div>
