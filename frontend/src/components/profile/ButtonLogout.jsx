@@ -4,7 +4,12 @@ import "./styles/UserAccount.css";
 
 function ButtonLogout({ handleLogout }) {
   return (
-    <button type="submit" className="profile-logout" onClick={handleLogout}>
+    <button
+      type="submit"
+      className="profile-logout"
+      style={{ cursor: "pointer" }}
+      onClick={handleLogout}
+    >
       Me déconnecter
     </button>
   );

@@ -31,7 +31,39 @@ export default function Register() {
           }`
         )
         .then(() => setVerifyEmail(true))
+        .then(() => {
+          if (verifyEmail && register.password !== register.passwordverified) {
+            swal({
+              title: "Error!",
+              text: "Les mots de passe sont différents",
+              icon: "error",
+              confirmButtonText: "Match !!",
+            });
+          } else {
+            axios
+              .post(
+                `${import.meta.env.VITE_BACKEND_URL}/users/register`,
+                register,
+                { withCredentials: true }
+              )
 
+              .then(() => {
+                setRegister(initialRegister);
+                navigate("/registration/register/goodconduct", {
+                  replace: true,
+                });
+              })
+
+              .catch(() => {
+                swal({
+                  title: "error!",
+                  text: "Erreur lors de l'enregistrement de l'utilisateur",
+                  icon: "error",
+                  confirmButtonText: "Ok",
+                });
+              });
+          }
+        })
         .catch(() => {
           swal({
             title: "Error!",
@@ -40,30 +72,6 @@ export default function Register() {
             confirmButtonText: "ok",
           });
         });
-    }
-    if (verifyEmail && register.password !== register.passwordverified) {
-      swal({
-        title: "Error!",
-        text: "Les mots de passe sont différents",
-        icon: "error",
-        confirmButtonText: "Match !!",
-      });
-    } else {
-      axios
-        .post(`${import.meta.env.VITE_BACKEND_URL}/users/register`, register)
-
-        .then(() =>
-          navigate("/registration/register/goodconduct", { replace: true })
-        )
-        .catch(() => {
-          swal({
-            title: "error!",
-            text: "Ce email existe déjà",
-            icon: "error",
-            confirmButtonText: "Ok je change",
-          });
-        });
-      setRegister(initialRegister);
     }
   };
 

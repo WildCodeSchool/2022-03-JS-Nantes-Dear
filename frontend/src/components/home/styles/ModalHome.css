@@ -112,4 +112,7 @@ body.ReactModal__Body--open {
   .last-paragraph {
     max-width: 350px;
   }
+  .modal {
+    height: 60vh;
+  }
 }

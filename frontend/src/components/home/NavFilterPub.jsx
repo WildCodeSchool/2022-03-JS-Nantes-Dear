@@ -1,65 +1,65 @@
-import { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 import "./styles/NavFilterPub.css";
 import filter from "../../assets/filter-blue.png";
+import FilterCategories from "./FilterCategories";
+import PostCard from "../post/CardPost/PostCard";
 
 export default function NavFilterPub() {
   const [inactive, setInactive] = useState(true);
+  const [categories, setCategories] = useState([]);
+  const [posts, setPosts] = useState([]);
 
   const handleShowNav = () => {
     setInactive(!inactive);
   };
+  useEffect(() => {
+    axios
+      .get(`${import.meta.env.VITE_BACKEND_URL}/category`)
+      .then((res) => res.data)
+      .then((data) => {
+        setCategories(data);
+      })
+      .catch((err) => {
+        console.warn(err);
+      });
+  }, []);
 
   return (
     <nav className="menuResearch">
       <div className="filter-container">
-        <button className="navfilter" type="button" onClick={handleShowNav}>
+        <button
+          className="navfilter"
+          type="button"
+          style={{ cursor: "pointer" }}
+          onClick={handleShowNav}
+        >
           <img src={filter} className="logofilter" alt="filter" />
         </button>
       </div>
       <div className={`categorie-container ${inactive ? "inactive" : ""}`}>
         <h4> Catégories </h4>
         <div className="checkbox-container">
-          <div className="checkbox">
-            <label htmlFor="Chiffres">
-              Chiffres clefs
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Témoignages">
-              Témoignages
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Débat">
-              Débats
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Bien être">
-              Bien-être sexuel
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Amour">
-              Amour
-              <input type="checkbox" />
-            </label>
-          </div>
-          <div className="checkbox">
-            <label htmlFor="Polyamoure">
-              Polyamour
-              <input type="checkbox" />
-            </label>
-          </div>
+          {categories.map((e) => (
+            <FilterCategories key={e.id} category={e} />
+          ))}
         </div>
         <div className="confirm-filter-container">
-          <button id="confirmFilter" type="button" onClick={handleShowNav}>
+          <button
+            id="confirmFilter"
+            type="button"
+            style={{ cursor: "pointer" }}
+            onClick={handleShowNav}
+          >
             VALIDER LES FILTRES
           </button>
+          {posts
+            .filter((post) =>
+              categories === "" ? true : post.content.includes(setPosts())
+            )
+            .map((post) => (
+              <PostCard post={post} key={post.id} />
+            ))}
         </div>
       </div>
     </nav>

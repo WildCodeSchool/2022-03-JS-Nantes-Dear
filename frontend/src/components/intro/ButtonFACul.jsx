@@ -4,7 +4,7 @@ import "./styles/ButtonFACul.css";
 function ButtonFACul() {
   return (
     <div className="buttonfacul">
-      <h3>F.A.Cul</h3>
+      <h3>F.A.Cul </h3>
     </div>
   );
 }

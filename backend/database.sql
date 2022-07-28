@@ -1,58 +1,67 @@
-CREATE DATABASE  IF NOT EXISTS dear;
+-- Active: 1650891592667@@127.0.0.1@3306@dear
+CREATE DATABASE IF NOT EXISTS dear;
+
+USE dear;
 DROP TABLE IF EXISTS admin;
-CREATE TABLE `admin` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `message` varchar(255) UNIQUE,
-  `userId` int
+CREATE TABLE admin (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  message varchar(255),
+  userId int
 );
 DROP TABLE IF EXISTS user;
-CREATE TABLE `user`(
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `email` varchar(255) UNIQUE,
-  `pseudo` varchar(255) UNIQUE,
-  `password` varchar(255),
-  `role` varchar(255),
-  `adminId` int
-);
+CREATE TABLE user (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  email varchar(255) UNIQUE,
+  pseudo varchar(255) UNIQUE,
+  password varchar(255),
+  role varchar(255),
+  age varchar(150)
+  );
 
 DROP TABLE IF EXISTS post;
-CREATE TABLE `post` (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `content` varchar(255),
-  `userId` int,
-  `categoryId` int,
-  `createdAt` datetime,
-  `likes` int,
-  `signals` int
+CREATE TABLE post (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  content varchar(255),
+  userId int,
+  categoryId int,
+  createdAt datetime,
+  likes int,
+  signals int
 );
 
 DROP TABLE IF EXISTS comment;
 CREATE TABLE comment (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `createdAt` datetime,
-  `userId` int,
-  `postId` int
+  id int PRIMARY KEY AUTO_INCREMENT,
+  createdAt datetime,
+  userId int,
+  postId int
 );
 
 DROP TABLE IF EXISTS category;
 CREATE TABLE category (
-  `id` int PRIMARY KEY AUTO_INCREMENT,
-  `name` varchar(255),
-  `color` varchar(255)
+  id int PRIMARY KEY AUTO_INCREMENT,
+  name varchar(255),
+  color varchar(255)
 );
+
+ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES comment (userId);
 
 ALTER TABLE comment ADD FOREIGN KEY (userId) REFERENCES user (id);
 
 ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 
-ALTER TABLE admin ADD FOREIGN KEY (userId) REFERENCES user (id);
+ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES admin (userId);
 
-INSERT INTO user (email, pseudo, password, role) VALUES 
-("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN"),
-("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq", "ROLE_ADMIN"),
-("Petitfenouil10@gmail.com", "Petitfenouil10", "$2b$10$WUbrfR6d2QgyJmJswACuMethqHszW1b3gWXuC4/oKD3FjxRCRgRt6", "ROLE_USER"),
-("Supertomate27@gmail.com", "Supertomate27", "$2b$10$yteXWz72uXVXyrf5wL4xBeWBSpXvhXdADcaMntt1koxECGtwzXaHC", "ROLE_USER"),
-("Ananasrose5@gmail.com", "Ananasrose5", "$2b$10$8MBdZRO9si6eHC7lbdGx9eqGftGUvGVwPwbm5xeJi7nOM4jDfikDe", "ROLE_USER");
+ALTER TABLE post ADD FOREIGN KEY (userId) REFERENCES user (id);
+
+INSERT INTO user (email, pseudo, password, role, age) VALUES 
+("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN", "18-25"),
+("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq", "ROLE_ADMIN","26-35"),
+("severinevilleneuve@gmail.com", "severine", "$2y$10$IQJiTdQ9Stu6VxObtn/34un8Vzv/kVB9HlBvcxXjKh7GpmU2Mil", "ROLE_ADMIN", "45+"),
+("aline.saint-lanne@orange.fr", "astl", "$2b$10$bqXzfwdxfAF99ub5BAqNGeKHkeZEZEXTkm2.B1pBev9TvccUyIOsC", "ROLE_ADMIN", "26-35"),
+("Petitfenouil10@gmail.com", "Petitfenouil10", "$2b$10$WUbrfR6d2QgyJmJswACuMethqHszW1b3gWXuC4/oKD3FjxRCRgRt6", "ROLE_USER", "26-34"),
+("Supertomate27@gmail.com", "Supertomate27",  "$2b$10$yteXWz72uXVXyrf5wL4xBeWBSpXvhXdADcaMntt1koxECGtwzXaHC", "ROLE_USER", "36-45" ),
+("Ananasrose5@gmail.com", "Ananasrose5", "$2b$10$8MBdZRO9si6eHC7lbdGx9eqGftGUvGVwPwbm5xeJi7nOM4jDfikDe", "ROLE_USER", "18-25" );
 
 INSERT INTO category (name) VALUES 
 ("Amour"),
@@ -65,6 +74,6 @@ INSERT INTO category (name) VALUES
 ("Vagin");
 
 INSERT INTO post (content, userId, categoryId, createdAt) VALUES
-("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 3, 6, "2022-07-18"),
-("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 4, 6, "2022-07-17"),
-("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 5, 8, "2022-07-16");
+("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 9, 6, "2022-07-18"),
+("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 10, 6, "2022-07-17"),
+("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 11, 8, "2022-07-16");

@@ -1,16 +1,24 @@
 /* eslint-disable no-alert */
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
+import AuthContext from "../../contexts/AuthContext";
 import ButtonLogout from "./ButtonLogout";
 
 function Logout() {
+  const { setLoggedUser } = useContext(AuthContext);
   const handleLogout = (event) => {
     event.preventDefault();
     axios
-      .get(`${import.meta.env.VITE_BACKEND_URL}/users/logout`, {
+      .post(`${import.meta.env.VITE_BACKEND_URL}/users/logout`, null, {
         withCredentials: true,
       })
+      .then(() =>
+        setLoggedUser({
+          status: false,
+          user: {},
+        })
+      )
       .then(() => {
         alert("Successfully logged out");
       })

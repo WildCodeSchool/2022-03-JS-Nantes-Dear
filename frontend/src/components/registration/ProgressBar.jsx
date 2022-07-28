@@ -8,6 +8,12 @@ const Container = Styled.div`
     margin-right: 8px;
   }
 
+  @media screen and (min-width: 1024px) {
+    progress {
+      width: 30%;
+    }
+  }
+
   progress[value] {
     width: ${(props) => props.width};
 
@@ -20,6 +26,13 @@ const Container = Styled.div`
     border-radius: 20px;
     background-color: grey;
   }  
+
+  @media screen and (min-width: 1024px) {
+    progress[value]::-webkit-progress-bar {
+      width: 39%;
+      margin-left: 19.5rem;
+    }
+  }
 
   progress[value]::-webkit-progress-value {
     height: 10px;

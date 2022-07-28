@@ -1,7 +1,6 @@
 import React from "react";
 import "./styles/Hello.css";
 import { Link } from "react-router-dom";
-// eslint-disable-next-line import/no-unresolved
 import logo from "../../assets/dear-logo-white.png";
 import ButtonGo from "./ButtonGo";
 
@@ -22,7 +21,7 @@ export default function Hello() {
       </div>
       <div className="button-go-inscription">
         <Link to="/home">
-          <ButtonGo />
+          <ButtonGo style={{ cursor: "pointer" }} />
         </Link>
       </div>
     </div>

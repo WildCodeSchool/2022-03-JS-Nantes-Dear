@@ -1,16 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/LoginAdmin.css";
 import axios from "axios";
 import swal from "sweetalert";
 import ButtonConnexion from "../components/admin/ButtonConnexion";
 import logoCircle from "../assets/logo-dear-rond.png";
+import AuthContext from "../contexts/AuthContext";
 
 function LoginAdmin() {
   const [pseudo, setPseudo] = useState("");
   const [password, setPassword] = useState("");
 
   const navigate = useNavigate();
+
+  const { setLoggedUser } = useContext(AuthContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -28,6 +31,12 @@ function LoginAdmin() {
           { pseudo, password },
           { withCredentials: true }
         )
+        .then(({ data }) =>
+          setLoggedUser({
+            status: true,
+            user: data,
+          })
+        )
         .then(() => navigate("/adminaccount", { replace: true }))
         .catch((err) => {
           console.error(err);
@@ -38,7 +47,7 @@ function LoginAdmin() {
   return (
     <div className="loginadmin">
       <div className="admin-login-top">
-        <h1>Bienvenue Aline et Lila</h1>
+        <h1>Bienvenues Aline et Lila</h1>
         <img
           className="logo-admin-rond-login"
           src={logoCircle}

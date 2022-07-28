@@ -5,7 +5,12 @@ import "./styles/ButtonDeleteAccount.css";
 function ButtonDeleteAccount({ handleDelete }) {
   return (
     <div>
-      <button type="button" className="profile-delete" onClick={handleDelete}>
+      <button
+        type="button"
+        className="profile-delete"
+        style={{ cursor: "pointer" }}
+        onClick={handleDelete}
+      >
         Supprimer mon profil
       </button>
     </div>
