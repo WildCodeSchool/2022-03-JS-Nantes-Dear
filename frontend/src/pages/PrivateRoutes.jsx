@@ -32,5 +32,5 @@ export default function PrivateRoutes() {
 
   if (!loaded) return null;
 
-  return loggedUser.status ? <Outlet /> : <Navigate to="/login" />;
+  return loggedUser.status ? <Outlet /> : <Navigate to="/" />;
 }

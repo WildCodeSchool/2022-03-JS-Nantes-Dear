@@ -36,7 +36,7 @@ function MailDeleteProfile() {
         </h2>
       </div>
       <div className="subtilte-maildeleteprofile">
-        <h1 className="subtilte-maildeleteprofile">Envoie Mail :</h1>
+        <h1 className="subtilte-maildeleteprofile">Rédaction Mail :</h1>
         <form className="contactuser" htmlFor="sendsorrymail">
           <label className="contactuserform" htmlFor="sendsorrymail">
             <textarea

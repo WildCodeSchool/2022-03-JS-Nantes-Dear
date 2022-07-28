@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import PostCardAdmin from "./PostCardAdmin";
+import PostCard from "../post/CardPost/PostCard";
 import "./styles/PostListAdmin.css";
 
 export default function PostListAdmin() {
@@ -18,7 +18,7 @@ export default function PostListAdmin() {
     <div className="postList">
       <div className="post">
         {posts.map((post) => (
-          <PostCardAdmin key={post.id} post={post.id} />
+          <PostCard key={post.id} post={post.id} />
         ))}
       </div>
     </div>
