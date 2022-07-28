@@ -1,25 +1,18 @@
 import React from "react";
 import "./styles/PostCardAdmin.css";
 import propTypes from "prop-types";
-import TimeAgo from "javascript-time-ago";
-import fr from "javascript-time-ago/locale/fr";
-import ReactTimeAgo from "react-time-ago";
 import ButtonLikeDislike from "../post/ButtonLikeDislike";
 
-TimeAgo.addDefaultLocale(fr);
-TimeAgo.addLocale(fr);
-
 function PostCardAdmin({ post }) {
-  const { user, content, category, createdAt } = post;
+  const { user, content, category } = post;
 
   return (
     <div className="postcard">
       <div className="headercard">
         <h2>
-          <span className="dateText">
-            {" "}
-            <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />{" "}
-          </span>
+          {/* <span className="dateText">
+           
+          </span> */}
           {user}
         </h2>
         <p>{category}</p>
@@ -39,7 +32,6 @@ PostCardAdmin.propTypes = {
     user: propTypes.number.isRequired,
     content: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
-    createdAt: propTypes.string.isRequired,
   }).isRequired,
 };
 
