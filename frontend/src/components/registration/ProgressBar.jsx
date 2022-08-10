@@ -1,4 +1,3 @@
-/* eslint-disable react/function-component-definition */
 import React from "react";
 import PropTypes from "prop-types";
 import Styled from "styled-components";
@@ -41,13 +40,13 @@ const Container = Styled.div`
   }
 `;
 
-const ProgressBar = ({ value, max, color, width }) => {
+function ProgressBar({ value, max, color, width }) {
   return (
     <Container className="container-back" color={color} width={width}>
       <progress value={value} max={max} />
     </Container>
   );
-};
+}
 
 ProgressBar.propTypes = {
   value: PropTypes.number.isRequired,

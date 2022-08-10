@@ -17,8 +17,7 @@ function PostCard({ post }) {
       <div className="headercard">
         <h2>
           <span className="dateText">
-            {" "}
-            <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />{" "}
+            <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />
           </span>
           {user}
         </h2>
@@ -36,7 +35,7 @@ function PostCard({ post }) {
 
 PostCard.propTypes = {
   post: propTypes.shape({
-    user: propTypes.number.isRequired,
+    user: propTypes.string.isRequired,
     content: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
     createdAt: propTypes.string.isRequired,
