@@ -97,11 +97,10 @@ class UserController {
                 })
                 .status(200)
                 .send({ id, pseudo });
-            } else {
-              res
-                .status(403)
-                .send("Le pseudo ou le mot de passe ne sont pas valides");
             }
+            res
+              .status(403)
+              .send("Le pseudo ou le mot de passe ne sont pas valides");
           } catch (err) {
             res.status(500).send(`Erreur Interne avec bcrypt ${err}`);
           }
@@ -109,7 +108,7 @@ class UserController {
       })
       .catch((err) => {
         console.error(err);
-        res.status(500).send({
+        return res.status(500).send({
           error: err.message,
         });
       });

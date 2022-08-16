@@ -21,7 +21,6 @@ export default function Register() {
         title: "error!",
         text: "Merci de renseigner tous les champs",
         icon: "error",
-        confirmButtonText: "Parfait !!",
       });
     } else {
       axios
@@ -37,7 +36,6 @@ export default function Register() {
               title: "Error!",
               text: "Les mots de passe sont différents",
               icon: "error",
-              confirmButtonText: "Match !!",
             });
           } else {
             axios
@@ -59,7 +57,7 @@ export default function Register() {
                   title: "error!",
                   text: "Erreur lors de l'enregistrement de l'utilisateur",
                   icon: "error",
-                  confirmButtonText: "Ok",
+                  // confirmButtonText: "Ok",
                 });
               });
           }
@@ -69,7 +67,7 @@ export default function Register() {
             title: "Error!",
             text: "Cet email existe déjà",
             icon: "error",
-            confirmButtonText: "ok",
+            // confirmButtonText: "ok",
           });
         });
     }

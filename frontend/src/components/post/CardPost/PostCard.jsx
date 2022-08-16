@@ -12,8 +12,18 @@ TimeAgo.addLocale(fr);
 function PostCard({ post }) {
   const { user, content, category, createdAt } = post;
 
+  const backgroundColorList = [
+    "#303364",
+    "#EC4D4D",
+    "#A7D1CD",
+    "#F8C053",
+    "#A098C9",
+  ];
+  const rand = Math.floor(Math.random() * backgroundColorList.length);
+  const valueColor = backgroundColorList[rand];
+
   return (
-    <div className="postcard">
+    <div className="postcard" style={{ backgroundColor: valueColor }}>
       <div className="headercard">
         <h2>
           <span className="dateText">
