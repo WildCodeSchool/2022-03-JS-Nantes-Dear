@@ -12,6 +12,7 @@ class UserController {
       res.status(409).send({
         error: "Ce pseudo existe déjà",
       });
+      return;
     }
 
     const [mail] = await models.user.findByMail(email);
@@ -97,6 +98,7 @@ class UserController {
                 })
                 .status(200)
                 .send({ id, pseudo });
+              return;
             }
             res
               .status(403)
