@@ -104,6 +104,17 @@ function GoodConduct() {
             sécrétions vaginales, de l’urine et des excréments sont strictement
             interdites.
           </label>
+          {/* <label htmlFor="box">
+            <input
+              ref={ref}
+              id="selectAll"
+              type="checkbox"
+              name="selectAll"
+              onChange={(event) => selectAll(event.target.checked)}
+              checked={checkedAll}
+            />
+            TOUT ACCEPTER
+          </label> */}
         </div>
         <div className="conduct-conclusion">
           <p>

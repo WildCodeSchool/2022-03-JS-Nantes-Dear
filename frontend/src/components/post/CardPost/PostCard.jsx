@@ -12,13 +12,22 @@ TimeAgo.addLocale(fr);
 function PostCard({ post }) {
   const { user, content, category, createdAt } = post;
 
+  const backgroundColorList = [
+    "#303364",
+    "#EC4D4D",
+    "#A7D1CD",
+    "#F8C053",
+    "#A098C9",
+  ];
+  const rand = Math.floor(Math.random() * backgroundColorList.length);
+  const valueColor = backgroundColorList[rand];
+
   return (
-    <div className="postcard">
+    <div className="postcard" style={{ backgroundColor: valueColor }}>
       <div className="headercard">
         <h2>
           <span className="dateText">
-            {" "}
-            <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />{" "}
+            <ReactTimeAgo date={new Date(createdAt)} relocale="fr" />
           </span>
           {user}
         </h2>
@@ -36,7 +45,7 @@ function PostCard({ post }) {
 
 PostCard.propTypes = {
   post: propTypes.shape({
-    user: propTypes.number.isRequired,
+    user: propTypes.string.isRequired,
     content: propTypes.string.isRequired,
     category: propTypes.string.isRequired,
     createdAt: propTypes.string.isRequired,

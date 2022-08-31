@@ -73,7 +73,7 @@ class PostController {
         userId: user.id,
         categoryId: parseInt(categoryId, 10),
         createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
-        likes: 0,
+        likers: 0,
         signals: 0,
       })
       .then(([result]) => {

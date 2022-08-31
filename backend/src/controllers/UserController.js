@@ -12,6 +12,7 @@ class UserController {
       res.status(409).send({
         error: "Ce pseudo existe déjà",
       });
+      return;
     }
 
     const [mail] = await models.user.findByMail(email);
@@ -97,11 +98,11 @@ class UserController {
                 })
                 .status(200)
                 .send({ id, pseudo });
-            } else {
-              res
-                .status(403)
-                .send("Le pseudo ou le mot de passe ne sont pas valides");
+              return;
             }
+            res
+              .status(403)
+              .send("Le pseudo ou le mot de passe ne sont pas valides");
           } catch (err) {
             res.status(500).send(`Erreur Interne avec bcrypt ${err}`);
           }
@@ -109,7 +110,7 @@ class UserController {
       })
       .catch((err) => {
         console.error(err);
-        res.status(500).send({
+        return res.status(500).send({
           error: err.message,
         });
       });
