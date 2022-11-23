@@ -34,12 +34,13 @@ Dear is a application for people who want to talk about sexualities without tabo
 - _Prettier_ : "Quality of code" tool as well, focuses on the styleguide
 - _ Airbnb Standard_ : One of the most known "standards", even though it's not officially linked to ES/JS
 - _Nodemon_ : Allows to restart the server everytime a .js file is udated
-- Axios 
-- Sweetalert
-- PropTypes
-- React-icons
-- Bcrypt
-- CookieParser
-- Nodemailer
-- Jsonwebtoken
-- Joi
+- _Axios_
+- _Sweetalert_
+- _PropTypes_
+- _React-icons_
+- _Bcrypt_
+- _CookieParser_
+- _Nodemailer_
+- _Jsonwebtoken_
+- _Joi_
+- _MySql2_

@@ -19,24 +19,44 @@ app.use(
   })
 );
 
+app.get("/posttext", (_, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).send("[GET] Hello World!");
+});
+app.post("/posttext", (_, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).send("[POST] Hello World!");
+});
+app.put("/step-4-2", (_, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).send("[PUT] Hello World!");
+});
+app.delete("/step-4-2", (_, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).send("[DELETE] Hello World!");
+});
+app.options("/step-4-1", (_, res) => {
+  res.set("Access-Control-Allow-Origin", "*");
+  res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
+  res.set("Access-Control-Allow-Headers", "Content-Type");
+  res.status(200).send();
+});
+
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../public")));
 
-// app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
-
-// API routes
 app.use(userRoutes);
 app.use(categoryRoutes);
 app.use(postRoutes);
 app.use(router);
 
-// Redirect all requests to the REACT app
-// app.get("*", (req, res) => {
-//   res.sendFile(
-//     path.join(__dirname, "..", "..", "frontend", "dist", "index.html")
-//   );
-// });
-
-// ready to export
 module.exports = app;
