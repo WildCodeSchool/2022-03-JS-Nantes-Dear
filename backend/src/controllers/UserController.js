@@ -68,7 +68,7 @@ class UserController {
 
     const validationErrors = Joi.object({
       pseudo: Joi.string().max(15).required(),
-      password: Joi.string().max(15).required(),
+      password: Joi.string().max(150).required(),
     }).validate({ pseudo, password }).error;
 
     if (validationErrors) {

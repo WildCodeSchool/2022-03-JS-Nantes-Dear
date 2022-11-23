@@ -13,7 +13,7 @@ CREATE TABLE user (
   id int PRIMARY KEY AUTO_INCREMENT,
   email varchar(255) UNIQUE,
   pseudo varchar(255) UNIQUE,
-  password varchar(255),
+  password varchar(255) UNIQUE,
   role varchar(255),
   age varchar(150)
   );
@@ -74,6 +74,6 @@ INSERT INTO category (name) VALUES
 ("Vagin");
 
 INSERT INTO post (content, userId, categoryId, createdAt, likers, signals) VALUES
-("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 9, 6, "2022-07-18"),
-("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 10, 6, "2022-07-17"),
-("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 11, 8, "2022-07-16");
+("Je ne sais pas comment parler de sexualité avec mes ami.e.s... Je ne sais pas pourquoi ça me gêne autant", 5, 6, "2022-07-18",0,0),
+("Hello, hello, besoin d'un avis. En ce moment dans mon couple c'est assez tendu, on a un blocage au niveau sexuel, la personne ne veut jamais le faire...", 6, 6, "2022-07-17",0,0),
+("Je ne sais pas si je suis solo dans cette reflexion mais les poils de ma copine ne me dérange pas du tout... Et j'ai pleins d'ami.e, ça les dérangent beaucoup. Et vous?", 7, 7, "2022-07-16",0,0);

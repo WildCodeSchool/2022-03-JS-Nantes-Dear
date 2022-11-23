@@ -1,5 +1,4 @@
-/* eslint-disable import/no-named-as-default-member */
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { IoIosArrowDroprightCircle } from "react-icons/io";
 import { BsListTask } from "react-icons/bs";
@@ -8,6 +7,7 @@ import { VscWorkspaceTrusted } from "react-icons/vsc";
 import { HiOutlineChatAlt2 } from "react-icons/hi";
 import { FiFileText } from "react-icons/fi";
 import "./styles/UserAccount.css";
+import UserContext from "../../contexts/UserContext";
 import LegalNotice from "./LegalNotice";
 import TrustCharter from "./TrustCharter";
 import MyPersonalDatas from "./MyPersonalDatas";
@@ -20,6 +20,7 @@ import ScrollButton from "../home/ScrollButton";
 import ButtonDeleteAccount from "./ButtonDeleteAccount";
 
 function UserAccount() {
+  const { register } = useContext(UserContext);
   const [toggleState, setToggleState] = useState(1);
 
   const toggleTab = (index) => {
@@ -30,7 +31,7 @@ function UserAccount() {
     <div className="user-account-page">
       <div className="profile-top">
         <div className="pseudo-top">
-          <h1>Pseudo</h1>
+          <h1> {register.pseudo}</h1>
         </div>
         <Link to="/home">
           <img className="logo-user-page" src={logoBlue} alt="logo Dear bleu" />
