@@ -1,5 +1,6 @@
 const Joi = require("joi");
 const dayjs = require("dayjs");
+const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class PostController {
@@ -53,6 +54,9 @@ class PostController {
 
   static add = async (req, res) => {
     const { content, categoryId } = req.body;
+    const { accessToken } = req.body;
+    const user = jwt.verify(accessToken, process.env.JWT_AUTH_SECRET);
+
     const validationErrors = Joi.object({
       content: Joi.string().max(255).required(),
       categoryId: Joi.number().required(),
@@ -66,10 +70,11 @@ class PostController {
     models.post
       .insert({
         content,
+        userId: user.id,
         categoryId: parseInt(categoryId, 10),
         createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
-        likers: [],
-        signals: [],
+        likers: 0,
+        signals: 0,
       })
       .then(([result]) => {
         res.status(201).send({
