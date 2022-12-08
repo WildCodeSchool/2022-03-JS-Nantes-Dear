@@ -92,7 +92,7 @@ class UserController {
               );
 
               res
-                .cookie("accessToken", token, {
+                .cookie("accessTokenTOTO", token, {
                   httpOnly: true,
                   secure: process.env.NODE_ENV === "production",
                 })
