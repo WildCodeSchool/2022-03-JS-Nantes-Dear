@@ -5,7 +5,7 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { email, pseudo, password, age, role } = req.body;
+    const { email, pseudo, password, role, age } = req.body;
 
     const [user] = await models.user.findByPseudo(pseudo);
     if (user.length) {
@@ -26,6 +26,7 @@ class UserController {
       email: Joi.string().email().max(255).required(),
       pseudo: Joi.string().max(50).required(),
       password: Joi.string().max(255).required(),
+      role: Joi.string().max(15).required(),
       age: Joi.string().max(30).required(),
     }).validate({ email, pseudo, password, age }).error;
 
@@ -42,12 +43,8 @@ class UserController {
         .insert({ email, pseudo, hash, age, role })
         .then(([result]) => {
           res.status(201).json({
+            ...result,
             id: result.insertId,
-            email,
-            pseudo,
-            hash,
-            age,
-            role,
           });
         })
         .catch((err) => {
@@ -92,12 +89,12 @@ class UserController {
               );
 
               res
-                .cookie("accessTokenTOTO", token, {
+                .cookie("jwt", token, {
                   httpOnly: true,
                   secure: process.env.NODE_ENV === "production",
                 })
                 .status(200)
-                .send({ id, pseudo });
+                .send({ id, pseudo, role, token, message: "logged in !!" });
               return;
             }
             res
@@ -131,7 +128,7 @@ class UserController {
   };
 
   static logout = (req, res) => {
-    res.clearCookie("accessToken");
+    res.clearCookie("jwt");
     res.sendStatus(204);
   };
 
@@ -155,23 +152,23 @@ class UserController {
       });
   };
 
-  static checkToken = (req, res) => {
-    const token = req.cookie.access_token;
-    if (token) {
-      return res.sendStatus(401);
-    }
-    try {
-      const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
+  // static checkToken = (req, res) => {
+  //   const token = req.cookie.access_token;
+  //   if (token) {
+  //     return res.sendStatus(401);
+  //   }
+  //   try {
+  //     const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
 
-      return res.status(200).json({
-        id: data.id,
-        email: data.email,
-        role: data.role,
-      });
-    } catch {
-      return res.sendStatus(401);
-    }
-  };
+  //     return res.status(200).json({
+  //       id: data.id,
+  //       email: data.email,
+  //       role: data.role,
+  //     });
+  //   } catch {
+  //     return res.sendStatus(401);
+  //   }
+  // }; // doublon avec le middlewrare authorization et de plus ne fonctionne pas
 
   static checkPseudo = (req, res) => {
     models.user

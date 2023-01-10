@@ -2,13 +2,12 @@ const express = require("express");
 const { UserController } = require("../controllers");
 
 const routes = express.Router();
-const { authorization } = require("../middlewares/authMiddleware");
-const { isAdmin } = require("../middlewares/isAdminMiddleware");
+const { authorization, isAdmin } = require("../middlewares/authMiddleware");
 
 routes.get("/users", authorization, isAdmin, UserController.browse);
 routes.get("/users/pseudo", UserController.checkPseudo);
 routes.get("/users/email", UserController.checkEmail);
-routes.get("users/checkToken", UserController.checkToken);
+// routes.get("users/token", UserController.checkToken);
 routes.post("/users/register", UserController.register);
 routes.post("/users/login", UserController.login);
 routes.get("/users/logout", authorization, UserController.logout);
