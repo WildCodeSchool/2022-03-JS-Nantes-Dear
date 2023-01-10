@@ -1,6 +1,5 @@
 const Joi = require("joi");
 const dayjs = require("dayjs");
-const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class PostController {
@@ -54,40 +53,45 @@ class PostController {
 
   static add = async (req, res) => {
     const { content, categoryId } = req.body;
-    const { accessToken } = req.body;
-    const user = jwt.verify(accessToken, process.env.JWT_AUTH_SECRET);
 
     const validationErrors = Joi.object({
       content: Joi.string().max(255).required(),
       categoryId: Joi.number().required(),
+      // userId: Joi.number().required(),
     }).validate({ content, categoryId }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
       return;
     }
+    try {
+      models.post
+        .insert({
+          content,
 
-    models.post
-      .insert({
-        content,
-        userId: user.id,
-        categoryId: parseInt(categoryId, 10),
-        createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
-        likers: 0,
-        signals: 0,
-      })
-      .then(([result]) => {
-        res.status(201).send({
-          ...result,
-          id: result.insertId,
+          categoryId: parseInt(categoryId, 10),
+          createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
+          likers: 0,
+          signals: 0,
+        })
+        .then(([result]) => {
+          res.status(201).send({
+            ...result,
+            id: result.insertId,
+          });
+        })
+
+        .catch((err) => {
+          console.error(err);
+          res.status(401).send({
+            error: "invalid JWT",
+          });
         });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send({
-          error: err.message,
-        });
+    } catch (err) {
+      res.status(500).send({
+        error: `Erreur JWT token : ${err.message}`,
       });
+    }
   };
 
   static delete = (req, res) => {

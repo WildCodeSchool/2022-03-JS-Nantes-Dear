@@ -2,12 +2,7 @@
 CREATE DATABASE IF NOT EXISTS dear;
 
 USE dear;
-DROP TABLE IF EXISTS admin;
-CREATE TABLE admin (
-  id int PRIMARY KEY AUTO_INCREMENT,
-  message varchar(255),
-  userId int
-);
+
 DROP TABLE IF EXISTS user;
 CREATE TABLE user (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -29,14 +24,6 @@ CREATE TABLE post (
   signals int
 );
 
-DROP TABLE IF EXISTS comment;
-CREATE TABLE comment (
-  id int PRIMARY KEY AUTO_INCREMENT,
-  createdAt datetime,
-  userId int,
-  postId int
-);
-
 DROP TABLE IF EXISTS category;
 CREATE TABLE category (
   id int PRIMARY KEY AUTO_INCREMENT,
@@ -44,19 +31,15 @@ CREATE TABLE category (
   color varchar(255)
 );
 
-ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES comment (userId);
-
-ALTER TABLE comment ADD FOREIGN KEY (userId) REFERENCES user (id);
-
 ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 
 ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES admin (userId);
 
 ALTER TABLE post ADD FOREIGN KEY (userId) REFERENCES user (id);
 
-INSERT INTO user (email, pseudo, password, role, age, likes) VALUES 
+INSERT INTO user (email, pseudo, password, role, age) VALUES 
 ("lila@lpp-agency.com", "Lila", "$2b$10$Huf9uETmgMB0ORpChxjTY.ettsNSOnLVJoEXJhHSmdtklO.IVj21i", "ROLE_ADMIN", "18-25"),
-("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq", "ROLE_ADMIN","26-35"),
+("aline@lpp-agency.com", "Aline", "$2b$10$uaNcWP4MdKw/DjtIUj4NWuMuJvypzDkere6CRqmlQTlHcZ7caldGq","ROLE_ADMIN", "26-35"),
 ("severinevilleneuve@gmail.com", "severine", "$2b$10$7kHR0F.H8TbWWwtGDmWlGutxBSZQNgUsX8dodGY4kIzcepyIK00", "ROLE_ADMIN", "45+"),
 ("aline.saint-lanne@orange.fr", "astl", "$2b$10$bqXzfwdxfAF99ub5BAqNGeKHkeZEZEXTkm2.B1pBev9TvccUyIOsC", "ROLE_ADMIN", "26-35"),
 ("Petitfenouil10@gmail.com", "Petitfenouil10", "$2b$10$WUbrfR6d2QgyJmJswACuMethqHszW1b3gWXuC4/oKD3FjxRCRgRt6", "ROLE_USER", "26-34"),

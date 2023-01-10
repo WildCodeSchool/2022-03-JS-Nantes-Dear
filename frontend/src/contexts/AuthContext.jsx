@@ -1,18 +1,18 @@
-import { createContext, useState, useMemo } from "react";
+// import { createContext, useState, useMemo } from "react";
 
-const AuthContext = createContext();
-export default AuthContext;
+// const AuthContext = createContext();
+// export default AuthContext;
 
-export function AuthContextProvider() {
-  const initialAuth = {
-    status: false,
-    user: {},
-  };
-  const [loggedUser, setLoggedUser] = useState(initialAuth);
+// export function AuthContextProvider() {
+//   const initialAuth = {
+//     status: false,
+//     user: {},
+//   };
+//   const [loggedUser, setLoggedUser] = useState(initialAuth);
 
-  const values = useMemo(
-    () => ({ initialAuth, loggedUser, setLoggedUser }),
-    [loggedUser]
-  );
-  return <AuthContext.Provider value={values} />;
-}
+//   const values = useMemo(
+//     () => ({ initialAuth, loggedUser, setLoggedUser }),
+//     [loggedUser]
+//   );
+//   return <AuthContext.Provider value={values} />;
+// }

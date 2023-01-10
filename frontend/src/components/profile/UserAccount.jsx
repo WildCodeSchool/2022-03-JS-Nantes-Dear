@@ -15,7 +15,7 @@ import FaCul from "./FaCul";
 import ContactForm from "./ContactForm";
 import FooterHome from "../home/FooterHome";
 import logoBlue from "../../assets/dear-logo-blue.png";
-import Logout from "./Logout";
+// import Logout from "./Logout";
 import ScrollButton from "../home/ScrollButton";
 import ButtonDeleteAccount from "./ButtonDeleteAccount";
 
@@ -101,7 +101,7 @@ function UserAccount() {
             </button>
           </div>
           <div className="profile-logout">
-            <Logout />
+            {/* <Logout /> */}
             <ButtonDeleteAccount />
           </div>
         </div>

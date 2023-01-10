@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
@@ -10,8 +10,6 @@ import ButtonReturn from "../components/home/ButtonReturn";
 
 export default function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
-  const [verifyEmail, setVerifyEmail] = useState(false);
-
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -26,12 +24,11 @@ export default function Register() {
       axios
         .get(
           `${import.meta.env.VITE_BACKEND_URL}/users/email?email=${
-            register.email
+            register.email // vérifie que ce mail n'existe pas dans la db
           }`
         )
-        .then(() => setVerifyEmail(true))
         .then(() => {
-          if (verifyEmail && register.password !== register.passwordverified) {
+          if (register.password !== register.passwordverified) {
             swal({
               title: "Error!",
               text: "Les mots de passe sont différents",
