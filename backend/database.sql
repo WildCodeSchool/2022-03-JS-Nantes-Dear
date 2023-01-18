@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS post;
 CREATE TABLE post (
   id int PRIMARY KEY AUTO_INCREMENT,
   content varchar(255),
-  userId int,
+  userId int NOT NULL,
   categoryId int,
   createdAt datetime,
   likers int,
@@ -30,10 +30,17 @@ CREATE TABLE category (
   name varchar(255),
   color varchar(255)
 );
+DROP TABLE IF EXISTS comment;
+CREATE TABLE comment (
+  id int PRIMARY KEY AUTO_INCREMENT,
+  createdAt datetime,
+  userId int,
+  postId int
+);
 
 ALTER TABLE post ADD FOREIGN KEY (categoryId) REFERENCES category (id);
 
-ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES admin (userId);
+ALTER TABLE user ADD FOREIGN KEY (id) REFERENCES comment (userId);
 
 ALTER TABLE post ADD FOREIGN KEY (userId) REFERENCES user (id);
 

@@ -23,37 +23,6 @@ app.use(
   })
 );
 
-// app.get("/posttext", (_, res) => {
-//   res.set("Access-Control-Allow-Origin", "*");
-//   res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
-//   res.set("Access-Control-Allow-Headers", "Content-Type");
-//   res.status(200).send("[GET] Hello World!");
-// });
-// app.post("/posttext", (_, res) => {
-//   res.set("Access-Control-Allow-Origin", "*");
-//   res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
-//   res.set("Access-Control-Allow-Headers", "Content-Type");
-//   res.status(200).send("[POST] Hello World!");
-// });
-// app.put("/step-4-2", (_, res) => {
-//   res.set("Access-Control-Allow-Origin", "*");
-//   res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
-//   res.set("Access-Control-Allow-Headers", "Content-Type");
-//   res.status(200).send("[PUT] Hello World!");
-// });
-// app.delete("/step-4-2", (_, res) => {
-//   res.set("Access-Control-Allow-Origin", "*");
-//   res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
-//   res.set("Access-Control-Allow-Headers", "Content-Type");
-//   res.status(200).send("[DELETE] Hello World!");
-// });
-// app.options("/step-4-1", (_, res) => {
-//   res.set("Access-Control-Allow-Origin", "*");
-//   res.set("Access-Control-Allow-Method", "GET,OPTIONS,PUT,DELETE,POST");
-//   res.set("Access-Control-Allow-Headers", "Content-Type");
-//   res.status(200).send();
-// });
-
 app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../public")));

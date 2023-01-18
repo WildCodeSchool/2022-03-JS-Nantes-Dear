@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
+import UserContext from "../../contexts/UserContext";
 import ButtonComments from "./ButtonComments";
 import ButtonPublications from "./ButtonPublications";
 import ButtonReturnPurple from "./ButtonReturnPurple";
 import "./styles/UserActivities.css";
 
-function UserActivities() {
+export default function UserActivities() {
+  const { register } = useContext(UserContext);
+
   return (
     <div className="container-page-user-activities">
       <div className="userpageactivities">
@@ -13,7 +16,9 @@ function UserActivities() {
         <h2 className="head-subtilte-userpageactivities">Activités</h2>
       </div>
       <div className="subtilte-userpageacitivities">
-        <h1 className="subtilte-userpage">Toute l'activité de :</h1>
+        <h1 className="subtilte-userpage">
+          Toute l'activité de : {register.pseudo}
+        </h1>
       </div>
       <div className="buttons-userpageacitivities">
         <ButtonPublications />
@@ -22,5 +27,3 @@ function UserActivities() {
     </div>
   );
 }
-
-export default UserActivities;

@@ -37,7 +37,6 @@ body {
   border-radius: 10px;
   height: 3.5rem;
   border: none;
-  margin-bottom: 40px;
 }
 
 .inputEmail,
@@ -53,6 +52,30 @@ body {
 .inputConfirmPassword,
 .inputEmail {
   color: var(--dark-blue);
+}
+
+.inputEmail,
+.inputPassword {
+  margin-bottom: 40px;
+}
+
+.inputPassword {
+  position: relative;
+}
+
+.inputConfirmPassword {
+  margin-bottom: 10px;
+}
+
+.eye {
+  position: absolute;
+}
+
+ul {
+  list-style: none;
+}
+li {
+  font-size: 0.8rem;
 }
 
 @media screen and (min-width: 768px) and (max-width: 1024px) {

@@ -14,7 +14,7 @@ function FilterSearch({ searchValue, setSearchValue }) {
             type="text"
             name="searchbar"
             id="searchbar"
-            placeholder="Rechercher"
+            placeholder="Rechercher par mot clé"
             value={searchValue}
             onChange={(event) => setSearchValue(event.target.value)}
           />
