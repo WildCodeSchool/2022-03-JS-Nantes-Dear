@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./styles/Register.css";
 import axios from "axios";
@@ -7,9 +7,16 @@ import ProgressBar from "../components/registration/ProgressBar";
 import UserContext from "../contexts/UserContext";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
+import closeEye from "../assets/closed-eye.svg";
+import openEye from "../assets/opened-eye.svg";
+import PswValidator from "../utils/PswValidator";
 
 export default function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
+  const [psw, setPsw] = useState("");
+  const [pswIsVisible, setPswIsVisible] = useState("false");
+  const pswValidator = new PswValidator(psw);
+
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
@@ -92,20 +99,22 @@ export default function Register() {
               setRegister({ ...register, email: e.target.value })
             }
           />
+
           <input
             className="inputPassword"
-            type="password"
+            type={pswIsVisible ? "text" : `password`}
             name="password"
             id="password"
             placeholder="Mot de passe"
             value={register.password}
             onChange={(e) =>
-              setRegister({ ...register, password: e.target.value })
+              setRegister({ ...register, password: e.target.value }) ||
+              setPsw(e.target.value)
             }
           />
           <input
             className="inputConfirmPassword"
-            type="password"
+            type={pswIsVisible ? "text" : `password`}
             name="password"
             id="password"
             placeholder="Confirmation du mot de passe"
@@ -114,6 +123,56 @@ export default function Register() {
               setRegister({ ...register, passwordverified: e.target.value })
             }
           />
+
+          <div className="eye">
+            <span
+              onClick={() => setPswIsVisible((prevState) => !prevState)}
+              role="presentation"
+            >
+              <img
+                src={pswIsVisible ? closeEye : openEye}
+                alt={pswIsVisible ? "closed Eye" : "open Eye"}
+                width="32"
+              />
+            </span>
+          </div>
+
+          <div className="pswValidation">
+            <ul>
+              <li
+                style={{
+                  color: pswValidator.hasLowerCase() ? "green" : "red",
+                }}
+              >
+                1 lowercase letter
+              </li>
+              <li
+                style={{
+                  color: pswValidator.hasUpperCase() ? "green" : "red",
+                }}
+              >
+                1 Uppercase letter
+              </li>
+              <li style={{ color: pswValidator.hasNumber() ? "green" : "red" }}>
+                1 number
+              </li>
+              <li
+                style={{
+                  color: pswValidator.hasSpecialChar() ? "green" : "red",
+                }}
+              >
+                1 special character
+              </li>
+              <li
+                style={{
+                  color: pswValidator.hasValidLength() ? "green" : "red",
+                }}
+              >
+                Minimum 8 characters
+              </li>
+            </ul>
+          </div>
+
           <div className="button-continue">
             <ButtonContinue handleSubmit={handleSubmit} />
           </div>

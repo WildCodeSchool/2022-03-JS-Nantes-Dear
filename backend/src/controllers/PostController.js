@@ -1,5 +1,6 @@
 const Joi = require("joi");
 const dayjs = require("dayjs");
+const jwt = require("jsonwebtoken");
 const models = require("../models");
 
 class PostController {
@@ -53,22 +54,24 @@ class PostController {
 
   static add = async (req, res) => {
     const { content, categoryId } = req.body;
+    // console.log(req.body);
+    const { accessToken } = req.cookies;
+    const token = jwt.verify(accessToken, process.env.JWT_AUTH_SECRET);
 
     const validationErrors = Joi.object({
       content: Joi.string().max(255).required(),
       categoryId: Joi.number().required(),
-      // userId: Joi.number().required(),
     }).validate({ content, categoryId }).error;
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
-      return;
+      return true;
     }
     try {
       models.post
         .insert({
           content,
-
+          userId: token.id,
           categoryId: parseInt(categoryId, 10),
           createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
           likers: 0,
@@ -92,6 +95,7 @@ class PostController {
         error: `Erreur JWT token : ${err.message}`,
       });
     }
+    return true;
   };
 
   static delete = (req, res) => {

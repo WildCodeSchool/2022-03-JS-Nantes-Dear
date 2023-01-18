@@ -24,8 +24,7 @@ import UserDelete from "../components/admin/UserDelete";
 import MailDeleteProfile from "../components/admin/MailDeleteProfile";
 import DeleteProfile from "../components/admin/DeleteProfile";
 import UserList from "../components/admin/UserList";
-// import PrivateRoutes from "./PrivateRoutes";
-// import Logout from "../components/profile/Logout";
+import Logout from "../components/profile/Logout";
 
 export default function Body() {
   const initialRegister = {
@@ -34,7 +33,7 @@ export default function Body() {
     email: "",
     password: "",
     passwordverified: "",
-    // isAdmin: false,
+    role: "ROLE_USER",
   };
   const [register, setRegister] = useState(initialRegister);
 
@@ -45,7 +44,6 @@ export default function Body() {
 
   return (
     <div>
-      {/* <AuthContextProvider> */}
       <UserContext.Provider value={values}>
         <Routes>
           <Route path="/" element={<Intro />} />
@@ -76,16 +74,13 @@ export default function Body() {
           <Route path="/maildeleteprofile" element={<MailDeleteProfile />} />
           <Route path="userdelete/deleteprofile" element={<DeleteProfile />} />
           <Route path="/comment" element={<Comment />} />
-          {/* <Route path="/logout" element={<Logout />} /> */}
+          <Route path="/logout" element={<Logout />} />
           <Route path="/loginadmin" element={<LoginAdmin />} />
           <Route path="/connection" element={<Connection />} />
-          {/* <Route element={<PrivateRoutes />}> */}
           <Route path="/adminaccount" element={<AdminAccount />} />
           <Route path="/useraccount" element={<UserAccount />} />
-          {/* </Route> */}
         </Routes>
       </UserContext.Provider>
-      {/* </AuthContextProvider> */}
     </div>
   );
 }

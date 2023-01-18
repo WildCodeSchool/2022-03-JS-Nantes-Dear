@@ -10,7 +10,6 @@ import ButtonContinue from "../components/registration/ButtonContinue";
 
 function Login() {
   const { register, setRegister } = useContext(UserContext);
-
   const navigate = useNavigate();
 
   // const { setLoggedUser } = useContext(AuthContext);

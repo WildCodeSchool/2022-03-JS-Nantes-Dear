@@ -21,20 +21,6 @@ class UserController {
         error: "Cet email existe déjà",
       });
     }
-
-    const validationErrors = Joi.object({
-      email: Joi.string().email().max(255).required(),
-      pseudo: Joi.string().max(50).required(),
-      password: Joi.string().max(255).required(),
-      role: Joi.string().max(15).required(),
-      age: Joi.string().max(30).required(),
-    }).validate({ email, pseudo, password, age }).error;
-
-    if (validationErrors) {
-      res.status(422).send(req.body);
-      return;
-    }
-
     try {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(password, salt);
@@ -89,7 +75,7 @@ class UserController {
               );
 
               res
-                .cookie("jwt", token, {
+                .cookie("accessToken", token, {
                   httpOnly: true,
                   secure: process.env.NODE_ENV === "production",
                 })
@@ -113,6 +99,16 @@ class UserController {
       });
   };
 
+  static logout = (req, res) => {
+    res
+      .clearCookie("jwt", {
+        secure: true,
+        sameSite: "none",
+      })
+      .status(200)
+      .send("User has been logged out.");
+  };
+
   static browse = (req, res) => {
     models.user
       .findAll()
@@ -125,11 +121,6 @@ class UserController {
           error: err.message,
         });
       });
-  };
-
-  static logout = (req, res) => {
-    res.clearCookie("jwt");
-    res.sendStatus(204);
   };
 
   static edit = (req, res) => {
