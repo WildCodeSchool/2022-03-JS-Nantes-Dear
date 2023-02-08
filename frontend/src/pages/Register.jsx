@@ -7,10 +7,15 @@ import ProgressBar from "../components/registration/ProgressBar";
 import UserContext from "../contexts/UserContext";
 import ButtonContinue from "../components/registration/ButtonContinue";
 import ButtonReturn from "../components/home/ButtonReturn";
+import closeEye from "../assets/closed-eye.svg";
+import openEye from "../assets/opened-eye.svg";
+import PswValidator from "../utils/PswValidator";
 
 export default function Register() {
   const { initialRegister, register, setRegister } = useContext(UserContext);
-  const [verifyEmail, setVerifyEmail] = useState(false);
+  const [psw, setPsw] = useState("");
+  const [pswIsVisible, setPswIsVisible] = useState("false");
+  const pswValidator = new PswValidator(psw);
 
   const navigate = useNavigate();
 
@@ -21,23 +26,20 @@ export default function Register() {
         title: "error!",
         text: "Merci de renseigner tous les champs",
         icon: "error",
-        confirmButtonText: "Parfait !!",
       });
     } else {
       axios
         .get(
           `${import.meta.env.VITE_BACKEND_URL}/users/email?email=${
-            register.email
+            register.email // vérifie que ce mail n'existe pas dans la db
           }`
         )
-        .then(() => setVerifyEmail(true))
         .then(() => {
-          if (verifyEmail && register.password !== register.passwordverified) {
+          if (register.password !== register.passwordverified) {
             swal({
               title: "Error!",
               text: "Les mots de passe sont différents",
               icon: "error",
-              confirmButtonText: "Match !!",
             });
           } else {
             axios
@@ -59,7 +61,7 @@ export default function Register() {
                   title: "error!",
                   text: "Erreur lors de l'enregistrement de l'utilisateur",
                   icon: "error",
-                  confirmButtonText: "Ok",
+                  // confirmButtonText: "Ok",
                 });
               });
           }
@@ -69,7 +71,7 @@ export default function Register() {
             title: "Error!",
             text: "Cet email existe déjà",
             icon: "error",
-            confirmButtonText: "ok",
+            // confirmButtonText: "ok",
           });
         });
     }
@@ -97,20 +99,22 @@ export default function Register() {
               setRegister({ ...register, email: e.target.value })
             }
           />
+
           <input
             className="inputPassword"
-            type="password"
+            type={pswIsVisible ? "text" : `password`}
             name="password"
             id="password"
             placeholder="Mot de passe"
             value={register.password}
             onChange={(e) =>
-              setRegister({ ...register, password: e.target.value })
+              setRegister({ ...register, password: e.target.value }) ||
+              setPsw(e.target.value)
             }
           />
           <input
             className="inputConfirmPassword"
-            type="password"
+            type={pswIsVisible ? "text" : `password`}
             name="password"
             id="password"
             placeholder="Confirmation du mot de passe"
@@ -119,6 +123,56 @@ export default function Register() {
               setRegister({ ...register, passwordverified: e.target.value })
             }
           />
+
+          <div className="eye">
+            <span
+              onClick={() => setPswIsVisible((prevState) => !prevState)}
+              role="presentation"
+            >
+              <img
+                src={pswIsVisible ? closeEye : openEye}
+                alt={pswIsVisible ? "closed Eye" : "open Eye"}
+                width="32"
+              />
+            </span>
+          </div>
+
+          <div className="pswValidation">
+            <ul>
+              <li
+                style={{
+                  color: pswValidator.hasLowerCase() ? "green" : "red",
+                }}
+              >
+                1 lowercase letter
+              </li>
+              <li
+                style={{
+                  color: pswValidator.hasUpperCase() ? "green" : "red",
+                }}
+              >
+                1 Uppercase letter
+              </li>
+              <li style={{ color: pswValidator.hasNumber() ? "green" : "red" }}>
+                1 number
+              </li>
+              <li
+                style={{
+                  color: pswValidator.hasSpecialChar() ? "green" : "red",
+                }}
+              >
+                1 special character
+              </li>
+              <li
+                style={{
+                  color: pswValidator.hasValidLength() ? "green" : "red",
+                }}
+              >
+                Minimum 8 characters
+              </li>
+            </ul>
+          </div>
+
           <div className="button-continue">
             <ButtonContinue handleSubmit={handleSubmit} />
           </div>

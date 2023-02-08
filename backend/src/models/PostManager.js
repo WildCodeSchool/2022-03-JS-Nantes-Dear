@@ -12,7 +12,7 @@ class PostManager extends AbstractManager {
 
   findByCategory(category) {
     return this.connection.query(
-      `select *me FROM ${PostManager.table} JOIN category ON post.id = post.categoryId WHERE post.id = ?`,
+      `select * FROM ${PostManager.table} JOIN category ON post.id = post.categoryId WHERE post.id = ?`,
       [category]
     );
   }
@@ -25,13 +25,13 @@ class PostManager extends AbstractManager {
 
   insert(post) {
     return this.connection.query(
-      `insert into ${PostManager.table} (content, userId, categoryId, createdAt, likes, signals) values (?, ?, ?, ?, ?, ?)`,
+      `insert into ${PostManager.table} (content, userId, categoryId, createdAt, likers, signals) values (?, ?, ?, ?, ?, ?)`,
       [
         post.content,
         post.userId,
         post.categoryId,
         post.createdAt,
-        post.likes,
+        post.likers,
         post.signals,
       ]
     );

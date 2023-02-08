@@ -1,19 +1,18 @@
-import { createContext, useState } from "react";
+// import { createContext, useState, useMemo } from "react";
 
-const AuthContext = createContext();
-export default AuthContext;
+// const AuthContext = createContext();
+// export default AuthContext;
 
-// eslint-disable-next-line react/prop-types
-export function AuthContextProvider({ children }) {
-  const [loggedUser, setLoggedUser] = useState({
-    status: false,
-    user: {},
-  });
+// export function AuthContextProvider() {
+//   const initialAuth = {
+//     status: false,
+//     user: {},
+//   };
+//   const [loggedUser, setLoggedUser] = useState(initialAuth);
 
-  return (
-    // eslint-disable-next-line react/jsx-no-constructed-context-values
-    <AuthContext.Provider value={{ loggedUser, setLoggedUser }}>
-      {children}
-    </AuthContext.Provider>
-  );
-}
+//   const values = useMemo(
+//     () => ({ initialAuth, loggedUser, setLoggedUser }),
+//     [loggedUser]
+//   );
+//   return <AuthContext.Provider value={values} />;
+// }

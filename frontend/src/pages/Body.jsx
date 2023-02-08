@@ -1,7 +1,7 @@
 import { useState, useMemo } from "react";
 import { Routes, Route } from "react-router-dom";
 import UserContext from "../contexts/UserContext";
-import { AuthContextProvider } from "../contexts/AuthContext";
+// import { AuthContextProvider } from "../contexts/AuthContext";
 import UserAccount from "../components/profile/UserAccount";
 import DeleteAccount from "../components/profile/DeleteAccount";
 import Intro from "./Intro";
@@ -24,7 +24,6 @@ import UserDelete from "../components/admin/UserDelete";
 import MailDeleteProfile from "../components/admin/MailDeleteProfile";
 import DeleteProfile from "../components/admin/DeleteProfile";
 import UserList from "../components/admin/UserList";
-import PrivateRoutes from "./PrivateRoutes";
 import Logout from "../components/profile/Logout";
 
 export default function Body() {
@@ -45,50 +44,43 @@ export default function Body() {
 
   return (
     <div>
-      <AuthContextProvider>
-        <UserContext.Provider value={values}>
-          <Routes>
-            <Route path="/" element={<Intro />} />
-            <Route path="/facul" element={<FACul />} />
-            <Route path="/introadult" element={<IntroAdult />} />
-            <Route path="/sorrynotadult" element={<SorryNotAdult />} />
-            <Route path="/registration" element={<Registration />} />
-            <Route path="/registration/register" element={<Register />} />
-            <Route
-              path="/registration/register/goodconduct"
-              element={<GoodConduct />}
-            />
-            <Route
-              path="/registration/register/goodconduct/hello"
-              element={<Hello />}
-            />
-            <Route path="/addpost" element={<AddPost />} />
-            <Route path="/addpost/home" element={<AddPost />} />
-            <Route path="/connection/bonjour" element={<Bonjour />} />
-            <Route path="/home" element={<Home />} />
-            <Route path="/userlist" element={<UserList />} />
-            <Route path="/useractivities" element={<UserActivities />} />
-            <Route path="/userdelete" element={<UserDelete />} />
-            <Route
-              path="/useraccount/deleteaccount/:userId"
-              element={<DeleteAccount />}
-            />
-            <Route path="/maildeleteprofile" element={<MailDeleteProfile />} />
-            <Route
-              path="userdelete/deleteprofile"
-              element={<DeleteProfile />}
-            />
-            <Route path="/comment" element={<Comment />} />
-            <Route path="/logout" element={<Logout />} />
-            <Route path="/loginadmin" element={<LoginAdmin />} />
-            <Route path="/connection" element={<Connection />} />
-            <Route element={<PrivateRoutes />}>
-              <Route path="/adminaccount" element={<AdminAccount />} />
-              <Route path="/useraccount" element={<UserAccount />} />
-            </Route>
-          </Routes>
-        </UserContext.Provider>
-      </AuthContextProvider>
+      <UserContext.Provider value={values}>
+        <Routes>
+          <Route path="/" element={<Intro />} />
+          <Route path="/facul" element={<FACul />} />
+          <Route path="/introadult" element={<IntroAdult />} />
+          <Route path="/sorrynotadult" element={<SorryNotAdult />} />
+          <Route path="/registration" element={<Registration />} />
+          <Route path="/registration/register" element={<Register />} />
+          <Route
+            path="/registration/register/goodconduct"
+            element={<GoodConduct />}
+          />
+          <Route
+            path="/registration/register/goodconduct/hello"
+            element={<Hello />}
+          />
+          <Route path="/addpost" element={<AddPost />} />
+          <Route path="/addpost/home" element={<AddPost />} />
+          <Route path="/connection/bonjour" element={<Bonjour />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/userlist" element={<UserList />} />
+          <Route path="/useractivities" element={<UserActivities />} />
+          <Route path="/userdelete" element={<UserDelete />} />
+          <Route
+            path="/useraccount/deleteaccount/:userId"
+            element={<DeleteAccount />}
+          />
+          <Route path="/maildeleteprofile" element={<MailDeleteProfile />} />
+          <Route path="userdelete/deleteprofile" element={<DeleteProfile />} />
+          <Route path="/comment" element={<Comment />} />
+          <Route path="/logout" element={<Logout />} />
+          <Route path="/loginadmin" element={<LoginAdmin />} />
+          <Route path="/connection" element={<Connection />} />
+          <Route path="/adminaccount" element={<AdminAccount />} />
+          <Route path="/useraccount" element={<UserAccount />} />
+        </Routes>
+      </UserContext.Provider>
     </div>
   );
 }

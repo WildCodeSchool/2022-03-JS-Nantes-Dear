@@ -26,7 +26,6 @@
 }
 
 .conduct-text {
-  font-size: 0.7rem;
   margin-left: 9vw;
   margin-right: 20vw;
 }
@@ -46,8 +45,10 @@ span {
 }
 
 .checking label {
-  margin-left: 2vw;
-  font-size: 0.9rem;
+  margin-left: 5vw;
+  margin-right: 5vw;
+  text-align: justify;
+  font-size: 0.8rem;
   margin-bottom: 10px;
 }
 
@@ -87,8 +88,9 @@ span {
 }
 
 .conduct-conclusion p {
-  font-size: 0.8rem;
+  font-size: 0.9rem;
   text-align: center;
+  margin-left: 4vw;
   margin-top: 5vh;
   margin-bottom: 6vh;
 }

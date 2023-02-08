@@ -1,15 +1,19 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
-const cookieParser = require("cookie-parser");
+const cookieParser = require("cookie-parser"); // permet de décoder le token
 const userRoutes = require("./routes/user.routes");
 const categoryRoutes = require("./routes/category.routes");
 const postRoutes = require("./routes/post.routes");
 const router = require("./router");
+// const { authorization } = require("./middlewares/authMiddleware");
 
 const app = express();
 
 app.use(cookieParser());
+
+// jwt
+// app.get("*", authorization); // ce middleware intervient tout le tps pour les GET
 
 app.use(
   cors({
@@ -23,20 +27,9 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, "../public")));
 
-// app.use(express.static(path.join(__dirname, "..", "..", "frontend", "dist")));
-
-// API routes
 app.use(userRoutes);
 app.use(categoryRoutes);
 app.use(postRoutes);
 app.use(router);
 
-// Redirect all requests to the REACT app
-// app.get("*", (req, res) => {
-//   res.sendFile(
-//     path.join(__dirname, "..", "..", "frontend", "dist", "index.html")
-//   );
-// });
-
-// ready to export
 module.exports = app;

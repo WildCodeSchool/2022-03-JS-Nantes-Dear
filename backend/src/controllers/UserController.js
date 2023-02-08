@@ -5,13 +5,14 @@ const models = require("../models");
 
 class UserController {
   static register = async (req, res) => {
-    const { email, pseudo, password, age, role } = req.body;
+    const { email, pseudo, password, role, age } = req.body;
 
     const [user] = await models.user.findByPseudo(pseudo);
     if (user.length) {
       res.status(409).send({
         error: "Ce pseudo existe déjà",
       });
+      return;
     }
 
     const [mail] = await models.user.findByMail(email);
@@ -20,19 +21,6 @@ class UserController {
         error: "Cet email existe déjà",
       });
     }
-
-    const validationErrors = Joi.object({
-      email: Joi.string().email().max(255).required(),
-      pseudo: Joi.string().max(50).required(),
-      password: Joi.string().max(255).required(),
-      age: Joi.string().max(30).required(),
-    }).validate({ email, pseudo, password, age }).error;
-
-    if (validationErrors) {
-      res.status(422).send(req.body);
-      return;
-    }
-
     try {
       const salt = await bcrypt.genSalt(10);
       const hash = await bcrypt.hash(password, salt);
@@ -41,12 +29,8 @@ class UserController {
         .insert({ email, pseudo, hash, age, role })
         .then(([result]) => {
           res.status(201).json({
+            ...result,
             id: result.insertId,
-            email,
-            pseudo,
-            hash,
-            age,
-            role,
           });
         })
         .catch((err) => {
@@ -67,7 +51,7 @@ class UserController {
 
     const validationErrors = Joi.object({
       pseudo: Joi.string().max(15).required(),
-      password: Joi.string().max(15).required(),
+      password: Joi.string().max(150).required(),
     }).validate({ pseudo, password }).error;
 
     if (validationErrors) {
@@ -96,12 +80,12 @@ class UserController {
                   secure: process.env.NODE_ENV === "production",
                 })
                 .status(200)
-                .send({ id, pseudo });
-            } else {
-              res
-                .status(403)
-                .send("Le pseudo ou le mot de passe ne sont pas valides");
+                .send({ id, pseudo, role, token, message: "logged in !!" });
+              return;
             }
+            res
+              .status(403)
+              .send("Le pseudo ou le mot de passe ne sont pas valides");
           } catch (err) {
             res.status(500).send(`Erreur Interne avec bcrypt ${err}`);
           }
@@ -109,10 +93,20 @@ class UserController {
       })
       .catch((err) => {
         console.error(err);
-        res.status(500).send({
+        return res.status(500).send({
           error: err.message,
         });
       });
+  };
+
+  static logout = (req, res) => {
+    res
+      .clearCookie("jwt", {
+        secure: true,
+        sameSite: "none",
+      })
+      .status(200)
+      .send("User has been logged out.");
   };
 
   static browse = (req, res) => {
@@ -127,11 +121,6 @@ class UserController {
           error: err.message,
         });
       });
-  };
-
-  static logout = (req, res) => {
-    res.clearCookie("accessToken");
-    res.sendStatus(204);
   };
 
   static edit = (req, res) => {
@@ -154,23 +143,23 @@ class UserController {
       });
   };
 
-  static checkToken = (req, res) => {
-    const token = req.cookie.access_token;
-    if (token) {
-      return res.sendStatus(401);
-    }
-    try {
-      const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
+  // static checkToken = (req, res) => {
+  //   const token = req.cookie.access_token;
+  //   if (token) {
+  //     return res.sendStatus(401);
+  //   }
+  //   try {
+  //     const data = jwt.verify(token, process.env.JWT_AUTH_SECRET);
 
-      return res.status(200).json({
-        id: data.id,
-        email: data.email,
-        role: data.role,
-      });
-    } catch {
-      return res.sendStatus(401);
-    }
-  };
+  //     return res.status(200).json({
+  //       id: data.id,
+  //       email: data.email,
+  //       role: data.role,
+  //     });
+  //   } catch {
+  //     return res.sendStatus(401);
+  //   }
+  // }; // doublon avec le middlewrare authorization et de plus ne fonctionne pas
 
   static checkPseudo = (req, res) => {
     models.user

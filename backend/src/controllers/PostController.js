@@ -54,8 +54,9 @@ class PostController {
 
   static add = async (req, res) => {
     const { content, categoryId } = req.body;
+    // console.log(req.body);
     const { accessToken } = req.cookies;
-    const user = jwt.verify(accessToken, process.env.JWT_AUTH_SECRET);
+    const token = jwt.verify(accessToken, process.env.JWT_AUTH_SECRET);
 
     const validationErrors = Joi.object({
       content: Joi.string().max(255).required(),
@@ -64,30 +65,37 @@ class PostController {
 
     if (validationErrors) {
       res.status(422).send(validationErrors);
-      return;
+      return true;
     }
+    try {
+      models.post
+        .insert({
+          content,
+          userId: token.id,
+          categoryId: parseInt(categoryId, 10),
+          createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
+          likers: 0,
+          signals: 0,
+        })
+        .then(([result]) => {
+          res.status(201).send({
+            ...result,
+            id: result.insertId,
+          });
+        })
 
-    models.post
-      .insert({
-        content,
-        userId: user.id,
-        categoryId: parseInt(categoryId, 10),
-        createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
-        likes: 0,
-        signals: 0,
-      })
-      .then(([result]) => {
-        res.status(201).send({
-          ...result,
-          id: result.insertId,
+        .catch((err) => {
+          console.error(err);
+          res.status(401).send({
+            error: "invalid JWT",
+          });
         });
-      })
-      .catch((err) => {
-        console.error(err);
-        res.status(500).send({
-          error: err.message,
-        });
+    } catch (err) {
+      res.status(500).send({
+        error: `Erreur JWT token : ${err.message}`,
       });
+    }
+    return true;
   };
 
   static delete = (req, res) => {
